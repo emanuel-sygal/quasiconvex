@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx,color,mathtools}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\usepackage[all,cmtip]{xy}
+\usepackage{epstopdf, comment}
+
+\usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{hyperref}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\linespread{1.2}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\DeclareMathOperator{\crit}{crit}
+
+\DeclareMathOperator{\Hdim}{H.dim }
+\DeclareMathOperator{\supp}{supp }
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\idiam}{i.diam}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\hol}{Hol}
+\DeclareMathOperator{\hyp}{hyp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\area}{Area}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\sphere}{\hat{\mathbb{C}}}
+ 
+\begin{document}
+
+
+Abstract We show that the exterior of the cauliflower Julia set is quasiconvex.
+
+1 Introduction
+
+Let X be a path-connected subset of the plane. A rectifiable path \gamma:\left[0,1\right]\to X is called C-quasiconvex, for some constant C, if its length \ell\left(\gamma\right) satisfies the \ell(\gamma)\leq C\cdot\left|\gamma(0)-\gamma(1)\right|.
+
+The space X is called quasiconvex if there is a constant C such that each pair of points can be joined by a C-quasiconvex path. In other words, the intrinsic metric on X is comparable to the ambient Euclidean metric of \C.
+
+Explicitly, for every x,y\in X there is a rectifiable path \gamma joining x,y and satisfying \ell(\gamma)\leq C\left|x-y\right|.
+
+For example, it is proved in [1] that any quasidisk is quasiconvex. 
+
+Thus, for example, the Koch snowflake has quasiconvex interior and exterior.Consider the quadratic polynomials f_{c}(z)=z^{2}+c. If f_{c} has an attracting fixed point then its Julia set J(f_{c}) is a quasicircle, hence its interior and exterior are both quasiconvex. This is the case for values of c in the main cardioid of the Mandelbrot set, i.e. for c\in\left\{ -\frac{\lambda}{2}-\frac{\lambda^{2}}{4}:\,\left|\lambda\right|<1\right\} .
+
+A natural question, then, is what happens for c on the boundary of the main cardioid. For which values of c are the interior and exterior of the Julia set J(f_{c}) quasiconvex? We consider the case c=1/4, known as the cauliflower.
+
+Since the interior of J(f_{1/4}) has an inward-pointing cusp, it is not quasiconvex. However, in [1] there is an example of a John disk whose complement is not quasiconvex. Thus the question remains whether the exterior of J(f_{1/4}) is quasiconvex or not. Our goal is to prove that the exterior is quasiconvex. 
+
+1.1 Sketch of the argument
+
+It is proved in [1, Theorem F] that to show quasiconvexity it suffices to build quasiconvex paths between pairs of points on the Julia set, rather than between any two points in the exterior.
+
+We show quasiconvexity by an explicit construction of these quasiconvex paths.it is enough to connect points that lie on the boundary.Lemma 1. Let U\subset\C be a domain. The closure \overline{U} is quasiconvex if and only if there exists a constant c such that any two points z_{1},z_{2}\in\partial U can be joined by a c-quasiconvex path.
+
+To construct these curves we use the conjugation of f_{c} on the exterior of the Julia set to the map z^{2} on the exterior of the unit disk \D^{*}. We partition \D^{*} into Carleson-like boxes and connect points on the unit circle by traveling on the boundary of these boxes. Both the boxes and the path on their boundary respect the dynamics of z^{2} there, which allow us to transport these paths from \D^{*} to the exterior of J(f_{c}) 
+
+We construct two collections of curves, the so-called "express" and "peripheral" tracks. We use the metaphor of a train traveling between the endpoints and switching between tracks. We stitch the quasiconvex paths from these tracks. We make repeated use of the principle of the conformal elevator in constructing the tracks.Now let K be the filled Julia set of the polynomial f(z)=z^{2}+\frac{1}{4}. 
+
+The construction of the train tracks is done first in the case of the exterior unit disk (c=0), and then transported to the nontrivial c=1/4 case using the Böttcher linearization. Thus we first explain the method in the case of c=0. 
+
+For clarity of exposition, we then show how the method works in the case of c=0.1, in which the map being expanding on the Julia set makes the argument simpler, and only then prove the parabolic case c=1/4. As previously noted, the exterior in the case c=0.1 is already known to be quasiconvex in virtue of being a quasidisk.
+
+How come the cauliflower is not quasicircle?
+
+Our method also works for any hyperbolic or parabolic f_{c}(z)=z^{2}+c 
+
+Theorem. 
+
+0.1 AccesibilityRudin Real and Complex Analysis, 12.10
+
+2 The exterior of a disk
+
+The exterior \D^{*}=\left\{ \left|z\right|>1\right\}  of the unit disk is trivially quasiconvex by connecting points along the perimeter of the circle. However, these paths follow the boundary too closely and their length would blow up if we transport them to the exterior of J(f_{c}), c\neq0, via the Riemann map. Instead, we construct quasiconvexity paths by traveling along the boundaries of suitable Carleson boxes which we now define.
+
+Definition 1. Let n\in\N_{0} and k\in\left\{ 0,\ldots,2^{n}-1\right\} . We call the setB_{n,k}=\exp\left(\biggl(2^{-n-1}\log2,\,2^{-n}\log2\biggl]\times\biggl(\frac{k}{2^{n}}2\pi,\,\frac{(k+1)}{2^{n}}2\pi\biggl]\right)an \boldsymbol{f_{0}}-Carleson box. 
+
+Observe that for a fixed n, the union \bigsqcup_{k=0}^{2^{n}-1}B_{k,n} is a partition of the annulus \left\{ 2^{2^{-n-1}}<\left|z\right|\leq2^{2^{-n}}\right\}  into 2^{n} equally-spaced sectors.
+
+The Carleson \boldsymbol{f_{0}}-box decomposition is the partition of \D^{*} obtained by f_{0}-Carleson boxes:\D^{*}=\left\{ z:\,\left|z\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
+
+The crucial property of this partition is its invariance under f_{0}, stemming from the relation
+
+f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}.In the classical Carleson squares decomposition, the angular length of each square is proportional to its distance from \partial\D. This is not the case in the previous definition, but the two notions look visually similar.of f_{c} and will the conjugation of f_{c} on its basin of infinity to the map z^{2} on the exterior unit disk.
+
+
+
+We describe the motion along quasigeodesics as a train drive. Accordingly, we proceed to define "stations" and "tracks".
+
+Definition 2. The central station is the point 2\in\D^{*}. Stations are the iterated preimages of the point s_{0,0}=2 under the map f_{0}:z\mapsto z^{2}. We index them as s_{n,k}=2^{2^{-n}}e^{\frac{k}{2^{n}}2\pi},\qquad n\in\N_{0},\,k\in\left\{ 0,\ldots,2^{n}-1\right\} .
+
+Stations are naturally structured in a binary tree, where the root is the central station 2 and the children of a node are its preimages. The 2^{n} stations of generation n in the tree are equally spaced on the circle C_{n}=\left\{ \left|z\right|=2^{1/2^{n}}\right\} .
+
+
+
+We next lay "train tracks" on the boundaries of Carleson boxes, connecting adjacent stations. We classify tracks into two kinds: express (radial) tracks and peripheral tracks. The endpoints of tracks are the stations.
+
+Definition 3. We define two families of paths, which we use to travel between stations.
+
+1. Given two stations s,s' of the same generation n on the tree, the peripheral track \gamma_{s,s'}^{p} between these stations is the short arc of the circle C_{n} connecting s to s'.are the circles \delta_{n}=for integers n\geq-1. 
+
+2. Observe that every station s of generation n has a unique station s' of the next generation n+1 with the same argument \mathrm{Arg}\left(s\right). (Indeed, the angles of stations of generation n+1 are a refinement of the angles of the previous generation n.) We call s' the radial successor of s.
+
+The Express track \gamma_{s,s'}^{e} between these two stations is the radial segment [s,s'].
+
+We refer to a concatenation of tracks as a train journey. A journey is identified with its sequence of stations \left(\sigma_{i}\right).
+
+Notice that the tracks preserve the dynamics: applying z\mapsto z^{2} on a track \gamma_{s,s'} gives a track of the same kind between their parents in tree, of the preceding generation. The tracks trace the boundaries of the preimages of the annulus A(0,\sqrt{2},2) under z\mapsto z^{2}.are the iterated preimages of the interval \left[1,2\right] under the map f_{0}(z)=z^{2}. These are radial curves ending at the unit circle. Explicitly, for each dyadic direction \theta=\exp\left(2^{-k}\pi i\right)\in\partial\D, where k\geq0 is an integer, we have the peripheral track \gamma_{\theta}=\left\{ r\theta:\,r\in\left[1,2^{1-k}\right]\right\} .We construct the Carleson boxes as iterated preimages under f_{0}=z^{2} of the annulus A(0,2,4)=\left\{ 2\leq\left|z\right|\leq4\right\} .See figure []. It is instructive to think of these curves in terms of the Carleson boxes. We refer to the boundaries of the Carleson boxes as the "peripheral tracks". Explicitly, these are just the circles C_{k}=\left\{ \left|z\right|=2^{k}\right\}  for integers k\leq1.We moreover build See figure. For each radius of the form r=2^{k}, where k\leq1 is an integer, we have an associates peripheral
+
+We now put these constructions into action to show quasiconvexity.
+
+Theorem 4. a. There exists a constant L such that any point z_{1}\in\partial\D can be joined to the central station 2\in\D^{*} by a train journey \eta_{z_{1}} of length at most L.that is contained in the exterior \D^{*} and which lies on tracks.
+
+b. The domain \D^{*} is quasiconvex via paths that are train journeys.
+
+Proof. a. Starting from the central station s_{0,0}=2, we construct a journey \eta_{z_{1}}=\left(\sigma_{0}=2,\sigma_{1},\ldots\right) to the given point z_{1}=\exp(2\pi i\theta) on \partial\D. We inductively choose the next stations of the journey in pairs, in a greedy manner, where in each step we drive peripherally to the station closest to z_{1} and then drive to its radial successor. See Figure.
+
+Proof. 
+
+Proof. For the first station \sigma_{1} we have no choice and we drive to the station \sigma_{1}=s_{1,0}=\sqrt{2}.
+
+Proof. Suppose that we already chose the stations \left(\sigma_{0},\ldots,\sigma_{2k-1}\right). Then from \sigma_{2k-1} we drive to the station \sigma_{2k} on the same circle, \left|\sigma_{2k-1}\right|=\left|\sigma_{2k}\right|, that minimizes the angular distance \left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|. 
+
+Proof. The minimizer \sigma_{2k} is adjacent peripherally to \sigma_{2k-1}, since the angular distance between stations on C_{n} is \frac{2\pi}{2^{n}} and we maintain the invariant \left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|\leq\frac{2\pi}{2^{k}} throughout the journey. Thus the length of the track \gamma_{\sigma_{2k-1},\sigma_{2k}}^{p} is either r_{n}\cdot\frac{2\pi}{2^{k}}=2^{1/2^{k}}\frac{2\pi}{2^{k}} or 0 (in case \sigma_{2k-1}=\sigma_{2k}), and in any case the length is at most \lesssim\frac{1}{2^{k}} for a global hidden constant. The total length of all the express tracks in the journey is exactly \sqrt{2}-1, hence the total length of the journey is \gamma_{\sigma_{2k+1},\sigma_{2k}} is exactly r_{k}-r_{k+1}=2^{1/2^{k}}-2^{1/2^{k+1}}, and hence  at most some constant L, independent of z_{1}.
+
+Proof. Traveling from the central station 2\in\D^{*} to z_{1}\in\partial\D
+
+Proof. The output sequence of stations converges to z_{1}, and its length is uniformly bounded. Indeed, observe that at the i-th iteration of the loop in the algorithm, the length of the concatenated paths is \lesssim2^{-i}.
+
+Proof. b. Fix two points (“terminal stations") z_{1},z_{2}\in\partial\D. Let \eta_{z_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{z_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty} be the journeys from part (a), connecting each terminal to the central station. 
+
+Proof. Let \left(\sigma_{0},\ldots,\sigma_{N}\right) be the maximal common prefix of \eta_{z_{1}} and \eta_{z_{2}}. Let \eta_{z_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right) be the truncated paths. By the of N, we have that \eta_{z_{1}}^{\text{truncated}} and \eta_{z_{2}}^{\text{truncated}} are two journeys with a common starting point, so we can concatenate them to obtain a bi-infinite journey \eta_{z_{1},z_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right) connecting z_{1} and z_{2}.
+
+Proof. 
+
+Proof. We conclude the proof by showing that \mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|z_{1}-z_{2}\right|.
+
+Proof. As \left|z_{1}-z_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right| and \mathrm{Arg}\left(z_{i}\right)\propto\theta_{i}, it is equivalent to show\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|.
+
+Proof. By the choice of N, \left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
+
+Proof. Thus it is enough to prove that \mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim2^{-N}. But \mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)=\mathrm{Length}\left(\eta_{z_{1}}^{\text{truncated}}\right)+\mathrm{Length}\left(\eta_{z_{2}}^{\text{truncated}}\right),so it is enough to observe that \mathrm{Length}\left(\eta_{z_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}by part (a).
+
+Proof. (It exists since otherwise z_{1}=z_{2}.)Proof. Second Solution. 1 The hyperbolic Case
+
+Proof. 1 The Cauliflower Case
+
+References 
+
+% \cite{euclidean-quasiconvexity}
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{00}
+
+\bibitem{euclidean-quasiconvexity} Hakobyan, Hrant, and Herron, David A.. "Euclidean quasiconvexity.." Annales Academiae Scientiarum Fennicae. Mathematica 33.1 (2008): 205-230.
+
+\end{thebibliography}
+
+
+
+\end{document}
+

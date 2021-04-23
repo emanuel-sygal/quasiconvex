@@ -1,0 +1,732 @@
+\input{preamble.tex}
+\begin{document}
+
+\section{Introduction}
+A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex }if its
+intrinsic metric is comparable to the ambient Euclidean metric. Explicitly,
+this means that there exists a constant $A\geq1$ such that every
+two points $z_{1},z_{2}\in\Omega$ have a rectifiable path $\gamma:\left[0,1\right]\to\Omega$
+connecting them which satisfies %
+\begin{comment}
+Let $X$ be a path-connected subset of the plane. A rectifiable path
+$\gamma:\left[0,1\right]\to X$ is called $C$\textbf{-quasiconvex,
+}for some constant $C$, if its length satisfies
+\end{comment}
+{} 
+\[
+\mathrm{Length}(\gamma)\leq A\cdot\left|z_{1}-z_{2}\right|.
+\]
+
+We call such a path $\gamma$ a \emph{quasiconvexity witness }for\emph{
+$z_{1},z_{2}$.}%
+\begin{comment}
+The space $X$ is called \textbf{quasiconvex }if there is a constant
+$C$ such that every pair of points $z_{1},z_{2}\in X$ can be connected
+by a $C$-quasiconvex path. In other words, the intrinsic metric on
+$X$ is comparable to the ambient Euclidean metric. 
+\end{comment}
+
+If $\Omega$ is the interior of a Jordan curve, then by \cite[Corollary F]{key-1}
+it is enough to find certificates for points $z_{1},z_{2}$ that are
+on the boundary curve $\partial\Omega$.%
+\begin{comment}
+It is also shown in \cite{key-1} that any quasidisk is quasiconvex.
+\end{comment}
+
+Our interest in quasiconvexity stems from its connection with the
+John property: If $\Omega$ is a quasiconvex Jordan domain, then the
+interior of its complement is John. See \cite[Corollary 3.4]{key-1}
+for details. 
+
+We want to show that the exterior of the developed deltoid is quasiconvex. 
+
+We show that the exterior of the cauliflower, $\mathcal{J}^{\text{exterior}}(z^{2}+1/4)$,
+is quasiconvex. We then adapt our argument to the exterior of the developed deltoid.
+
+\begin{comment}
+The Filled Julia set of $z^{2}+1/4$, called the cauliflower, has
+an inward-pointing cusp and hence is not quasiconvex.
+\end{comment}
+
+\begin{comment}
+Thus, for any $c$ in 
+
+For values $c$ in quadratic polynomials $f_{c}(z)=z^{2}+c$
+\end{comment}
+\begin{comment}
+If $f_{c}$ has an attracting fixed point then its Julia set $\mathcal{J}(f_{c})$
+is a quasicircle, hence its interior and exterior are both quasiconvex.
+This is the case for values of $c$ in the main cardioid of the Mandelbrot
+set.
+\end{comment}
+\begin{comment}
+, i.e. for 
+\[
+c\in\left\{ -\frac{\lambda}{2}-\frac{\lambda^{2}}{4}:\,\left|\lambda\right|<1\right\} .
+\]
+\end{comment}
+
+\subsection{Sketch of the argument}
+
+We show quasiconvexity by an explicit construction of paths connecting
+given points on the boundary.\textbf{}
+
+%We use the Böttcher coordinate on the exterior unit disk 
+We use the conjugation of $f_{c}:z\mapsto z^{2}+c$ on the exterior
+of the Julia set to the map $z^{2}$ on the exterior of the unit disk
+$\D^{*}$. We decompose $\D^{*}$ into Carleson boxes invariant under
+$z^{2}$ and connect points on the unit circle by traveling on the
+boundary of these boxes. Both the boxes and the path on their boundary
+respect the dynamics of $z^{2}$ there, which allow us to transport
+these paths from $\D^{*}$ to the exterior of $\mathcal{J}(f_{c})$ 
+
+We construct two collections of curves, which we call "express"
+and "peripheral" tracks. We use the metaphor
+of a train traveling between the endpoints and switching between tracks.
+We stitch the quasiconvexity certificates out of these tracks.
+
+The construction of the train tracks is done first in the case of
+the exterior unit disk ($c=0$), and then transported to the 
+$c=1/4$ case using the Böttcher coordinate. 
+%Thus we first explain the method in the case of $c=0$. 
+
+For clarity of exposition, we first show how the method works in the hyperbolic case, in which the conformal elevator makes the argument
+simpler, and only then prove the parabolic case $c=1/4$. 
+%We do this even though $J_{0.1}^{\text{exterior}}$ is known in advance to be quasiconvex, in virtue of being a quasidisk.
+
+
+\section{Power map}
+
+The exterior $\D^{*}=\left\{ \left|z\right|>1\right\} $ of the unit
+disk is trivially quasiconvex by connecting points along the perimeter
+of the circle. However, these paths follow the boundary too closely
+and their length would blow up if we transport them to the exterior
+of $\mathcal{J}(f_{c})$, $c\neq0$, via the Riemann map. Instead,
+we connect points by traveling along the boundaries of Carleson boxes
+which we now define.
+\begin{definition}
+Let $n\in\N_{0}$ and $k\in\left\{ 0,\ldots,2^{n}-1\right\} $. We
+call the set
+%\[B_{n,k}=\exp\left(\biggl(2^{-n-1}\log2,\,2^{-n}\log2\biggl]\times\biggl(\frac{k}{2^{n}}2\pi,\,\frac{(k+1)}{2^{n}}2\pi\biggl]\right)\]
+
+\[
+B_{n,k}=\left\{ z:\quad\left|z\right|\in\biggl(2^{2^{-n}},2^{2^{-n-1}}\biggl],\qquad\mathrm{arg}(z)\in\biggl(\frac{k}{2^{n}}2\pi,\frac{(k+1)}{2^{n}}2\pi\biggl]\right\} 
+\]
+
+an \emph{$\boldsymbol{f_{0}}$}\textbf{\emph{-Carleson box}}\emph{.} 
+
+Observe that for a fixed $n$, the union $\bigsqcup_{k=0}^{2^{n}-1}B_{k,n}$
+is a partition of the annulus 
+\[
+\left\{ 2^{2^{-n-1}}<\left|z\right|\leq2^{2^{-n}}\right\} 
+\]
+ into $2^{n}$ equally-spaced sectors.
+
+The\emph{ }\textbf{\emph{Carleson }}\emph{$\boldsymbol{f_{0}}$}\textbf{\emph{-box
+decomposition}} is the partition of $\D^{*}$ obtained by $f_{0}$-Carleson
+boxes:
+\[
+\D^{*}=\left\{ z:\,\left|z\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
+\]
+
+The crucial property of this partition is its invariance under $f_{0}$,
+stemming from the relation
+
+\[
+f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}.
+\]
+\end{definition}
+
+\begin{comment}
+We describe the motion along quasigeodesics as a train drive. Accordingly,
+we proceed to define "stations"{} and "tracks".
+\end{comment}
+
+\begin{definition}
+The \emph{central station }is the point\emph{ $s_{0,0}=2$. Stations
+}are the iterated preimages of the central station under the map $f_{0}:z\mapsto z^{2}$.
+We index them as 
+\[
+s_{n,k}=2^{2^{-n}}\exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\} .
+\]
+
+Stations are naturally structured in a binary tree, where the root
+is the central station $2$ and the children of a node are its preimages.
+The $2^{n}$ stations of generation $n$ in the tree are equally spaced
+on the circle $C_{n}=\left\{ \left|z\right|=2^{1/2^{n}}\right\} $. 
+
+
+\end{definition}
+
+We next lay two types of "train tracks" on the boundaries of Carleson boxes, which we use to travel between stations.
+
+\begin{definition}
+Let $s=s_{n,k}$ be a station.
+
+1. The \emph{peripheral neighbors} of $s$ are $s_{n,\left(k\pm1\right)\mod2^{n}}$,
+the two stations adjacent to $s_{n,k}$ on $C_{n}$.
+
+2. Given a peripheral neighbor $s'$ of $s$, the \emph{peripheral
+	track }$\gamma_{s,s'}^{\text{peripheral}}$ between these stations
+is the short arc of the circle $C_{n}$ connecting $s$ to $s'$.
+
+3. The \emph{radial successor} of $s$ is $\mathrm{RadicalSuccessor}(s)=s_{n+1,2k}$, the unique station of generation $n+1$ on the radial segment $[0,s]$.
+
+4. The \emph{Express track} $\gamma_{s}^{\text{express}}$ from $s$ is the radial segment $[s,\mathrm{RadicalSuccessor}(s)]$.
+
+5. A \emph{train journey} is a concatenation of tracks. A journey is identified with its sequence of stations. %  $\left(\sigma_{i}\right)$
+\end{definition}
+
+Notice that the tracks preserve the dynamics: applying $z\mapsto z^{2}$
+on a peripheral track between $s,s'$ gives a peripheral track between the
+parents of $s,s'$ in the tree, and likewise for an express track.
+ 
+\begin{lemma}
+There is a family $\{\eta_{z}:z\in\partial\D\}$ of journeys with
+the following properties:
+
+1. Every $\eta_{z}$ is a journey $\left(\sigma_{0},\sigma_{1},\ldots\right)$
+from the central station $\sigma_{0}=s_{0,0}=2$ to $\lim\sigma_{k}=z$.
+
+2. There are no two consecutive peripheral tracks in $\eta_{z}$.
+
+3. $\mathrm{Length}(\sigma_{k})\lesssim2^{-k}$ uniformly in $z$. 
+
+4. The journeys are invariant under $f_{0}$, in the sense that $$f_{0}(\eta_{z})=\eta{}_{f_{0}(z)}\cup[2,4]$$
+for every $z\in\partial\D$.
+\end{lemma}
+
+\begin{proof}
+Let $z=z_{1}=\exp(2\pi i\theta)\in\partial\D$. We choose the stations
+$\sigma_{i}$ inductively in pairs, in a greedy manner. In each step
+we drive peripherally to the station closest to $z_{1}$ and then
+drive to its radial successor. See Figure \ref{fig:Carleson1}. 
+\end{proof}
+\input{"marker path.tex"}
+
+\begin{proof}
+For the first station $\sigma_{1}$ we have no choice and we drive
+to the station $\sigma_{1}=s_{1,0}=\sqrt{2}$.
+
+Suppose that we already chose the stations $\left(\sigma_{0},\ldots,\sigma_{2k-1}\right)$.
+Then from $\sigma_{2k-1}$ we drive to the station $\sigma_{2k}$
+on the same circle, $\left|\sigma_{2k-1}\right|=\left|\sigma_{2k}\right|$,
+that minimizes the angular distance $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|$. 
+
+The minimizer $\sigma_{2k}$ is adjacent peripherally to $\sigma_{2k-1}$,
+since the angular distance between stations on $C_{n}$ is $\frac{2\pi}{2^{n}}$
+and we maintain the invariant $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|\leq\frac{2\pi}{2^{k}}$
+throughout the journey. Thus the length of the peripheral track $\gamma_{\sigma_{2k-1},\sigma_{2k}}^{p}$
+is either $r_{n}\cdot\frac{2\pi}{2^{k}}=2^{1/2^{k}}\frac{2\pi}{2^{k}}$
+or $0$ (in case $\sigma_{2k-1}=\sigma_{2k}$), and in any case the
+length is at most $\lesssim\frac{1}{2^{k}}$ for a global hidden constant.
+The length of the $k$-th express track decays exponentially due to
+the invariance under $f_{0}$. Explicitly it is $2^{1/2^{k}}-2^{1/2^{k+1}}\leq2^{2^{-k}}-1\lesssim2^{-k}$
+since $\lim_{x\to0}\frac{2^{x}-1}{x}=\log2$.
+
+Thus the total length of the journey is  bounded uniformly in $z$.
+\begin{comment}
+property $4$ is automatic from property $3$, and the rest are evident
+from the construction.
+\end{comment}
+\end{proof}
+%
+\begin{comment}
+\begin{lemma}
+In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$
+decays exponentially in $k$, uniformly in $z$.
+\end{lemma}
+\end{comment}
+
+We call $\eta_{z}$ the \emph{central journey} of $z$.
+\begin{theorem}
+The domain $\D^{*}$ is quasiconvex with quasiconvexity certificates
+that are journeys.
+\end{theorem}
+
+\begin{proof}
+Fix two points (“terminal stations") $z_{1},z_{2}\in\partial\D$.
+Let $\eta_{z_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{z_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
+be their central journeys, connecting each terminal to the central
+station.
+
+Let $\left(\sigma_{0},\ldots,\sigma_{N}\right)$ be the maximal common
+prefix of $\eta_{z_{1}}$ and $\eta_{z_{2}}$. Let $\eta_{z_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
+be the truncated paths. By the maximality of $N$, we have that $\eta_{z_{1}}^{\text{truncated}}$
+and $\eta_{z_{2}}^{\text{truncated}}$ are two journeys with a common
+starting point, so we can concatenate them to obtain a bi-infinite
+journey 
+\[
+\eta_{z_{1},z_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right)
+\]
+ connecting $z_{1}$ and $z_{2}$.
+\input{"marker path 2.tex"}
+
+We conclude the proof by showing that $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|z_{1}-z_{2}\right|$.
+
+As $\left|z_{1}-z_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right|$
+and $\mathrm{Arg}\left(z_{i}\right)\propto\theta_{i}$, it is equivalent
+to show
+\[
+\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|.
+\]
+
+By the choice of $N$, 
+\[
+\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
+\]
+
+Thus it is enough to prove that $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim2^{-N}$.
+But 
+\[
+\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)=\mathrm{Length}\left(\eta_{z_{1}}^{\text{truncated}}\right)+\mathrm{Length}\left(\eta_{z_{2}}^{\text{truncated}}\right),
+\]
+so it is enough to observe that 
+\[
+\mathrm{Length}\left(\eta_{z_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}
+\]
+by part (3) of the previous lemma.
+
+\end{proof}
+
+\section{Hyperbolic Map}
+
+Throughout this section we fix an arbitrary $c\in\left(-\frac{3}{4},\frac{1}{4}\right)$ and denote $f_c: z\mapsto z^2 + c$ by $f$.
+Since the critical point $0$ is in the filled Julia set of $f$,
+there is a conformal map $\psi:\D^{*}\to\mathcal{J}^{\text{exterior}}(f)$
+conjugating $f$ to $z^{2}$, i.e. $f\circ\psi(z)=\psi\circ f_{0}(z)$
+for every $z\in\D^{*}$.
+
+The map $\psi$ extends to a homeomorphism between the circle
+$\partial\D$ and the Julia set $\mathcal{J}(f)$ by Carathéodory's
+theorem, since $\mathcal{J}$ is a Jordan curve.
+
+All $f_{0}$-invariant constructions carry over from $\D^{*}$ to
+$\mathcal{J}^{\text{exterior}}(f)$, and now they are $f$-invariant:
+%We have $f$-Carelson boxes $B_{n,k,c}=\psi(B_{n,k})$ and
+%an $f$-Carelson decomposition 
+%\[\mathcal{J}^{\text{exterior}}(f)=\psi\left(\left\{ \left|z\right|>2\right\} \right)\sqcup\bigsqcup_{n,k,}B_{n,k,c},\]
+We have stations $s_{n,k,c}=\psi(s_{n,k})$ and likewise tracks.
+The express tracks lie on the external rays of $\psi$, and the
+peripheral tracks are on the level sets of $\psi$, or equivalently
+on the equipotentials of Green's function.
+
+As an example of how invariance carries other, applying $\psi$
+to both sides of the equation 
+\[
+f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}
+\]
+gives the corresponding relation 
+\[
+f\left(B_{n+1,k,c}\right)=B_{n,\lfloor\frac{k}{2}\rfloor,c}.
+\]
+
+We observe that the central station is still on the real line:
+
+\begin{lemma}$\psi(\mathbb{D}^{*}\cap\R)\subseteq\R$. In particular,
+$\psi(s_{0,0})\in\R$.
+\end{lemma}
+\begin{proof}
+This is true by symmetry of $\D^{*}$ and $\mathcal{J}^{\text{exterior}}(f)$
+with respect to $\R$. Formally, $\overline{\psi}(\overline{z})$
+is another conformal map with the same conjugation relation, so by
+uniqueness of the Böttcher coordinate (with a given derivative at
+$\infty$) we obtain $\psi(z)=\overline{\psi}(\overline{z})$,
+hence $\psi(z)\in\R$ for $z\in\R$.
+\end{proof}
+Note that this lemma remains true for $c=1/4$.
+
+\begin{comment}
+$c=0.1\in(\frac{-3}{4},\frac{1}{4})$
+\end{comment}
+
+\begin{comment}
+We explain the proof in the easier setting in which $f$ is inside
+the main cardioid, e.g. $c\in\left(-\frac{3}{4},\frac{1}{4}\right)$. 
+\end{comment}
+
+\begin{comment}
+We suppress the index $c$ at times. 
+\end{comment}
+
+As before, we have:
+\begin{lemma}
+There is a family $\{\eta_{z}:z\in\mathcal{J}(f)\}$ of journeys
+with the following properties:
+
+1. Every $\eta_{z}$ is a journey $\left(\sigma_{0},\sigma_{1},\ldots\right)$
+from the central station $\sigma_{0}=s_{0,0,c}$ to $\lim\sigma_{k}=z$.
+
+2. There are no two consecutive peripheral tracks in $\eta_{z}$.
+
+3. $\mathrm{Length}(\sigma_{k})\lesssim\theta^{-k}$ uniformly in
+$z$, for a constant $\theta=\theta(c)>1$.
+
+4. The journeys are invariant under $f$, in the sense that $f(\eta_{z})=\eta{}_{f(z)}\cup f\left([2,4]\right)$
+for every $z\in\partial\D$.
+\end{lemma}
+
+\begin{proof}
+Let $z\in\mathcal{J}\left(f\right)$. Let $\zeta=\psi^{-1}(z)$
+be the corresponding point on $\partial\D$, %
+\begin{comment}
+because $\psi$ extends to a homeomorphism in the hyperbolic case.
+\end{comment}
+
+which has a central journey $\eta_{\zeta}$ in $\D^{*}$. We choose
+the central journey of $z$ to be $\eta_{z}=f\left(\eta_{\zeta}\right).$
+
+We take the images of the corresponding journeys from the case of
+$\D^{*}$. Parts $1,2,4$ are then automatic. We now check part (3). 
+
+The map $f$ is pointwise expanding on the Julia set $\mathcal{J}(f)$,
+so by compactness $f$ is uniformly expanding there, i.e. there
+are a constant $\theta>1$ and a neighborhood $\mathcal{U}$ of $\mathcal{J}(f)$
+on which $\left|f'\right|>\theta$. Since every journey is eventually
+contained in $\mathcal{U}$, we have for $k\gg1$ that $\mathrm{Length}(f(\gamma))\geq\theta\mathrm{\cdot Length}\left(\gamma\right)$.
+Thus the length of peripheral tracks decays exponentially at rate
+$\theta$, and likewise for express tracks.%
+\begin{comment}
+Let $z=z_{1}=\exp(2\pi i\theta)\in\partial\D$. We choose the stations
+$\sigma_{i}$ inductively in pairs, in a greedy manner. In each step
+we drive peripherally to the station closest to $z_{1}$ and then
+drive to its radial successor. See Figure. 
+\end{comment}
+\end{proof}
+%
+To take advantage of the preceding lemma for showing quasiconvexity,
+we use the following claim.
+
+\begin{claim}Let\textbf{ $f$ }be a rational map that is expanding
+on its Julia set $\mathcal{J}(f)$. Then there exists a constant $\epsilon$
+such that for every two points $z,w\in\mathcal{J}(f)$, there exists
+$n\in\mathbb{N}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.
+\end{claim}
+\begin{proof}
+\emph{(sketch.)}\textbf{ }This claim follows from the condition that
+$\left|f'\right|>1$ on $\mathcal{J}$ since as long as two points
+$z,w\in\mathcal{J}$ are close enough we can approximate $f$ linearly
+to see that the images $f(z),f(w)$ must be further apart. 
+\end{proof}
+\begin{comment}
+We may alternatively see this claim as a degenerate version of the
+principle of conformal elevator, which we briefly recall.
+\end{comment}
+
+\begin{remark}
+This claim has some similarity to the \emph{principle of the conformal
+elevator}, which we now recall.
+
+A rational map is said to be \emph{hyperbolic }if every critical point
+converges to an attracting cycle, and no critical point is on the
+Julia set.
+
+\emph{The principle of the conformal elevator: }Let $f$ be a hyperbolic
+map, let $\zeta\in\mathcal{J}(f)$ and let $r>0$ be sufficiently
+small. Then there exists an iterate $f^{\circ n}(B(\zeta,r))$ of
+the ball $B(\zeta,r)$ which is a set of diameter bounded below uniformly
+in $\zeta,r$ and which is "almost round".
+Since we do not need this control on the distortion of the balls,
+we do not state the precise form of this latter constraint and refer
+the reader to {[}2{]} for details.
+\end{remark}
+
+\begin{comment}
+Since we only need to make a pair of points on the Julia set a fixed
+distance apart.
+\end{comment}
+
+\begin{comment}
+In this case we have available the conformal elevator principle, which
+allows enlarging every ball centered at $\mathcal{J}(f)$ to a
+definite size by iteratively applying $f$. 
+\end{comment}
+
+\begin{theorem}
+The domain $\mathcal{J}^{\text{exterior}}(f)$ is quasiconvex.
+\end{theorem}
+
+\begin{proof}
+Let $z_{1},z_{2}$ be two points on $\mathcal{J}(f)$. We construct
+a quasiconformality certificate curve connecting $z_{1}$ and $z_{2}$.
+We use the obvious candidate: let $\zeta_{i}=\psi^{-1}\left(z_{i}\right)\in\partial\D$,
+then we have a quasiconformality certificate for them $\eta_{\zeta_{1},\zeta_{2}}$
+from the $c=0$ case. We choose $\eta_{z_{1},z_{2},c}=\psi(\eta_{\zeta_{1},\zeta_{2}})$
+to be the certificates. By the invariance of the construction, this is
+a journey on the $f$-Carleson decomposition which can similarly
+be described directly in terms of a common ancestor in the tree structure,
+since $\psi$ is a bijective correspondence between the two decompositions.
+Since we already know that the lengths of tracks in the journey decay
+exponentially, with rate $\theta>1$, the same proof of the case $c=0$
+also shows quasiconvexity in this case.
+\end{proof}
+%
+We give a second proof, relying on the previous claim on separation
+of points under iteration. This proof will better prepare us to the
+parabolic $c=1/4$ case, in which we don't have uniform expansion
+of $f$ on its Julia set.
+\begin{proof}
+By the claim, there exists some $\epsilon$ such that any two points
+are $\epsilon$-apart under some iteration of $f$. Let $z_{1},z_{2}\in\mathcal{J}(f)$.
+If $\left|z_{0}-z_{1}\right|\geq\epsilon$ then there is nothing to
+prove, since we may just concatenate $\eta_{z_{1}}$ and $\eta_{z_{2}}$
+and absorb this bounded length into the quasiconformality constant
+$A$. Explicitly, if $\mathrm{Length}\left(\eta_{z}\right)\leq L$
+for all $z\in\mathcal{J}$ then we take $A\geq\frac{2L}{\epsilon}$
+and then automatically $\mathrm{Length}\left(\eta_{z_{1}}+\eta_{z_{2}}\right)\leq A\left|z_{0}-z_{1}\right|$.
+
+If, on the other hand, $\left|z_{0}-z_{1}\right|<\epsilon$, then
+we may use the claim to find an iterate $f^{\circ n}$ such that $\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\geq\epsilon$.
+Then there is a certificate journey $\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}$
+between them, and we take the certificate $\eta_{z_{0},z_{1}}$ between
+the original points to be the component of $f^{\circ-n}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)$
+that connects the points $z_{0},z_{1}$.
+
+A distortion estimate: 
+\[
+\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\asymp\frac{\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)}{\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|}
+\]
+ for some point $\zeta$ on $\mathcal{J}$. The denominator grows
+with $n$ exponentially at rate $\theta$, while the numerator has
+a bound of the form 
+\[
+\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)\lesssim\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\lesssim\theta^{n}\left|z_{0}-z_{1}\right|
+\]
+ so altogether 
+\[
+\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\lesssim\frac{\theta^{n}\left|z_{0}-z_{1}\right|}{\theta^{n}}=\left|z_{0}-z_{1}\right|
+\]
+ so $\eta_{z_{0},z_{1},c}$ is a quasiconformality certificate.
+
+\begin{comment}
+By compactness of $\mathcal{J}$, the derivative $\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|$
+is uniformly bounded for a fixed $n$. Moreover, this distortion estimate
+shows that the length of the curve scales with $n$ at exactly the
+same rate in which the distance between the iterated images $f^{\circ n}(z_{0}),f^{\circ n}(z_{1})$
+scale with $n$, so the curve $\gamma$ has a uniformly bounded quasiconvexity
+constant, as needed.
+\end{comment}
+\begin{comment}
+take the quasiconformality constant $A$ to be large enough so that
+the sum of the lengths $\mathrm{Length}\left(\eta_{z_{1}}\right)+\mathrm{Length}\left(\eta_{z_{2}}\right)\leq A\left|z_{0}-z_{1}\right|$
+\end{comment}
+\begin{comment}
+If $ $ then the condition of uniform quasiconvexity on the paths
+connecting the points $z_{0}$ and $z_{1}$ is just having bounded
+length, so we may concatenate the paths $\gamma_{z_{0},2}$ and $\gamma_{z_{1},2}$
+which exist by part (a).
+\end{comment}
+\begin{comment}
+In general, the points $z_{0},z_{1}$ may be close to one another,
+but we use the expanding dynamics of $f$ on the Julia set to
+make them far apart: There exists some iterate $f^{\circ n}$
+such that $\left|f^{\circ n}\left(z_{0}\right)-f^{\circ n}\left(z_{1}\right)\right|\geq0.1$.
+Then we have a path of uniformly bounded length $\gamma{}_{z_{0},z_{1},n}$
+connecting them in $\D^{*}$. Let $\gamma$ be the component of $f^{\circ\left(-n\right)}(\gamma{}_{z_{0},z_{1},n})$
+containing $z_{0},z_{1}$. 
+\end{comment}
+\begin{comment}
+
+\section{The Cauliflower Case}
+
+\subsection{All points on the boundary are accessible}
+
+Let $J$\textbf{ }be the julia set of $f(z)=z^{2}+\frac{1}{4}$. Denote
+the filled Julia set by $K$.
+
+The point $z=\frac{1}{2}$ will be denoted $p$.
+
+\textbf{Claim. }The external ray which lands at the main cusp $p$
+is a straight line.
+
+\textbf{Proof. }There is a symmetry around the real line.$\square$
+
+Let $\delta_{p}$ be the line segment lying on the real line which
+joins the main cusp $p$ with $\gamma_{p,0}$.
+
+By the previous claim, $\delta_{p}$ is a geodesic of the basin of
+infinity.
+
+Define $\delta_{q}$ for any cusp $q=f^{-n}(p)$ by taking the connected
+component of the preimage $f^{-n}(\delta_{q})$ which contains $q$.
+
+This is again a geodesic which lies on an external ray.
+
+\textbf{Observation. }Every $\delta_{q}$ is a rectifiable curve.
+
+\textbf{Proof. }The inverse image of a rectifiable curve under a holomorphic
+mapping is rectifiable.
+
+\textbf{Claim. }Every cusp $q$ of the Julia set is accessible.
+
+\textbf{Proof. $\delta_{q}$ }is rectifiable, starts at $q$ and thus
+it is enough to observe that the other endpoint of $\delta_{q}$ is
+accessible.
+
+\textbf{Claim. }Every point $\zeta\in J=\partial K$ is accessible.
+
+\textbf{Idea. }We already showed this in the case when $\zeta$ is
+a cusp, and cusps are the “hardest to reach"{} points
+on the Julia set. Given a non-cusp point $\zeta\in J$, we consider
+a nearby cusp $q$ and connect $\zeta$ with the curve $\delta_{q}$
+of $q$. For making the connection we introduce "highways"{}
+in the next section.
+
+
+\subsection{Railways}
+
+\subsubsection*{Preamble}
+
+Let $a,b$ be two points on $J$ to be chosen later.
+
+Let $\gamma_{p,0}$ be a geodesic between $a,b$ with respect to the
+inner metric of the basin of infinity $\mathbb{C}\setminus K$.
+
+\textbf{Claim. }$J$ is a Jordan curve.
+
+Let $\gamma_{a,b}$ be the curve connecting $a,b$ along $J$ “in
+the same direction as $\gamma_{p,0}$".
+
+Let $U_{p,0}$ to be the domain whose boundary is the union of $\gamma_{p,0}$
+and the $\gamma_{a,b}$.
+
+Define inductively $\gamma_{p,j}$ to be the component of the preimage
+of $\gamma_{p,j-1}$ that is inside $U_{p,0}$.
+
+\textbf{Claim. }There is a unique such preimage.
+
+Define $U_{p,j}$ to be the domain whose boundary is the union of
+$\gamma_{p,j}$ and the $\gamma_{a,b}$.
+
+\textbf{Claim. }Every cusp point $q$ is a preimage $f^{\circ(-n)}(p)$
+of the main cusp $p=\frac{1}{2}$, for a unique positive integer $n$.
+
+Given a cusp $q=f^{\circ\left(-n\right)}\left(p\right)$, define $U_{q,j}=f^{\circ(-n)}U_{p,j}$.
+
+\textbf{Choice of $a,b$. }We choose the initial geodesic $\gamma_{p,0}$
+so that the union over all cusps $\cup_{q}U_{q,0}$ contains a one-sided
+neighborhood of the Julia set $J$.
+
+That is, there is $\epsilon$ such that the union contains all points
+in $K$ whose distance to the boundary $J$ is at most $\epsilon$.
+
+Let $T_{p,j}$ be the region $U_{p,j}\setminus U_{p,j-1}$.
+
+\subsubsection*{Usage}
+
+\textbf{Strategy. }Given a point $\zeta\in J$, find $j$ such that
+$\zeta\in\partial T_{p,j}$. 
+
+Define the size of a cusp $q=f^{-n}(p)$ to be $n$. We use this to
+compare the size of different cusps.
+
+Let $p_{n}$ be a sequence of cusps converging to $\zeta$.
+
+Construct a curve from $\zeta$ that verifies the accessibility of
+$\zeta$ as follows.
+
+The curve starts along $\delta_{p}$, until the point $a_{p,q_{1}}$
+on $\delta_{p}$ closest to $\delta_{q_{1}}$.
+
+Add a linear segment from $a_{p,q_{1}}$ to $a_{\ensuremath{q_{1},p}}$,
+then continue along $\delta_{q_{1},q_{2}}$ until $a_{q_{1},q_{2}}$.
+Iterating this process, we obtain a curve $\gamma_{\zeta}$ .
+
+\textbf{Claim. }The curve $\gamma_{\zeta}$ has finite length.
+
+To show this, we need the following estimates.
+
+\subsubsection*{Diameter Comparisons}
+
+Denote by $\diam\left(A\right)$ the Euclidean diameter of a set $A$,
+and by $i.\diam\left(A\right)$ the inner diameter on the escaping
+set, i.e. the diameter induced by the Riemann mapping from the escaping
+set to the disk.
+
+\textbf{Claim. }$\diam T_{p,n}\asymp i.\diam T_{p,n}$.
+
+\textbf{Claim. }$\diam U_{p,n}\asymp i.\diam U_{p,n}$.
+
+\textbf{Proof. }Koebe distortion theorem.
+
+\section{Accessibility in the Hyperbolic Case}
+
+Consider the polynomial $f(z)=z^{2}+c$ for some positive constant
+$c<\frac{1}{4}$.
+
+This polynomial is hyperbolic: its attracting fixed point $z_{a}$
+is in the interior of the filled Julia set, and thus the conformal
+elevator principle applies.
+
+We first recall the principle.
+
+\textbf{Proposition. }The post-critical set has positive distance
+from the Julia set.
+
+\textbf{Proof. }Since \textbf{$z_{a}$ }is an attracting fixed point,\textbf{
+}it must have a critical point converging to it. Since $0$ is the
+unique critical point of the polynomial $p_{c}$, we deduce that $0$
+is attracted to $z_{a}$. Thus the forward iterations of $0$ stay
+a bounded distance away from the Julia set, since $z_{a}$ is with
+positive distance to the Julia set. $\square$
+
+\textbf{Observation. }Let $R>0$ be the distance from the post-critical
+set to the Julia set. Consider the ball $B=B(z,\frac{R}{2})$.
+
+Since $B$ is disjoint from the post-critical set, none of its preimages
+$f^{-n}\left(B\right)$ contains the critical point $0$.
+
+Thus $f$ restricted on each such preimage is univalent and 2-to-1.
+
+By Koebe's distortion theorem, applied to iterates $f^{\circ n}$,
+the diameter of the preimages of $B$ changes by at most a multiplicative
+constant.
+
+This principle shows that all points $z$ on the Julia set $J(p_{c})$
+are accessible, since after repeated applications of $f^{n}(B)$ we
+get a topological ball of definite size which we may use to construct
+an explicit path exiting $K$ in a rectifiable way.
+
+\section{Accessibility in the Parabolic Case}
+
+Let $f(z)=z^{2}+\frac{1}{4}$. Let $J=J(f)$ be the Julia set of $f$.
+Let $K$ be the filled Julia set, known as the cauliflower.
+
+\textbf{Claim. }The Cauliflower is bounded.
+
+\textbf{Proof. }As in the hyperbolic case.$\square$
+
+Using claim 1, fix $R>0$ for which $B(0,R)\supset K$. Denote $B=B(0,R)$.
+
+Let $\zeta\in J$. Our goal is to show that $\zeta$ is accessible.
+
+This is immediately equaivalent to showing that there is a rectifiable
+curve $\Gamma$ starting at $\zeta$ that exits $B$.
+
+The basic strategy will be to investigate the geometry near the main
+cusp $p=\frac{1}{4}$, since all other cusps are preimages of $p$
+under $f$,
+
+whence the principle of the conformal elevator reduces the general
+case to the case of a point sufficiently close to the main cusp $p$.
+
+To implement this strategy, we take some arbitrary other point on
+the Julia set, connect it by a curve $\gamma$ to $a$, then consider
+all preimages of $\gamma$.
+
+In general, consecutive images near a parabolic point have consecutive
+distances comparable to $\frac{1}{n^{2}}$ , where $n$ is the index
+of the preimage.
+\end{comment}
+\end{proof}
+\begin{thebibliography}{1}
+\bibitem[1]{key-1}Hakobyan, Hrant, and Herron, David A.. "Euclidean
+quasiconvexity.."{} Annales Academiae Scientiarum Fennicae.
+Mathematica 33.1 (2008): 205-230.
+
+\bibitem[2]{key-2}Mario Bonk, Mikhail Lyubich, Sergei Merenkov, Quasisymmetries
+of Sierpiński carpet Julia sets, Advances in Mathematics, Volume 301,
+2016, Pages 383-422, ISSN 0001-8708, https://doi.org/10.1016/j.aim.2016.06.007.
+\end{thebibliography}
+
+\end{document}

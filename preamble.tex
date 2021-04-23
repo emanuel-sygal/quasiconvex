@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}
+\usepackage{graphicx,color,mathtools}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\usepackage[all,cmtip]{xy}
+\usepackage{comment}
+
+\usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\linespread{1.2}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\DeclareMathOperator{\crit}{crit}
+
+\DeclareMathOperator{\Hdim}{H.dim }
+\DeclareMathOperator{\supp}{supp }
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\idiam}{i.diam}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\hol}{Hol}
+\DeclareMathOperator{\hyp}{hyp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\area}{Area}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\sphere}{\hat{\mathbb{C}}}
+
+\usepackage{tikz} 
+
+
+\global\long\def\R{\mathbb{R}}%
+\global\long\def\C{\mathbb{C}}%
+\global\long\def\N{\mathbb{N}}%
+\global\long\def\Z{\mathbb{Z}}%
+\global\long\def\D{\mathbb{D}}%
+\global\long\def\H{\mathbb{H}}%
+\global\long\def\Im{\mathrm{Im}}%
+\global\long\def\Re{\mathrm{Re}}%
+\global\long\def\Arg{\mathrm{Arg}}%
+\global\long\def\do#1#2{\frac{\partial#1}{\partial#2}}%
+\global\long\def\nor#1{\left|#1\right|}%
+\global\long\def\o#1{\overline{#1}}%
+\global\long\def\norm#1{\left\Vert #1\right\Vert }%
+\global\long\def\no{\emptyset}%
+\global\long\def\ep{\varepsilon}%
+\global\long\def\mp#1{\left\langle #1\right\rangle }%
+\global\long\def\lap{\triangle}%
+\global\long\def\dz{\mathrm{\mathrm{dz}}}%
+\global\long\def\dt{\mathrm{\mathrm{dt}}}%
+\global\long\def\dtheta{\mathrm{\mathrm{d\theta}}}%
+\global\long\def\dx{\mathrm{\mathrm{dx}}}%
+\global\long\def\dw{\mathrm{\mathrm{dw}}}%
+\global\long\def\res{\mathrm{\mathrm{res}}}%
+\global\long\def\ind{\mathrm{\mathrm{ind}}}%
+\global\long\def\rad{\mathrm{\mathrm{rad}}}%
+\global\long\def\S{\mathrm{\mathbb{S}}}%
+\global\long\def\post{\mathrm{\mathrm{post}}}%
+\global\long\def\lcm{\mathrm{\mathrm{lcm}}}%
+\global\long\def\T{\mathrm{\mathbb{T}}}%
+\global\long\def\diam{\mathrm{\mathrm{diam}}}%

@@ -1,0 +1,4848 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz} 
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam Fixed"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\D}{\mathbb{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\H}{\mathbb{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Im}{\mathrm{Im}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Re}{\mathrm{Re}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Arg}{\mathrm{Arg}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\do}[2]{\frac{\partial#1}{\partial#2}}
+{\frac{\partial#1}{\partial#2}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\nor}[1]{\left|#1\right|}
+{\left|#1\right|}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\o}[1]{\overline{#1}}
+{\overline{#1}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\norm}[1]{\left\Vert #1\right\Vert }
+{\left\Vert #1\right\Vert }
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\no}{\emptyset}
+{\emptyset}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ep}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\mp}[1]{\left\langle #1\right\rangle }
+{\left\langle #1\right\rangle }
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lap}{\triangle}
+{\triangle}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dz}{\mathrm{\mathrm{dz}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dt}{\mathrm{\mathrm{dt}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dtheta}{\mathrm{\mathrm{d\theta}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dx}{\mathrm{\mathrm{dx}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dw}{\mathrm{\mathrm{dw}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\res}{\mathrm{\mathrm{res}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}{\mathrm{\mathrm{ind}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rad}{\mathrm{\mathrm{rad}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\S}{\mathrm{\mathbb{S}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\post}{\mathrm{\mathrm{post}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lcm}{\mathrm{\mathrm{lcm}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\T}{\mathrm{\mathbb{T}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diam}{\mathrm{\mathrm{diam}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+A domain 
+\begin_inset Formula $\Omega\subseteq\C$
+\end_inset
+
+ is called 
+\series bold
+quasiconvex 
+\series default
+if its intrinsic metric is comparable to the ambient Euclidean metric.
+ Explicitly, this means that there exists a constant 
+\begin_inset Formula $A\geq1$
+\end_inset
+
+ such that every two points 
+\begin_inset Formula $z_{1},z_{2}\in\Omega$
+\end_inset
+
+ have a rectifiable path 
+\begin_inset Formula $\gamma:\left[0,1\right]\to\Omega$
+\end_inset
+
+ connecting them which satisfies 
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a path-connected subset of the plane.
+ A rectifiable path 
+\begin_inset Formula $\gamma:\left[0,1\right]\to X$
+\end_inset
+
+ is called 
+\begin_inset Formula $C$
+\end_inset
+
+
+\series bold
+-quasiconvex, 
+\series default
+for some constant 
+\begin_inset Formula $C$
+\end_inset
+
+, if its length satisfies
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\mathrm{Length}(\gamma)\leq A\cdot\left|z_{1}-z_{2}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We call such a path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ a 
+\emph on
+quasiconvexity witness 
+\emph default
+for
+\emph on
+ 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+.
+\emph default
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+The space 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $X$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is called 
+\series bold
+quasiconvex 
+\series default
+if there is a constant 
+\begin_inset Formula $C$
+\end_inset
+
+ such that every pair of points 
+\begin_inset Formula $z_{1},z_{2}\in X$
+\end_inset
+
+ can be connected by a 
+\begin_inset Formula $C$
+\end_inset
+
+-quasiconvex path.
+ In other words, the intrinsic metric on 
+\begin_inset Formula $X$
+\end_inset
+
+ is comparable to the ambient Euclidean metric.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the interior of a Jordan curve, then by 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Corollary F"
+key "key-1"
+literal "true"
+
+\end_inset
+
+ it is enough to find witnesses for points 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ that are on the boundary curve 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Explicitly, for every 
+\begin_inset Formula $x,y\in X$
+\end_inset
+
+ there is a rectifiable path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ joining 
+\begin_inset Formula $x,y$
+\end_inset
+
+ and satisfying 
+\begin_inset Formula 
+\[
+\ell(\gamma)\leq C\left|x-y\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+It is also shown in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "true"
+
+\end_inset
+
+ that any quasidisk is quasiconvex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Our interest in quasiconvexity stems from its connection with the John property:
+ If 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a quasiconvex Jordan domain, then the interior of its complement is
+ John.
+ See 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Corollary 3.4"
+key "key-1"
+literal "true"
+
+\end_inset
+
+ for details.
+ 
+\end_layout
+
+\begin_layout Standard
+We want to show that the exterior of the developed deltoid is quasiconvex.
+ 
+\end_layout
+
+\begin_layout Standard
+Before that, we show that the exterior of the cauliflower, 
+\begin_inset Formula $\mathcal{J}^{\text{exterior}}(z^{2}+1/4)$
+\end_inset
+
+ is quasiconvex.
+ The proof for the deltoid is similar, but requires some extra work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+The Filled Julia set of 
+\begin_inset Formula $z^{2}+1/4$
+\end_inset
+
+, called the cauliflower, has an inward-pointing cusp and hence is not quasiconv
+ex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+We show that the complement of the cauliflower is quasiconvex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Thus, for any 
+\begin_inset Formula $c$
+\end_inset
+
+ in 
+\end_layout
+
+\begin_layout Plain Layout
+For values 
+\begin_inset Formula $c$
+\end_inset
+
+ in quadratic polynomials 
+\begin_inset Formula $f_{c}(z)=z^{2}+c$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Thus, for example, the Koch snowflake has quasiconvex interior and exterior.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ has an attracting fixed point then its Julia set 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ is a quasicircle, hence its interior and exterior are both quasiconvex.
+ This is the case for values of 
+\begin_inset Formula $c$
+\end_inset
+
+ in the main cardioid of the Mandelbrot set.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+, i.e.
+ for 
+\begin_inset Formula 
+\[
+c\in\left\{ -\frac{\lambda}{2}-\frac{\lambda^{2}}{4}:\,\left|\lambda\right|<1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+A natural question, then, is what happens for 
+\begin_inset Formula $c$
+\end_inset
+
+ on the boundary of the main cardioid.
+ For which values of 
+\begin_inset Formula $c$
+\end_inset
+
+ are the interior and exterior of the Julia set 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ quasiconvex? We consider the cauliflower case 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+However, in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "true"
+
+\end_inset
+
+ there is an example of a John disk whose complement is not quasiconvex.
+ Thus the question remains whether the exterior of 
+\begin_inset Formula $J(f_{1/4})$
+\end_inset
+
+ is quasiconvex or not.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sketch of the argument
+\end_layout
+
+\begin_layout Standard
+We show quasiconvexity by an explicit construction of paths connecting given
+ points on the boundary.
+\series bold
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+it is enough to connect points that lie on the boundary.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Lemma 1.
+ 
+\series default
+Let 
+\begin_inset Formula $U\subset\C$
+\end_inset
+
+ be a domain.
+ The closure 
+\begin_inset Formula $\overline{U}$
+\end_inset
+
+ is quasiconvex if and only if there exists a constant 
+\begin_inset Formula $c$
+\end_inset
+
+ such that any two points 
+\begin_inset Formula $z_{1},z_{2}\in\partial U$
+\end_inset
+
+ can be joined by a 
+\begin_inset Formula $c$
+\end_inset
+
+-quasiconvex path.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+
+\series default
+ ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We use the Böttcher coordinate on the exterior unit disk 
+\end_layout
+
+\begin_layout Standard
+We use the conjugation of 
+\begin_inset Formula $f_{c}:z\mapsto z^{2}+c$
+\end_inset
+
+ on the exterior of the Julia set to the map 
+\begin_inset Formula $z^{2}$
+\end_inset
+
+ on the exterior of the unit disk 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+.
+ We decompose 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ into Carleson boxes invariant under 
+\begin_inset Formula $z^{2}$
+\end_inset
+
+ and connect points on the unit circle by traveling on the boundary of these
+ boxes.
+ Both the boxes and the path on their boundary respect the dynamics of 
+\begin_inset Formula $z^{2}$
+\end_inset
+
+ there, which allow us to transport these paths from 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ to the exterior of 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We construct two collections of curves, the so-called "express" and "peripheral"
+ tracks.
+ We use the metaphor of a train traveling between the endpoints and switching
+ between tracks.
+ We stitch the quasiconvex paths from these tracks.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We make repeated use of the principle of the conformal elevator in constructing
+ the tracks.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Now let 
+\begin_inset Formula $K$
+\end_inset
+
+ be the filled Julia set of the polynomial 
+\begin_inset Formula $f(z)=z^{2}+\frac{1}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+We prove (Theorem 3) that the exterior of 
+\begin_inset Formula $K$
+\end_inset
+
+ is quasiconvex, with respect to the Euclidean metric.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The construction of the train tracks is done first in the case of the exterior
+ unit disk (
+\begin_inset Formula $c=0$
+\end_inset
+
+), and then transported to the nontrivial 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+ case using the Böttcher linearization.
+ Thus we first explain the method in the case of 
+\begin_inset Formula $c=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For clarity of exposition, we then show how the method works in the case
+ of 
+\begin_inset Formula $c=0.1$
+\end_inset
+
+, in which the conformal elevator makes the argument simpler, and only then
+ prove the parabolic case 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+.
+ We do this even though 
+\begin_inset Formula $J_{0.1}^{\text{exterior}}$
+\end_inset
+
+ is known in advance to be quasiconvex, in virtue of being a quasidisk.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+How come the cauliflower is not quasicircle?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Our method also works for any hyperbolic or parabolic 
+\begin_inset Formula $f_{c}(z)=z^{2}+c$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Theorem.
+\end_layout
+
+\begin_layout Plain Layout
+We refer to 
+\begin_inset Formula $K$
+\end_inset
+
+ as 
+\series bold
+the cauliflower
+\series default
+.
+\end_layout
+
+\begin_layout Plain Layout
+Is the complement domain 
+\begin_inset Formula $F=\mathbb{C}\setminus K$
+\end_inset
+
+ quasiconvex?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Accesibility
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Rudin Real and Complex Analysis, 12.10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+For a polynomial Julia set 
+\begin_inset Formula $J$
+\end_inset
+
+, a point 
+\begin_inset Formula $z\in J$
+\end_inset
+
+ is 
+\series bold
+accessible
+\series default
+ if there is a simple arc in the complement 
+\begin_inset Formula $\C\setminus K$
+\end_inset
+
+ of the filled Julia set which connects 
+\begin_inset Formula $z$
+\end_inset
+
+ and infinity.
+ Equivalently
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Lindelöf
+\end_layout
+
+\end_inset
+
+, there exists an external ray landing at 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Power map
+\end_layout
+
+\begin_layout Standard
+The exterior 
+\begin_inset Formula $\D^{*}=\left\{ \left|z\right|>1\right\} $
+\end_inset
+
+ of the unit disk is trivially quasiconvex by connecting points along the
+ perimeter of the circle.
+ However, these paths follow the boundary too closely and their length would
+ blow up if we transport them to the exterior of 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+, 
+\begin_inset Formula $c\neq0$
+\end_inset
+
+, via the Riemann map.
+ Instead, we connect points by traveling along the boundaries of invariant
+ boxes which we now define.
+\end_layout
+
+\begin_layout Definition
+Let 
+\begin_inset Formula $n\in\N_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $k\in\left\{ 0,\ldots,2^{n}-1\right\} $
+\end_inset
+
+.
+ We call the set
+\begin_inset Formula 
+\[
+B_{n,k}=\exp\left(\biggl(2^{-n-1}\log2,\,2^{-n}\log2\biggl]\times\biggl(\frac{k}{2^{n}}2\pi,\,\frac{(k+1)}{2^{n}}2\pi\biggl]\right)
+\]
+
+\end_inset
+
+an 
+\emph on
+
+\begin_inset Formula $\boldsymbol{f_{0}}$
+\end_inset
+
+
+\series bold
+-Carleson box
+\series default
+.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Definition
+Observe that for a fixed 
+\begin_inset Formula $n$
+\end_inset
+
+, the union 
+\begin_inset Formula $\bigsqcup_{k=0}^{2^{n}-1}B_{k,n}$
+\end_inset
+
+ is a partition of the annulus 
+\begin_inset Formula 
+\[
+\left\{ 2^{2^{-n-1}}<\left|z\right|\leq2^{2^{-n}}\right\} 
+\]
+
+\end_inset
+
+ into 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ equally-spaced sectors.
+\end_layout
+
+\begin_layout Definition
+The
+\emph on
+ 
+\series bold
+Carleson 
+\series default
+
+\begin_inset Formula $\boldsymbol{f_{0}}$
+\end_inset
+
+
+\series bold
+-box decomposition
+\series default
+\emph default
+ is the partition of 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ obtained by 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+-Carleson boxes:
+\begin_inset Formula 
+\[
+\D^{*}=\left\{ z:\,\left|z\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+The crucial property of this partition is its invariance under 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+, stemming from the relation
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}.
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In the classical Carleson squares decomposition, the angular length of each
+ square is proportional to its distance from 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+.
+ This is not the case in the previous definition, but the two notions look
+ visually similar.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ and will the conjugation of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ on its basin of infinity to the map 
+\begin_inset Formula $z^{2}$
+\end_inset
+
+ on the exterior unit disk.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+We describe the motion along quasigeodesics as a train drive.
+ Accordingly, we proceed to define "stations" and "tracks".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+The 
+\emph on
+central station 
+\emph default
+is the point
+\emph on
+ 
+\begin_inset Formula $s_{0,0}=2$
+\end_inset
+
+.
+ Stations 
+\emph default
+are the iterated preimages of the central station under the map 
+\begin_inset Formula $f_{0}:z\mapsto z^{2}$
+\end_inset
+
+.
+ We index them as 
+\begin_inset Formula 
+\[
+s_{n,k}=2^{2^{-n}}\exp\left(\frac{k}{2^{n}}2\pi\right),\qquad n\in\N_{0},\,k\in\left\{ 0,\ldots,2^{n}-1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Stations are naturally structured in a binary tree, where the root is the
+ central station 
+\begin_inset Formula $2$
+\end_inset
+
+ and the children of a node are its preimages.
+ The 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ stations of generation 
+\begin_inset Formula $n$
+\end_inset
+
+ in the tree are equally spaced on the circle 
+\begin_inset Formula $C_{n}=\left\{ \left|z\right|=2^{1/2^{n}}\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Definition
+The 
+\emph on
+radial successor 
+\emph default
+of a station 
+\begin_inset Formula $s_{n,k}$
+\end_inset
+
+ of generation 
+\begin_inset Formula $n$
+\end_inset
+
+ is 
+\begin_inset Formula $s_{n+1,2k}$
+\end_inset
+
+, the unique station of generation 
+\begin_inset Formula $n+1$
+\end_inset
+
+ on the radial segment 
+\begin_inset Formula $[0,s]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+The 
+\emph on
+peripheral neighbors 
+\emph default
+of a station 
+\begin_inset Formula $s_{n,k}$
+\end_inset
+
+ are 
+\begin_inset Formula $s_{n,\left(k\pm1\right)\mod2^{n}}$
+\end_inset
+
+, the two stations adjacent to 
+\begin_inset Formula $s_{n,k}$
+\end_inset
+
+ on 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We next lay two types of "train tracks" on the boundaries of Carleson boxes,
+ which we use to travel between stations.
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+We classify tracks into two kinds: express (radial) tracks and peripheral
+ tracks.
+ The endpoints of tracks are the stations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+We define two families of paths, which we use to travel between stations.
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $s_{n,k}$
+\end_inset
+
+ be a station.
+\end_layout
+
+\begin_layout Definition
+1.
+ Given a peripheral neighbor 
+\begin_inset Formula $s'$
+\end_inset
+
+ of 
+\begin_inset Formula $s$
+\end_inset
+
+, the 
+\emph on
+peripheral track 
+\emph default
+
+\begin_inset Formula $\gamma_{s,s'}^{\text{peripheral}}$
+\end_inset
+
+ between these stations is the short arc of the circle 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+ connecting 
+\begin_inset Formula $s$
+\end_inset
+
+ to 
+\begin_inset Formula $s'$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+are the circles 
+\begin_inset Formula $\delta_{n}=$
+\end_inset
+
+for integers 
+\begin_inset Formula $n\geq-1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+2.
+ 
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Observe that every station 
+\begin_inset Formula $s$
+\end_inset
+
+ of generation 
+\begin_inset Formula $n$
+\end_inset
+
+ has a unique station 
+\begin_inset Formula $s'$
+\end_inset
+
+ of the next generation 
+\begin_inset Formula $n+1$
+\end_inset
+
+ with the same argument 
+\begin_inset Formula $\mathrm{Arg}\left(s\right)$
+\end_inset
+
+.
+ (Indeed, the angles of stations of generation 
+\begin_inset Formula $n+1$
+\end_inset
+
+ are a refinement of the angles of the previous generation 
+\begin_inset Formula $n$
+\end_inset
+
+.) We call 
+\begin_inset Formula $s'$
+\end_inset
+
+ the 
+\emph on
+radial successor 
+\emph default
+of 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The 
+\emph on
+Express track
+\emph default
+ 
+\begin_inset Formula $\gamma_{s,s'}^{\text{express}}$
+\end_inset
+
+ between these two stations is the radial segment 
+\begin_inset Formula $[s,s']$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+We refer to a concatenation of tracks as a 
+\emph on
+train journey
+\emph default
+.
+ A journey is identified with its sequence of stations 
+\begin_inset Formula $\left(\sigma_{i}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Notice that the tracks preserve the dynamics: applying 
+\begin_inset Formula $z\mapsto z^{2}$
+\end_inset
+
+ on a peripheral track between 
+\begin_inset Formula $s,s'$
+\end_inset
+
+ gives a peripheral track the parents of 
+\begin_inset Formula $s,s'$
+\end_inset
+
+ in the tree, and likewise for an express track.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The tracks trace the boundaries of the preimages of the annulus 
+\begin_inset Formula $A(0,\sqrt{2},2)$
+\end_inset
+
+ under 
+\begin_inset Formula $z\mapsto z^{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+are the 
+\emph on
+iterated
+\emph default
+ preimages of the interval 
+\begin_inset Formula $\left[1,2\right]$
+\end_inset
+
+ under the map 
+\begin_inset Formula $f_{0}(z)=z^{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+These are radial curves ending at the unit circle.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Explicitly, for each dyadic direction 
+\begin_inset Formula $\theta=\exp\left(2^{-k}\pi i\right)\in\partial\D$
+\end_inset
+
+, where 
+\begin_inset Formula $k\geq0$
+\end_inset
+
+ is an integer, we have the peripheral track 
+\begin_inset Formula 
+\[
+\gamma_{\theta}=\left\{ r\theta:\,r\in\left[1,2^{1-k}\right]\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We construct the Carleson boxes as iterated preimages under 
+\begin_inset Formula $f_{0}=z^{2}$
+\end_inset
+
+ of the annulus 
+\begin_inset Formula 
+\[
+A(0,2,4)=\left\{ 2\leq\left|z\right|\leq4\right\} .
+\]
+
+\end_inset
+
+See figure [].
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+It is instructive to think of these curves in terms of the Carleson boxes.
+ We refer to the boundaries of the Carleson boxes as the "peripheral tracks".
+ Explicitly, these are just the circles 
+\begin_inset Formula $C_{k}=\left\{ \left|z\right|=2^{k}\right\} $
+\end_inset
+
+ for integers 
+\begin_inset Formula $k\leq1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We moreover build See figure.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+For each radius of the form 
+\begin_inset Formula $r=2^{k}$
+\end_inset
+
+, where 
+\begin_inset Formula $k\leq1$
+\end_inset
+
+ is an integer, we have an associates peripheral
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+There is a family 
+\begin_inset Formula $\{\eta_{z}:z\in\partial\D\}$
+\end_inset
+
+ of journeys with the following properties:
+\end_layout
+
+\begin_layout Lemma
+1.
+ Every 
+\begin_inset Formula $\eta_{z}$
+\end_inset
+
+ is a journey 
+\begin_inset Formula $\left(\sigma_{0},\sigma_{1},\ldots\right)$
+\end_inset
+
+ from the central station 
+\begin_inset Formula $\sigma_{0}=s_{0,0}=2$
+\end_inset
+
+ to 
+\begin_inset Formula $\lim\sigma_{k}=z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+2.
+ There are no two consecutive peripheral tracks in 
+\begin_inset Formula $\eta_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+3.
+ 
+\begin_inset Formula $\mathrm{Length}(\sigma_{k})\lesssim2^{-k}$
+\end_inset
+
+ uniformly in 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Lemma
+4.
+ The journeys are invariant under 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+, in the sense that 
+\begin_inset Formula $f_{0}(\eta_{z})=\eta{}_{f_{0}(z)}\cup[2,4]$
+\end_inset
+
+ for every 
+\begin_inset Formula $z\in\partial\D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $z=z_{1}=\exp(2\pi i\theta)\in\partial\D$
+\end_inset
+
+.
+ We choose the stations 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ inductively in pairs, in a greedy manner.
+ In each step we drive peripherally to the station closest to 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and then drive to its radial successor.
+ See Figure.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tikzpicture} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (0,0) circle (1); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (0,0) circle (2); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (0,0) circle (2^0.5); 	 	
+\backslash
+draw[red] (0,0) circle (2^0.25); 	 	
+\backslash
+draw[red] (0,0) circle (2^0.125);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [yellow,-, double=yellow, double distance=4
+\backslash
+pgflinewidth, opacity=0.4, ] (2,0) -- (1.41,0) arc (0:180:1.4) -- (-1.189,0)
+ arc (180:90:1.189) -- (0,1.0905);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[blue] (2,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[blue] (2,0) --  (1,0);	 
+\backslash
+draw[blue] (-2^0.5,0) -- (-1,0);	 
+\backslash
+draw[blue] (0, 2^0.25) -- (0,1);	 
+\backslash
+draw[blue] (0, -2^0.25) -- (0,-1);	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill[olive] (2,0) circle (1pt); 
+\backslash
+fill[olive] (2^0.5,0) circle (1pt); 
+\backslash
+fill[olive] (-2^0.5,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+angle in {0,90,180,270} 
+\backslash
+fill[olive] (
+\backslash
+angle:2^0.25) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+foreach 
+\backslash
+angle in {0,45,90,135,180,225,270,315} 		
+\backslash
+fill[olive] (
+\backslash
+angle:2^0.125) circle (1pt); 		
+\backslash
+foreach 
+\backslash
+angle in {0,45,90,135,180,225,270,315} 		
+\backslash
+draw[blue] (
+\backslash
+angle:2^0.125) -- (
+\backslash
+angle:1); 	
+\backslash
+node[circle,inner sep=1pt,fill=purple,label=below:{$z$}] at (-0.3,0.953) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[circle,inner sep=1pt,fill=purple,label=right:{$s_{0,0}$}] at (2,0)
+ {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[circle,inner sep=1pt,fill=purple,label=below:{$s_{0,1}$}] at (1.4,0)
+ {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+For the first station 
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+ we have no choice and we drive to the station 
+\begin_inset Formula $\sigma_{1}=s_{1,0}=\sqrt{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Suppose that we already chose the stations 
+\begin_inset Formula $\left(\sigma_{0},\ldots,\sigma_{2k-1}\right)$
+\end_inset
+
+.
+ Then from 
+\begin_inset Formula $\sigma_{2k-1}$
+\end_inset
+
+ we drive to the station 
+\begin_inset Formula $\sigma_{2k}$
+\end_inset
+
+ on the same circle, 
+\begin_inset Formula $\left|\sigma_{2k-1}\right|=\left|\sigma_{2k}\right|$
+\end_inset
+
+, that minimizes the angular distance 
+\begin_inset Formula $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+The minimizer 
+\begin_inset Formula $\sigma_{2k}$
+\end_inset
+
+ is adjacent peripherally to 
+\begin_inset Formula $\sigma_{2k-1}$
+\end_inset
+
+, since the angular distance between stations on 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{2\pi}{2^{n}}$
+\end_inset
+
+ and we maintain the invariant 
+\begin_inset Formula $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|\leq\frac{2\pi}{2^{k}}$
+\end_inset
+
+ throughout the journey.
+ Thus the length of the peripheral track 
+\begin_inset Formula $\gamma_{\sigma_{2k-1},\sigma_{2k}}^{p}$
+\end_inset
+
+ is either 
+\begin_inset Formula $r_{n}\cdot\frac{2\pi}{2^{k}}=2^{1/2^{k}}\frac{2\pi}{2^{k}}$
+\end_inset
+
+ or 
+\begin_inset Formula $0$
+\end_inset
+
+ (in case 
+\begin_inset Formula $\sigma_{2k-1}=\sigma_{2k}$
+\end_inset
+
+), and in any case the length is at most 
+\begin_inset Formula $\lesssim\frac{1}{2^{k}}$
+\end_inset
+
+ for a global hidden constant.
+ The length of the 
+\begin_inset Formula $k$
+\end_inset
+
+-th express track decays exponentially due to the invariance under 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+.
+ Explicitly it is 
+\begin_inset Formula $2^{1/2^{k}}-2^{1/2^{k+1}}\leq2^{2^{-k}}-1\lesssim2^{-k}$
+\end_inset
+
+ since 
+\begin_inset Formula $\lim_{x\to0}\frac{2^{x}-1}{x}=\log2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Thus the total length of the journey is 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma_{\sigma_{2k+1},\sigma_{2k}}$
+\end_inset
+
+ is exactly 
+\begin_inset Formula $r_{k}-r_{k+1}=2^{1/2^{k}}-2^{1/2^{k+1}}$
+\end_inset
+
+, and hence
+\end_layout
+
+\end_inset
+
+ bounded uniformly in 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+property 
+\begin_inset Formula $4$
+\end_inset
+
+ is automatic from property 
+\begin_inset Formula $3$
+\end_inset
+
+, and the rest are evident from the construction.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Lemma
+In particular, the length of a suffix 
+\begin_inset Formula $\sigma_{k}+\sigma_{k+1}+\ldots$
+\end_inset
+
+ decays exponentially in 
+\begin_inset Formula $k$
+\end_inset
+
+, uniformly in 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We call 
+\begin_inset Formula $\eta_{z}$
+\end_inset
+
+ the 
+\emph on
+central journey
+\emph default
+ of 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+The domain 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ is quasiconvex with quasiconvexity witnesses that are journeys.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Traveling from the central station 
+\begin_inset Formula $2\in\D^{*}$
+\end_inset
+
+ to 
+\begin_inset Formula $z_{1}\in\partial\D$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+Input: a point 
+\begin_inset Formula $z_{1}\in\partial\D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout LyX-Code
+Set the active station to be 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout LyX-Code
+initialize the output path 
+\begin_inset Formula $\gamma_{2,z_{0}}$
+\end_inset
+
+ to be empty.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+Repeat:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+Let 
+\begin_inset Formula $s$
+\end_inset
+
+  be the active station.
+\end_layout
+
+\begin_layout LyX-Code
+Let 
+\begin_inset Formula $n$
+\end_inset
+
+ be the generation of 
+\begin_inset Formula $s$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+Let 
+\begin_inset Formula $s'$
+\end_inset
+
+ be the station of generation 
+\begin_inset Formula $n$
+\end_inset
+
+ which minimizes 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+the angular distance 
+\begin_inset Formula $\left|\mathrm{Arg}(s)-\mathrm{Arg}(z_{1})\right|$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+Concatenate the peripheral track 
+\begin_inset Formula $\gamma_{s,s'}^{p}$
+\end_inset
+
+ to the end of 
+\begin_inset Formula $\gamma_{2,z_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout LyX-Code
+Let 
+\begin_inset Formula $s''$
+\end_inset
+
+  be the station of generation 
+\begin_inset Formula $n+1$
+\end_inset
+
+  of the same angle as 
+\begin_inset Formula $s'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout LyX-Code
+Concatenate the express track 
+\begin_inset Formula $\gamma_{s',s''}^{e}$
+\end_inset
+
+ to the end of 
+\begin_inset Formula $\gamma_{2,z_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout LyX-Code
+Set 
+\begin_inset Formula $s''$
+\end_inset
+
+  to be the active station.
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+Return the path 
+\begin_inset Formula $\gamma_{2,z_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The output sequence of stations converges to 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+, and its length is uniformly bounded.
+ Indeed, observe that at the 
+\begin_inset Formula $i$
+\end_inset
+
+-th iteration of the loop in the algorithm, the length of the concatenated
+ paths is 
+\begin_inset Formula $\lesssim2^{-i}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Fix two points (
+\begin_inset Quotes eld
+\end_inset
+
+terminal stations") 
+\begin_inset Formula $z_{1},z_{2}\in\partial\D$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\eta_{z_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{z_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
+\end_inset
+
+ be their central journeys, connecting each terminal to the central station.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $\left(\sigma_{0},\ldots,\sigma_{N}\right)$
+\end_inset
+
+ be the maximal common prefix of 
+\begin_inset Formula $\eta_{z_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta_{z_{2}}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\eta_{z_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
+\end_inset
+
+ be the truncated paths.
+ By the maximality of 
+\begin_inset Formula $N$
+\end_inset
+
+, we have that 
+\begin_inset Formula $\eta_{z_{1}}^{\text{truncated}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta_{z_{2}}^{\text{truncated}}$
+\end_inset
+
+ are two journeys with a common starting point, so we can concatenate them
+ to obtain a bi-infinite journey 
+\begin_inset Formula 
+\[
+\eta_{z_{1},z_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right)
+\]
+
+\end_inset
+
+ connecting 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tikzpicture} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (0,0) circle (1); 		
+\backslash
+draw[red] (0,0) circle (2); 		
+\backslash
+draw[red] (0,0) circle (2^0.5); 		
+\backslash
+draw[red] (0,0) circle (2^0.25); 		
+\backslash
+draw[red] (0,0) circle (2^0.125); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [yellow,-, double=yellow, double distance=4
+\backslash
+pgflinewidth, opacity=0.4, 		] (-1.189,0) arc (180:90:1.189) -- (0,1.0905);
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [blue,-, double=cyan, double distance=4
+\backslash
+pgflinewidth, opacity=0.4, ] (-1.189,0) arc (-180:-90:1.189) -- (0,-1.0905)
+ arc (-90:-135:1.0905); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[blue] (2,0); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw[blue] (2,0) --  (1,0);	 		
+\backslash
+draw[blue] (-2^0.5,0) -- (-1,0);	 		
+\backslash
+draw[blue] (0, 2^0.25) -- (0,1);	 		
+\backslash
+draw[blue] (0, -2^0.25) -- (0,-1);	 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[olive] (2,0) circle (1pt); 		
+\backslash
+fill[olive] (2^0.5,0) circle (1pt); 		
+\backslash
+fill[olive] (-2^0.5,0) circle (1pt); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+foreach 
+\backslash
+angle in {0,90,180,270} 		
+\backslash
+fill[olive] (
+\backslash
+angle:2^0.25) circle (1pt); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+foreach 
+\backslash
+angle in {0,45,90,135,180,225,270,315} 		
+\backslash
+fill[olive] (
+\backslash
+angle:2^0.125) circle (1pt); 		
+\backslash
+foreach 
+\backslash
+angle in {0,45,90,135,180,225,270,315} 		
+\backslash
+draw[blue] (
+\backslash
+angle:2^0.125) -- (
+\backslash
+angle:1); 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[circle,inner sep=1pt,fill=purple,label=below:{$z_1$}] at (-0.3,0.953)
+ {};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[circle,inner sep=1pt,fill=purple,label=above:{$z_2$}] at (-0.6,-0.8)
+ {}; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node[circle,inner sep=1pt,fill=purple,label={ right:{$s_{0,0}$}} ] at (2,0)
+ {}; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We conclude the proof by showing that 
+\begin_inset Formula $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|z_{1}-z_{2}\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+As 
+\begin_inset Formula $\left|z_{1}-z_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right|$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathrm{Arg}\left(z_{i}\right)\propto\theta_{i}$
+\end_inset
+
+, it is equivalent to show
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+By the choice of 
+\begin_inset Formula $N$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Thus it is enough to prove that 
+\begin_inset Formula $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim2^{-N}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)=\mathrm{Length}\left(\eta_{z_{1}}^{\text{truncated}}\right)+\mathrm{Length}\left(\eta_{z_{2}}^{\text{truncated}}\right),
+\]
+
+\end_inset
+
+so it is enough to observe that 
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{z_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}
+\]
+
+\end_inset
+
+by part (3) of the previous lemma.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(It exists since otherwise 
+\begin_inset Formula $z_{1}=z_{2}$
+\end_inset
+
+.)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Proof
+Second Solution.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $z_{1},z_{2}\in\partial\D$
+\end_inset
+
+ are a fixed distance apart, say 
+\begin_inset Formula $\left|z_{1}-z_{2}\right|\geq0.1$
+\end_inset
+
+, then we can simply concatenate 
+\begin_inset Formula $s_{n}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{n}^{2}$
+\end_inset
+
+ to obtain the required path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, since 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ has a uniformly bounded length.
+ For general points 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+, we apply the conformal elevator: repeated squaring of the points 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ makes them a definite distance apart: there is some 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|f_{0}^{\circ n}(z_{0})-f_{0}^{\circ n}(z_{1})\right|\geq0.1$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\gamma'$
+\end_inset
+
+ be the path joining 
+\begin_inset Formula $f_{0}^{\circ n}(z_{0})$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{0}^{\circ n}(z_{1})$
+\end_inset
+
+ through the point 
+\begin_inset Formula $2$
+\end_inset
+
+, as in the previous case.
+ Then we claim that the path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ which is the component of 
+\begin_inset Formula $f^{\circ\left(-n\right)}\left(\gamma\right)$
+\end_inset
+
+ passing through 
+\begin_inset Formula $z_{0},z_{1}$
+\end_inset
+
+ is our required path.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hyperbolic Map
+\end_layout
+
+\begin_layout Standard
+Throughout this section we take 
+\begin_inset Formula $c\in\left(-\frac{3}{4},\frac{1}{4}\right)$
+\end_inset
+
+.
+ Since the critical point 
+\begin_inset Formula $0$
+\end_inset
+
+ is in the filled Julia set of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+, there is a conformal map 
+\begin_inset Formula $\psi_{c}:\D^{*}\to\mathcal{J}^{\text{exterior}}(f_{c})$
+\end_inset
+
+ conjugating 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ to 
+\begin_inset Formula $z^{2}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $f_{c}\circ\psi_{c}(z)=\psi_{c}\circ f_{0}(z)$
+\end_inset
+
+ for every 
+\begin_inset Formula $z\in\D^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The map 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+ extends to a homeomorphism between the circle 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+ and the Julia set 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ by Carathéodory's theorem, since 
+\begin_inset Formula $\mathcal{J}$
+\end_inset
+
+ is a Jordan curve.
+\end_layout
+
+\begin_layout Standard
+All 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+-invariant constructions carry over from 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathcal{J}^{\text{exterior}}(f_{c})$
+\end_inset
+
+, and now they are 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+-invariant: We have 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+-Carelson boxes 
+\begin_inset Formula $B_{n,k,c}=\psi_{c}(B_{n,k})$
+\end_inset
+
+ and an 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+-Carelson decomposition 
+\begin_inset Formula 
+\[
+\mathcal{J}^{\text{exterior}}(f_{c})=\psi_{c}\left(\left\{ \left|z\right|>2\right\} \right)\sqcup\bigsqcup_{n,k,}B_{n,k,c},
+\]
+
+\end_inset
+
+we have stations 
+\begin_inset Formula $s_{n,k,c}=\psi_{c}(s_{n,k})$
+\end_inset
+
+ and likewise tracks.
+ The express tracks lie on the external rays of 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+, and the peripheral tracks are on the level sets of 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+, or equivalently on the equipotentials of Green's function.
+\end_layout
+
+\begin_layout Standard
+As an example of how invariance carries other, applying 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+ to both sides of the equation 
+\begin_inset Formula 
+\[
+f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}
+\]
+
+\end_inset
+
+gives the corresponding relation 
+\begin_inset Formula 
+\[
+f_{c}\left(B_{n+1,k,c}\right)=B_{n,\lfloor\frac{k}{2}\rfloor,c}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We observe that the central station is still on the real line:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Lemma.
+ 
+\series default
+
+\begin_inset Formula $\psi_{c}(\mathbb{D}^{*}\cap\R)\subseteq\R$
+\end_inset
+
+.
+ In particular, 
+\begin_inset Formula $\psi_{c}(s_{0,0})\in\R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+This is true by symmetry of 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{J}^{\text{exterior}}(f_{c})$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\R$
+\end_inset
+
+.
+ Formally, 
+\begin_inset Formula $\overline{\psi_{c}}(\overline{z})$
+\end_inset
+
+ is another conformal map with the same conjugation relation, so by uniqueness
+ of the Böttcher coordinate (with a given derivative at 
+\begin_inset Formula $\infty$
+\end_inset
+
+) we obtain 
+\begin_inset Formula $\psi_{c}(z)=\overline{\psi_{c}}(\overline{z})$
+\end_inset
+
+, hence 
+\begin_inset Formula $\psi_{c}(z)\in\R$
+\end_inset
+
+ for 
+\begin_inset Formula $z\in\R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Note that this lemma remains true for 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $c=0.1\in(\frac{-3}{4},\frac{1}{4})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+We explain the proof in the easier setting in which 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ is inside the main cardioid, e.g.
+ 
+\begin_inset Formula $c\in\left(-\frac{3}{4},\frac{1}{4}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This is in contrast to the case 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+, in which we get close to the parabolic fixed point.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+We suppress the index 
+\begin_inset Formula $c$
+\end_inset
+
+ at times.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As before, we have:
+\end_layout
+
+\begin_layout Lemma
+There is a family 
+\begin_inset Formula $\{\eta_{z,c}:z\in\mathcal{J}(f_{c})\}$
+\end_inset
+
+ of journeys with the following properties:
+\end_layout
+
+\begin_layout Lemma
+1.
+ Every 
+\begin_inset Formula $\eta_{z,c}$
+\end_inset
+
+ is a journey 
+\begin_inset Formula $\left(\sigma_{0},\sigma_{1},\ldots\right)$
+\end_inset
+
+ from the central station 
+\begin_inset Formula $\sigma_{0}=s_{0,0,c}$
+\end_inset
+
+ to 
+\begin_inset Formula $\lim\sigma_{k}=z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+2.
+ There are no two consecutive peripheral tracks in 
+\begin_inset Formula $\eta_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+3.
+ 
+\begin_inset Formula $\mathrm{Length}(\sigma_{k})\lesssim\theta^{-k}$
+\end_inset
+
+ uniformly in 
+\begin_inset Formula $z$
+\end_inset
+
+, for a constant 
+\begin_inset Formula $\theta=\theta(c)>1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+4.
+ The journeys are invariant under 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+, in the sense that 
+\begin_inset Formula $f_{c}(\eta_{z,c})=\eta{}_{f_{c}(z)}\cup f_{c}\left([2,4]\right)$
+\end_inset
+
+ for every 
+\begin_inset Formula $z\in\partial\D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $z\in\mathcal{J}\left(f_{c}\right)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\zeta=\psi_{c}^{-1}(z)$
+\end_inset
+
+ be the corresponding point on 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+, 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+because 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+ extends to a homeomorphism in the hyperbolic case.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+which has a central journey 
+\begin_inset Formula $\eta_{\zeta}$
+\end_inset
+
+ in 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+.
+ We choose the central journey of 
+\begin_inset Formula $z$
+\end_inset
+
+ to be 
+\begin_inset Formula $\eta_{z,c}=f_{c}\left(\eta_{\zeta}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We take the images of the corresponding journeys from the case of 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+.
+ Parts 
+\begin_inset Formula $1,2,4$
+\end_inset
+
+ are then automatic.
+ We now check part (3).
+ 
+\end_layout
+
+\begin_layout Proof
+The map 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ is pointwise expanding on the Julia set 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+, so by compactness 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ is uniformly expanding there, i.e.
+ there are a constant 
+\begin_inset Formula $\theta>1$
+\end_inset
+
+ and a neighborhood 
+\begin_inset Formula $\mathcal{U}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ on which 
+\begin_inset Formula $\left|f'\right|>\theta$
+\end_inset
+
+.
+ Since every journey is eventually contained in 
+\begin_inset Formula $\mathcal{U}$
+\end_inset
+
+, we have for 
+\begin_inset Formula $k\gg1$
+\end_inset
+
+ that 
+\begin_inset Formula $\mathrm{Length}(f(\gamma))\geq\theta\mathrm{\cdot Length}\left(\gamma\right)$
+\end_inset
+
+.
+ Thus the length of peripheral tracks decays exponentially at rate 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and likewise for express tracks.
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $z=z_{1}=\exp(2\pi i\theta)\in\partial\D$
+\end_inset
+
+.
+ We choose the stations 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ inductively in pairs, in a greedy manner.
+ In each step we drive peripherally to the station closest to 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and then drive to its radial successor.
+ See Figure.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To take advantage of the preceding lemma for showing quasiconvexity, we
+ use the following claim.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Claim.
+ 
+\series default
+Let
+\series bold
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ 
+\series default
+be a rational map that is expanding on its Julia set 
+\begin_inset Formula $\mathcal{J}(f)$
+\end_inset
+
+.
+ Then there exists a constant 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ such that for every two points 
+\begin_inset Formula $z,w\in\mathcal{J}(f)$
+\end_inset
+
+, there exists 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ for which 
+\begin_inset Formula $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\emph on
+(sketch.)
+\series bold
+\emph default
+ 
+\series default
+This claim follows from the condition that 
+\begin_inset Formula $\left|f'\right|>1$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathcal{J}$
+\end_inset
+
+ since as long as two points 
+\begin_inset Formula $z,w\in\mathcal{J}$
+\end_inset
+
+ are close enough we can approximate 
+\begin_inset Formula $f$
+\end_inset
+
+ linearly to see that the images 
+\begin_inset Formula $f(z),f(w)$
+\end_inset
+
+ must be further apart.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+We may alternatively see this claim as a degenerate version of the principle
+ of conformal elevator, which we briefly recall.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+This claim has some similarity to the 
+\emph on
+principle of the conformal elevator
+\emph default
+, which we now recall.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A rational map is said to be 
+\emph on
+hyperbolic 
+\emph default
+if every critical point converges to an attracting cycle, and no critical
+ point is on the Julia set.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The principle of the conformal elevator: 
+\emph default
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a hyperbolic map, let 
+\begin_inset Formula $\zeta\in\mathcal{J}(f)$
+\end_inset
+
+ and let 
+\begin_inset Formula $r>0$
+\end_inset
+
+ be sufficiently small.
+ Then there exists an iterate 
+\begin_inset Formula $f^{\circ n}(B(\zeta,r))$
+\end_inset
+
+ of the ball 
+\begin_inset Formula $B(\zeta,r)$
+\end_inset
+
+ which is a set of diameter bounded below uniformly in 
+\begin_inset Formula $\zeta,r$
+\end_inset
+
+ and which is "almost round".
+ Since we do not need this control on the distortion of the balls, we do
+ not state the precise form of this latter constraint and refer the reader
+ to [2] for details.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Since we only need to make a pair of points on the Julia set a fixed distance
+ apart.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+In this case we have available the conformal elevator principle, which allows
+ enlarging every ball centered at 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+ to a definite size by iteratively applying 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+The domain 
+\begin_inset Formula $\mathcal{J}^{\text{exterior}}(f_{c})$
+\end_inset
+
+ is quasiconvex.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ be two points on 
+\begin_inset Formula $\mathcal{J}(f_{c})$
+\end_inset
+
+.
+ We construct a quasiconformality witness curve connecting 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+.
+ We use the obvious candidate: let 
+\begin_inset Formula $\zeta_{i}=\psi^{-1}\left(z_{i}\right)\in\partial\D$
+\end_inset
+
+, then we have a quasiconformality witness for them 
+\begin_inset Formula $\eta_{\zeta_{1},\zeta_{2}}$
+\end_inset
+
+ from the 
+\begin_inset Formula $c=0$
+\end_inset
+
+ case.
+ We choose 
+\begin_inset Formula $\eta_{z_{1},z_{2},c}=\psi_{c}(\eta_{\zeta_{1},\zeta_{2}})$
+\end_inset
+
+ to be the witnesses.
+ By the invariance of the construction, this is a journey on the 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+-Carleson decomposition which can similarly be described directly in terms
+ of a common ancestor in the tree structure, since 
+\begin_inset Formula $\psi_{c}$
+\end_inset
+
+ is a bijective correspondence between the two decompositions.
+ Since we already know that the lengths of tracks in the journey decay exponenti
+ally, with rate 
+\begin_inset Formula $\theta>1$
+\end_inset
+
+, the same proof of the case 
+\begin_inset Formula $c=0$
+\end_inset
+
+ also shows quasiconvexity in this case.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We give a second proof, relying on the previous claim on separation of points
+ under iteration.
+ This proof will better prepare us to the parabolic 
+\begin_inset Formula $c=1/4$
+\end_inset
+
+ case, in which we don't have uniform expansion of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ on its Julia set.
+\end_layout
+
+\begin_layout Proof
+By the claim, there exists some 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ such that any two points are 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+-apart under some iteration of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $z_{1},z_{2}\in\mathcal{J}(f_{c})$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\left|z_{0}-z_{1}\right|\geq\epsilon$
+\end_inset
+
+ then there is nothing to prove, since we may just concatenate 
+\begin_inset Formula $\eta_{z_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta_{z_{2}}$
+\end_inset
+
+ and absorb this bounded length into the quasiconformality constant 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Explicitly, if 
+\begin_inset Formula $\mathrm{Length}\left(\eta_{z}\right)\leq L$
+\end_inset
+
+ for all 
+\begin_inset Formula $z\in\mathcal{J}$
+\end_inset
+
+ then we take 
+\begin_inset Formula $A\geq\frac{2L}{\epsilon}$
+\end_inset
+
+ and then automatically 
+\begin_inset Formula $\mathrm{Length}\left(\eta_{z_{1}}+\eta_{z_{2}}\right)\leq A\left|z_{0}-z_{1}\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If, on the other hand, 
+\begin_inset Formula $\left|z_{0}-z_{1}\right|<\epsilon$
+\end_inset
+
+, then we may use the claim to find an iterate 
+\begin_inset Formula $f^{\circ n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\geq\epsilon$
+\end_inset
+
+.
+ Then there is a witness journey 
+\begin_inset Formula $\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}$
+\end_inset
+
+ between them, and we take the witness 
+\begin_inset Formula $\eta_{z_{0},z_{1}}$
+\end_inset
+
+ between the original points to be the component of 
+\begin_inset Formula $f^{\circ-n}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)$
+\end_inset
+
+ that connects the points 
+\begin_inset Formula $z_{0},z_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+A distortion estimate: 
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\asymp\frac{\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)}{\left|\left(f_{c}^{\circ n}\right)'\left(\zeta\right)\right|}
+\]
+
+\end_inset
+
+ for some point 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathcal{J}$
+\end_inset
+
+.
+ The denominator grows with 
+\begin_inset Formula $n$
+\end_inset
+
+ exponentially at rate 
+\begin_inset Formula $\theta$
+\end_inset
+
+, while the numerator has a bound of the form 
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)\lesssim\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\lesssim\theta^{n}\left|z_{0}-z_{1}\right|
+\]
+
+\end_inset
+
+ so altogether 
+\begin_inset Formula 
+\[
+\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\lesssim\frac{\theta^{n}\left|z_{0}-z_{1}\right|}{\theta^{n}}=\left|z_{0}-z_{1}\right|
+\]
+
+\end_inset
+
+ so 
+\begin_inset Formula $\eta_{z_{0},z_{1},c}$
+\end_inset
+
+ is a quasiconformality witness.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+By compactness of 
+\begin_inset Formula $\mathcal{J}$
+\end_inset
+
+, the derivative 
+\begin_inset Formula $\left|\left(f_{c}^{\circ n}\right)'\left(\zeta\right)\right|$
+\end_inset
+
+ is uniformly bounded for a fixed 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Moreover, this distortion estimate shows that the length of the curve scales
+ with 
+\begin_inset Formula $n$
+\end_inset
+
+ at exactly the same rate in which the distance between the iterated images
+ 
+\begin_inset Formula $f_{c}^{\circ n}(z_{0}),f_{c}^{\circ n}(z_{1})$
+\end_inset
+
+ scale with 
+\begin_inset Formula $n$
+\end_inset
+
+, so the curve 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ has a uniformly bounded quasiconvexity constant, as needed.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+take the quasiconformality constant 
+\begin_inset Formula $A$
+\end_inset
+
+ to be large enough so that the sum of the lengths 
+\begin_inset Formula $\mathrm{Length}\left(\eta_{z_{1}}\right)+\mathrm{Length}\left(\eta_{z_{2}}\right)\leq A\left|z_{0}-z_{1}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $ $
+\end_inset
+
+ then the condition of uniform quasiconvexity on the paths connecting the
+ points 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ is just having bounded length, so we may concatenate the paths 
+\begin_inset Formula $\gamma_{z_{0},2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{z_{1},2}$
+\end_inset
+
+ which exist by part (a).
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+In general, the points 
+\begin_inset Formula $z_{0},z_{1}$
+\end_inset
+
+ may be close to one another, but we use the expanding dynamics of 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ on the Julia set to make them far apart: There exists some iterate 
+\begin_inset Formula $f_{c}^{\circ n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|f_{c}^{\circ n}\left(z_{0}\right)-f_{c}^{\circ n}\left(z_{1}\right)\right|\geq0.1$
+\end_inset
+
+.
+ Then we have a path of uniformly bounded length 
+\begin_inset Formula $\gamma{}_{z_{0},z_{1},n}$
+\end_inset
+
+ connecting them in 
+\begin_inset Formula $\D^{*}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ be the component of 
+\begin_inset Formula $f^{\circ\left(-n\right)}(\gamma{}_{z_{0},z_{1},n})$
+\end_inset
+
+ containing 
+\begin_inset Formula $z_{0},z_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Section
+The Cauliflower Case
+\end_layout
+
+\begin_layout Subsection
+All points on the boundary are accessible
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $J$
+\end_inset
+
+
+\series bold
+ 
+\series default
+be the julia set of 
+\begin_inset Formula $f(z)=z^{2}+\frac{1}{4}$
+\end_inset
+
+.
+ Denote the filled Julia set by 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The point 
+\begin_inset Formula $z=\frac{1}{2}$
+\end_inset
+
+ will be denoted 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+The external ray which lands at the main cusp 
+\begin_inset Formula $p$
+\end_inset
+
+ is a straight line.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\series default
+There is a symmetry around the real line.
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $\delta_{p}$
+\end_inset
+
+ be the line segment lying on the real line which joins the main cusp 
+\begin_inset Formula $p$
+\end_inset
+
+ with 
+\begin_inset Formula $\gamma_{p,0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+By the previous claim, 
+\begin_inset Formula $\delta_{p}$
+\end_inset
+
+ is a geodesic of the basin of infinity.
+\end_layout
+
+\begin_layout Plain Layout
+Define 
+\begin_inset Formula $\delta_{q}$
+\end_inset
+
+ for any cusp 
+\begin_inset Formula $q=f^{-n}(p)$
+\end_inset
+
+ by taking the connected component of the preimage 
+\begin_inset Formula $f^{-n}(\delta_{q})$
+\end_inset
+
+ which contains 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+This is again a geodesic which lies on an external ray.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Observation.
+ 
+\series default
+Every 
+\begin_inset Formula $\delta_{q}$
+\end_inset
+
+ is a rectifiable curve.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\series default
+The inverse image of a rectifiable curve under a holomorphic mapping is
+ rectifiable.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+Every cusp 
+\begin_inset Formula $q$
+\end_inset
+
+ of the Julia set is accessible.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\begin_inset Formula $\delta_{q}$
+\end_inset
+
+ 
+\series default
+is rectifiable, starts at 
+\begin_inset Formula $q$
+\end_inset
+
+ and thus it is enough to observe that the other endpoint of 
+\begin_inset Formula $\delta_{q}$
+\end_inset
+
+ is accessible.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+Every point 
+\begin_inset Formula $\zeta\in J=\partial K$
+\end_inset
+
+ is accessible.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Idea.
+ 
+\series default
+We already showed this in the case when 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ is a cusp, and cusps are the 
+\begin_inset Quotes eld
+\end_inset
+
+hardest to reach" points on the Julia set.
+ Given a non-cusp point 
+\begin_inset Formula $\zeta\in J$
+\end_inset
+
+, we consider a nearby cusp 
+\begin_inset Formula $q$
+\end_inset
+
+ and connect 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ with the curve 
+\begin_inset Formula $\delta_{q}$
+\end_inset
+
+ of 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ For making the connection we introduce "highways" in the next section.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+
+\series default
+ The cauliflower 
+\begin_inset Formula $K$
+\end_inset
+
+ is bounded.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+
+\series default
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This follows from the boundedness of the Julia set, which
+\end_layout
+
+\end_inset
+
+ An elementary calculation.
+ For 
+\begin_inset Formula $\left|z\right|>2$
+\end_inset
+
+, iterations of 
+\begin_inset Formula $z^{2}+\frac{1}{4}$
+\end_inset
+
+ escape to infinity.
+\end_layout
+
+\begin_layout Plain Layout
+Choose 
+\begin_inset Formula $R>0$
+\end_inset
+
+ such that 
+\begin_inset Formula $B(0,R)$
+\end_inset
+
+ contains 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+Every point 
+\begin_inset Formula $\zeta\in J=\partial K$
+\end_inset
+
+ is accessible.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Railways
+\end_layout
+
+\begin_layout Subsubsection*
+Preamble
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $a,b$
+\end_inset
+
+ be two points on 
+\begin_inset Formula $J$
+\end_inset
+
+ to be chosen later.
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $\gamma_{p,0}$
+\end_inset
+
+ be a geodesic between 
+\begin_inset Formula $a,b$
+\end_inset
+
+ with respect to the inner metric of the basin of infinity 
+\begin_inset Formula $\mathbb{C}\setminus K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+
+\begin_inset Formula $J$
+\end_inset
+
+ is a Jordan curve.
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $\gamma_{a,b}$
+\end_inset
+
+ be the curve connecting 
+\begin_inset Formula $a,b$
+\end_inset
+
+ along 
+\begin_inset Formula $J$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+in the same direction as 
+\begin_inset Formula $\gamma_{p,0}$
+\end_inset
+
+".
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $U_{p,0}$
+\end_inset
+
+ to be the domain whose boundary is the union of 
+\begin_inset Formula $\gamma_{p,0}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\gamma_{a,b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Define inductively 
+\begin_inset Formula $\gamma_{p,j}$
+\end_inset
+
+ to be the component of the preimage of 
+\begin_inset Formula $\gamma_{p,j-1}$
+\end_inset
+
+ that is inside 
+\begin_inset Formula $U_{p,0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+There is a unique such preimage.
+\end_layout
+
+\begin_layout Plain Layout
+Define 
+\begin_inset Formula $U_{p,j}$
+\end_inset
+
+ to be the domain whose boundary is the union of 
+\begin_inset Formula $\gamma_{p,j}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\gamma_{a,b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+Every cusp point 
+\begin_inset Formula $q$
+\end_inset
+
+ is a preimage 
+\begin_inset Formula $f^{\circ(-n)}(p)$
+\end_inset
+
+ of the main cusp 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+, for a unique positive integer 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Given a cusp 
+\begin_inset Formula $q=f^{\circ\left(-n\right)}\left(p\right)$
+\end_inset
+
+, define 
+\begin_inset Formula $U_{q,j}=f^{\circ(-n)}U_{p,j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Choice of 
+\begin_inset Formula $a,b$
+\end_inset
+
+.
+ 
+\series default
+We choose the initial geodesic 
+\begin_inset Formula $\gamma_{p,0}$
+\end_inset
+
+ so that the union over all cusps 
+\begin_inset Formula $\cup_{q}U_{q,0}$
+\end_inset
+
+ contains a one-sided neighborhood of the Julia set 
+\begin_inset Formula $J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+That is, there is 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ such that the union contains all points in 
+\begin_inset Formula $K$
+\end_inset
+
+ whose distance to the boundary 
+\begin_inset Formula $J$
+\end_inset
+
+ is at most 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $T_{p,j}$
+\end_inset
+
+ be the region 
+\begin_inset Formula $U_{p,j}\setminus U_{p,j-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Usage
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Strategy.
+ 
+\series default
+Given a point 
+\begin_inset Formula $\zeta\in J$
+\end_inset
+
+, find 
+\begin_inset Formula $j$
+\end_inset
+
+ such that 
+\begin_inset Formula $\zeta\in\partial T_{p,j}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If there is such a 
+\begin_inset Formula $j$
+\end_inset
+
+ then it is unique.
+ If there is not such 
+\begin_inset Formula $j$
+\end_inset
+
+ then the argument will be similar but using the cusp 
+\begin_inset Formula $p'=f^{-1}(\frac{1}{2})=-\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Define the size of a cusp 
+\begin_inset Formula $q=f^{-n}(p)$
+\end_inset
+
+ to be 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ We use this to compare the size of different cusps.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $p_{\zeta}$
+\end_inset
+
+ be the largest cusp on 
+\begin_inset Formula $\partial T_{p,j}$
+\end_inset
+
+.
+ Note that the cusps are dense in 
+\begin_inset Formula $J$
+\end_inset
+
+, so there is such a cusp.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $p_{n}$
+\end_inset
+
+ be a sequence of cusps converging to 
+\begin_inset Formula $\zeta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Construct a curve from 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ that verifies the accessibility of 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ as follows.
+\end_layout
+
+\begin_layout Plain Layout
+The curve starts along 
+\begin_inset Formula $\delta_{p}$
+\end_inset
+
+, until the point 
+\begin_inset Formula $a_{p,q_{1}}$
+\end_inset
+
+ on 
+\begin_inset Formula $\delta_{p}$
+\end_inset
+
+ closest to 
+\begin_inset Formula $\delta_{q_{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Add a linear segment from 
+\begin_inset Formula $a_{p,q_{1}}$
+\end_inset
+
+ to 
+\begin_inset Formula $a_{\ensuremath{q_{1},p}}$
+\end_inset
+
+, then continue along 
+\begin_inset Formula $\delta_{q_{1},q_{2}}$
+\end_inset
+
+ until 
+\begin_inset Formula $a_{q_{1},q_{2}}$
+\end_inset
+
+.
+ Iterating this process, we obtain a curve 
+\begin_inset Formula $\gamma_{\zeta}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+The curve 
+\begin_inset Formula $\gamma_{\zeta}$
+\end_inset
+
+ has finite length.
+\end_layout
+
+\begin_layout Plain Layout
+To show this, we need the following estimates.
+\end_layout
+
+\begin_layout Subsubsection*
+Diameter Comparisons
+\end_layout
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Denote by 
+\begin_inset Formula $\diam\left(A\right)$
+\end_inset
+
+ the Euclidean diameter of a set 
+\begin_inset Formula $A$
+\end_inset
+
+, and by 
+\begin_inset Formula $i.\diam\left(A\right)$
+\end_inset
+
+ the inner diameter on the escaping set, i.e.
+ the diameter induced by the Riemann mapping from the escaping set to the
+ disk.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+
+\begin_inset Formula $\diam T_{p,n}\asymp i.\diam T_{p,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+
+\begin_inset Formula $\diam U_{p,n}\asymp i.\diam U_{p,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\series default
+Koebe distortion theorem.
+\end_layout
+
+\begin_layout Section
+Accessibility in the Hyperbolic Case
+\end_layout
+
+\begin_layout Plain Layout
+Consider the polynomial 
+\begin_inset Formula $f(z)=z^{2}+c$
+\end_inset
+
+ for some positive constant 
+\begin_inset Formula $c<\frac{1}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+This polynomial is hyperbolic: its attracting fixed point 
+\begin_inset Formula $z_{a}$
+\end_inset
+
+ is in the interior of the filled Julia set, and thus the conformal elevator
+ principle applies.
+\end_layout
+
+\begin_layout Plain Layout
+We first recall the principle.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proposition.
+ 
+\series default
+The post-critical set has positive distance from the Julia set.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\series default
+Since 
+\series bold
+
+\begin_inset Formula $z_{a}$
+\end_inset
+
+ 
+\series default
+is an attracting fixed point,
+\series bold
+ 
+\series default
+it must have a critical point converging to it.
+ Since 
+\begin_inset Formula $0$
+\end_inset
+
+ is the unique critical point of the polynomial 
+\begin_inset Formula $p_{c}$
+\end_inset
+
+, we deduce that 
+\begin_inset Formula $0$
+\end_inset
+
+ is attracted to 
+\begin_inset Formula $z_{a}$
+\end_inset
+
+.
+ Thus the forward iterations of 
+\begin_inset Formula $0$
+\end_inset
+
+ stay a bounded distance away from the Julia set, since 
+\begin_inset Formula $z_{a}$
+\end_inset
+
+ is with positive distance to the Julia set.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Observation.
+ 
+\series default
+Let 
+\begin_inset Formula $R>0$
+\end_inset
+
+ be the distance from the post-critical set to the Julia set.
+ Consider the ball 
+\begin_inset Formula $B=B(z,\frac{R}{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Since 
+\begin_inset Formula $B$
+\end_inset
+
+ is disjoint from the post-critical set, none of its preimages 
+\begin_inset Formula $f^{-n}\left(B\right)$
+\end_inset
+
+ contains the critical point 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Thus 
+\begin_inset Formula $f$
+\end_inset
+
+ restricted on each such preimage is univalent and 2-to-1.
+\end_layout
+
+\begin_layout Plain Layout
+By Koebe's distortion theorem, applied to iterates 
+\begin_inset Formula $f^{\circ n}$
+\end_inset
+
+, the diameter of the preimages of 
+\begin_inset Formula $B$
+\end_inset
+
+ changes by at most a multiplicative constant.
+\end_layout
+
+\begin_layout Plain Layout
+This principle shows that all points 
+\begin_inset Formula $z$
+\end_inset
+
+ on the Julia set 
+\begin_inset Formula $J(p_{c})$
+\end_inset
+
+ are accessible, since after repeated applications of 
+\begin_inset Formula $f^{n}(B)$
+\end_inset
+
+ we get a topological ball of definite size which we may use to construct
+ an explicit path exiting 
+\begin_inset Formula $K$
+\end_inset
+
+ in a rectifiable way.
+\end_layout
+
+\begin_layout Section
+Accessibility in the Parabolic Case
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $f(z)=z^{2}+\frac{1}{4}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $J=J(f)$
+\end_inset
+
+ be the Julia set of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $K$
+\end_inset
+
+ be the filled Julia set, known as the cauliflower.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Claim.
+ 
+\series default
+The Cauliflower is bounded.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Proof.
+ 
+\series default
+As in the hyperbolic case.
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Using claim 1, fix 
+\begin_inset Formula $R>0$
+\end_inset
+
+ for which 
+\begin_inset Formula $B(0,R)\supset K$
+\end_inset
+
+.
+ Denote 
+\begin_inset Formula $B=B(0,R)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $\zeta\in J$
+\end_inset
+
+.
+ Our goal is to show that 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ is accessible.
+\end_layout
+
+\begin_layout Plain Layout
+This is immediately equaivalent to showing that there is a rectifiable curve
+ 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ starting at 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ that exits 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The basic strategy will be to investigate the geometry near the main cusp
+ 
+\begin_inset Formula $p=\frac{1}{4}$
+\end_inset
+
+, since all other cusps are preimages of 
+\begin_inset Formula $p$
+\end_inset
+
+ under 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Plain Layout
+whence the principle of the conformal elevator reduces the general case
+ to the case of a point sufficiently close to the main cusp 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+To implement this strategy, we take some arbitrary other point on the Julia
+ set, connect it by a curve 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ to 
+\begin_inset Formula $a$
+\end_inset
+
+, then consider all preimages of 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+In general, consecutive images near a parabolic point have consecutive distances
+ comparable to 
+\begin_inset Formula $\frac{1}{n^{2}}$
+\end_inset
+
+ , where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the index of the preimage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "key-1"
+literal "false"
+
+\end_inset
+
+Hakobyan, Hrant, and Herron, David A..
+ "Euclidean quasiconvexity.." Annales Academiae Scientiarum Fennicae.
+ Mathematica 33.1 (2008): 205-230.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "2"
+key "key-2"
+literal "false"
+
+\end_inset
+
+Mario Bonk, Mikhail Lyubich, Sergei Merenkov, Quasisymmetries of Sierpiński
+ carpet Julia sets, Advances in Mathematics, Volume 301, 2016, Pages 383-422,
+ ISSN 0001-8708, https://doi.org/10.1016/j.aim.2016.06.007.
+\end_layout
+
+\end_body
+\end_document
