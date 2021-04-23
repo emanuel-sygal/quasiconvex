@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  23 APR 2021 16:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  23 APR 2021 17:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -651,73 +651,73 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Excluding 'comment' comment. Excluding 'comment' comment.
 Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment. [1
+Excluding 'comment' comment. [1
 
-]
+] Excluding 'comment' comment.
 Excluding 'comment' comment. [2] [3] (./marker path.tex)
 Excluding 'comment' comment. Excluding 'comment' comment. [4]
 (./marker path 2.tex) [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 []\TU/lmr/m/n/12 TODO:
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 350--350
+Underfull \hbox (badness 5403) in paragraph at lines 348--348
 \TU/lmr/m/n/12 We use
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 more
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 than
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 hyper-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 bolicity,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 also
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 Julia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--350
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 \TU/lmr/m/n/12 Jordan
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
+Underfull \hbox (badness 10000) in paragraph at lines 363--363
 []\TU/lmr/m/n/12 TODO:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
+Underfull \hbox (badness 10000) in paragraph at lines 363--363
 \TU/lmr/m/n/12 Make
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
+Underfull \hbox (badness 10000) in paragraph at lines 363--363
 \TU/lmr/m/n/12 this
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--372
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
 []\TU/lmr/m/n/12 TODO:
  []
 
@@ -734,6 +734,6 @@ Here is how much of TeX's memory you used:
  19000 multiletter control sequences out of 15000+600000
  13077 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,7n,52p,445b,767s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,7n,52p,470b,767s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on quasiconvex cauliflower [oleg].pdf (9 pages).

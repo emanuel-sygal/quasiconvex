@@ -52,8 +52,6 @@ If $f_{c}$ has an attracting fixed point then its Julia set $\mathcal{J}(f_{c})$
 is a quasicircle, hence its interior and exterior are both quasiconvex.
 This is the case for values of $c$ in the main cardioid of the Mandelbrot
 set.
-\end{comment}
-\begin{comment}
 , i.e. for 
 \[
 c\in\left\{ -\frac{\lambda}{2}-\frac{\lambda^{2}}{4}:\,\left|\lambda\right|<1\right\} .
@@ -62,34 +60,33 @@ c\in\left\{ -\frac{\lambda}{2}-\frac{\lambda^{2}}{4}:\,\left|\lambda\right|<1\ri
 
 \subsection{Sketch of the argument}
 
-We show quasiconvexity by an explicit construction of paths connecting
-given points on the boundary.\textbf{}
+We show quasiconvexity by an explicit construction of a certificate connecting two given points on the Julia set.
 
-%We use the Böttcher coordinate on the exterior unit disk 
-We use the conjugation of $f_{c}:z\mapsto z^{2}+c$ on the exterior
-of the Julia set to the map $z^{2}$ on the exterior of the unit disk
-$\D^{*}$. We decompose $\D^{*}$ into Carleson boxes invariant under
+We first build such certificates for the exterior unit disk $\mathbb D ^*$, and then transport them by the Böttcher coordinate $\psi$ of $f_{1/4}$ to the exterior of the cauliflower.
+
+In order to retain control on the certificates after applying $\psi$, we build the certificates on $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$. This is done by only traveling along the boundaries of a suitable Carleson box decomposition of $\mathbb D^{*}$.
+
+The image of a certificate $c$ under the conjugacy $\psi$ is invariant under $f_{1/4}$. We use this invariance to show that $\psi(c)$ is indeed a certificate, by a parabolic variant of the principle of the conformal elevator: We repeatedly apply $f_{1/4}$ on $\psi(c)$ until either the distance between the endpoints grows to a definite size or one endpoint is attracted sufficiently fast to the parabolic fixed point $1/2$. The latter case requires a more delicate treatment.
+
+To facilitate the reading, we separate this latter difficulty by first demonstrating the proof in the hyperbolic case of maps $f_c$ where  $c\in\left[-\frac 34,\frac{1}{4}\right]$. In this case the usual conformal elevator applies. We then embark on the $c=\frac 14$ case.
+
+\begin{comment}
+We decompose $\D^{*}$ into Carleson boxes invariant under
 $z^{2}$ and connect points on the unit circle by traveling on the
 boundary of these boxes. Both the boxes and the path on their boundary
 respect the dynamics of $z^{2}$ there, which allow us to transport
 these paths from $\D^{*}$ to the exterior of $\mathcal{J}(f_{c})$ 
+
 
 We construct two collections of curves, which we call "express"
 and "peripheral" tracks. We use the metaphor
 of a train traveling between the endpoints and switching between tracks.
 We stitch the quasiconvexity certificates out of these tracks.
 
-The construction of the rail tracks is done first in the case of
-the exterior unit disk ($c=0$), and then transported to the 
-$c=1/4$ case using the Böttcher coordinate. 
-%Thus we first explain the method in the case of $c=0$. 
-
-For clarity of exposition, we first show how the method works in the hyperbolic case, in which the conformal elevator makes the argument
-simpler, and only then prove the parabolic case $c=1/4$. 
 %We do this even though $J_{0.1}^{\text{exterior}}$ is known in advance to be quasiconvex, in virtue of being a quasidisk.
+\end{comment}
 
-
-\section{Power map}
+\section{The exterior disk}
 
 The exterior $\D^{*}=\left\{ \left|z\right|>1\right\} $ of the unit
 disk is trivially quasiconvex by connecting points along the perimeter
@@ -131,10 +128,9 @@ f_{0}\left(B_{n+1,k}\right)=B_{n,\lfloor\frac{k}{2}\rfloor}.
 \]
 \end{definition}
 
-\begin{comment}
-We describe the motion along quasigeodesics as a train drive. Accordingly,
-we proceed to define "stations"{} and "tracks".
-\end{comment}
+We describe the travel along Carleson boxes using the metaphor of a train switching between rail tracks. Accordingly,
+we proceed to define "stations" and "tracks".
+
 
 \begin{definition}
 The \emph{central station }is the point\emph{ $s_{0,0}=2$. Stations
@@ -291,7 +287,7 @@ by part (3) of the previous lemma.
 
 
 
-\section{Rails for other maps}
+\section{Transporting the Rails}
 Let $c\in\left[-\frac 34,\frac{1}{4}\right]$, and denote by $\psi$ the Böttcher coordinate of $f: z\mapsto z^2+c$ at infinity. 
 This means that $\psi$ is the unique conformal map $\D^{*}\to\mathrm{Exterior}(\mathcal{J})$  which fixes $\infty$ and satisfies the conjugacy $$f\circ\psi=\psi\circ f_{0}.$$
 Since the julia set $\mathcal J$ is a Jordan domain, the map $\psi$ extends to a homeomorphism between the circle
