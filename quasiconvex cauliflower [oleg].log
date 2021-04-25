@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  23 APR 2021 17:10
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  25 APR 2021 05:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,86 +654,21 @@ Excluding 'comment' comment. Excluding 'comment' comment.
 Excluding 'comment' comment. [1
 
 ] Excluding 'comment' comment.
-Excluding 'comment' comment. [2] [3] (./marker path.tex)
-Excluding 'comment' comment. Excluding 'comment' comment. [4]
-(./marker path 2.tex) [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-[]\TU/lmr/m/n/12 TODO:
+Excluding 'comment' comment. [2] [3] (./marker path.tex) [4]
+(./marker path 2.tex) [5] [6] [7] Excluding 'comment' comment.
+Overfull \hbox (3.328pt too wide) in paragraph at lines 374--374
+[]\TU/lmr/m/n/12 hopefully 
  []
 
-
-Underfull \hbox (badness 5403) in paragraph at lines 348--348
-\TU/lmr/m/n/12 We use
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 more
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 than
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 hyper-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 bolicity,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 also
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 Julia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--348
-\TU/lmr/m/n/12 Jordan
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--363
-[]\TU/lmr/m/n/12 TODO:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--363
-\TU/lmr/m/n/12 Make
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--363
-\TU/lmr/m/n/12 this
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--370
-[]\TU/lmr/m/n/12 TODO:
- []
-
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-[7] Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. [8] [9] (./quasiconvex cauliflower [oleg].aux) ) 
+[8] [9] Excluding 'comment' comment. Excluding 'comment' comment. [10]
+(./quasiconvex cauliflower [oleg].aux) ) 
 Here is how much of TeX's memory you used:
- 15281 strings out of 492922
- 284232 string characters out of 6136751
- 377702 words of memory out of 5000000
- 19000 multiletter control sequences out of 15000+600000
- 13077 words of font info for 63 fonts, out of 8000000 for 9000
+ 15264 strings out of 492922
+ 284048 string characters out of 6136751
+ 377944 words of memory out of 5000000
+ 18994 multiletter control sequences out of 15000+600000
+ 10300 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,7n,52p,470b,767s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,7n,52p,539b,776s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on quasiconvex cauliflower [oleg].pdf (9 pages).
+Output written on quasiconvex cauliflower [oleg].pdf (10 pages).
