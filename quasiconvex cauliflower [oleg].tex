@@ -371,7 +371,7 @@ By compactness of $\mathcal J$, the map $f^{\circ N}$ is also uniformly expandin
 For every value $a \mod N$, the peripheral tracks on circles $C_n$ of index $n \equiv a \mod N$ have total length bounded by a geometric series of rate $\theta$, hence finite. Express tracks are bounded in the same way. % We conclude that the total length of the itinerary is bounded.
 
 b.
-\marginpar{hopefully} Since we already know that the lengths of tracks in the itinerary decay exponentially with rate $\theta>1$, the same proof of the case $c=0$ also shows quasiconvexity in this case.
+\marginpar{(didn't check)} Since we already know that the lengths of tracks in the itinerary decay exponentially with rate $\theta>1$, the same proof of the case $c=0$ also shows quasiconvexity in this case.
 
 We give a second proof, relying on corollary \ref{elevator for points on julia}. This proof will better prepare us for the
 parabolic $c=1/4$ case, in which we don't have expansion of $f$ on its Julia set.
@@ -406,16 +406,29 @@ a bound of the form
 \mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\lesssim\frac{\theta^{n}\left|z_{1}-z_{2}\right|}{\theta^{n}}=\left|z_{1}-z_{2}\right|
 \]
  so $\eta_{z_{0},z_{1},c}$ is a quasiconvexity certificate.
+\end{proof}
 
 \section{The Cauliflower}
-In this section we denote  $f=f_{1/4}: z\mapsto z^2+ \frac 14$. We keep the notations
-use the same rails and certificates as in the hyperbolic case.
+In this section we denote  $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
+%We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
+
+We define a decomposition of the circle that is equivariant with $f_0$ by considering the first "departure": the first time that the central itinerary had to make a turn.
+
+\input{"marker path 3.tex"}
+
+\begin{definition}
+Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_n$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
+See figure \ref{fig:departure-decomposition}.
+\end{definition}
 
 
 
-\subsection{Parabolic Elevator}
-The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal elevator does not apply. We proceed to develop a substitute.
+The decomposition is invariant under $f_0$ in the sense that $f_0(I_{n+1})=I_n$, because of the invariance of $\eta _\zeta$.
+Thus we apply the Böttcher map $\psi$ to obtain a corresponding departure decomposition of $\mathcal J$ that is invariant under $f$.
 
+
+\subsection{Building an Elevator}
+The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal elevator does not apply. We now develop a substitute.
 
 Let $z_1,z_2 \in \mathcal J$, and let
 \begin{align*}
@@ -431,28 +444,47 @@ Indeed, in this case there is an annulus of definite modulus that has both $z_1,
 
 Instead of keeping track of the distance to $\mathrm{CriticalOrbit}(f)$, it is enough to consider the distance to the fixed point $1/2$, which is its only accumulation point on $\mathcal J$.
 
-Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make (WLOG) $z_1$ closer to $1/2$ than to $z_2$ by a multiplicative constant.
+Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make (WLOG) 
+\begin{align*}
+|f^{\circ m} (z_1)-\frac 12| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
+\end{align*}
+for a constant $c$.
 
+\begin{theorem}[Parabolic Conformal Elevator on $\mathcal J$]
+	Let $z_1,z_2 \in \mathcal J$ and let $\zeta_1,\zeta_2\in \partial \mathbb D^*$ be the corresponding preimages. 
+	 There exists a forward iterate	$f^{\circ N}$ for which one of the following holds.
+	
+	1. $\left|f^{\circ N}(z)-f^{\circ N}(w)\right|>\epsilon$, where $\epsilon>0$ is an absolute constant.
+	
+	2. $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq 3$.
+\end{theorem}
 
-enlarge the distance by a definite amount by applying $f$: The distance $|f(z_2)-f(z_1)|$
+\begin{proof}
+	Along the lines of the verbal explanation.
+\end{proof}
+%enlarge the distance by a definite amount by applying $f$: The distance $|f(z_2)-f(z_1)|$
+
+\subsection{Climbing the Elevator}
+By the previous discussion, we reduced to the case where $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq 3$.
+
+By Koebe's distortion theorem, it is enough to show that for the points $$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$ the itinerary $\psi(\eta_{w_1,w_2})$ is a certificate, and then we conclude the same for $z_1,z_2$. 
+
+Hence we fix $z_1,z_2$ and suppose WLOG that $m\geq n$ and $N=1$, i.e. that $z_1,z_2$ themselves satisfy 
+\begin{align} \label{parabolic separation}
+	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq 3.
+\end{align}
+
+Condition \ref{parabolic separation} gives us some control from below on $|z_1-z_2|$. We compare it to the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ to finish the proof.
+
+ \input{"departure-decomposition.tex"}
+
+We represent $\eta$ as a concatenation of three paths: The radial segment $[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See figure \ref{fig:Three-parts-of-eta}.
+
+The part in 
 
 \begin{comment}
-By compactness of $\mathcal{J}$, the derivative $\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|$
-is uniformly bounded for a fixed $n$. Moreover, this distortion estimate
-shows that the length of the curve scales with $n$ at exactly the
-same rate in which the distance between the iterated images $f^{\circ n}(z_{0}),f^{\circ n}(z_{1})$
-scale with $n$, so the curve $\gamma$ has a uniformly bounded quasiconvexity
-constant, as needed.
-\end{comment}
-
-\begin{comment}
-
-\section{Quasiconvexity for the cauliflower}
 
 \subsection{All points on the boundary are accessible}
-
-Let $J$\textbf{ }be the Julia set of $f(z)=z^{2}+\frac{1}{4}$. Denote
-the filled Julia set by $K$.
 
 The point $z=\frac{1}{2}$ will be denoted $p$.
 
@@ -461,7 +493,7 @@ is a straight line.
 
 \textbf{Proof. }There is a symmetry around the real line.$\square$
 
-Let $\delta_{p}$ be the line segment lying on the real line which
+Let $\delta_{p}$ be the segment lying on the real line which
 joins the main cusp $p$ with $\gamma_{p,0}$.
 
 By the previous claim, $\delta_{p}$ is a geodesic of the basin of
@@ -638,17 +670,18 @@ In general, consecutive images near a parabolic point have consecutive
 distances comparable to $\frac{1}{n^{2}}$ , where $n$ is the index
 of the preimage.
 \end{comment}
-\end{proof}
-\begin{thebibliography}{1}
-\bibitem[HH08]{euclidean-quasiconvexity}Hakobyan, Hrant, and Herron, David A.. "Euclidean
-quasiconvexity.."{} Annales Academiae Scientiarum Fennicae.
-Mathematica 33.1 (2008): 205-230.
 
+\begin{thebibliography}{1}
+	% Will make into a bib file when I get it to work
 \bibitem[BLM16]{BLM16}Mario Bonk, Mikhail Lyubich, Sergei Merenkov, Quasisymmetries
 of Sierpiński carpet Julia sets, Advances in Mathematics, Volume 301,
 2016, Pages 383-422, ISSN 0001-8708, https://doi.org/10.1016/j.aim.2016.06.007.
 
 \bibitem[CJY94]{julia-and-john}Carleson, L., Jones, P.W. and Yoccoz, JC. Julia and John. Bol. Soc. Bras. Mat 25, 1–30 (1994). https://doi.org/10.1007/BF01232933
+
+\bibitem[HH08]{euclidean-quasiconvexity}Hakobyan, Hrant, and Herron, David A.. "Euclidean
+quasiconvexity.."{} Annales Academiae Scientiarum Fennicae.
+Mathematica 33.1 (2008): 205-230.
 
 \bibitem[KMS09]{BV-extension}Koskela P., Miranda M., Shanmugalingam N. (2010) Geometric Properties of Planar BV -Extension Domains. In: Laptev A. (eds) Around the Research of Vladimir Maz'ya I. International Mathematical Series, vol 11. Springer, New York, NY. 
 \end{thebibliography}
