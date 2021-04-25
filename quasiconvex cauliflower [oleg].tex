@@ -307,7 +307,9 @@ Express tracks lie on external rays of the filled Julia set $\mathcal K$.
 Peripheral tracks lie on the level sets of $\psi$, or equivalently on the equipotentials of $\mathcal K$.
 
 3. Let $z_1,z_2\in \mathcal J$, and let $\zeta_i=\psi^{-1}(z_i)$ be the corresponding points on $\partial \mathbb D^*$. 
-The \emph{$c$-itineraries} are $\eta_{z,z',c}=\psi(\eta_{\zeta,\zeta'})$.
+The \emph{$c$-itineraries} are $\eta_{z,z'}=\psi(\eta_{\zeta,\zeta'})$.
+We omit $c$ from some notation for ease of reading. It will be clear at any given context whether we work in $\mathbb D^*$ or in $\mathcal J$.
+
 
 These itineraries can equivalently be obtained directly as in the case of $\mathbb D^*$, in terms of following the central itineraries from the common ancestor in the tree structure.
 %Trivially since $\psi$ is a bijective correspondence between the two decompositions.
@@ -362,12 +364,14 @@ Then we have the estimate
 $$\mathrm{Length}(\psi(\gamma_{k}))\lesssim\theta^{-k}$$ uniformly in
 $\zeta$, for some constant $\theta=\theta(c)>1$.
 
-b. The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex  with the itineraries $\eta_{z_1,z_2}$ as certificates..
+b. The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex  with the itineraries $\eta_{z_1,z_2}$ as certificates.
 \end{theorem}
 
 \begin{proof}
 a. The map $f$ has some iterate $f^{\circ N}$ that is pointwise expanding on the Julia set $\mathcal{J}(f)$, where $N$ is independent of $z$.
-By compactness of $\mathcal J$, the map $f^{\circ N}$ is also uniformly expanding there, i.e. there are a constant $\theta>1$ and a neighborhood $\mathcal{U}$ of $\mathcal{J}(f)$ on which $\left|(f^{\circ n})'\right|=|\prod f'(f^\circ k) |>\theta$. Every itinerary is eventually contained in $\mathcal{U}$, so for almost all itineraries $\gamma$ we have $\mathrm{Length} \left( f^{\circ N}(\gamma) \right) \geq \theta \mathrm{Length} \left( \gamma \right)$. 
+By compactness of $\mathcal J$, the map $f^{\circ N}$ is also uniformly expanding there, i.e. there are a constant $\theta>1$ and a neighborhood $\mathcal{U}$ of $\mathcal{J}(f)$ on which $\left|(f^{\circ n})'\right|=|\prod f'(f^\circ k) |>\theta$. 
+Every itinerary is eventually contained in $\mathcal{U}$, so for almost all itineraries $\gamma$ we have $\mathrm{Length} \left( f^{\circ N}(\gamma) \right) \geq \theta \mathrm{Length} \left( \gamma \right)$. 
+
 For every value $a \mod N$, the peripheral tracks on circles $C_n$ of index $n \equiv a \mod N$ have total length bounded by a geometric series of rate $\theta$, hence finite. Express tracks are bounded in the same way. % We conclude that the total length of the itinerary is bounded.
 
 b.
@@ -385,27 +389,30 @@ for all $z\in\mathcal{J}$ then we take $A\geq\frac{2L}{\epsilon}$
 and then automatically $\mathrm{Length}\left(\eta_{z_{1}}+\eta_{z_{2}}\right)\leq A\left|z_{1}-z_{2}\right|$.
 
 If, on the other hand, $\left|z_{1}-z_{2}\right|<\epsilon$, then
-we use  corollary \ref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that $\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\geq\epsilon$.
-Then there is a certificate itinerary $\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}$
+we use  corollary \ref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
+\begin{equation}
+	|w_0-w_1|:=\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\geq\epsilon.
+\end{equation}
+There is a certificate $\eta_{w_0,w_1}$
 between them, and we take the certificate $\eta_{z_{0},z_{1}}$ between
-the original points to be the component of $f^{\circ-n}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)$
+the original points to be the component of $f^{\circ-n}\left(\eta_{w_0,w_1}\right)$
 that connects the points $z_{0},z_{1}$.
 
 A distortion estimate: 
 \[
-\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\asymp\frac{\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)}{\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|}
+\mathrm{Length}\left(\eta_{z_{0},z_{1}}\right)\asymp\frac{\mathrm{Length}\left(\eta_{w_0,w_1}\right)}{\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|}
 \]
  for some point $\zeta$ on $\mathcal{J}$. The denominator grows
 with $n$ exponentially at rate $\theta$, while the numerator has
 a bound of the form 
 \[
-\mathrm{Length}\left(\eta_{f^{\circ n}(z_{0}),f^{\circ n}(z_{1}),c}\right)\lesssim\left|f^{\circ n}(z_{0})-f^{\circ n}(z_{1})\right|\lesssim\theta^{n}\left|z_{1}-z_{2}\right|
+\mathrm{Length}\left(\eta_{w_0,w_1}\right)\lesssim\left|w_0-w_1\right|\lesssim\theta^{n}\left|z_{1}-z_{2}\right|
 \]
  so altogether 
 \[
-\mathrm{Length}\left(\eta_{z_{0},z_{1},c}\right)\lesssim\frac{\theta^{n}\left|z_{1}-z_{2}\right|}{\theta^{n}}=\left|z_{1}-z_{2}\right|
+\mathrm{Length}\left(\eta_{z_{0},z_{1}}\right)\lesssim\frac{\theta^{n}\left|z_{1}-z_{2}\right|}{\theta^{n}}=\left|z_{1}-z_{2}\right|
 \]
- so $\eta_{z_{0},z_{1},c}$ is a quasiconvexity certificate.
+ so $\eta_{z_{0},z_{1}}$ is a quasiconvexity certificate.
 \end{proof}
 
 \section{The Cauliflower}
@@ -456,7 +463,7 @@ for a constant $c$.
 	
 	1. $\left|f^{\circ N}(z)-f^{\circ N}(w)\right|>\epsilon$, where $\epsilon>0$ is an absolute constant.
 	
-	2. $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq 3$.
+	2. $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq 2$.
 \end{theorem}
 
 \begin{proof}
@@ -465,13 +472,13 @@ for a constant $c$.
 %enlarge the distance by a definite amount by applying $f$: The distance $|f(z_2)-f(z_1)|$
 
 \subsection{Climbing the Elevator}
-By the previous discussion, we reduced to the case where $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq 3$.
+By the previous discussion, we reduced to the case where $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq 2$.
 
 By Koebe's distortion theorem, it is enough to show that for the points $$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$ the itinerary $\psi(\eta_{w_1,w_2})$ is a certificate, and then we conclude the same for $z_1,z_2$. 
 
 Hence we fix $z_1,z_2$ and suppose WLOG that $m\geq n$ and $N=1$, i.e. that $z_1,z_2$ themselves satisfy 
 \begin{align} \label{parabolic separation}
-	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq 3.
+	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq 2.
 \end{align}
 
 Condition \ref{parabolic separation} gives us some control from below on $|z_1-z_2|$. We compare it to the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ to finish the proof.
@@ -480,7 +487,25 @@ Condition \ref{parabolic separation} gives us some control from below on $|z_1-z
 
 We represent $\eta$ as a concatenation of three paths: The radial segment $[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See figure \ref{fig:Three-parts-of-eta}.
 
-The part in 
+Of course we have
+\begin{equation}
+	\mathrm{Length}(\psi(\eta))=\mathrm{Length}(\psi(\gamma_m))+\mathrm{Length}(\psi(\gamma_n))+\mathrm{Length}(\psi(\gamma_{m,n})).
+\end{equation}
+
+Recall that our goal is to show $\mathrm{Length}(\psi(\eta)) \lesssim |z_1-z_2|$
+
+All that is left is to prove the following.
+\begin{proposition}
+1. \begin{equation}
+	\mathrm{Length}(\psi(\gamma_m)) \lesssim \mathrm{Length}(\psi(\gamma_{m,n}))
+\end{equation}
+and the same holds for $m,n$ interchanged.
+
+2. \begin{equation}
+\mathrm{Length}(\psi(\gamma_{m,n})) \lesssim |\psi(z_1)-\psi(z_2)|.
+\end{equation}
+
+\end{proposition}
 
 \begin{comment}
 
