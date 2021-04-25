@@ -122,7 +122,7 @@ is a partition of the annulus
 The \emph{Carleson box decomposition} is the partition of $\D^{*}$ obtained by $f_{0}$-Carleson
 boxes:
 \[
-\D^{*}=\left\{ z:\,\left|z\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
+\D^{*}=\left\{ \zeta:\,\left|\zeta\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
 \]
 
 The crucial property of this decomposition is its invariance under $f_{0}$,
@@ -139,7 +139,7 @@ We now define "stations" and "tracks".
 \begin{definition}
 A \emph{terminal} is a point $\zeta \in \partial \mathbb D^*$ on the unit circle.
 The \emph{central station} is the point\emph{ $s_{0,0}=2$. Stations
-}are the iterated preimages of the central station under the map $f_{0}:z\mapsto z^{2}$.
+}are the iterated preimages of the central station under the map $f_{0}:\zeta\mapsto \zeta^{2}$.
 We index them as 
 \[
 s_{n,k}=2^{2^{-n}}\exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\} .
@@ -148,7 +148,7 @@ s_{n,k}=2^{2^{-n}}\exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad
 Stations are naturally structured in a binary tree, where the root
 is the central station $2$ and the children of a node are its preimages.
 The $2^{n}$ stations of generation $n$ in the tree are equally spaced
-on the circle $C_{n}=\left\{ \left|z\right|=2^{1/2^{n}}\right\} $. 
+on the circle $C_{n}=\left\{ \left|\zeta\right|=2^{1/2^{n}}\right\} $. 
 
 
 \end{definition}
@@ -172,21 +172,21 @@ is the short arc of the circle $C_{n}$ connecting $s$ to $s'$.
 %5. An \emph{itinerary} is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$. We identify an itinerary with the curve obtained by traveling along it.
 \end{definition}
 
-Notice that the tracks preserve the dynamics: applying $z\mapsto z^{2}$
+Notice that the tracks preserve the dynamics: applying $\zeta\mapsto \zeta^{2}$
 on a peripheral track between $s,s'$ gives a peripheral track between the
 parents of $s,s'$ in the tree, and likewise for an express track.
 
 When a passenger purchases a ticket between two stations $s_1$ and $s_2$, they must follow a particular itinerary to get from $s_1$ to $s_2$.
 If $s_1$ is the central station, then this compulsory itinerary is determined by the rule that the passenger always stays as close as possible to its destination in the peripheral distance. 
-This also determines how to travel from the central station to a terminal $z\in \partial \mathbb D^*$, by continuity. See figure \ref{fig:Carleson1} and the next definition.
+This also determines how to travel from the central station to a terminal $\zeta\in \partial \mathbb D^*$, by continuity. See figure \ref{fig:Carleson1} and the next definition.
 
 % There is a caveat in the analogy, because this gives rise to an itinerary between any two points and if we approximate terminal points by bearby stations then we do not get the same path.
 
 \begin{definition}
-Let $z=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_z$ from the central station to $z$ is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$ where $\sigma_{0}=s_{0,0}=2$ and $\lim_{k\to \infty} \sigma_{k}=z$, defined as follows.
+Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_\zeta$ from the central station to $\zeta$ is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$ where $\sigma_{0}=s_{0,0}=2$ and $\lim_{k\to \infty} \sigma_{k}=\zeta$, defined as follows.
 
-We choose the stations $\sigma_{i}$ inductively in pairs, in a greedy manner. In each step
-we travel peripherally to the station closest to $z_{1}$ and then
+We choose the stations $\sigma_{i}$ greedily in pairs. In each step
+we travel peripherally to the station closest to $\zeta$ and then
 travel to its radial successor. See Figure \ref{fig:Carleson1}. 
 
 For the first station $\sigma_{1}$ we have no choice and we travel
@@ -199,14 +199,14 @@ that minimizes the angular distance $\left|\Arg\left(z_{1}\right)-\Arg\left(\sig
 
 \end{definition} 
 
-We call $\eta_{z}$ the \emph{central itinerary} of $z$.
-Note that there are no two consecutive peripheral tracks in $\eta_{z}$, and that the itineraries are invariant under $f_{0}$, in the sense that $$f_{0}(\eta_{z})=\eta{}_{f_{0}(z)}\cup[s_{0,0},f_0(s_{0,0})]$$
-for every $z\in\partial\D$.
+We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$.
+Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and that the itineraries are invariant under $f_{0}$, in the sense that $$f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]$$
+for every $\zeta\in\partial\D$.
 
 \begin{lemma}
-Let $z\in \partial \mathbb D^*$. Decompose the central itinerary $\eta_{z}$ into its constituent tracks, 
-$$\eta_{z}=\gamma _1 + \gamma_2\ldots .$$ 
-	Then we have the estimate $$\mathrm{Length}(\gamma_{k})\lesssim2^{-k}$$ uniformly in $z$. 
+Let $\zeta\in \partial \mathbb D^*$. Decompose the central itinerary $\eta_{\zeta}$ into its constituent tracks, 
+$$\eta_{\zeta}=\gamma _1 + \gamma_2\ldots .$$ 
+	Then we have the estimate $$\mathrm{Length}(\gamma_{k})\lesssim2^{-k}$$ uniformly in $\zeta$. 
 
 \end{lemma}
 \input{"marker path.tex"}
@@ -214,7 +214,7 @@ $$\eta_{z}=\gamma _1 + \gamma_2\ldots .$$
 \begin{proof}
 The station $\sigma_{2k}$ is adjacent peripherally to $\sigma_{2k-1}$,
 since the angular distance between stations on $C_{n}$ is $\frac{2\pi}{2^{n}}$
-and we maintain the invariant $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|\leq\frac{2\pi}{2^{k}}$
+and we maintain the invariant $\left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{2k}\right)\right|\leq\frac{2\pi}{2^{k}}$
 throughout the itinerary. Thus the length of the peripheral track $\gamma_{\sigma_{2k-1},\sigma_{2k}}^{p}$
 is either $r_{n}\cdot\frac{2\pi}{2^{k}}=2^{1/2^{k}}\frac{2\pi}{2^{k}}$
 or $0$ (in case $\sigma_{2k-1}=\sigma_{2k}$), and in any case the
@@ -223,59 +223,59 @@ The length of the $k$-th express track decays exponentially due to
 the invariance under $f_{0}$. Explicitly it is $2^{1/2^{k}}-2^{1/2^{k+1}}\leq2^{2^{-k}}-1\lesssim2^{-k}$
 since $\lim_{x\to0}\frac{2^{x}-1}{x}=\log2$.
 
-Thus the total length of the itinerary is bounded uniformly in $z$.
+Thus the total length of the itinerary is bounded uniformly in $\zeta$.
 \end{proof}
 
-%In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$ decays exponentially in $k$, uniformly in $z$.
+%In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$ decays exponentially in $k$, uniformly in $\zeta$.
 
 The itinerary between two general stations $s$ and $s'$ is obtained by juxtaposing $\eta_{s_1}$ and $\eta_{s_2}$, discarding the part where they coincide. See figure \ref{fig:Carleson2}. 
 %Note that this may result in an "inefficient" itinerary: two stations that are peripheral neighbors might have a rather long itinerary between them.
-By continuity, this defines the itinerary between two terminals $z_1$ and $z_2$.
+By continuity, this defines the itinerary between two terminals $\zeta_1$ and $\zeta_2$.
 
 In a more precise language:
 \begin{definition}
-	Let $z_{1},z_{2}\in\partial\D^*$ be two terminals. The itinerary $\eta_{z_{1},z_{2}}$ between them is defined as follows.
-	Let $\eta_{z_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{z_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
+	Let $\zeta_{1},\zeta_{2}\in\partial\D^*$ be two terminals. The itinerary $\eta_{\zeta_{1},\zeta_{2}}$ between them is defined as follows.
+	Let $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
 	be the corresponding central itineraries.	
 	Let $\left(\sigma_{0},\ldots,\sigma_{N}\right)$ be the maximal common
-	prefix of $\eta_{z_{1}}$ and $\eta_{z_{2}}$. Let $\eta_{z_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
-	be the truncated paths. By the maximality of $N$, we have that $\eta_{z_{1}}^{\text{truncated}}$
-	and $\eta_{z_{2}}^{\text{truncated}}$ are two itineraries with a common
+	prefix of $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Let $\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
+	be the truncated paths. By the maximality of $N$, we have that $\eta_{\zeta_{1}}^{\text{truncated}}$
+	and $\eta_{\zeta_{2}}^{\text{truncated}}$ are two itineraries with a common
 	starting point, so we can concatenate them to obtain a bi-infinite itinerary 
 	\[
-	\eta_{z_{1},z_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right)
+	\eta_{\zeta_{1},\zeta_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right)
 	\]
-	connecting $z_{1}$ and $z_{2}$.
+	connecting $\zeta_{1}$ and $\zeta_{2}$.
 	\input{"marker path 2.tex"}
 	
 \end{definition}
 
 \begin{theorem} \label{quasiconvex disk}
-The domain $\D^{*}$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+The domain $\D^{*}$ is quasiconvex with the itineraries $\eta_{\zeta_1,\zeta_2}$ as certificates.
 \end{theorem}
 
 \begin{proof}
-It is enough to show that $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|z_{1}-z_{2}\right|$.
+It is enough to show that $\mathrm{Length}\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim\left|\zeta_{1}-\zeta_{2}\right|$.
 
-As $\left|z_{1}-z_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right|$
-and $\mathrm{Arg}\left(z_{i}\right)\propto\theta_{i}$, it is equivalent to show
+As $\left|\zeta_{1}-\zeta_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right|$
+and $\mathrm{Arg}\left(\zeta_{i}\right)\propto\theta_{i}$, it is equivalent to show
 \[
-\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|.
+\mathrm{Length}\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|.
 \]
 
 By the choice of $N$, 
 \[
-\left|\Arg\left(z_{1}\right)-\Arg\left(z_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
+\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
 \]
 
-Thus it is enough to prove that $\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)\lesssim2^{-N}$.
+Thus it is enough to prove that $\mathrm{Length}\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim2^{-N}$.
 But 
 \[
-\mathrm{Length}\left(\eta_{z_{1},z_{2}}\right)=\mathrm{Length}\left(\eta_{z_{1}}^{\text{truncated}}\right)+\mathrm{Length}\left(\eta_{z_{2}}^{\text{truncated}}\right),
+\mathrm{Length}\left(\eta_{\zeta_{1},\zeta_{2}}\right)=\mathrm{Length}\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\mathrm{Length}\left(\eta_{\zeta_{2}}^{\text{truncated}}\right),
 \]
 so it is enough to observe that 
 \[
-\mathrm{Length}\left(\eta_{z_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}
+\mathrm{Length}\left(\eta_{\zeta_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}
 \]
 by part (3) of the previous lemma.
 
@@ -417,8 +417,15 @@ use the same rails and certificates as in the hyperbolic case.
 The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal elevator does not apply. We proceed to develop a substitute.
 
 
-Let $z_1,z_2 \in \mathcal J$, and let $\mathrm{CriticalOrbit(f)}=\{f^n(0): n \in \mathbb N\}$ be the forward orbit of the critical point.
-As long as the distance $z_1-z_2$ is small in comparison to the distance of $z_1,z_2$ from $\mathrm{CriticalOrbit(f)}$, we profit from applying $f$: By standard distortion estimates, $|f(z_1)-f(z_2)|\geq c |z_1-z_2|$ for some constant $c>1$.
+Let $z_1,z_2 \in \mathcal J$, and let
+\begin{align*}
+	\mathrm{CriticalOrbit(f)}=\{f^n(0): n \in \mathbb N\}
+\end{align*} be the forward orbit of the critical point.
+As long as the distance $z_1-z_2$ is small in comparison to the distance of $z_1,z_2$ from $\mathrm{CriticalOrbit(f)}$, we profit from applying $f$: By standard distortion estimates, 
+\begin{align*}
+|f(z_1)-f(z_2)|\geq c |z_1-z_2|
+\end{align*}
+for some constant $c>1$.
 
 Indeed, in this case there is an annulus of definite modulus that has both $z_1,z_2$ in its bounded complementary component and has all points of $\mathrm{CriticalOrbit(f)}$ in the unbounded complementary component.
 
@@ -637,7 +644,7 @@ of the preimage.
 quasiconvexity.."{} Annales Academiae Scientiarum Fennicae.
 Mathematica 33.1 (2008): 205-230.
 
-\bibitem{BLM16}Mario Bonk, Mikhail Lyubich, Sergei Merenkov, Quasisymmetries
+\bibitem[BLM16]{BLM16}Mario Bonk, Mikhail Lyubich, Sergei Merenkov, Quasisymmetries
 of Sierpiński carpet Julia sets, Advances in Mathematics, Volume 301,
 2016, Pages 383-422, ISSN 0001-8708, https://doi.org/10.1016/j.aim.2016.06.007.
 
