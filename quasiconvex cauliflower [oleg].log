@@ -1,23 +1,37 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  25 APR 2021 11:16
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  27 APR 2021 01:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **"quasiconvex cauliflower [oleg].tex"
 (./quasiconvex cauliflower [oleg].tex
 LaTeX2e <2018-12-01>
-(./preamble.tex (c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+(./preamble.tex (c:/texlive/2019/texmf-dist/tex/latex/nag/nag.sty
+Package: nag 2011/11/25 0.7 warning about old commands (ulmi)
+\c@nag@c=\count80
+\c@nag@sins=\count81
+Package nag Info: Loaded nag-l2tabu.cfg  on input line 552.
+
+(c:/texlive/2019/texmf-dist/tex/latex/nag/nag-l2tabu.cfg
+File: nag-l2tabu.cfg 2010/05/17 v2.11 l2tabu rules for nag.sty (ulmi)
+)
+Package nag Info: Loaded nag-orthodox.cfg  on input line 552.
+
+(c:/texlive/2019/texmf-dist/tex/latex/nag/nag-orthodox.cfg
+File: nag-orthodox.cfg 2006/04/19 v1.8 strict rules for nag.sty (ulmi)
+))
+(c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -39,9 +53,9 @@ Package ifvtex Info: VTeX not detected.
 (c:/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count88
-\Gm@cntv=\count89
-\c@Gm@tempcnt=\count90
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
 \Gm@bindingoffset=\dimen103
 \Gm@wd@mp=\dimen104
 \Gm@odd@mp=\dimen105
@@ -51,6 +65,34 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
+)
+(c:/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
+
+(c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count93
+)
+\csq@reset=\count94
+\csq@gtype=\count95
+\csq@glevel=\count96
+\csq@qlevel=\count97
+\csq@maxlvl=\count98
+\csq@tshold=\count99
+\csq@ltx@everypar=\toks16
+
+(c:/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(c:/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Disabling multilingual quotes.
+Package csquotes Info: Disabling multilingual quotes.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
 )
 (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -85,15 +127,15 @@ Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
 (c:/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count91
-\calc@Bcount=\count92
+\calc@Acount=\count100
+\calc@Bcount=\count101
 \calc@Adimen=\dimen113
 \calc@Bdimen=\dimen114
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count93
+\calc@Ccount=\count102
 \calc@Cskip=\skip45
 )
 (c:/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -109,7 +151,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
+\@emptytoks=\toks17
 \ex@=\dimen115
 ))
 (c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -119,13 +161,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count103
 LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count104
+\leftroot@=\count105
 LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count106
+\DOTSCASE@=\count107
 LaTeX Info: Redefining \ldots on input line 482.
 LaTeX Info: Redefining \dots on input line 485.
 LaTeX Info: Redefining \cdots on input line 606.
@@ -134,26 +176,26 @@ LaTeX Info: Redefining \cdots on input line 606.
 \big@size=\dimen117
 LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count108
+\c@MaxMatrixCols=\count109
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
-\tag@help=\toks17
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
-\andhelp@=\toks18
+\c@parentequation=\count110
+\dspbrk@lvl=\count111
+\tag@help=\toks18
+\row@=\count112
+\column@=\count113
+\maxfields@=\count114
+\andhelp@=\toks19
 \eqnshift@=\dimen118
 \alignsep@=\dimen119
 \tagshift@=\dimen120
 \tagwidth@=\dimen121
 \totwidth@=\dimen122
 \lineht@=\dimen123
-\@envbody=\toks19
+\@envbody=\toks20
 \multlinegap=\skip47
 \multlinetaggap=\skip48
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
@@ -161,7 +203,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count106
+\g_MT_multlinerow_int=\count115
 \l_MT_multwidth_dim=\dimen124
 \origjot=\skip49
 \l_MT_shortvdotswithinadjustabove_dim=\dimen125
@@ -183,15 +225,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (c:/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks21
-\thm@bodyfont=\toks22
-\thm@headfont=\toks23
-\thm@notefont=\toks24
-\thm@headpunct=\toks25
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
 \thm@preskip=\skip50
 \thm@postskip=\skip51
 \thm@headsep=\skip52
-\dth@everypar=\toks26
+\dth@everypar=\toks27
 )
 (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -213,14 +255,14 @@ Loading kernel: messages; fonts; allocations: state,
 \D@c=\dimen134
 \L@c=\dimen135
 \R@c=\dimen136
-\Edge@c=\toks27
+\Edge@c=\toks28
 \X@p=\dimen137
 \Y@p=\dimen138
 \U@p=\dimen139
 \D@p=\dimen140
 \L@p=\dimen141
 \R@p=\dimen142
-\Edge@p=\toks28
+\Edge@p=\toks29
 \X@origin=\dimen143
 \Y@origin=\dimen144
 \X@xbase=\dimen145
@@ -237,21 +279,21 @@ Loading kernel: messages; fonts; allocations: state,
  direction,
 \d@X=\dimen154
 \d@Y=\dimen155
-\K@=\count107
-\KK@=\count108
-\Direction=\count109
+\K@=\count116
+\KK@=\count117
+\Direction=\count118
 \K@dXdY=\dimen156
 \K@dYdX=\dimen157
 \xyread@=\read1
 \xywrite@=\write3
-\csp@=\count110
+\csp@=\count119
 \quotPTK@=\dimen158
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks29
+\swaptoks@@=\toks30
 \connectobjectbox@@=\box31
  objects,
-\styletoks@=\toks30
+\styletoks@=\toks31
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
@@ -265,8 +307,8 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: All features v.3.8
 (c:/texlive/2019/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count111
-\crvpts@=\toks31
+\crv@cnt@=\count120
+\crvpts@=\toks32
 \splinebox@=\box32
 \splineval@=\dimen159
 \splinedepth@=\dimen160
@@ -287,13 +329,13 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: Colour extension v.3.11 loaded)
 (c:/texlive/2019/texmf-dist/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.14
-\Row=\count112
-\Col=\count113
-\queue@=\toks32
-\queue@@=\toks33
-\qcount@=\count114
-\qcount@@=\count115
-\matrixsize@=\count116
+\Row=\count121
+\Col=\count122
+\queue@=\toks33
+\queue@@=\toks34
+\qcount@=\count123
+\qcount@@=\count124
+\matrixsize@=\count125
  loaded)
 (c:/texlive/2019/texmf-dist/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
@@ -303,13 +345,46 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \CommentStream=\write4
 
 Excluding comment 'comment')
-\c@theorem=\count117
+(c:/texlive/2019/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
 
+(c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(c:/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
+)
+\XKV@depth=\count126
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(c:/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
 (c:/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks34
+\pgfutil@everybye=\toks37
 \pgfutil@tempdima=\dimen165
 \pgfutil@tempdimb=\dimen166
 
@@ -332,11 +407,11 @@ Package: pgf 2019/02/02 v3.1.1 (3.1.1)
 Package: pgfsys 2019/02/02 v3.1.1 (3.1.1)
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks35
-\pgfkeys@temptoks=\toks36
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks37
+\pgfkeys@tmptoks=\toks40
 ))
 \pgf@x=\dimen167
 \pgf@y=\dimen168
@@ -348,14 +423,14 @@ Package: pgfsys 2019/02/02 v3.1.1 (3.1.1)
 \pgf@yc=\dimen174
 \w@pgf@writea=\write5
 \r@pgf@reada=\read2
-\c@pgf@counta=\count118
-\c@pgf@countb=\count119
-\c@pgf@countc=\count120
-\c@pgf@countd=\count121
-\t@pgf@toka=\toks38
-\t@pgf@tokb=\toks39
-\t@pgf@tokc=\toks40
-\pgf@sys@id@count=\count122
+\c@pgf@counta=\count127
+\c@pgf@countb=\count128
+\c@pgf@countc=\count129
+\c@pgf@countd=\count130
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count131
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2019/02/02 v3.1.1 (3.1.1)
 )
@@ -370,33 +445,16 @@ File: pgfsys-dvipdfmx.def 2019/02/02 v3.1.1 (3.1.1)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2019/02/02 v3.1.1 (3.1.1)
 )
-\pgfsys@objnum=\count123
+\pgfsys@objnum=\count132
 )))
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfsyssoftpath@smallbuffer@items=\count124
-\pgfsyssoftpath@bigbuffer@items=\count125
+\pgfsyssoftpath@smallbuffer@items=\count133
+\pgfsyssoftpath@bigbuffer@items=\count134
 )
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)) (c:/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: xetex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2019/02/02 v3.1.1 (3.1.1)
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
@@ -404,11 +462,11 @@ Package: pgfcore 2019/02/02 v3.1.1 (3.1.1)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen175
-\pgfmath@count=\count126
+\pgfmath@count=\count135
 \pgfmath@box=\box34
-\pgfmath@toks=\toks41
-\pgfmath@stack@operand=\toks42
-\pgfmath@stack@operation=\toks43
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
 )
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
@@ -428,7 +486,7 @@ x)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
 etics.code.tex)))
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count127
+\c@pgfmathroundto@lastzeros=\count136
 ))
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2019/02/02 v3.1.1 (3.1.1)
@@ -464,7 +522,7 @@ File: pgfcorescopes.code.tex 2019/02/02 v3.1.1 (3.1.1)
 \pgfpic=\box35
 \pgf@hbox=\box36
 \pgf@layerbox@main=\box37
-\pgf@picture@serial@count=\count128
+\pgf@picture@serial@count=\count137
 )
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
@@ -495,7 +553,7 @@ File: pgfcorearrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2019/02/02 v3.1.1 (3.1.1)
 \pgf@max=\dimen199
-\pgf@sys@shading@range@num=\count129
+\pgf@sys@shading@range@num=\count138
 )
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2019/02/02 v3.1.1 (3.1.1)
@@ -543,8 +601,8 @@ Package: pgffor 2019/02/02 v3.1.1 (3.1.1)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen258
 \pgffor@skip=\dimen259
-\pgffor@stack=\toks44
-\pgffor@toks=\toks45
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
 ))
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2019/02/02 v3.1.1 (3.1.1)
@@ -552,7 +610,7 @@ Package: tikz 2019/02/02 v3.1.1 (3.1.1)
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@plot@mark@count=\count130
+\pgf@plot@mark@count=\count139
 \pgfplotmarksize=\dimen260
 )
 \tikz@lastx=\dimen261
@@ -565,23 +623,52 @@ File: pgflibraryplothandlers.code.tex 2019/02/02 v3.1.1 (3.1.1)
 \tikz@figbox@bg=\box41
 \tikz@tempbox=\box42
 \tikz@tempbox@bg=\box43
-\tikztreelevel=\count131
-\tikznumberofchildren=\count132
-\tikznumberofcurrentchild=\count133
-\tikz@fig@count=\count134
+\tikztreelevel=\count140
+\tikznumberofchildren=\count141
+\tikznumberofcurrentchild=\count142
+\tikz@fig@count=\count143
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfmatrixcurrentrow=\count135
-\pgfmatrixcurrentcolumn=\count136
-\pgf@matrix@numberofcolumns=\count137
+\pgfmatrixcurrentrow=\count144
+\pgfmatrixcurrentcolumn=\count145
+\pgf@matrix@numberofcolumns=\count146
 )
-\tikz@expandcount=\count138
+\tikz@expandcount=\count147
 
 (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)))) (./quasiconvex cauliflower [oleg].aux)
+)))
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.te
+x
+File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+\c@@todonotes@numberoftodonotes=\count148
+) (c:/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip53
+\enit@outerparindent=\dimen267
+\enit@toks=\toks49
+\enit@inbox=\box44
+\enit@count@id=\count149
+\enitdp@description=\count150
+)
+\c@theorem=\count151
+)
+(./quasiconvex cauliflower [oleg].aux)
 \openout1 = `"quasiconvex cauliflower [oleg].aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -598,6 +685,17 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 2.
+Package nag Info: Command \frontmatter not defined, skipping amendment on input
+ line 2.
+Package nag Info: Command \mainmatter not defined, skipping amendment on input 
+line 2.
+Package nag Info: Command \backmatter not defined, skipping amendment on input 
+line 2.
+Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
+line 2.
+Package nag Info: Command \RaggedRight not defined, skipping amendment on input
+ line 2.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -634,8 +732,23 @@ LaTeX Font Info:    ... okay on input line 2.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
+Package todonotes Warning: The length marginparwidth is less than 2cm and will 
+most likely cause issues with the appearance of inserted todonotes. The issue c
+an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
+loading the todonotes package. on input line 2.
+
+Package nag Info: Command \caption@xlabel not defined, skipping amendment on in
+put line 2.
+Package nag Info: Command \captionabove not defined, skipping amendment on inpu
+t line 2.
+Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
+t line 2.
+Package nag Info: Command \hc@caption not defined, skipping amendment on input 
+line 2.
+Package nag Info: Command \topcaption not defined, skipping amendment on input 
+line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -650,26 +763,27 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 5.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment. [1
+Excluding 'comment' comment. Excluding 'comment' comment. [1
 
-] Excluding 'comment' comment.
+]
 Excluding 'comment' comment. [2] [3] (./marker path.tex) [4]
-(./marker path 2.tex) [5] [6] [7] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 378--378
-[]\TU/lmr/m/n/12 (didn’t
+(./marker path 2.tex) [5] [6] Excluding 'comment' comment.
+Excluding 'comment' comment. [7]
+Overfull \hbox (10.528pt too wide) in paragraph at lines 358--358
+[]\TU/lmr/m/n/12 (probably) 
  []
 
-[8] (./marker path 3.tex) [9] [10] (./departure-decomposition.tex) [11]
-Excluding 'comment' comment. [12] [13] (./quasiconvex cauliflower [oleg].aux) )
- 
+[8] Excluding 'comment' comment. (./marker path 3.tex) [9] [10]
+(./departure-decomposition.tex) [11] Excluding 'comment' comment. [12]
+No complaints by nag.
+[13] (./quasiconvex cauliflower [oleg].aux) ) 
 Here is how much of TeX's memory you used:
- 15313 strings out of 492922
- 284995 string characters out of 6136751
- 381115 words of memory out of 5000000
- 19037 multiletter control sequences out of 15000+600000
+ 17347 strings out of 492922
+ 320395 string characters out of 6136751
+ 442825 words of memory out of 5000000
+ 21016 multiletter control sequences out of 15000+600000
  10300 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,8n,52p,539b,776s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,8n,81p,842b,787s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on quasiconvex cauliflower [oleg].pdf (13 pages).

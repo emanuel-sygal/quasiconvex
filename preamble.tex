@@ -1,10 +1,17 @@
+\RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[12pt]{article}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}
+\usepackage[autostyle=false, style=english]{csquotes}
+%\MakeOuterQuote{"}
+
+
 \usepackage{graphicx,color,mathtools}
 \usepackage{amssymb,amsmath,amsthm,mathrsfs}
 \usepackage[all,cmtip]{xy}
 \usepackage{comment}
+\usepackage{todonotes}
+\usepackage{enumitem}   
 
 \usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{}
 
@@ -41,8 +48,9 @@
 \DeclareMathOperator{\area}{Area}
 \DeclareMathOperator{\loc}{loc}
 \DeclareMathOperator{\Mod}{Mod}
-\DeclareMathOperator{\sphere}{\hat{\mathbb{C}}}
-
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Length}{Length}
+\DeclareMathOperator{\CriticalOrbit}{CriticalOrbit}
 \usepackage{tikz} 
 
 
@@ -52,14 +60,11 @@
 \global\long\def\Z{\mathbb{Z}}%
 \global\long\def\D{\mathbb{D}}%
 \global\long\def\H{\mathbb{H}}%
-\global\long\def\Im{\mathrm{Im}}%
-\global\long\def\Re{\mathrm{Re}}%
-\global\long\def\Arg{\mathrm{Arg}}%
 \global\long\def\do#1#2{\frac{\partial#1}{\partial#2}}%
 \global\long\def\nor#1{\left|#1\right|}%
 \global\long\def\o#1{\overline{#1}}%
 \global\long\def\norm#1{\left\Vert #1\right\Vert }%
-\global\long\def\no{\emptyset}%
+\global\long\def\\sphere{\hat{\mathbb{C}}}%
 \global\long\def\ep{\varepsilon}%
 \global\long\def\mp#1{\left\langle #1\right\rangle }%
 \global\long\def\lap{\triangle}%
@@ -68,11 +73,5 @@
 \global\long\def\dtheta{\mathrm{\mathrm{d\theta}}}%
 \global\long\def\dx{\mathrm{\mathrm{dx}}}%
 \global\long\def\dw{\mathrm{\mathrm{dw}}}%
-\global\long\def\res{\mathrm{\mathrm{res}}}%
-\global\long\def\ind{\mathrm{\mathrm{ind}}}%
-\global\long\def\rad{\mathrm{\mathrm{rad}}}%
 \global\long\def\S{\mathrm{\mathbb{S}}}%
-\global\long\def\post{\mathrm{\mathrm{post}}}%
-\global\long\def\lcm{\mathrm{\mathrm{lcm}}}%
 \global\long\def\T{\mathrm{\mathbb{T}}}%
-\global\long\def\diam{\mathrm{\mathrm{diam}}}%
