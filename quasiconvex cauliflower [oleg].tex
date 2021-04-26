@@ -139,9 +139,9 @@ the two stations adjacent to $s_{n,k}$ on $C_{n}$.
 	track }$\gamma_{s,s'}$ from $s$ to $s'$
 is the short arc of the circle $C_{n}$ connecting $s$ to $s'$.
 
-3. The \emph{radial successor} of $s$ is $\mathrm{RadicalSuccessor}(s)=s_{n+1,2k}$, the unique station of generation $n+1$ on the radial segment $[0,s]$.
+3. The \emph{radial successor} of $s$ is $\RadialSuccessor(s)=s_{n+1,2k}$, the unique station of generation $n+1$ on the radial segment $[0,s]$.
 
-4. Denote $s'=\mathrm{RadicalSuccessor}(s)$, then the \emph{Express track} $\gamma_{s,s'}$ from $s$ to $s'$ is the radial segment $[s,s']$.
+4. Denote $s'=\RadialSuccessor(s)$, then the \emph{Express track} $\gamma_{s,s'}$ from $s$ to $s'$ is the radial segment $[s,s']$.
 
 %5. An \emph{itinerary} is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$. We identify an itinerary with the curve obtained by traveling along it.
 \end{definition}
@@ -157,24 +157,20 @@ This also determines how to travel from the central station to a terminal $\zeta
 % There is a caveat in the analogy, because this gives rise to an itinerary between any two points and if we approximate terminal points by bearby stations then we do not get the same path.
 
 \begin{definition}
-Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_\zeta$ from the central station to $\zeta$ is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$ where $\sigma_{0}=s_{0,0}=2$ and $\lim_{k\to \infty} \sigma_{k}=\zeta$, defined as follows.
+Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_\zeta$ from the central station to $\zeta$ is a path 
+$\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_0,\sigma_1}+\ldots$ made of tracks between stations $\sigma_0,\sigma_1,\ldots$, defined inductively as follows.
 
-We choose the stations $\sigma_{i}$ greedily in pairs. In each step
-we travel peripherally to the station closest to $\zeta$ and then
-travel to its radial successor. See Figure \ref{fig:Carleson1}. 
-
-For the first station $\sigma_{1}$ we have no choice and we travel
-to the station $\sigma_{1}=s_{1,0}=\sqrt{2}$.
-
-Suppose that we already chose the stations $\left(\sigma_{0},\ldots,\sigma_{2k-1}\right)$.
-Then from $\sigma_{2k-1}$ we travel to the station $\sigma_{2k}$
-on the same circle, $\left|\sigma_{2k-1}\right|=\left|\sigma_{2k}\right|$,
-that minimizes the angular distance $\left|\Arg\left(z_{1}\right)-\Arg\left(\sigma_{2k}\right)\right|$. 
+Start at the main station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning $$\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
+< \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,$$ then take $\sigma_{k+1}=\sigma$. Otherwise, take 
+$\sigma_{k+1}=\RadialSuccessor(\sigma)$.
 
 \end{definition} 
 
-We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$.
-Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and that the itineraries are invariant under $f_{0}$, in the sense that $$f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]$$
+We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$, and identify $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$.
+Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and that the itineraries are invariant under $f_{0}$, in the sense that
+\begin{equation*}
+f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]
+\end{equation*}
 for every $\zeta\in\partial\D$.
 
 \begin{lemma}
