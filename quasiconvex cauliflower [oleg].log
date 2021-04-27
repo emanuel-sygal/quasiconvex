@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  27 APR 2021 01:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.6)  27 APR 2021 09:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -767,23 +767,39 @@ Excluding 'comment' comment. Excluding 'comment' comment. [1
 
 ]
 Excluding 'comment' comment. [2] [3] (./marker path.tex) [4]
-(./marker path 2.tex) [5] [6] Excluding 'comment' comment.
-Excluding 'comment' comment. [7]
-Overfull \hbox (10.528pt too wide) in paragraph at lines 354--354
-[]\TU/lmr/m/n/12 (probably) 
- []
+(./marker path 2.tex) [5] Excluding 'comment' comment. [6]
+Excluding 'comment' comment. [7] Excluding 'comment' comment. [8]
+Excluding 'comment' comment. (./marker path 3.tex) [9] [10]
+(./departure-decomposition.tex) [11] Excluding 'comment' comment.
+(./quasiconvex cauliflower [oleg].bbl
 
-[8] Excluding 'comment' comment. (./marker path 3.tex) [9] [10]
-(./departure-decomposition.tex) [11] Excluding 'comment' comment. [12]
-No complaints by nag.
-[13] (./quasiconvex cauliflower [oleg].aux) ) 
+Package nag Warning: Command \sc is an old LaTeX 2.09 command. 
+(nag)                Use \scshape or \textsc instead on input line 4.
+
+
+Package nag Warning: Command \sc is an old LaTeX 2.09 command. 
+(nag)                Use \scshape or \textsc instead on input line 9.
+
+
+Package nag Warning: Command \sc is an old LaTeX 2.09 command. 
+(nag)                Use \scshape or \textsc instead on input line 14.
+
+
+Package nag Warning: Command \sc is an old LaTeX 2.09 command. 
+(nag)                Use \scshape or \textsc instead on input line 20.
+
+) Excluding 'comment' comment.
+
+Package nag Warning: 4 complaints in total.
+
+[12] (./quasiconvex cauliflower [oleg].aux) ) 
 Here is how much of TeX's memory you used:
- 17349 strings out of 492922
- 320426 string characters out of 6136751
- 442851 words of memory out of 5000000
- 21018 multiletter control sequences out of 15000+600000
- 10300 words of font info for 53 fonts, out of 8000000 for 9000
+ 17355 strings out of 492922
+ 320630 string characters out of 6136751
+ 441831 words of memory out of 5000000
+ 21019 multiletter control sequences out of 15000+600000
+ 10308 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  64i,8n,81p,842b,787s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on quasiconvex cauliflower [oleg].pdf (13 pages).
+Output written on quasiconvex cauliflower [oleg].pdf (12 pages).
