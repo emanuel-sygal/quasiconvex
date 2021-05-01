@@ -12,6 +12,9 @@
 \usepackage{comment}
 \usepackage{todonotes}
 \usepackage{enumitem}   
+\usepackage{tikz} 
+\usepackage{hyperref}
+
 
 \usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{}
 
@@ -22,7 +25,6 @@
 \numberwithin{equation}{section}
 
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{example}[theorem]{Example}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{claim}[theorem]{Claim}
@@ -33,7 +35,8 @@
 \newtheorem*{remark}{Remark}
 
 \theoremstyle{definition}
-\newtheorem*{definition}{Definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
 
 \DeclareMathOperator{\crit}{crit}
 
@@ -52,7 +55,6 @@
 \DeclareMathOperator{\Length}{Length}
 \DeclareMathOperator{\CriticalOrbit}{CriticalOrbit}
 \DeclareMathOperator{\RadialSuccessor}{RadialSuccessor}
-\usepackage{tikz} 
 
 
 \global\long\def\R{\mathbb{R}}%

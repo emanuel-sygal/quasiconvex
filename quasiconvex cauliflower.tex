@@ -152,13 +152,13 @@ parents of $s,s'$ in the tree, and likewise for an express track.
 
 When a passenger purchases a ticket between two stations $s_1$ and $s_2$, they must follow a particular itinerary to get from $s_1$ to $s_2$.
 If $s_1$ is the central station, then this compulsory itinerary is determined by the rule that the passenger always stays as close as possible to its destination in the peripheral distance. 
-This also determines how to travel from the central station to a terminal $\zeta\in \partial \mathbb D^*$, by continuity. See Figure \ref{fig:Carleson1} and the next definition.
+This also determines how to travel from the central station to a terminal $\zeta\in \partial \mathbb D^*$, by continuity. See \autoref{fig:Carleson1} and the next definition.
 
 % There is a caveat in the analogy, because this gives rise to an itinerary between any two points and if we approximate terminal points by bearby stations then we do not get the same path.
 
 \begin{definition}
 Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_\zeta$ from the central station to $\zeta$ is a path 
-$\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_0,\sigma_1}+\ldots$ made of tracks between stations $\sigma_0,\sigma_1,\ldots$, defined inductively as follows.
+$\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ made of tracks between stations $\sigma_0,\sigma_1,\ldots$, defined inductively as follows.
 
 Start at the main station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning $$\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
 < \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,$$ then take $\sigma_{k+1}=\sigma$. Otherwise, take 
@@ -167,13 +167,19 @@ $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
 \end{definition} 
 
 We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$, and identify $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$.
-Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and that the itineraries are invariant under $f_{0}$, in the sense that
+
+Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and thus 
+\begin{equation} \label{generation-lower-bound}
+\operatorname{Generation}(\sigma_k)\geq \frac k2.
+\end{equation}
+
+Also note that the itineraries are invariant under $f_{0}$, in the sense that
 \begin{equation*}
 f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]
 \end{equation*}
 for every $\zeta\in\partial\D$.
 
-\begin{lemma}
+\begin{lemma} \label{track_decay}
 Let $\zeta\in \partial \mathbb D^*$. Decompose the central itinerary $\eta_{\zeta}$ into its constituent tracks, 
 $$\eta_{\zeta}=\gamma _1 + \gamma_2\ldots .$$ 
 	Then we have the estimate $$\Length(\gamma_{k})\lesssim2^{-k}$$ uniformly in $\zeta$. 
@@ -183,25 +189,21 @@ In particular, the total length of $\eta_\zeta$ is bounded uniformly in $\zeta$.
 
 %In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$ decays exponentially in $k$, uniformly in $\zeta$.
 
-The itinerary between two stations $s$ and $s'$ is defined by juxtaposing $\eta_{s_1}$ and $\eta_{s_2}$ and discarding the part where they coincide. See Figure \ref{fig:Carleson2}. 
+The itinerary between two stations $s$ and $s'$ is defined by juxtaposing $\eta_{s_1}$ and $\eta_{s_2}$ and discarding the part where they coincide. See \autoref{fig:Carleson2}. 
 %Note that this may result in an "inefficient" itinerary: two stations that are peripheral neighbors might have a rather long itinerary between them.
 By continuity, this defines the itinerary between any two terminals $\zeta_1$ and $\zeta_2$:
 
-\begin{definition}
-	Let $\zeta_{1},\zeta_{2}\in\partial\D^*$ be two terminals. The itinerary $\eta_{\zeta_{1},\zeta_{2}}$ between them is defined as follows.
-	Let $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
-	be the corresponding central itineraries.	
-	Let $\left(\sigma_{0},\ldots,\sigma_{N}\right)$ be the maximal common
-	prefix of $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Let $\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
-	be the truncated paths. By the maximality of $N$, we have that $\eta_{\zeta_{1}}^{\text{truncated}}$
-	and $\eta_{\zeta_{2}}^{\text{truncated}}$ are two itineraries with a common
-	starting point, so we can concatenate them to obtain a bi-infinite itinerary 
-	\[
-	\eta_{\zeta_{1},\zeta_{2}}=\left(\ldots\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\ldots\right)
-	\]
-	connecting $\zeta_{1}$ and $\zeta_{2}$.
+\begin{definition} \label{def-disk-itinerary}
+	The \emph{itinerary} between two terminals $\zeta_{1},\zeta_{2}\in\partial\D^*$ is defined by gluing the central itineraries $\eta_{\zeta_{1}},\eta_{\zeta_{2}}$ and discarding the common part. Explicitly, 
+	denote $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty},\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
+	and let $\left(\sigma_{0},\ldots,\sigma_{N}\right)$ be the common prefix of $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Let $\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$
+	be the truncated paths. Then
+	%= \operatorname{Reverse}()...	
+ \begin{gather*}
+ \eta_{\zeta_{1},\zeta_{2}}  \left(\dots,\sigma_{N+2}^{2},\sigma_{N+1}^{2},\sigma_{N},\sigma_{N+1}^{1},\sigma_{N+2}^{1},\dots\right).
+ \end{gather*}
+	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$.
 	\input{"marker path 2.tex"}
-	
 \end{definition}
 
 \begin{theorem} \label{quasiconvex disk}
@@ -209,29 +211,30 @@ The domain $\D^{*}$ is quasiconvex with the itineraries $\eta_{\zeta_1,\zeta_2}$
 \end{theorem}
 
 \begin{proof}
-It is enough to show that $\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim\left|\zeta_{1}-\zeta_{2}\right|$.
-
-As $\left|\zeta_{1}-\zeta_{2}\right|\asymp\left|\theta_{1}-\theta_{2}\right|$
-and $\mathrm{Arg}\left(\zeta_{i}\right)\propto\theta_{i}$, it is equivalent to show
-\[
-\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|.
-\]
-
-By the choice of $N$, 
-\[
-\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|\leq\frac{2\pi}{2^{N}}.
-\]
-
-Thus it is enough to prove that $\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right)\lesssim2^{-N}$.
-But 
-\[
-\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right)=\Length\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\Length\left(\eta_{\zeta_{2}}^{\text{truncated}}\right),
-\]
-so it is enough to observe that 
+We keep the notations of \autoref{def-disk-itinerary}.
+Decompose 	
+\begin{equation}
+\Length(\eta_{\zeta_{1},\zeta_{2}})=\Length\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\Length\left(\eta_{\zeta_{2}}^{\text{truncated}}\right),
+\end{equation}
+then each summand is bounded using \autoref{track_decay} and \eqref{generation-lower-bound} by 
 \[
 \Length\left(\eta_{\zeta_{i}}^{\text{truncated}}\right)\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}}\lesssim2^{-N}
 \]
-by part (3) of the previous lemma.
+Now 
+\[
+\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|\geq\frac{2\pi}{2^{N}}.
+\]
+since the central itineraries to $\zeta_1$ and to $\zeta_2$ diverged on $\sigma_N$, which lies on generation $\geq \frac N2$ since there are no consecutive peripheral tracks.
+
+Finally
+\begin{align*}
+	\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right) & = \Length\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\Length\left(\eta_{\zeta_{2}}^{\text{truncated}}\right) \\
+	& \lesssim 2^{-N} \\
+	&\lesssim
+	\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right| \\
+	&\asymp
+	\left|\zeta_{1}-\zeta_{2}\right|.
+\end{align*}
 
 \end{proof}
 
@@ -302,11 +305,11 @@ $f^{\circ n}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.
 
 \begin{comment}
 \begin{proof}
-	Apply proposition \ref{elevator} to a ball centered on the Julia set which contains $z,w$ on its boundary at roughly antipodal points. After blowing up we get points $f^{\circ n}(z),f^{\circ n}(w)$ which are a definite distance apart by Koebe's distortion theorem. %\todo{make this correct}
+	Apply \autoref{elevator} to a ball centered on the Julia set which contains $z,w$ on its boundary at roughly antipodal points. After blowing up we get points $f^{\circ n}(z),f^{\circ n}(w)$ which are a definite distance apart by Koebe's distortion theorem. %\todo{make this correct}
 \end{proof}
 \end{comment}
 
-We are now ready to show the analogue of Theorem \ref{quasiconvex disk}.
+We are now ready to show the analogue of \autoref{quasiconvex disk}.
 %\todo{We use more than hyperbolicity, also that the Julia set is a Jordan domain}
 \begin{theorem} 
 \begin{enumerate}[label=(\roman*)]
@@ -340,10 +343,10 @@ The lengths of the express tracks can be bounded in the same way. % We conclude 
 
 \item Since we already know that the lengths of tracks in the itinerary decay exponentially with rate $\theta>1$, the same proof of the case $c=0$ also shows quasiconvexity in this case.
 
-We give a second proof, relying on Corollary \ref{elevator for points on julia}. This proof will better prepare us for the
+We give a second proof, relying on \autoref{elevator for points on julia}. This proof will better prepare us for the
 parabolic $c=1/4$ case, in which we don't have expansion of $f$ on its Julia set.
 
-By Corollary \ref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f$. 
+By \autoref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f$. 
 Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon$ then there is nothing to
 prove since we may just concatenate $\eta_{z_{1}}$ and $\eta_{z_{2}}$
 and absorb this bounded length into the quasiconvexity constant
@@ -355,7 +358,7 @@ and then automatically $\Length\left(\eta_{z_{1}}+\eta_{z_{2}}\right)\leq A\left
 \end{comment}
 
 On the other hand, if $\left|z_{1}-z_{2}\right|<\epsilon$, then
-we use  Corollary \ref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
+we use  \autoref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
 \begin{equation}
 	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon.
 \end{equation}
@@ -385,12 +388,14 @@ In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$ etc.
 
 We prove the following:
 \begin{theorem} \label{quasiconvex-cauliflower}
-	a. Let $\zeta\in\partial{\D^*}$ and $z=\psi(\zeta)$. Then 
+	\begin{enumerate}[label=(\roman*)]
+	\item Let $\zeta\in\partial{\D^*}$ and $z=\psi(\zeta)$. Then 
 %	\begin{equation}
 $	\Length(\eta_z)<\infty.$
 %	\end{equation}
 	
-    b. The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+     \item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+\end{enumerate}
 \end{theorem}
 
 \begin{comment}
@@ -404,14 +409,14 @@ $$\Length(\psi(\gamma_{k}))\lesssim\theta^{-k}$$ uniformly in
 $\zeta$, for some constant $\theta=\theta(c)>1$.	
 \end{comment}
 
-To prove Theorem \ref{quasiconvex-cauliflower} we develop some machinery. We decompose the points of the circle according to 
+To prove \autoref{quasiconvex-cauliflower} we develop some machinery. We decompose the points of the circle according to 
 the first \emph{departure}: the first time that the central itinerary had to make a turn.
 
 \input{"marker path 3.tex"}
 
 \begin{definition}
 Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_n \subset \partial \mathbb D ^*$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
-See Figure \ref{fig:departure-decomposition}.
+See \autoref{fig:departure-decomposition}.
 \end{definition}
 
 This departure decomposition is invariant under $f_0$ in the sense that $f_0(I_{n+1})=I_n$, because of the invariance of $\eta _\zeta$.
@@ -421,9 +426,22 @@ Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure de
 
 The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal elevator does not apply. We now develop a substitute.
 
-Let $z_1,z_2 \in \mathcal J$, and let
+\begin{theorem}[Parabolic Conformal Elevator on $\mathcal J$] \label{parabolic-elevator}
+	Let $d\geq 2$ be an integer. Every pair of points $z_1,z_2 \in \mathcal J$ has a forward iterate $f^{\circ N}$ satisfying at least one of the following two conditions:
+	\begin{enumerate}[label=(\roman*)]
+		\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;
+		
+		or
+		\item $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
+	\end{enumerate}
+\end{theorem}
+ \todo{Mostly unwritten from here}
+
+\begin{comment}
+\begin{proof}
+Let
 \begin{align*}
-	\CriticalOrbit(f)=\{f^n(0): n \in \mathbb N\}
+\CriticalOrbit(f)=\{f^n(0): n \in \mathbb N\}
 \end{align*} be the forward orbit of the critical point.
 As long as the distance $|z_1-z_2|$ is small in comparison to the distances of $z_1,z_2$ from $\CriticalOrbit(f)$, we profit from applying $f$: By standard distortion estimates, 
 \begin{align*}
@@ -437,28 +455,14 @@ Instead of keeping track of the distance to $\mathrm{CriticalOrbit}(f)$, it is e
 
 Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make (WLOG) 
 \begin{align*}
-\big|f^{\circ m} (z_1)-\frac 12\big| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
+\big|f^{\circ m} (z_1)-\tfrac 12\big| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
 \end{align*}
 for a constant $c$.
-
-\begin{theorem}[Parabolic Conformal Elevator on $\mathcal J$]
-	Let $z_1,z_2 \in \mathcal J$ and let $\zeta_1,\zeta_2\in \partial \mathbb D^*$ be the corresponding preimages. 
-	 There exists a forward iterate	$f^{\circ N}$ for which one of the following holds.
-	\begin{enumerate}[label=(\roman*)]
-		\item $\left|f^{\circ N}(z)-f^{\circ N}(w)\right|>\epsilon$, where $\epsilon>0$ is an absolute constant.
-		
-		\item $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq 2$.
-	\end{enumerate}
-	
-\end{theorem}
-
-\begin{proof}
-	Along the lines of the verbal explanation above.
 \end{proof}
-%enlarge the distance by a definite amount by applying $f$: The distance $|f(z_2)-f(z_1)|$
+\end{comment}
 
 \subsection{Climbing the Elevator}
-By the previous discussion, we have reduced Theorem \ref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq 2$.
+\autoref{parabolic-elevator} reduces \autoref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
 
 By Koebe's distortion theorem, it is enough to show that for the points $$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$ the itinerary $\eta_{w_1,w_2}$ is a certificate, and then we conclude the same for $z_1,z_2$. 
 
@@ -467,11 +471,11 @@ Hence we fix $z_1,z_2 \in \mathcal J$ and suppose WLOG that $N=1$, i.e.\ that $z
 	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq 2.
 \end{align}
 
-Condition \ref{parabolic separation} gives us some control from below on $|z_1-z_2|$. We compare it to the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ to finish the proof.
+Condition \eqref{parabolic separation} gives us some control from below on $|z_1-z_2|$. We compare it to the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ to finish the proof.
 
  \input{"departure-decomposition.tex"}
 
-We represent $\eta$ as a concatenation of three paths: The radial segment $[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See Figure \ref{fig:Three-parts-of-eta}.
+We represent $\eta$ as a concatenation of three paths: The radial segment $[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \autoref{fig:Three-parts-of-eta}.
 
 Our goal is to show 
 \begin{equation} \label{quasiconvexity goal}
@@ -485,32 +489,29 @@ Of course we have
 \end{equation}
 
 
-The condition $|m-n| \geq 2$ prevents the green segment $\gamma _{m,n}$ in the Figure from being too small in comparison to the cyan or magenta paths:
-\begin{proposition}
+The condition $|m-n| \geq d$ prevents the green segment $\gamma _{m,n}$ in the Figure from being too small in comparison to the cyan or magenta paths:
+\begin{proposition} For $d \gg 1$, 
+	\begin{enumerate}[label=(\roman*)]
+		\item \begin{equation}
+			\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
+		\end{equation}
+		
+		\item 	\begin{equation}
+			\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
+		\end{equation}
+		
+	\end{enumerate}
 	%1. 
 	%$\mathrm{InnerDiameter}(\psi(I))$	
 	%2.
-\begin{equation}
-	\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
-\end{equation}
 \end{proposition}
-\begin{proof}
-...
-\end{proof}
 
 %Thus equation (\ref{quasiconvexity goal}) is equivalent to
 %\begin{equation} \label{quasiconvexity goal2}
 %	\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
 %\end{equation}
 
-\begin{proof}(Theorem \ref{quasiconvex-cauliflower}, part (b))
-	We are left with proving the estimate 
-	\begin{equation}
-		\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
-	\end{equation}
-	...
-\end{proof}
-
+% This concludes the proof of \autoref{quasiconvex-cauliflower}.
 
 \begin{comment}
 
