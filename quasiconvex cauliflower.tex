@@ -166,6 +166,8 @@ $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
 
 \end{definition} 
 
+\input{"marker path.tex"}
+
 We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$, and identify $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$.
 
 Note that there are no two consecutive peripheral tracks in $\eta_{\zeta}$, and thus 
@@ -185,7 +187,7 @@ $$\eta_{\zeta}=\gamma _1 + \gamma_2\ldots .$$
 	Then we have the estimate $$\Length(\gamma_{k})\lesssim2^{-k}$$ uniformly in $\zeta$. 
 In particular, the total length of $\eta_\zeta$ is bounded uniformly in $\zeta$.
 \end{lemma}
-\input{"marker path.tex"}
+
 
 %In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$ decays exponentially in $k$, uniformly in $\zeta$.
 
@@ -194,13 +196,16 @@ We now define the would-be certificates. We do this by traveling as efficiently 
 %Note that this may result in an "inefficient" itinerary: two stations that are peripheral neighbors might have a rather long itinerary between them.
 %By continuity, this defines the itinerary between any two terminals $\zeta_1$ and $\zeta_2$:
 
+% If two terminals are bearby then their common ancestor $N$ must be large, because if $N$ is small then the points must be far away.*/-+
+
 \begin{definition} \label{def-disk-itinerary} Let $\zeta_{1},\zeta_{2}\in\partial\D^*$ be two distinct terminals, let  $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty}$ and 
 	$\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
 	 be the corresponding central itineraries, and let $\sigma$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Note that $\sigma$ is well-defined.	 
-	 Suppose $\sigma=s_{N,k}=\sigma^1_i=\sigma^2_j$. Then the \emph{itinerary} between the two terminals $\zeta_{1},\zeta_{2}\in\partial\D^*$ is defined by  %$\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$ be the truncated paths. Then
+	 Suppose $\sigma=\sigma^1_i=\sigma^2_j$. The \emph{itinerary} between  $\zeta_{1}$ and $\zeta_{2}\in\partial\D^*$ is defined by  %$\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$ be the truncated paths. Then
  \begin{gather*}
- \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right).
+ \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right),
  \end{gather*}
+where we identify as before a sequence of stations with the corresponding path made of tracks.
 	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$. See \cref{fig:Carleson2}. 
 \end{definition}
 \input{"marker path 2.tex"}
