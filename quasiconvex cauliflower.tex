@@ -163,8 +163,7 @@ $\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ m
 Start at the main station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning $$\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
 < \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,$$ then take $\sigma_{k+1}=\sigma$. Otherwise, take 
 $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
-
-\end{definition} 
+\end{definition}
 
 \input{"marker path.tex"}
 
@@ -200,12 +199,11 @@ We now define the would-be certificates. We do this by traveling as efficiently 
 
 \begin{definition} \label{def-disk-itinerary} Let $\zeta_{1},\zeta_{2}\in\partial\D^*$ be two distinct terminals, let  $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty}$ and 
 	$\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$
-	 be the corresponding central itineraries, and let $\sigma$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Note that $\sigma$ is well-defined.	 
-	 Suppose $\sigma=\sigma^1_i=\sigma^2_j$. The \emph{itinerary} between  $\zeta_{1}$ and $\zeta_{2}\in\partial\D^*$ is defined by  %$\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$ be the truncated paths. Then
+	 be the corresponding central itineraries, and let  $\sigma=\sigma^1_i=\sigma^2_j$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$. Note that $\sigma$ is well-defined.
+	 We define the \emph{itinerary} between  $\zeta_{1}$ and $\zeta_{2}$ to be the path  %$\eta_{\zeta_{i}}^{\text{truncated}}=\left(\sigma_{N},\sigma_{N+1}^{i},\ldots\right)$ be the truncated paths. Then
  \begin{gather*}
- \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right),
+ \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right).
  \end{gather*}
-where we identify as before a sequence of stations with the corresponding path made of tracks.
 	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$. See \cref{fig:Carleson2}. 
 \end{definition}
 \input{"marker path 2.tex"}
@@ -216,15 +214,16 @@ The domain $\D^{*}$ is quasiconvex with the itineraries $\eta_{\zeta_1,\zeta_2}$
 
 \begin{proof}
 We keep the notations of \cref{def-disk-itinerary}.
-We decompose
+We decompose the itinerary into two paths, so that
 \begin{equation}
-\Length(\eta_{\zeta_{1},\zeta_{2}})=\Length\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\Length\left(\eta_{\zeta_{2}}^{\text{truncated}}\right),
+\Length(\eta_{\zeta_{1},\zeta_{2}})=\Length\left(\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right)
++\Length\left(\sigma,\sigma_{i+1}^{1},\sigma_{i+2}^{1},\dots\right),
 \end{equation}
-and bound each summand using \cref{track_decay},
+and bound each summand using \cref{track_decay}: if $\operatorname{Generation}(\sigma)=N$, then 
 \begin{align}
-\Length\left(\eta_{\zeta_{i}}^{\text{truncated}}\right)
-&\lesssim\sum_{k=N}^{\infty}\frac{1}{2^{k}} \\ 
-&\lesssim2^{-N}.
+\Length(\eta_{\zeta_{1},\zeta_{2}})
+&\lesssim 2 \sum_{k=N}^{\infty}\frac{1}{2^{k}} \\ 
+&\lesssim2^{-N}. \label{eq:1}
 \end{align}
 
 On the other hand 
@@ -236,23 +235,17 @@ On the other hand
 \end{equation}
 and
 \begin{equation}
-\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right|\geq\frac{2\pi}{2^{N}}.
+\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right| \geq \frac {2\pi}{2^{N+2}}.
 \end{equation}
-since otherwise the central itineraries to $\zeta_1$ and to $\zeta_2$ would have agreed on the 
-diverged on $\sigma_N$, which lies on generation $\geq \frac N2$ since there are no consecutive peripheral tracks.
+%Suppose two stations diverge at generation $N$ and never meet after that. Then we can bound the distance between the endpoints from below. This is not quite as trivial as it sounds but it is correct.
 
-Finally
+Combining the previous estimates gives
 \begin{align*}
-	\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right) & = \Length\left(\eta_{\zeta_{1}}^{\text{truncated}}\right)+\Length\left(\eta_{\zeta_{2}}^{\text{truncated}}\right) \\
-	& \lesssim 2^{-N} \\
-	&\lesssim
-	\left|\Arg\left(\zeta_{1}\right)-\Arg\left(\zeta_{2}\right)\right| \\
-	&\asymp
-	\left|\zeta_{1}-\zeta_{2}\right|.
+	\Length\left(\eta_{\zeta_{1},\zeta_{2}}\right) 
+	\lesssim	\left|\zeta_{1}-\zeta_{2}\right|
 \end{align*}
-
+as desired.
 \end{proof}
-
 
 
 
