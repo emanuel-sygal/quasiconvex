@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot(z):
+    plt.plot(z.real,z.imag)
+
+def f1(w):
+    return (w-1/4)**.5
+
+def f2(w):
+    return -(w-1/4)**.5
+from math import pi, exp
+z = np.arange(1,2,0.01, dtype=np.complex)
+#z = np.array([exp(complex(0,x)) for x in np.arange(0,2*pi,0.01)], dtype=np.complex)
+
+l = [complex(x, (1-x**2)**.5) for x in np.arange(0,1,0.01)]+[complex(x, -(1-x**2)**.5) for x in np.arange(1,0,0.01)]
+z = np.array(l, dtype=np.complex)
+print(z)
+#w = np.arange(1,2,0.01, dtype=np.complex)
+#y = np.zeros_like(x, dtype=np.complex)
+
+#z2 = f1(z)
+plot(f1(z))
+plot(f2(z))
+
+plt.show()
+#t=f1(x)
+#print(t)
