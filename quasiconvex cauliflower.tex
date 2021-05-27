@@ -294,7 +294,7 @@ Hyperbolic maps enjoy the principle of the conformal elevator, which roughly say
 	$\diam {f^{\circ n}(B(z,r))}$ is bounded below uniformly in $z$ and $r$. 
 \end{proposition}
 
-%See \cite{bonk_quasisymmetries_2016} for a stronger version, details and a proof.
+See \cite{bonk_quasisymmetries_2016} for a stronger version, details and a proof.
 
 \begin{corollary} \label{elevator for points on julia}
 	Let $f$ be a rational hyperbolic map. There exists  $\epsilon$ such that for every two points $z,w\in\mathcal{J}(f)$, there is a forward iterate
@@ -331,6 +331,7 @@ $z$, for some constant $\theta=\theta(c)>1$.
 	\begin{enumerate}[label=\normalfont(\roman*)]
 \item The map $f$ has some iterate $f^{\circ N}$ such that $|f^{\circ N}|>1$ on the Julia set $\mathcal{J}$, where $N$ is independent of $z$.
 By the compactness of $\mathcal J$, there is some $\theta >1 $ uniform in $z$ such that $\left|(f^{\circ N})'\right|>\theta$ on some neighborhood $\mathcal{U}$ of $\mathcal{J}$.
+		\todo{I want to rewrite this later}
 Every itinerary is eventually contained in $\mathcal{U}$, so for almost all itineraries $\gamma$ we have 
 \begin{equation*}
 \Length ( f^{\circ N}(\gamma) ) \geq \theta \cdot \Length( \gamma). 
@@ -382,13 +383,10 @@ Altogether
 
 \section{The Cauliflower}
 In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$ etc.
-
-The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
 
 We prove the following:
 \begin{theorem} \label{quasiconvex-cauliflower}
-	
 	\begin{enumerate}[label=\normalfont(\roman*)]
 	\item Let $\zeta\in\partial{\D^*}$ and $z=\psi(\zeta)$. Then 
 %	\begin{equation}
@@ -399,7 +397,7 @@ $	\Length(\eta_z)<\infty.$
 \end{enumerate}
 \end{theorem}
 
-\iffalse
+\begin{comment}
 Quantitatively, %let $\zeta=\psi^{-1}(z)\in\partial{D}$ and decomp
 decompose the central itinerary into its constituent tracks $\eta_z = \gamma _1 +\gamma_2 +\ldots,$
 then we have the bound $$
@@ -408,9 +406,9 @@ $$\eta_\zeta = \gamma _1 +\gamma_2 +\ldots.$$
 Then
 $$\Length(\psi(\gamma_{k}))\lesssim\theta^{-k}$$ uniformly in
 $\zeta$, for some constant $\theta=\theta(c)>1$.	
-\fi
+\end{comment}
 
-To prove \cref{quasiconvex-cauliflower} we develop some machinery. We decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
+To prove \cref{quasiconvex-cauliflower} we develop some machinery. We decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary had to make a turn.
 
 \input{"marker path 3.tex"}
 
@@ -435,8 +433,9 @@ The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal el
 		\item $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
 	\end{enumerate}
 \end{theorem}
+ \todo{Mostly unwritten from here}
 
-\iffalse
+\begin{comment}
 \begin{proof}
 Let
 \begin{align*}
@@ -458,107 +457,165 @@ Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definit
 \end{align*}
 for a constant $c$.
 \end{proof}
-\fi
+
+\end{comment}
 
 \subsection{Climbing the Elevator}
-%\cref{parabolic-elevator} reduces \cref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
+\cref{parabolic-elevator} reduces \cref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
 
-The following lemma shows that to check quasiconvexity it is enough to connect points after replacing them with a forward-image of our choice.
+By Koebe's distortion theorem, it is enough to show that for the points $$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$ the itinerary $\eta_{w_1,w_2}$ is a certificate and then we conclude the same for $z_1,z_2$. 
 
-\begin{lemma} \label{lem1}
-Let $z_1,z_2 \in \mathcal J$, and suppose that for some forward iterates 
-$$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$
-the itinerary $\eta_{w_1,w_2}$ satisfies 
-\begin{equation*}
-	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|.
-\end{equation*}
-Then the original points enjoy a similar estimate,
-\begin{equation*}
-	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|
-\end{equation*}
-where $B$ depends only on $A$.
-\end{lemma}
-
-<<<<<<< HEAD
 Hence we fix $z_1,z_2 \in \mathcal J$ and suppose WLOG that $z_1,z_2$ themselves satisfy 
-=======
-\begin{proof}
-By Koebe's distortion theorem,
-\begin{equation*}
-	|w_1-w_2| \asymp |z_1-z_2| \cdot |(f^{\circ n})'|
-\end{equation*}
-and likewise
-\begin{equation*}
-\Length(f^{\circ n}(\eta_{z_1,z_2})) \asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ n})'|
-\end{equation*}
-
-but $f^{\circ n}(\eta_{z_1,z_2})$ is longer than $\eta_{w_1,w_2}$.
-\end{proof}
-
-By \cref{lem1} and \cref{parabolic-elevator}, it is enough to show that the itinerary $\eta_{z_1,z_2}$ is a certificate for points that satisfy
->>>>>>> dcec1eba99801ac26301daa74e820cf9b8952241
 \begin{align} \label{parabolic separation}
-	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq d.
+	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq 2.
 \end{align}
-where $d$ is a large enough integer.
 
-Condition \eqref{parabolic separation} gives us some control from below on $|z_1-z_2|$.
-Our next step is to control the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ from above.
+Condition \eqref{parabolic separation} gives us some control from below on $|z_1-z_2|$. We compare it to the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ to finish the proof.
 
  \input{"departure-decomposition.tex"}
 
 We represent $\eta$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
-Thus we have
-\begin{equation}
-	\Length(\psi(\eta))=\Length(\psi(\gamma_m))+\Length(\psi(\gamma_{m,n}))+\Length(\psi(\gamma_n)).
+
+Our goal is to show 
+\begin{equation} \label{quasiconvexity goal}
+\Length(\psi(\eta)) \lesssim |z_1-z_2|.
 \end{equation}
 
-%Our goal is to show 
-%\begin{equation} \label{quasiconvexity goal}
-%\Length(\psi(\eta)) \lesssim |z_1-z_2|.
-%\end{equation}
-
-Notice that $\psi(\gamma _{m,n})$ is a line segment. To estimate its length, denote $\ell_k = \psi(s_{k,0})-\psi(\psi(s_{k+1,0}))$. Then 
-\begin{equation*}
-\Length(\psi(\gamma_{m,n})) = \ell_m+\ldots+\ell_n.
-\end{equation*}
-
-\begin{lemma}
-	$\frac{\ell_n}{\ell_{n+1}} \asymp 1$. In particular, for every constant $c$ there is some large enough integer $d$ such that
-	\begin{equation*}
-		\ell_{m+1}+\ldots+\ell_{n-1} \geq C (\ell_m+\ell_n).
-	\end{equation*}
-whenever $|m-n| \geq d$.
-\end{lemma}
-\begin{proof}
-These segments are images of one another emanating from the cusp, so $\ell_n \asymp \frac 1n$.
-\end{proof}
-
-\begin{lemma}
-	\begin{equation*}
-	\operatorname{InnerDiameter}(\psi(I_m)) \lesssim \ell_n
-	\end{equation*}
-	where the hidden constant is independent of $n$.
-\end{lemma}
-
-The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$ from being too small in comparison to the other two paths:
-\begin{proposition} For $d \gg 1$, 
+Of course we have
 \begin{equation}
+	\Length(\psi(\eta))=\Length(\psi(\gamma_m))+\Length(\psi(\gamma_n))+\Length(\psi(\gamma_{m,n})).
+\end{equation}
+
+The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$, green in \cref{fig:Three-parts-of-eta}, from being too small in comparison to the cyan or magenta paths:
+\begin{proposition} For $d \gg 1$, 
+	\begin{enumerate}[label=\normalfont(\roman*)]
+		\item \begin{equation}
 			\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
 		\end{equation}
+		
+		\item 	\begin{equation}
+			\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
+		\end{equation}
+		
+	\end{enumerate}
+	%1. 
+	%$\mathrm{InnerDiameter}(\psi(I))$	
+	%2.
 \end{proposition}
 
+%Thus equation (\ref{quasiconvexity goal}) is equivalent to
+%\begin{equation} \label{quasiconvexity goal2}
+%	\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
+%\end{equation}
 
-
-\begin{proposition} For $d \gg 1$, 
-\begin{equation}
-	\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
-\end{equation}
-\end{proposition}
-
-%This concludes the proof.
+% This concludes the proof of \cref{quasiconvex-cauliflower}.
 
 \begin{comment}
+
+\subsection{All points on the boundary are accessible}
+
+The point $z=\frac{1}{2}$ will be denoted $p$.
+
+\textbf{Claim. }The external ray which lands at the main cusp $p$
+is a straight line.
+
+\textbf{Proof. }There is a symmetry around the real line.$\square$
+
+Let $\delta_{p}$ be the segment lying on the real line which
+joins the main cusp $p$ with $\gamma_{p,0}$.
+
+By the previous claim, $\delta_{p}$ is a geodesic of the basin of
+infinity.
+
+Define $\delta_{q}$ for any cusp $q=f^{-n}(p)$ by taking the connected
+component of the preimage $f^{-n}(\delta_{q})$ which contains $q$.
+
+This is again a geodesic which lies on an external ray.
+
+\textbf{Observation. }Every $\delta_{q}$ is a rectifiable curve.
+
+\textbf{Proof. }The inverse image of a rectifiable curve under a holomorphic
+mapping is rectifiable.
+
+\textbf{Claim. }Every cusp $q$ of the Julia set is accessible.
+
+\textbf{Proof. $\delta_{q}$ }is rectifiable, starts at $q$ and thus
+it is enough to observe that the other endpoint of $\delta_{q}$ is
+accessible.
+
+\textbf{Claim. }Every point $\zeta\in J=\partial K$ is accessible.
+
+\textbf{Idea. }We already showed this in the case when $\zeta$ is
+a cusp, and cusps are the “hardest to reach"{} points
+on the Julia set. Given a non-cusp point $\zeta\in J$, we consider
+a nearby cusp $q$ and connect $\zeta$ with the curve $\delta_{q}$
+of $q$. For making the connection we introduce "highways"{}
+in the next section.
+
+
+\subsection{Railways}
+
+\subsubsection*{Preamble}
+
+Let $a,b$ be two points on $J$ to be chosen later.
+
+Let $\gamma_{p,0}$ be a geodesic between $a,b$ with respect to the
+inner metric of the basin of infinity $\mathbb{C}\setminus K$.
+
+\textbf{Claim. }$J$ is a Jordan curve.
+
+Let $\gamma_{a,b}$ be the curve connecting $a,b$ along $J$ “in
+the same direction as $\gamma_{p,0}$".
+
+Let $U_{p,0}$ to be the domain whose boundary is the union of $\gamma_{p,0}$
+and the $\gamma_{a,b}$.
+
+Define inductively $\gamma_{p,j}$ to be the component of the preimage
+of $\gamma_{p,j-1}$ that is inside $U_{p,0}$.
+
+\textbf{Claim. }There is a unique such preimage.
+
+Define $U_{p,j}$ to be the domain whose boundary is the union of
+$\gamma_{p,j}$ and the $\gamma_{a,b}$.
+
+\textbf{Claim. }Every cusp point $q$ is a preimage $f^{\circ(-n)}(p)$
+of the main cusp $p=\frac{1}{2}$, for a unique positive integer $n$.
+
+Given a cusp $q=f^{\circ\left(-n\right)}\left(p\right)$, define $U_{q,j}=f^{\circ(-n)}U_{p,j}$.
+
+\textbf{Choice of $a,b$. }We choose the initial geodesic $\gamma_{p,0}$
+so that the union over all cusps $\cup_{q}U_{q,0}$ contains a one-sided
+neighborhood of the Julia set $J$.
+
+That is, there is $\epsilon$ such that the union contains all points
+in $K$ whose distance to the boundary $J$ is at most $\epsilon$.
+
+Let $T_{p,j}$ be the region $U_{p,j}\setminus U_{p,j-1}$.
+
+\subsubsection*{Usage}
+
+\textbf{Strategy. }Given a point $\zeta\in J$, find $j$ such that
+$\zeta\in\partial T_{p,j}$. 
+
+Define the size of a cusp $q=f^{-n}(p)$ to be $n$. We use this to
+compare the size of different cusps.
+
+Let $p_{n}$ be a sequence of cusps converging to $\zeta$.
+
+Construct a curve from $\zeta$ that verifies the accessibility of
+$\zeta$ as follows.
+
+The curve starts along $\delta_{p}$, until the point $a_{p,q_{1}}$
+on $\delta_{p}$ closest to $\delta_{q_{1}}$.
+
+Add a linear segment from $a_{p,q_{1}}$ to $a_{\ensuremath{q_{1},p}}$,
+then continue along $\delta_{q_{1},q_{2}}$ until $a_{q_{1},q_{2}}$.
+Iterating this process, we obtain a curve $\gamma_{\zeta}$ .
+
+\textbf{Claim. }The curve $\gamma_{\zeta}$ has finite length.
+
+To show this, we need the following estimates.
+
 \subsubsection*{Diameter Comparisons}
 
 Denote by $\diam\left(A\right)$ the Euclidean diameter of a set $A$,
@@ -569,6 +626,29 @@ set to the disk.
 \textbf{Claim. }$\diam T_{p,n}\asymp i.\diam T_{p,n}$.
 
 \textbf{Claim. }$\diam U_{p,n}\asymp i.\diam U_{p,n}$.
+
+\textbf{Proof. }Koebe distortion Theorem.
+
+\section{Accessibility in the Hyperbolic Case}
+
+Consider the polynomial $f(z)=z^{2}+c$ for some positive constant
+$c<\frac{1}{4}$.
+
+This polynomial is hyperbolic: its attracting fixed point $z_{a}$
+is in the interior of the filled Julia set and thus the conformal
+elevator principle applies.
+
+We first recall the principle.
+
+\textbf{Proposition. }The post-critical set has positive distance
+from the Julia set.
+
+\textbf{Proof. }Since \textbf{$z_{a}$ }is an attracting fixed point,\textbf{
+}it must have a critical point converging to it. Since $0$ is the
+unique critical point of the polynomial $p_{c}$, we deduce that $0$
+is attracted to $z_{a}$. Thus the forward iterations of $0$ stay
+a bounded distance away from the Julia set, since $z_{a}$ is with
+positive distance to the Julia set. $\square$
 
 \textbf{Observation. }Let $R>0$ be the distance from the post-critical
 set to the Julia set. Consider the ball $B=B(z,\frac{R}{2})$.
@@ -588,6 +668,20 @@ get a topological ball of definite size which we may use to construct
 an explicit path exiting $K$ in a rectifiable way.
 
 \section{Accessibility in the Parabolic Case}
+
+Let $f(z)=z^{2}+\frac{1}{4}$. Let $J=J(f)$ be the Julia set of $f$.
+Let $K$ be the filled Julia set, known as the cauliflower.
+
+\textbf{Claim. }The Cauliflower is bounded.
+
+\textbf{Proof. }As in the hyperbolic case.$\square$
+
+Using claim 1, fix $R>0$ for which $B(0,R)\supset K$. Denote $B=B(0,R)$.
+
+Let $\zeta\in J$. Our goal is to show that $\zeta$ is accessible.
+
+This is immediately equaivalent to showing that there is a rectifiable
+curve $\Gamma$ starting at $\zeta$ that exits $B$.
 
 The basic strategy will be to investigate the geometry near the main
 cusp $p=\frac{1}{4}$, since all other cusps are preimages of $p$
