@@ -25,8 +25,6 @@ The \emph{cauliflower} is the filled Julia set of the map $z^2+\frac 14$.
 We show that its complement, $\mathrm{Exterior}(\mathcal{J}(z^{2}+1/4))$,
 is quasiconvex. We then adapt our argument to establish that the exterior of the developed deltoid is quasiconvex.
 
-
-
 One motivation to study quasiconvexity stems from its connection with the
 John property: If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior. See \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
 As a consequence, this result is a strengthening of \cite[Theorem 6.1]{carleson_julia_1994}, which shows that the cauliflower is a John domain directly.
@@ -167,7 +165,7 @@ We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$ and identify $\et
 	\end{equation}
 %	where as before the generation of $s_{n,k}$ is defined to be $n$.
 	
-	\item The itineraries are essentially invariant under $f_{0}$, in the sense that
+	\item Central itineraries are essentially invariant under $f_{0}$, in the sense that
 	\begin{equation*}
 		f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]
 	\end{equation*}
@@ -198,7 +196,11 @@ In particular, the total length of $\eta_\zeta$ is bounded uniformly in $\zeta$.
  \begin{gather*}
  \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right).
  \end{gather*}
-	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$. See \cref{fig:Carleson2}. 
+	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$, see \cref{fig:Carleson2}. Note that itineraries are equivariant under the dynamics: we have  \begin{equation}
+		f(\eta_{\zeta_1,\zeta_2})=\eta_{f(\zeta_1),f(\zeta_2)}
+	\end{equation} for every pair of terminals $\zeta_1,\zeta_2 \in \partial \mathbb D^*$.
+	
+	
 \end{definition}
 \input{"marker path 2.tex"}
 
@@ -219,7 +221,7 @@ and bound each summand using \cref{track_decay}. Denoting $\operatorname{Generat
 &\lesssim 2 \sum_{k=n}^{\infty}\frac{1}{2^{k}} 
 \lesssim2^{-n}. \label{eq:1}
 \end{align*}
-We conclude by inspection of the construction that 
+We conclude by noticing that
 \begin{align*}
 \left|\zeta_{1}-\zeta_{2}\right|
 &\asymp
@@ -238,15 +240,17 @@ Since the Julia set $\mathcal J$ is a Jordan curve, the map $\psi$ extends to a 
 theorem.
 
 We apply $\psi$ to the rails that we constructed in $\mathbb D^*$ to obtain the corresponding rails in $\mathrm{Exterior}(\mathcal{J})$:
-\begin{definition}
+\begin{definition} \leavevmode
+\begin{enumerate}
+	\item The 	\emph{stations} of $f_c$ are the points  $s_{n,k,c}=\psi(s_{n,k})$.
 
-1. The 	\emph{stations} of $f_c$ are the points  $s_{n,k,c}=\psi(s_{n,k})$.
 
-2. The \emph{$c$-tracks} are the curves of the form $\psi \left(\gamma_{s,s'}\right)$, where $\gamma_{s,s'}$ is a track. They are classified as express or peripheral according to the corresponding classification of $\gamma_{s,s'}$. 
+\item The \emph{$c$-tracks} are the curves of the form $\psi \left(\gamma_{s,s'}\right)$, where $\gamma_{s,s'}$ is a track. They are classified as express or peripheral according to the corresponding classification of $\gamma_{s,s'}$. 
 Express tracks lie on \emph{external} rays of the filled Julia set $\mathcal K$, while peripheral tracks lie on the equipotentials of $\mathcal K$.
 
-3. Let $z_1,z_2\in \mathcal J$ and let $\zeta_i=\psi^{-1}(z_i)$ be the corresponding points on $\partial \mathbb D^*$. 
+\item Let $z_1,z_2\in \mathcal J$ and let $\zeta_i=\psi^{-1}(z_i)$ be the corresponding points on $\partial \mathbb D^*$. 
 The \emph{$c$-itineraries} are $\eta_{z,z'}=\psi(\eta_{\zeta,\zeta'})$.
+\end{enumerate}
 
 We omit $c$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\mathrm{Exterior}(\mathcal J)$.
 
@@ -288,7 +292,7 @@ Hyperbolic maps enjoy the principle of the conformal elevator, which roughly say
 
 We are now ready to show the analogue of \cref{quasiconvex disk}:
 %\todo{We use more than hyperbolicity, also that the Julia set is a Jordan domain}
-\begin{theorem} 
+\begin{theorem}  \leavevmode
 \begin{enumerate}[label=\normalfont(\roman*)]
 
 \item Let $z\in\mathcal{J}$ and decompose its central itinerary into tracks, 
@@ -299,35 +303,33 @@ Then we have the estimate
 \begin{equation*}
 \Length(\gamma_{k})\lesssim\theta^{-k},
 \end{equation*}
-uniformly in
-$z$, for some constant $\theta=\theta(c)>1$. In particular, any point on \(\mathcal{J}\) can be reached from $s_{0,0}$ by a curve of bounded length.
+uniformly in $z$, for some constant $\theta=\theta(c)>1$. In particular, any point on \(\mathcal{J}\) can be reached from $s_{0,0}$ by a curve of bounded length.
 
 \item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
-
+\begin{proof} \leavevmode
+\begin{enumerate}[label=\normalfont(\roman*)]
 \item The map $f$ has some iterate $f^{\circ N}$ such that $|f^{\circ N}|>1$ on the Julia set $\mathcal{J}$, where $N$ is independent of $z$.
-By the compactness of $\mathcal J$, there is some $\theta >1 $ uniform in $z$ such that $\left|(f^{\circ N})'\right|>\theta$ on some neighborhood $\mathcal{U}$ of $\mathcal{J}$.
-Every itinerary is eventually contained in $\mathcal{U}$, so for almost all itineraries $\gamma$ we have 
+By the compactness of $\mathcal J$, there is some $\theta >1$ such that $\left|(f^{\circ N})'\right|(z)>\theta$ on some neighborhood $\mathcal{U}$ of $\mathcal{J}$.
+Since every itinerary is eventually contained in $\mathcal{U}$, for almost all itineraries $\gamma$ we have 
 \begin{equation*}
 \Length ( f^{\circ N}(\gamma) ) \geq \theta \cdot \Length( \gamma). 
 \end{equation*}
 
-For every value $k$ modulo $N$, the peripheral tracks on circles $C_n$ of index $n \equiv k$ modulo N have a total length bounded by a geometric series of rate $\theta$, hence finite. 
+The peripheral tracks on circles $C_n$ of index $n \equiv k$ modulo $N$ have a total length bounded by a geometric series of rate $\theta$, hence finite. 
 The lengths of the express tracks can be bounded in the same way. % We conclude that the total length of the itinerary is bounded.
 
 \item Since we already know that the lengths of tracks in the itinerary decay exponentially with rate $\theta>1$, the same proof of the case $c=0$ also shows quasiconvexity in this case.
 
-We give a second proof, relying on \cref{elevator for points on julia}. This proof will better prepare us for the
-parabolic $c=1/4$ case, in which we don't have expansion of $f$ on its Julia set.
+We give a second proof, relying on \cref{elevator for points on julia}. This proof will better prepare us for the parabolic $c=1/4$ case, where we don't have expansion of $f$ on its Julia set.
 
 By \cref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f$. 
 Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon$ then there is nothing to
-prove since we may just concatenate $\eta_{z_{1}}$ and $\eta_{z_{2}}$
-and absorb this bounded length into the quasiconvexity constant
-$A$. 
+prove since the length of $\eta_{z_1z,_2}$ is bounded above by part (i).
+% we may just concatenate $\eta_{z_{1}}$ and $\eta_{z_{2}}$ and absorb this bounded length into the quasiconvexity constant
+
 \begin{comment}
 Explicitly, if $\Length\left(\eta_{z}\right)\leq L$
 for all $z\in\mathcal{J}$ then we take $A\geq\frac{2L}{\epsilon}$
@@ -335,13 +337,13 @@ and then automatically $\Length\left(\eta_{z_{1}}+\eta_{z_{2}}\right)\leq A\left
 \end{comment}
 
 On the other hand, if $\left|z_{1}-z_{2}\right|<\epsilon$, then
-we use  \cref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
+we may use  \cref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
 \begin{equation}
 	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon.
 \end{equation}
-There is a certificate $\eta_{w_1,w_2}$
-between them and we take the certificate $\eta_{z_{1},z_{2}}$ between the original points to be the component of $f^{\circ-n}\left(\eta_{w_1,w_2}\right)$
-that connects the points $z_{1},z_{2}$. Now, by a distortion estimate
+
+Notice that $f^{\circ n}(\eta_{z_1,z_2})=\eta_{w_1,w_2}$.
+By a distortion estimate
 \begin{equation*}
 \Length\left(\eta_{z_{0},z_{1}}\right)\asymp\frac{\Length\left(\eta_{w_0,w_1}\right)}{\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|}
 \end{equation*}
