@@ -170,9 +170,7 @@ We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$ and identify $\et
 		f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]
 	\end{equation*}
 	for every $\zeta\in \partial \mathbb D^*$.
-	
 \end{itemize}
-
 
 \begin{lemma} \label{track_decay}
 Let $\zeta\in \partial \mathbb D^*$. Decompose the central itinerary $\eta_{\zeta}$ into its constituent tracks, 
@@ -374,7 +372,7 @@ The cauliflower has cusps at the landing points of the dyadic external rays, i.e
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
 
 We prove the following:
-\begin{theorem} \label{quasiconvex-cauliflower}
+\begin{theorem} \label{quasiconvex-cauliflower} \leavevmode
 	
 	\begin{enumerate}[label=\normalfont(\roman*)]
 	\item Let $\zeta\in\partial{\D^*}$ and $z=\psi(\zeta)$. Then 
@@ -397,7 +395,13 @@ $$\Length(\psi(\gamma_{k}))\lesssim\theta^{-k}$$ uniformly in
 $\zeta$, for some constant $\theta=\theta(c)>1$.	
 \fi
 
-To prove \cref{quasiconvex-cauliflower} we develop some machinery. We decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
+To prove \cref{quasiconvex-cauliflower} we develop a version of the conformal elevator principle for parabolic maps. Given a pair of points $z_1,z_2$, by iteratively applying $f$ we can make them a definite distance apart, since the map is expansive on its Julia set. However, we can't always apply Koebe's distortion theorem to deduce an estimate on the path between the original points $z_1,z_2$. The problem arises when $z_1,z_2$ get mapped to points too close to the cusp $\frac 12$, so that the inverse map is not univalent. Thus we have a second stopping condition when we iterate $f$ on the pair of points: we stop if they lie in sufficiently well-separated cusps. 
+
+There are two cases: If initially the points $z_1,z_2$ are in the same cusp: ?
+
+WE fix a small ball $B$ around $1/2$
+
+We decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 
 \input{"marker path 3.tex"}
 
@@ -512,7 +516,7 @@ In terms of $\ell _k$, we can write
 	\begin{equation}
 \frac{\ell_n}{\ell_{n+1}} \asymp 1.
 	\end{equation}
-	 In particular, for every constant $C$ there is some large enough integer $d$ such that
+	 In particular, for any constant $C \geq 0$ there is a sufficiently large integer $d$ such that
 	\begin{equation*}
 		\ell_{m+1}+\ldots+\ell_{n-1} \geq C (\ell_m+\ell_n)
 	\end{equation*}
