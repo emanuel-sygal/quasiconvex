@@ -341,8 +341,12 @@ we may use  \cref{elevator for points on julia} to find an iterate $f^{\circ n}$
 \begin{equation}
 	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon.
 \end{equation}
+Such itineraries $\eta_{w_1,w_2}$ are certificates, and it follows that the original itineraries $\eta_{z_1z,_2}$ are certificates by Koebe's distortion theorem, which implies that 
+\begin{equation}
+	\frac{\Length\left(\eta_{z_{0},z_{1}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_0,w_1}\right)}{|w_1-w_2|}.
+\end{equation}
 
-Notice that $f^{\circ n}(\eta_{z_1,z_2})=\eta_{w_1,w_2}$.
+\begin{comment}
 By a distortion estimate
 \begin{equation*}
 \Length\left(\eta_{z_{0},z_{1}}\right)\asymp\frac{\Length\left(\eta_{w_0,w_1}\right)}{\left|\left(f^{\circ n}\right)'\left(\zeta\right)\right|}
@@ -358,11 +362,13 @@ Altogether
 \Length\left(\eta_{z_{1},z_{2}}\right)\lesssim\frac{\theta^{n}\left|z_{1}-z_{2}\right|}{\theta^{n}}=\left|z_{1}-z_{2}\right|
 \]
  so $\eta_{z_{1},z_{2}}$ is a quasiconvexity certificate.
+\end{comment}
+
 \end{enumerate}
 \end{proof}
 
 \section{The Cauliflower}
-In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$ etc.
+In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 
 The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
@@ -448,7 +454,7 @@ The following lemma shows that to check quasiconvexity it is enough to connect p
 
 \begin{lemma} \label{lem1}
 Let $z_1,z_2 \in \mathcal J$, and suppose that for some forward iterates 
-$$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2)$$
+$$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2),$$
 the itinerary $\eta_{w_1,w_2}$ satisfies 
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|.
@@ -515,6 +521,12 @@ whenever $|m-n| \geq d$.
 \begin{proof}
 These segments are successive images under $f$ that accumulate at the cusp, so $\ell_n \asymp \frac 1n$. This proves the lemma. However, we give an alternative, more general argument.
 \end{proof}
+
+The \emph{inner diameter} of a connected set $\Omega \subset \mathbb C$ is its diameter relative to the inner metric,
+\begin{equation}
+	\operatorname{InnerDiameter}(\Omega)=\sup _{p,q\in \Omega} \inf_\gamma \Length(\gamma)
+\end{equation}
+where the infimum is over all paths $\gamma$ in $\Omega$ that connect the point $p$ to $q$. We have the following:
 
 \begin{lemma}
 	\begin{equation*}
