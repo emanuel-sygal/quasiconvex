@@ -367,15 +367,13 @@ Altogether
 
 \section{The Cauliflower}
 In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
-
-The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
+%The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
-
-We prove the following:
+Our goal is to prove the following:
 \begin{theorem} \label{quasiconvex-cauliflower} \leavevmode
 	
 	\begin{enumerate}[label=\normalfont(\roman*)]
-	\item Let $\zeta\in\partial{\D^*}$ and $z=\psi(\zeta)$. Then 
+	\item Let $z \in \mathcal J$. Then 
 %	\begin{equation}
 $	\Length(\eta_z)<\infty.$
 %	\end{equation}
@@ -384,58 +382,61 @@ $	\Length(\eta_z)<\infty.$
 \end{enumerate}
 \end{theorem}
 
-\iffalse
-Quantitatively, %let $\zeta=\psi^{-1}(z)\in\partial{D}$ and decomp
-decompose the central itinerary into its constituent tracks $\eta_z = \gamma _1 +\gamma_2 +\ldots,$
-then we have the bound $$
-and decompose its central itinerary into tracks, 
-$$\eta_\zeta = \gamma _1 +\gamma_2 +\ldots.$$
-Then
-$$\Length(\psi(\gamma_{k}))\lesssim\theta^{-k}$$ uniformly in
-$\zeta$, for some constant $\theta=\theta(c)>1$.	
-\fi
+Unlike the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. If the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is too big in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot conclude quasiconvexity of $\eta_{z_1,z_2}$ from quasiconvexity of $\eta_{w_1,w_2}$. 
 
-To prove \cref{quasiconvex-cauliflower} we develop a version of the conformal elevator principle for parabolic maps. Given a pair of points $z_1,z_2$, by iteratively applying $f$ we can make them a definite distance apart, since the map is expansive on its Julia set. However, we can't always apply Koebe's distortion theorem to deduce an estimate on the path between the original points $z_1,z_2$. The problem arises when $z_1,z_2$ get mapped to points too close to the cusp $\frac 12$, so that the inverse map is not univalent. Thus we have a second stopping condition when we iterate $f$ on the pair of points: we stop if they lie in sufficiently well-separated cusps. 
-
-There are two cases: If initially the points $z_1,z_2$ are in the same cusp: ?
-
-WE fix a small ball $B$ around $1/2$
-
-We decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
+To prove part (ii) of \cref{quasiconvex-cauliflower} we thus consider separately the case where $w_1$ is closer to the main cusp $p=\frac 12$ than to $w_2$. In this case we use moduli estimates to show quasiconvexity directly. To formulate this second case, we decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 
 \input{"marker path 3.tex"}
 
 \begin{definition}
-Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_n \subset \partial \mathbb D ^*$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
+Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_{n, \mathbb D} \subset \partial \mathbb D ^*$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
 See \cref{fig:departure-decomposition}.
 \end{definition}
 
-This departure decomposition is invariant under $f_0$ in the sense that $f_0(I_{n+1})=I_n$, because of the invariance of $\eta _\zeta$.
-Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure decomposition of $\mathcal J$ that is invariant under $f$.
+This decomposition is invariant under $f_0$ in the sense that $f_0(I_{n+1, \mathbb D})=I_{n, \mathbb D}$, because of the invariance of $\eta _\zeta$.
+Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure decomposition $I_n = \psi(I_{n, \mathbb D})$ of $\mathcal J$ that is invariant under $f$.
 
-\subsection{Building the Elevator}
+%Fix a small ball $B$ around the main cusp $1/2$ and trace its preimages until we encounter the points $z_1,z_2$.
 
-The map $f$ has a parabolic fixed point at $\frac 12$, so the usual conformal elevator does not apply. We now develop a substitute.
+\subsection{The Parabolic Elevator}
+
+The following theorem shows that to check quasiconvexity of a general pair of points $z_1,z_2$ it is enough to consider the case where $z_1,z_2$ lie in well-separated cusps near the main cusps.
 
 \begin{theorem}[Parabolic Conformal Elevator on $\mathcal J$] \label{parabolic-elevator}
-	Let $d\geq 2$ be an integer. Every pair of points $z_1,z_2 \in \mathcal J$ has a forward iterate $f^{\circ N}$ satisfying at least one of the following two conditions:
+	Let $d\geq 2$ be an integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
 	\begin{enumerate}[label=\normalfont(\roman*)]
-		\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;
-		
+		\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;		
 		or
-		\item $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N }(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
+		\item $f^{\circ N }(z_1) \in I_n$ and $f^{\circ N }(z_2) \in I_m$ with $|m-n| \geq d$.		
 	\end{enumerate}
+
+Denote $f^{\circ N}(z_i)$ by $w_i$. Suppose that the itinerary $\eta_{w_1,w_2}$ satisfies
+\begin{equation*}
+	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|
+\end{equation*}
+for some $A>0$. Then the original points $z_1,z_2$ enjoy a similar estimate,
+\begin{equation*}
+	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|
+\end{equation*}
+where $B$ depends only on $A$.
 \end{theorem}
 
-\iffalse
 \begin{proof}
-Let
+		In case (i), Koebe's distortion theorem implies that
+	\begin{equation*}
+		|w_1-w_2| \asymp |z_1-z_2| \cdot |(f^{\circ n})'|
+	\end{equation*}
+	and that
+	\begin{align*}
+		\Length (\eta_{w_1,w_2}) \geq \Length(f^{\circ n}(\eta_{z_1,z_2})) \\
+		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ n})'|.
+	\end{align*}
+	The conclusion follows. From now suppose that we are in case (ii).
+
+By the choice of $w_1,w_2$, for every $k=0,\dots,N$ there is an annulus that separates $f^{\circ k}(z_1),f^{\circ k}(z_2)$ from the post-critical set of $f$, with modulus bounded from below uniformly in $N$.
+Thus by Koebe's distortion we have 
 \begin{align*}
-\CriticalOrbit(f)=\{f^n(0): n \in \mathbb N\}
-\end{align*} be the forward orbit of the critical point.
-As long as the distance $|z_1-z_2|$ is small in comparison to the distances of $z_1,z_2$ from $\CriticalOrbit(f)$, we profit from applying $f$: By standard distortion estimates, 
-\begin{align*}
-|f(z_1)-f(z_2)|\geq c |z_1-z_2|
+|f^{\circ k}(z_1)-f^{\circ k}(z_2)|\geq c |z_1-z_2|
 \end{align*}
 for some constant $c>1$.
 
@@ -443,49 +444,20 @@ Indeed, in this case there is an annulus of definite modulus that has both $z_1,
 
 Instead of keeping track of the distance to $\mathrm{CriticalOrbit}(f)$, it is enough to consider the distance to the fixed point $1/2$, which is its only accumulation point on $\mathcal J$.
 
-Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make (WLOG) 
+Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make
 \begin{align*}
 \big|f^{\circ m} (z_1)-\tfrac 12\big| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
 \end{align*}
 for a constant $c$.
 \end{proof}
-\fi
 
-\subsection{Climbing the Elevator}
-%\cref{parabolic-elevator} reduces \cref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \in \psi(I_n)$ and $f^{\circ N}(z_2) \in \psi(I_m)$ with $|m-n| \geq d$.
 
-The following lemma shows that to check quasiconvexity it is enough to connect points after replacing them with a forward-image of our choice.
+\subsection{Quasiconvexity for separated cusps}
+%\cref{parabolic-elevator} reduces \cref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \inI_n$ and $f^{\circ N}(z_2) \in I_m$ with $|m-n| \geq d$.
 
-\begin{lemma} \label{lem1}
-Let $z_1,z_2 \in \mathcal J$, and suppose that for some forward iterates 
-$$w_1=f^{\circ N }(z_1),\quad w_2=f^{\circ N }(z_2),$$
-the itinerary $\eta_{w_1,w_2}$ satisfies 
-\begin{equation*}
-	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|.
-\end{equation*}
-Then the original points enjoy a similar estimate,
-\begin{equation*}
-	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|
-\end{equation*}
-where $B$ depends only on $A$.
-\end{lemma}
-
-\begin{proof}
-By Koebe's distortion theorem,
-\begin{equation*}
-	|w_1-w_2| \asymp |z_1-z_2| \cdot |(f^{\circ n})'|
-\end{equation*}
-and likewise
-\begin{align*}
-\Length (\eta_{w_1,w_2}) \geq \Length(f^{\circ n}(\eta_{z_1,z_2})) \\
- \asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ n})'|
-\end{align*}
-
-\end{proof}
-
-By \cref{lem1} and \cref{parabolic-elevator}, it is enough to show that the itinerary $\eta_{z_1,z_2}$ is a certificate for points that satisfy
+By \cref{parabolic-elevator}, it is enough to show that the itinerary $\eta_{z_1,z_2}$ is a certificate for points that satisfy
 \begin{align} \label{parabolic separation}
-	z_1 \in \psi(I_n), \quad z_2 \in \psi(I_m), \quad m-n \geq d.
+	z_1 \in I_n, \quad z_2 \in I_m, \quad m-n \geq d.
 \end{align}
 where $d$ is a large enough integer.
 
@@ -544,11 +516,7 @@ The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$ from being too
 \begin{equation}
 			\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
 		\end{equation}
-\end{proposition}
-
-
-
-\begin{proposition} For $d \gg 1$, 
+and
 \begin{equation}
 	\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
 \end{equation}
