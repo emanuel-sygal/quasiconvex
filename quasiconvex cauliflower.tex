@@ -369,19 +369,7 @@ Altogether
 In this section $c=\frac 14$, so $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
-Our goal is to prove the following:
-\begin{theorem} \label{quasiconvex-cauliflower} \leavevmode
-	
-	\begin{enumerate}[label=\normalfont(\roman*)]
-	\item Let $z \in \mathcal J$. Then 
-%	\begin{equation}
-$	\Length(\eta_z)<\infty.$
-%	\end{equation}
-
-     \item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
-\end{enumerate}
-\end{theorem}
-
+Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$ (\cref{quasiconvex-cauliflower}). 
 Unlike the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. If the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot conclude quasiconvexity of $\eta_{z_1,z_2}$ from quasiconvexity of $\eta_{w_1,w_2}$. 
 
 To prove part (ii) of \cref{quasiconvex-cauliflower} we thus consider separately the case where $w_1$ is closer to the main cusp $p=\frac 12$ than to $w_2$. In this case we use moduli estimates to show quasiconvexity directly. To formulate this second case, we decompose the points of the circle according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
@@ -398,38 +386,117 @@ Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure de
 
 %Fix a small ball $B$ around the main cusp $1/2$ and trace its preimages until we encounter the points $z_1,z_2$.
 
+\subsection{Quasiconvexity for separated cusps}
+We now show that the itinerary $\eta_{w_1,w_2}$ is a certificate for points $w_1,w_2$ that lie in well-separated cusps near the main cusp. Explicitly, we assume that
+\begin{align} \label{parabolic separation}
+	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n \geq d,
+\end{align}
+where $d$ is a large enough integer.
+Later we will reduce the general case to this special one.
+
+Condition \eqref{parabolic separation} gives some control from below on $|w_1-w_2|$. We now bound the length of the itinerary $\psi(\eta)=\psi(\eta_{w_1,w_2})$ from above.
+We represent $\eta$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
+Thus we have
+\begin{equation}
+	\Length(\psi(\eta))=\Length(\psi(\gamma_m))+\Length(\psi(\gamma_{m,n}))+\Length(\psi(\gamma_n)).
+\end{equation}
+
+\input{"departure-decomposition.tex"}
+
+%Our goal is to show 
+%\begin{equation} \label{quasiconvexity goal}
+%\Length(\psi(\eta)) \lesssim |z_1-z_2|.
+%\end{equation}
+
+We first estimate the length of the line segment $\psi(\gamma _{m,n})$. Denote 
+$\ell_k = \psi(s_{k,0})-\psi(s_{k+1,0}).$
+In terms of $\ell _k$, we can write
+\begin{equation*}
+	\Length(\psi(\gamma_{m,n})) = \ell_m+\ldots+\ell_n.
+\end{equation*}
+
+\begin{lemma} The lengths ${\ell_n}$ satisfy
+	\begin{equation}
+		\frac{\ell_n}{\ell_{n+1}} \asymp 1.
+	\end{equation}
+	In particular, for any constant $C \geq 0$ there is a sufficiently large integer $d$ such that
+	\begin{equation*}
+		\ell_{m+1}+\ldots+\ell_{n-1} \geq C (\ell_m+\ell_n)
+	\end{equation*}
+	whenever $|m-n| \geq d$.
+\end{lemma}
+\begin{proof}
+	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 1/2$ corresponds to $0$. Thus $\ell_n \asymp \frac 1n$.
+\end{proof}
+
+The \emph{inner diameter} of a connected set $\Omega \subset \mathbb C$ is its diameter relative to the inner metric,
+\begin{equation}
+	\operatorname{InnerDiameter}(\Omega)=\sup _{p,q\in \Omega} \inf_\gamma \Length(\gamma)
+\end{equation}
+where the infimum is over all paths $\gamma$ in $\Omega$ that connect the point $p$ to $q$. We have the following:
+
+\begin{lemma}
+	\begin{equation*}
+		\operatorname{InnerDiameter}(\psi(I_n)) \lesssim \ell_n
+	\end{equation*}
+	where the hidden constant is independent of $n$.
+\end{lemma}
+
+The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
+\begin{proposition} For $d \gg 1$, 
+	\begin{equation}
+		\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
+	\end{equation}
+	and
+	\begin{equation}
+		\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
+	\end{equation}
+\end{proposition}
+
+\begin{corollary}
+	Let $d$ be a positive integer. There exists a constant $A>0$ such that for every pair of points $w_1,w_2$ that satisfy \cref{parabolic separation}, the itinerary $\eta_{w_1-w_2}$ is $A$-quasiconvex.
+\end{corollary}
+
 \subsection{The Parabolic Elevator}
 
-The following theorem shows that to check quasiconvexity of a general pair of points $z_1,z_2$ it is enough to consider the case where $z_1,z_2$ lie in well-separated cusps near the main cusps.
-
-\begin{theorem}[Parabolic Conformal Elevator on $\mathcal J$] \label{parabolic-elevator}
-	Let $d\geq 2$ be an integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
+\begin{theorem} \label{quasiconvex-cauliflower} \leavevmode
+	
 	\begin{enumerate}[label=\normalfont(\roman*)]
-		\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;		
-		or
-		\item $f^{\circ N }(z_1) \in I_n$ and $f^{\circ N }(z_2) \in I_m$ with $|m-n| \geq d$.		
+		\item Let $z \in \mathcal J$. Then 
+		%	\begin{equation}
+		$	\Length(\eta_z)<\infty.$
+		%	\end{equation}
+		
+		\item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
 	\end{enumerate}
+\end{theorem}
 
-Denote $f^{\circ N}(z_i)$ by $w_i$. Suppose that the itinerary $\eta_{w_1,w_2}$ satisfies
+\begin{proof}[Parabolic Conformal Elevator on $\mathcal J$] \label{parabolic-elevator}
+Let $d\geq 2$ be a sufficiently large integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
+\begin{enumerate}[label=\normalfont(\roman*)]
+	\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;		
+	or
+	\item $f^{\circ N }(z_1) \in I_n$ and $f^{\circ N }(z_2) \in I_m$ with $|m-n| \geq d$.		
+\end{enumerate}
+
+Denote $w_i=f^{\circ N}(z_i)$. We already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|
 \end{equation*}
-for some $A>0$. Then the original points $z_1,z_2$ enjoy a similar estimate,
+for some $A>0$. We now deduce that the original points $z_1,z_2$ enjoy a similar estimate,
 \begin{equation*}
 	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|
 \end{equation*}
 where $B$ depends only on $A$.
-\end{theorem}
-
-\begin{proof}
-		In case (i), Koebe's distortion theorem implies that
+	
+In case (i), Koebe's distortion theorem implies that
 	\begin{equation*}
-		|w_1-w_2| \asymp |z_1-z_2| \cdot |(f^{\circ n})'|
+		|w_1-w_2| \lesssim |z_1-z_2| \cdot \|(f^{\circ N})'|_{J}\|_{\infty}
 	\end{equation*}
 	and that
 	\begin{align*}
-		\Length (\eta_{w_1,w_2}) \geq \Length(f^{\circ n}(\eta_{z_1,z_2})) \\
-		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ n})'|.
+		\Length (\eta_{w_1,w_2}) = \Length(f^{\circ N}(\eta_{z_1,z_2})) \\
+		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ N})'|.
 	\end{align*}
 	The conclusion follows. From now suppose that we are in case (ii).
 
@@ -451,76 +518,6 @@ Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definit
 for a constant $c$.
 \end{proof}
 
-
-\subsection{Quasiconvexity for separated cusps}
-%\cref{parabolic-elevator} reduces \cref{quasiconvex-cauliflower} to the case when $f^{\circ N }(z_1) \inI_n$ and $f^{\circ N}(z_2) \in I_m$ with $|m-n| \geq d$.
-
-By \cref{parabolic-elevator}, it is enough to show that the itinerary $\eta_{z_1,z_2}$ is a certificate for points that satisfy
-\begin{align} \label{parabolic separation}
-	z_1 \in I_n, \quad z_2 \in I_m, \quad m-n \geq d.
-\end{align}
-where $d$ is a large enough integer.
-
-Condition \eqref{parabolic separation} gives us some control from below on $|z_1-z_2|$.
-Our next step is to control the length of the itinerary $\psi(\eta)=\psi(\eta_{z_1,z_2})$ from above.
-
- \input{"departure-decomposition.tex"}
-
-We represent $\eta$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
-Thus we have
-\begin{equation}
-	\Length(\psi(\eta))=\Length(\psi(\gamma_m))+\Length(\psi(\gamma_{m,n}))+\Length(\psi(\gamma_n)).
-\end{equation}
-
-%Our goal is to show 
-%\begin{equation} \label{quasiconvexity goal}
-%\Length(\psi(\eta)) \lesssim |z_1-z_2|.
-%\end{equation}
-
-Notice that $\psi(\gamma _{m,n})$ is a line segment. To estimate its length, denote 
-$\ell_k = \psi(s_{k,0})-\psi(s_{k+1,0}).$
-In terms of $\ell _k$, we can write
-\begin{equation*}
-\Length(\psi(\gamma_{m,n})) = \ell_m+\ldots+\ell_n.
-\end{equation*}
-
-\begin{lemma} The lengths ${\ell_n}$ satisfy
-	\begin{equation}
-\frac{\ell_n}{\ell_{n+1}} \asymp 1.
-	\end{equation}
-	 In particular, for any constant $C \geq 0$ there is a sufficiently large integer $d$ such that
-	\begin{equation*}
-		\ell_{m+1}+\ldots+\ell_{n-1} \geq C (\ell_m+\ell_n)
-	\end{equation*}
-whenever $|m-n| \geq d$.
-\end{lemma}
-\begin{proof}
-These segments are successive images under $f$ that accumulate at the cusp, so $\ell_n \asymp \frac 1n$. This proves the lemma. However, we give an alternative, more general argument.
-\end{proof}
-
-The \emph{inner diameter} of a connected set $\Omega \subset \mathbb C$ is its diameter relative to the inner metric,
-\begin{equation}
-	\operatorname{InnerDiameter}(\Omega)=\sup _{p,q\in \Omega} \inf_\gamma \Length(\gamma)
-\end{equation}
-where the infimum is over all paths $\gamma$ in $\Omega$ that connect the point $p$ to $q$. We have the following:
-
-\begin{lemma}
-	\begin{equation*}
-	\operatorname{InnerDiameter}(\psi(I_n)) \lesssim \ell_n
-	\end{equation*}
-	where the hidden constant is independent of $n$.
-\end{lemma}
-
-The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
-\begin{proposition} For $d \gg 1$, 
-\begin{equation}
-			\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
-		\end{equation}
-and
-\begin{equation}
-	\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
-\end{equation}
-\end{proposition}
 
 %This concludes the proof.
 
