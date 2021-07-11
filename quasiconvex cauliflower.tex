@@ -370,8 +370,16 @@ In this section $c=\frac 14$, and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 % We use  the same certificates as in the hyperbolic case, but now it is trickier to show that they work.
 Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-cauliflower}.
-Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We show quasiconvexity in this case by a direct argument. 
+Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
+We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. This is a corollary of the following:
+\begin{proposition}
+	For every $z \in \mathcal J$ we have $\Length(\eta_z)<\infty.$
+\end{proposition}
+
+\begin{proof}
+Decompose $\eta_z$ to its constituent tracks. The lengths of the peripheral tracks decays exponentially, because any two peripheral tracks are separated by at least one express track.
+\end{proof}
 
 The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 \input{"marker path 3.tex"}
@@ -391,8 +399,7 @@ We now show that the itinerary $\eta_{w_1,w_2}$ is a certificate for points $w_1
 \begin{align} \label{parabolic separation}
 	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n \geq d,
 \end{align}
-where $d$ is a large enough integer.
-Later we will reduce the general case to this special one.
+where $d$ is a large enough integer, to be chosen later.
 
 Condition \eqref{parabolic separation} gives some control from below on $|w_1-w_2|$. We now bound the length of the itinerary $\psi(\eta)=\psi(\eta_{w_1,w_2})$ from above.
 We represent $\eta$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
@@ -408,71 +415,86 @@ Thus we have
 %\Length(\psi(\eta)) \lesssim |z_1-z_2|.
 %\end{equation}
 
-We first estimate the length of the line segment $\psi(\gamma _{m,n})$. Denote 
-$\ell_k = \psi(s_{k,0})-\psi(s_{k+1,0}).$
-In terms of $\ell _k$, we can write
-\begin{equation*}
-	\Length(\psi(\gamma_{m,n})) = \ell_m+\ldots+\ell_n.
-\end{equation*}
+To estimate the length of each summand, we introduce the line segments $\ell_k = \psi(s_{k,0})-\psi(s_{k+1,0}).$ 
 
-\begin{lemma} The lengths ${\ell_n}$ satisfy
+\begin{lemma} \label{lem-ell_n}
+	The lengths ${\ell_n}$ satisfy
 	\begin{equation}
 		\frac{\ell_n}{\ell_{n+1}} \asymp 1.
 	\end{equation}
 	In particular, for any constant $C \geq 0$ there is a sufficiently large integer $d$ such that
-	\begin{equation*}
-		\ell_{m+1}+\ldots+\ell_{n-1} \geq C (\ell_m+\ell_n)
-	\end{equation*}
+	\begin{align*}
+		\Length(\psi(\gamma_{m,n})) = \ell_{m}+\ldots+\ell_{n} \\ \leq C (\ell_m+\ell_n)
+	\end{align*}
 	whenever $|m-n| \geq d$.
 \end{lemma}
-\begin{proof}
-	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 1/2$ corresponds to $0$. Thus $\ell_n \asymp \frac 1n$.
+\begin{proof} \leavevmode
+	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 12$ corresponds to $0$, hence $\ell_n \asymp \frac 1n$.
 \end{proof}
 
-The \emph{inner diameter} of a connected set $\Omega \subset \mathbb C$ is its diameter relative to the inner metric,
-\begin{equation}
-	\operatorname{InnerDiameter}(\Omega)=\sup _{p,q\in \Omega} \inf_\gamma \Length(\gamma)
-\end{equation}
-where the infimum is over all paths $\gamma$ in $\Omega$ that connect the point $p$ to $q$. We have the following:
+%\begin{definition}
+%The \emph{inner diameter} of a connected set $\Omega \subset \mathbb C$ is its diameter relative to the inner metric,
+%\begin{equation}
+%	\operatorname{InnerDiameter}(\Omega)=\sup _{p,q\in \Omega} \inf_\gamma \Length(\gamma)
+%\end{equation}
+%where the infimum is over all paths $\gamma$ in $\Omega$ that connect the point $p$ to $q$.
+%\end{definition}
+%
+%We have the following:
+%\begin{lemma}
+%	\begin{equation*}
+%		\operatorname{InnerDiameter}(\psi(I_n)) \lesssim \ell_n
+%	\end{equation*}
+%	where the hidden constant is independent of $n$.
+%\end{lemma}
 
-\begin{lemma}
-	\begin{equation*}
-		\operatorname{InnerDiameter}(\psi(I_n)) \lesssim \ell_n
-	\end{equation*}
-	where the hidden constant is independent of $n$.
-\end{lemma}
-
-The condition $|m-n| \geq d$ prevents the segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
-\begin{proposition} For $d \gg 1$, 
-	\begin{equation}
+The condition $|m-n| \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
+\begin{proposition} \leavevmode
+	\emph{(i)} We have \begin{equation}
 		\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
 	\end{equation}
-	and
+	\emph{(ii)} For $d \gg 1$, 
 	\begin{equation}
 		\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
 	\end{equation}
 \end{proposition}
 
+\begin{proof}
+(i) 	Koebe's distortion theorem gives that 
+\begin{equation}
+		\Length(\gamma_m) \lesssim \ell_m
+	\end{equation}
+	by the invariance of both sides under $f^{-1}$.
+	%In terms of $\ell _k$, we can write
+
+(ii) By the triangle inequality and part (i),
+\begin{align} \label{eq:triang}
+	\begin{split}
+	\Length(\psi(\gamma_{m,n})) \leq |w_1-w_2|+\Length(\psi(\gamma_m))+\Length(\psi(\gamma_n)) %\nonumber
+	\\ \leq |w_1-w_2|+C(\ell_m + \ell_n),
+	\end{split}
+\end{align}
+for a constant $C \geq 0$ independent of $d$. Applying \cref{lem-ell_n} on this constant $C$ we get that for $d \gg 1$, 
+\begin{align*}
+\Length(\psi(\gamma_{m,n})) \lesssim \Length(\psi(\gamma_{m,n})) - C(\ell_m + \ell _n)
+\end{align*}
+which together with \eqref{eq:triang} concludes the proof.
+\end{proof}
+
 \begin{corollary}
-	Let $d$ be a positive integer. There exists a constant $A>0$ such that for every pair of points $w_1,w_2$ that satisfy \cref{parabolic separation}, the itinerary $\eta_{w_1-w_2}$ is $A$-quasiconvex.
+	Let $d \gg 1$ be a positive integer. There exists a constant $A>0$ such that for every pair of points $w_1,w_2$ that satisfy \cref{parabolic separation}, the itinerary $\eta_{w_1,w_2}$ is $A$-quasiconvex.
 \end{corollary}
 
 \subsection{The Parabolic Elevator}
 
-\begin{theorem} \label{quasiconvex-cauliflower} \leavevmode
-	
+\begin{theorem} \label{quasiconvex-cauliflower} %\leavevmode
 	\begin{enumerate}[label=\normalfont(\roman*)]
-		\item Let $z \in \mathcal J$. Then 
-		%	\begin{equation}
-		$	\Length(\eta_z)<\infty.$
-		%	\end{equation}
-		
-		\item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+	The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}[Parabolic Conformal Elevator on $\mathcal J$] \label{parabolic-elevator}
-Let $d\geq 2$ be a sufficiently large integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
+\begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}
+Let $d\gg 1$ be a sufficiently large integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
 \begin{enumerate}[label=\normalfont(\roman*)]
 	\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant;		
 	or
@@ -485,37 +507,41 @@ Denote $w_i=f^{\circ N}(z_i)$. We already proved that the itinerary $\eta_{w_1,w
 \end{equation*}
 for some $A>0$. We now deduce that the original points $z_1,z_2$ enjoy a similar estimate,
 \begin{equation*}
-	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|
+	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|,
 \end{equation*}
-where $B$ depends only on $A$.
-	
-In case (i), Koebe's distortion theorem implies that
-	\begin{equation*}
-		|w_1-w_2| \lesssim |z_1-z_2| \cdot \|(f^{\circ N})'|_{J}\|_{\infty}
-	\end{equation*}
-	and that
-	\begin{align*}
-		\Length (\eta_{w_1,w_2}) = \Length(f^{\circ N}(\eta_{z_1,z_2})) \\
-		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ N})'|.
-	\end{align*}
-	The conclusion follows. From now suppose that we are in case (ii).
+where $B$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{\circ(-1)}$, but some care is due in checking that the inverse branches at each step are defined in a neighborhood of the itinerary.
 
-By the choice of $w_1,w_2$, for every $k=0,\dots,N$ there is an annulus that separates $f^{\circ k}(z_1),f^{\circ k}(z_2)$ from the post-critical set of $f$, with modulus bounded from below uniformly in $N$.
+Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are balls centered at all the cusps of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$ for a ball centered at $q$. Each ball $B_{\zeta}$ has a \emph{level}, which is the iterate $k$ such that $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two balls of level $N$.
+%We define the level of each of $z_1, z_2$ to be the level of the corresponding ball containing them.
+
+%By the stopping criterion, 
+%, which implies that
+%	\begin{equation*}
+%		|w_1-w_2| \lesssim |z_1-z_2| \cdot \|(f^{\circ N})'|_{\mathcal J}\|_{\infty}
+%	\end{equation*}
+%	and that
+%	\begin{align*}
+%		\Length (\eta_{w_1,w_2}) = \Length(f^{\circ N}(\eta_{z_1,z_2})) \\
+%		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ N})'|.
+%	\end{align*}
+%	The conclusion follows. From now suppose that we are in case (ii).
+
+Suppose we are in step (ii). By the choice of $w_1,w_2$, for every $k=0,\dots,N$ there is an annulus that separates $f^{\circ k}(z_1),f^{\circ k}(z_2)$ from the post-critical set of $f$, with modulus bounded from below uniformly in $N$.
 Thus by Koebe's distortion we have 
 \begin{align*}
 |f^{\circ k}(z_1)-f^{\circ k}(z_2)|\geq c |z_1-z_2|
 \end{align*}
 for some constant $c>1$.
 
-Indeed, in this case there is an annulus of definite modulus that has both $z_1,z_2$ in its bounded complementary component and has all points of $\CriticalOrbit(f)$ in the unbounded complementary component.
-
-Instead of keeping track of the distance to $\mathrm{CriticalOrbit}(f)$, it is enough to consider the distance to the fixed point $1/2$, which is its only accumulation point on $\mathcal J$.
-
-Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make
-\begin{align*}
-\big|f^{\circ m} (z_1)-\tfrac 12\big| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
-\end{align*}
-for a constant $c$.
+%Indeed, in this case there is an annulus of definite modulus that has both $z_1,z_2$ in its bounded complementary component and has all points of $\CriticalOrbit(f)$ in the unbounded complementary component.
+%
+%Instead of keeping track of the distance to $\mathrm{CriticalOrbit}(f)$, it is enough to consider the distance to the fixed point $1/2$, which is its only accumulation point on $\mathcal J$.
+%
+%Thus by repeatedly applying $f$ we either manage to separate $z_1,z_2$ a definite distance apart, in which case the argument for the hyperbolic case works, or we manage to make
+%\begin{align*}
+%\big|f^{\circ m} (z_1)-\tfrac 12\big| \leq c |f^{\circ m} (z_1)-f^{\circ m} (z_2)|
+%\end{align*}
+%for a constant $c$.
 \end{proof}
 
 
