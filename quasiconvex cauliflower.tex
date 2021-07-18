@@ -372,13 +372,13 @@ In this section $c=\frac 14$, and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-cauliflower}.
 Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
-We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. This is a corollary of the following:
+We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. This follows from:
 \begin{proposition}
 	For every $z \in \mathcal J$ we have $\Length(\eta_z)<\infty.$
 \end{proposition}
 
 \begin{proof}
-Decompose $\eta_z$ to its constituent tracks. The lengths of the peripheral tracks decays exponentially, because any two peripheral tracks are separated by at least one express track.
+Decompose $\eta_z$ to its constituent tracks. The lengths of the peripheral tracks decay exponentially, because any two peripheral tracks are separated by at least one express track.
 \end{proof}
 
 The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
@@ -395,41 +395,36 @@ Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure de
 %Fix a small ball $B$ around the main cusp $1/2$ and trace its preimages until we encounter the points $z_1,z_2$.
 
 \subsection{Quasiconvexity for separated cusps}
-We now show that the itinerary $\eta_{w_1,w_2}$ is a certificate for points $w_1,w_2$ that lie in well-separated cusps near the main cusp. Explicitly, we assume that
+We now show that the itineraries $\eta_{w_1,w_2}$ are certificates for points $w_1,w_2$ that satisfy the condition 
 \begin{align} \label{parabolic separation}
 	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n \geq d,
 \end{align}
-where $d$ is a large enough integer, to be chosen later.
+where $d$ is a large enough integer, to be chosen later. This means that the points lie in well-separated cusps near the main cusp $p$.
 
 Condition \eqref{parabolic separation} gives some control from below on $|w_1-w_2|$. We now bound the length of the itinerary $\psi(\eta)=\psi(\eta_{w_1,w_2})$ from above.
-We represent $\eta$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
+We represent $\psi(\eta)$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=\psi([s_{m,0},s_{n,0}])$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta}.
 Thus we have
 \begin{equation}
-	\Length(\psi(\eta))=\Length(\psi(\gamma_m))+\Length(\psi(\gamma_{m,n}))+\Length(\psi(\gamma_n)).
+	\Length(\psi(\eta))=\Length(\gamma_m)+\Length(\gamma_{m,n})+\Length(\gamma_n).
 \end{equation}
 
 \input{"departure-decomposition.tex"}
 
-%Our goal is to show 
-%\begin{equation} \label{quasiconvexity goal}
-%\Length(\psi(\eta)) \lesssim |z_1-z_2|.
-%\end{equation}
-
-To estimate the length of each summand, we introduce the line segments $\ell_k = \psi(s_{k,0})-\psi(s_{k+1,0}).$ 
+To estimate the length of each summand, we introduce $\ell_k = \Length(\psi([s_{k,0},s_{k+1,0}])) = \psi(s_{k,0})-\psi(s_{k+1,0}).$ 
 
 \begin{lemma} \label{lem-ell_n}
-	The lengths ${\ell_n}$ satisfy
+	The lengths ${\ell_k}$ satisfy
 	\begin{equation}
-		\frac{\ell_n}{\ell_{n+1}} \asymp 1.
+		\frac{\ell_k}{\ell_{k+1}} \asymp 1.
 	\end{equation}
 	In particular, for any constant $C \geq 0$ there is a sufficiently large integer $d$ such that
 	\begin{align*}
-		\Length(\psi(\gamma_{m,n})) = \ell_{m}+\ldots+\ell_{n} \\ \leq C (\ell_m+\ell_n)
+		\Length(\gamma_{m,n}) = \ell_{m}+\ldots+\ell_{n} \\ \leq C (\ell_m+\ell_n)
 	\end{align*}
 	whenever $|m-n| \geq d$.
 \end{lemma}
 \begin{proof} \leavevmode
-	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 12$ corresponds to $0$, hence $\ell_n \asymp \frac 1n$.
+	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 12$ corresponds to $0$, hence $\ell_k \asymp \frac 1k$.
 \end{proof}
 
 %\begin{definition}
@@ -451,11 +446,11 @@ To estimate the length of each summand, we introduce the line segments $\ell_k =
 The condition $|m-n| \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
 \begin{proposition} \leavevmode
 	\emph{(i)} We have \begin{equation}
-		\Length(\psi(\gamma_m)) \lesssim \Length(\psi(\gamma_{m,n})).
+		\Length(\gamma_m) \lesssim \Length(\gamma_{m,n}).
 	\end{equation}
 	\emph{(ii)} For $d \gg 1$, 
 	\begin{equation}
-		\Length(\psi(\gamma_{m,n})) \lesssim |z_1-z_2|.
+		\Length(\gamma_{m,n}) \lesssim |z_1-z_2|.
 	\end{equation}
 \end{proposition}
 
@@ -470,13 +465,13 @@ The condition $|m-n| \geq d$ prevents the line segment $\gamma _{m,n}$ from bein
 (ii) By the triangle inequality and part (i),
 \begin{align} \label{eq:triang}
 	\begin{split}
-	\Length(\psi(\gamma_{m,n})) \leq |w_1-w_2|+\Length(\psi(\gamma_m))+\Length(\psi(\gamma_n)) %\nonumber
+	\Length(\gamma_{m,n}) \leq |w_1-w_2|+\Length(\gamma_m)+\Length(\gamma_n) %\nonumber
 	\\ \leq |w_1-w_2|+C(\ell_m + \ell_n),
 	\end{split}
 \end{align}
 for a constant $C \geq 0$ independent of $d$. Applying \cref{lem-ell_n} on this constant $C$ we get that for $d \gg 1$, 
 \begin{align*}
-\Length(\psi(\gamma_{m,n})) \lesssim \Length(\psi(\gamma_{m,n})) - C(\ell_m + \ell _n)
+\Length(\gamma_{m,n}) \lesssim \Length(\gamma_{m,n}) - C(\ell_m + \ell _n)
 \end{align*}
 which together with \eqref{eq:triang} concludes the proof.
 \end{proof}
