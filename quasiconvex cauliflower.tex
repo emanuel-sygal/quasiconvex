@@ -372,16 +372,39 @@ In this section $c=\frac 14$, and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-cauliflower}.
 Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
-We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. This follows from:
-\begin{proposition}
-	For every $z \in \mathcal J$ we have $\Length(\eta_z)<\infty.$
+\subsection{Itineraries have finite length}
+We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the constituent tracks. For this to hold we need to glue together consecutive express tracks. This gluing is essential for having exponential decay, since the tracks of the central itinerary along the real line, $\eta_{\frac 12}$, decay at only a quadratic rate.
+
+\begin{definition}
+	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\eta_1+\dots+\eta_k$ where each $\eta_i$ is a concatenation of express tracks followed by a single peripheral track.
+\end{definition}
+
+The following definition is used in the proof of \cref{prop:finite_length}.
+\begin{definition}
+	The \emph{shadow} of a station $s$ is the set of all terminals $z\in \mathcal J$ that are the endpoints of itineraries starting at $s$.
+\end{definition}
+
+Using this definition, we claim:
+\begin{proposition} \label{prop:finite_length}
+	Let $z \in \mathcal J$, and let $\eta_z=\eta_1+\dots+\eta_k$ be its reduced decomposition. Then we have $\Length(\eta_j)\lesssim \theta^j$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in J$ are accessible from infinity.
 \end{proposition}
 
 \begin{proof}
-Decompose $\eta_z$ to its constituent tracks. The lengths of the peripheral tracks decay exponentially, because any two peripheral tracks are separated by at least one express track.
+The idea is that peripheral tracks never turn twice in the same direction, so cannot approach the cusp $p$ in a parabolic manner. Thus at large scales the length decays by a definite factor, and by the self-similarity of itineraries this follows also for the small-scale.
+To make it rigorous, consider first for simplicity the reduced tracks that start at the main station $\s_{0,0}$ with at least three consecutive express tracks. Take a neighborhood $N$ of the union of all those tracks, which does not contain the critical point $0$ and on which $f$ is univalent.
+The preimages of these tracks give all reduced tracks that start at some station $s$ with at least three express tracks.
+By Koebe's distortion theorem, we have 
+\begin{equation}
+\diam(\shadow(s)) \asymp \dist (s,\mathcal J) \asymp \diam (N_s)
+\end{equation}
+where $N_s$ is the preimage of $N$ that sends the main station to $s$. Thus the length of $\eta_j$ decays at the same rate as $\dist(s,\mathcal J)$, which is exponential.
+
+We used the assumption that the itinerary starts with at least three express tracks in order to have the neighborhood $N$. For itineraries that do not start with three consecutive express tracks, we consider separately the family $\Gamma_{\downarrow \downarrow \leftarrow}$ of those itineraries which start with two express tracks followed by a left itinerary, and $\Gamma_{\downarrow \downarrow \rightarrow}$. For each of these families the previous argument works.
 \end{proof}
 
-The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
+The shadows were not strictly necessary for the preceding proof, but they draw analogy with similar estimates for the Farey tesselation of the disk.
+
+We now proceed to showing quasiconvexity of the itineraries, as sketched above. The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 \input{"marker path 3.tex"}
 
 \begin{definition}
@@ -504,9 +527,11 @@ for some $A>0$. We now deduce that the original points $z_1,z_2$ enjoy a similar
 \begin{equation*}
 	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|,
 \end{equation*}
-where $B$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{\circ(-1)}$, but some care is due in checking that the inverse branches at each step are defined in a neighborhood of the itinerary.
+where $B$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{-1}$, but some care is due in checking that the inverse branches at each step are defined in a neighborhood of the itinerary.
 
-Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are balls centered at all the cusps of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$ for a ball centered at $q$. Each ball $B_{\zeta}$ has a \emph{level}, which is the iterate $k$ such that $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two balls of level $N$.
+Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are topological balls centered at all the cusps of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$ for a ball centered at $q$. Each ball $B_{\zeta}$ has a \emph{level}, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two sequences $B^1_k,B^2_k$ of balls with $B^1_1=B^2_1=B$. We consider separately the case where the sequences coincide and the case where they differ.
+
+ Let $j$ be the first index where $B^1_1 \neq B^2_1$.
 %We define the level of each of $z_1, z_2$ to be the level of the corresponding ball containing them.
 
 %By the stopping criterion, 
