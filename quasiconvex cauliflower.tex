@@ -373,38 +373,38 @@ Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cr
 Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
 \subsection{Itineraries have finite length}
-We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the constituent tracks. For this to hold we need to glue together consecutive express tracks. This gluing is essential for having exponential decay, since the tracks of the central itinerary along the real line, $\eta_{\frac 12}$, decay at only a quadratic rate.
+We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks, since the tracks of the central itinerary $\eta_{\frac 12}$ along the real line have only a quadratic rate of decay.
 
 \begin{definition}
 	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\eta_1+\dots+\eta_k$ where each $\eta_i$ is a concatenation of express tracks followed by a single peripheral track.
 \end{definition}
 
-The following definition is used in the proof of \cref{prop:finite_length}.
+The following definition is used in the proof of \cref{prop:finite-length}.
 \begin{definition}
 	The \emph{shadow} of a station $s$ is the set of all terminals $z\in \mathcal J$ that are the endpoints of itineraries starting at $s$.
 \end{definition}
 
 Using this definition, we claim:
-\begin{proposition} \label{prop:finite_length}
+\begin{proposition} \label{prop:finite-length}
 	Let $z \in \mathcal J$, and let $\eta_z=\eta_1+\dots+\eta_k$ be its reduced decomposition. Then we have $\Length(\eta_j)\lesssim \theta^j$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in J$ are accessible from infinity.
 \end{proposition}
 
 \begin{proof}
-The idea is that peripheral tracks never turn twice in the same direction, so cannot approach the cusp $p$ in a parabolic manner. Thus at large scales the length decays by a definite factor, and by the self-similarity of itineraries this follows also for the small-scale.
-To make it rigorous, consider first for simplicity the reduced tracks that start at the main station $\s_{0,0}$ with at least three consecutive express tracks. Take a neighborhood $N$ of the union of all those tracks, which does not contain the critical point $0$ and on which $f$ is univalent.
-The preimages of these tracks give all reduced tracks that start at some station $s$ with at least three express tracks.
-By Koebe's distortion theorem, we have 
+The idea is that peripheral tracks never turn twice in the same direction, so cannot approach the cusp $p$ in a parabolic manner. Thus at large scales the length decays by a definite factor, and by the self-similarity of itineraries the same happens in the small-scale.
+To make this rigorous, consider first the set $\Gamma_{\downarrow \downarrow \downarrow}$ of reduced tracks that start at the main station $s_{0,0}$ with at least three consecutive express tracks. Take a neighborhood $N$ of the union of all those tracks on which $f$ is univalent. % so in particular does not contain the critical point $0$
+For every station $s$, the corresponding family $\Gamma^s_{\downarrow \downarrow \downarrow}$ of tracks starting at $s$ is the preimage of $\Gamma_{\downarrow \downarrow \downarrow}$  under some branch of an iterate of $f^{-1}$ which maps the main station $s_{0,0}$ to $s$.
+Koebe's distortion theorem on this branch gives that
 \begin{equation}
-\diam(\shadow(s)) \asymp \dist (s,\mathcal J) \asymp \diam (N_s)
+\diam(\shadow(s)) \asymp \dist (s,\mathcal J) \asymp \diam (N_s) \asymp \min_{\gamma \in \Gamma^s_{\downarrow \downarrow \downarrow}} \Length(\gamma)
 \end{equation}
-where $N_s$ is the preimage of $N$ that sends the main station to $s$. Thus the length of $\eta_j$ decays at the same rate as $\dist(s,\mathcal J)$, which is exponential.
+where $N_s$ is the preimage of $N$. Thus the length of $\eta_j$ decays at the same rate as $\dist(s,\mathcal J)$. %We claim that this rate is exponential.
 
-We used the assumption that the itinerary starts with at least three express tracks in order to have the neighborhood $N$. For itineraries that do not start with three consecutive express tracks, we consider separately the family $\Gamma_{\downarrow \downarrow \leftarrow}$ of those itineraries which start with two express tracks followed by a left itinerary, and $\Gamma_{\downarrow \downarrow \rightarrow}$. For each of these families the previous argument works.
+We used the assumption that the itinerary starts with at least three express tracks in order to have the neighborhood $N$. For itineraries that do not start with three consecutive express tracks, we consider separately the family $\Gamma_{\downarrow \downarrow \leftarrow}$ of those itineraries which start with two express tracks followed by a left itinerary, and the similarly-defined $\Gamma_{\downarrow \downarrow \rightarrow}$. For each of these families the previous argument holds since there is such a neighborhood $N$ of univalence.
 \end{proof}
 
-The shadows were not strictly necessary for the preceding proof, but they draw analogy with similar estimates for the Farey tesselation of the disk.
+The shadows were not strictly necessary for the preceding proof, but they draw an analogy with similar estimates for the Farey tesselation of the disk.
 
-We now proceed to showing quasiconvexity of the itineraries, as sketched above. The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
+We proceed to show quasiconvexity of the itineraries, as sketched above. The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 \input{"marker path 3.tex"}
 
 \begin{definition}
@@ -433,7 +433,10 @@ Thus we have
 
 \input{"departure-decomposition.tex"}
 
-To estimate the length of each summand, we introduce $\ell_k = \Length(\psi([s_{k,0},s_{k+1,0}])) = \psi(s_{k,0})-\psi(s_{k+1,0}).$ 
+To estimate the length of each summand, we introduce the notation 
+\begin{equation}
+\ell_k = \Length(\psi([s_{k,0},s_{k+1,0}])) = \psi(s_{k,0})-\psi(s_{k+1,0}).
+\end{equation}
 
 \begin{lemma} \label{lem-ell_n}
 	The lengths ${\ell_k}$ satisfy
@@ -447,7 +450,7 @@ To estimate the length of each summand, we introduce $\ell_k = \Length(\psi([s_{
 	whenever $|m-n| \geq d$.
 \end{lemma}
 \begin{proof} \leavevmode
-	The map $f$ is affinely conjugate to the map $z^2+z$, and the main cusp $\frac 12$ corresponds to $0$, hence $\ell_k \asymp \frac 1k$.
+	The map $f$ is affinely conjugate to the map $g: z\mapsto z^2+z$, and the fixed point $\frac 12$ of $f$ corresponds to the fixed point $0$ of $g$. A point near $0$ get attracted to $0$ at rate $\asymp 1n$, so the distance between consecutive images in the trajectory is $\asymp \frac 1{k^2}$. Hence $\ell_k \asymp \frac 1{k^2}$.
 \end{proof}
 
 %\begin{definition}
@@ -466,7 +469,7 @@ To estimate the length of each summand, we introduce $\ell_k = \Length(\psi([s_{
 %	where the hidden constant is independent of $n$.
 %\end{lemma}
 
-The condition $|m-n| \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to the other two paths:
+The condition $|m-n| \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to $\gamma_m$ and $\gamma_n$:
 \begin{proposition} \leavevmode
 	\emph{(i)} We have \begin{equation}
 		\Length(\gamma_m) \lesssim \Length(\gamma_{m,n}).
@@ -529,11 +532,16 @@ for some $A>0$. We now deduce that the original points $z_1,z_2$ enjoy a similar
 \end{equation*}
 where $B$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{-1}$, but some care is due in checking that the inverse branches at each step are defined in a neighborhood of the itinerary.
 
-Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are topological balls centered at all the cusps of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$ for a ball centered at $q$. Each ball $B_{\zeta}$ has a \emph{level}, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two sequences $B^1_k,B^2_k$ of balls with $B^1_1=B^2_1=B$. We consider separately the case where the sequences coincide and the case where they differ.
+Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are topological balls centered at all the cusps $q$ of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$. Each ball $B_{\zeta}$ has a \emph{level}, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two sequences $B^1_k, B^2_k$ of balls with $B^1_1=B^2_1=B$. 
+Suppose that stopping criterion (ii) happened. Observe that the two sequences  $B^1_k, B^2_k$ must coincide, otherwise the first index $j$ where $B^1_j \neq B^2_j$ would give points $f^{-j}(z_1), f^{-j}(z_2)$ that belong to two distinct preimages of the same ball $B^1_{j-1}, B^2_{j-1}$, but these two preimages are a positive distance apart so the same is true for $f^{-j}(z_1), f^{-j}(z_2)$, so stopping criterion (i) holds, which is a contradiction.
+Now, since the two sequences of balls coincide, we may apply Koebe's distortion on the corresponding branch of $f^{-N}$ to deduce the necessary bound on $\eta_{z_1,z_2}$.
 
- Let $j$ be the first index where $B^1_1 \neq B^2_1$.
+\marginpar{From here it is even sketchier.} We are left with the case where stopping criterion (i) happened, i.e. the points $w_1,w_2$ are a positive distance apart and away from the cusp. Hence also the itinerary $\eta_{w_1,w_2}$ is away from the cusp. Choose a neighborhood $N_1$ of $w_1,w_2$  on which $f$ is univalent, Then choose a neighborhood $N_2 \supset N_1$ on which $f$ is univalent such that for every $w_1,w_2 \in N_1$ we have $\eta_{w_1,w_2} \subset N_2$.Next choose a neighborhood $N_3 \supset N_2$ such that there is a definite modulus to the annulus $N_3 \setminus N_2$. We choose these neighborhoods large enough so that finitely-many such $N_1$ neighborhoods suffice for every pair $w_1,w_2 \in \mathcal J$. We apply Koebe's distortion in these neighborhoods, choosing a branch of $f^{\circ -N}$ that sends $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$ in the previous case, to deduce that 
+\begin{equation}
+\frac{\Length(\eta_{z_1,z_2})}{|z_1-z_2|} \asymp \frac{\Length(\eta_{w_1,w_2})}{|w_1-w_2|}
+\end{equation}
+which implies the quasiconvexity of $\eta_{z_1,z_2}$.
 %We define the level of each of $z_1, z_2$ to be the level of the corresponding ball containing them.
-
 %By the stopping criterion, 
 %, which implies that
 %	\begin{equation*}
@@ -545,13 +553,12 @@ Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are 
 %		\asymp \Length(\eta_{z_1,z_2}) \cdot |(f^{\circ N})'|.
 %	\end{align*}
 %	The conclusion follows. From now suppose that we are in case (ii).
-
-Suppose we are in step (ii). By the choice of $w_1,w_2$, for every $k=0,\dots,N$ there is an annulus that separates $f^{\circ k}(z_1),f^{\circ k}(z_2)$ from the post-critical set of $f$, with modulus bounded from below uniformly in $N$.
-Thus by Koebe's distortion we have 
-\begin{align*}
-|f^{\circ k}(z_1)-f^{\circ k}(z_2)|\geq c |z_1-z_2|
-\end{align*}
-for some constant $c>1$.
+%By the choice of $w_1,w_2$, for every $k=0,\dots,N$ there is an annulus that separates $f^{\circ k}(z_1),f^{\circ k}(z_2)$ from the post-critical set of $f$, with modulus bounded from below uniformly in $N$.
+%By Koebe's distortion we have 
+%\begin{align*}
+%|f^{\circ k}(z_1)-f^{\circ k}(z_2)|\geq c |z_1-z_2|
+%\end{align*}
+%for some constant $c>1$.
 
 %Indeed, in this case there is an annulus of definite modulus that has both $z_1,z_2$ in its bounded complementary component and has all points of $\CriticalOrbit(f)$ in the unbounded complementary component.
 %
