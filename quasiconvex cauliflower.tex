@@ -81,13 +81,13 @@ Let $n\in\N_{0}$ and $k\in\left\{ 0,\ldots,2^{n}-1\right\} $. We call the set
 %\[B_{n,k}=\exp\left(\biggl(2^{-n-1}\log2,\,2^{-n}\log2\biggl]\times\biggl(\frac{k}{2^{n}} \cdot 2\pi,\,\frac{k+1}{2^{n}} \cdot 2\pi\biggl]\right)\]
 
 \[
-B_{n,k}=\left\{ z:\quad\left|z\right|\in\biggl(2^{2^{-n}},2^{2^{-n-1}}\biggl],\qquad\mathrm{arg}(z)\in\biggl(\frac{k}{2^{n}} \, 2\pi,\frac{k+1}{2^{n}} \, 2\pi\biggl]\right\} 
+B_{n,k}=\left\{ z:\quad\left|z\right|\in\biggl(2^{1/2^{n+1}}, 2^{1/2^{n}} \biggl],\qquad\mathrm{arg}(z)\in\biggl(\frac{k}{2^{n}} \, 2\pi,\frac{k+1}{2^{n}} \, 2\pi\biggl]\right\} 
 \]
 a \emph{Carleson box}\,.
 Observe that for a fixed $n$, the union $\bigsqcup_{k=0}^{2^{n}-1}B_{k,n}$
 is a partition of the annulus 
 \[
-\left\{ 2^{2^{-n-1}}<\left|z\right|\leq2^{2^{-n}}\right\} 
+\left\{ 2^{1/2^{n+1}} <\left|z\right|\leq 2^{1/2^{n}} \right\} 
 \]
  into $2^{n}$ equally-spaced sectors.
  
@@ -112,7 +112,7 @@ The \emph{central station} is the point\emph{ $s_{0,0}=2$. Stations
 }are the iterated preimages of the central station under the map $f_{0}:\zeta\mapsto \zeta^{2}$.
 We index them as 
 \[
-s_{n,k}=2^{2^{-n}}\exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\} .
+s_{n,k}=2^{1/2^{n}} \exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\} .
 \]
 Stations are naturally structured in a binary tree, where the root is the central station and the children of a node are its preimages. The \emph{generation} of a station $s_{n,k}$ is its level $n$ in this tree. The $2^{n}$ stations of generation $n$ in the tree are equally spaced on the circle $C_{n}=\left\{ \left|\zeta\right|=2^{1/2^{n}}\right\} $. 
 \end{definition}
@@ -124,13 +124,12 @@ Let $s=s_{n,k}$ be a station.
 
 1. The \emph{peripheral neighbors} of $s$ are the two stations $s_{n,\left(k\pm1\right)\mod 2^{n}}$ adjacent to $s_{n,k}$ on $C_{n}$.
 
-2. Given a peripheral neighbor $s'$ of $s$, the \emph{peripheral
-	track }$\gamma_{s,s'}$ from $s$ to $s'$
+2. The \emph{peripheral track }$\gamma_{s,s'}$ from $s$ to a peripheral neighbor $s'$
 is the short arc of the circle $C_{n}$ connecting $s$ to $s'$.
 
 3. The \emph{radial successor} of $s$ is $\RadialSuccessor(s)=s_{n+1,2k}$, the unique station of generation $n+1$ on the radial segment $[0,s]$.
 
-4. Denote $s'=\RadialSuccessor(s)$, then the \emph{Express track} $\gamma_{s,s'}$ from $s$ to $s'$ is the radial segment $[s,s']$.
+4. The \emph{Express track} $\gamma_{s,s'}$ from $s$ to its radial successor $s''$ is the radial segment $[s,s']$.
 
 %5. An \emph{itinerary} is a sequence of stations $\left(\sigma_{0},\sigma_{1},\ldots\right)$. We identify an itinerary with the curve obtained by traveling along it.
 \end{definition}
@@ -138,14 +137,13 @@ is the short arc of the circle $C_{n}$ connecting $s$ to $s'$.
 Notice that the tracks preserve the dynamics: applying $f_0$ to a peripheral track between stations $s,s'$ gives a peripheral track between the parents of $s,s'$ in the tree, and likewise for an express track.
 
 When a passenger travels between two stations $s_1$ and $s_2$, they must follow a particular itinerary from $s_1$ to $s_2$.
-If $s_1$ is the central station, then this compulsory itinerary is determined by the rule that the passenger always stays as close as possible to its destination $s_2$ in the peripheral distance. 
+If $s_1$ is the central station, then this itinerary is determined by the rule that the passenger stays as close as possible to its destination $s_2$ in the peripheral distance. 
 This also determines how to travel from the central station to a terminal $\zeta\in \partial \mathbb D^*$, by continuity. See \cref{fig:Carleson1} and the next definition.
 
 % There is a caveat in the analogy, because this gives rise to an itinerary between any two points and if we approximate terminal points by bearby stations then we do not get the same path.
 
 \begin{definition}
-Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{itinerary} $\eta_\zeta$ from the central station to $\zeta$ is a path 
-$\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ made of tracks between stations $\sigma_0,\sigma_1,\ldots$, defined inductively as follows:
+Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{central itinerary} of $\zeta$ is a path $\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ from the central station to $\zeta$, made of tracks between stations $\sigma_0,\sigma_1,\ldots$. It is defined inductively as follows:
 
 Start at the main station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning that $$\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
 < \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,$$ then take $\sigma_{k+1}=\sigma$. Otherwise, take 
@@ -154,7 +152,7 @@ $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
 
 \input{"marker path.tex"}
 
-We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$ and identify $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$. We record two properties of central itineraries:
+We identify $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$. We record two properties of central itineraries:
 
 \begin{itemize}
 	\item There are no two consecutive peripheral tracks in $\eta_{\zeta}$ and thus
@@ -172,12 +170,16 @@ We call $\eta_{\zeta}$ the \emph{central itinerary} of $\zeta$ and identify $\et
 
 \begin{lemma} \label{track_decay}
 Given $\zeta\in \partial \mathbb D^*$, decompose the central itinerary $\eta_{\zeta}$ into its constituent tracks, 
-$$\eta_{\zeta}=\gamma _1 + \gamma_2 + \dots.$$ 
+$$\eta_{\zeta}=\gamma _1 + \gamma_2 + \dots \; .$$ 
 	The lengths of $\gamma_k$ decay exponentially:
-	$$\Length(\gamma_{k})\lesssim 2^{-k},$$ uniformly in $\zeta$. 
+	$$\Length(\gamma_{k})\lesssim \theta^{k},$$ uniformly in $\zeta$, for some constant $\theta<1$.
 In particular, the total length of $\eta_\zeta$ is bounded above by a definite constant independent of $\zeta$.
 \end{lemma}
-
+\begin{proof}
+	The radial distances have size 
+	$$2^{1/2^n}-2^{1/2^{n+1}} = 2^{1/2^{n+1}} \sum_{k=1}^{\infty} \binom{1/2^{n+1}}{k} \asymp 2^{-n}.$$
+	By \eqref{generation-lower-bound}, the radial tracks of $\eta_\zeta$ satisfy the required bound with $\theta = \sqrt 2$. To conclude, note that a peripheral track of generation $n$ has length $\asymp 2^{-n}$ and reuse \eqref{generation-lower-bound}.
+\end{proof}
 
 %In particular, the length of a suffix $\sigma_{k}+\sigma_{k+1}+\ldots$ decays exponentially in $k$, uniformly in $\zeta$.
 
