@@ -372,22 +372,43 @@ Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cr
 Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
 \subsection{Itineraries have finite length}
-We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks, since the tracks of the central itinerary $\eta_{\frac 12}$ along the real line have only a quadratic rate of decay.
+We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks: for example, the tracks of the central itinerary $\eta_{\frac 12}$ have only a quadratic rate of length decay.
 
 \begin{definition}
 	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\eta_1+\dots+\eta_k$ where each $\eta_i$ is a concatenation of express tracks followed by a single peripheral track.
 \end{definition}
 
+\begin{comment}
 The following definition is used in the proof of \cref{prop:finite-length}.
 \begin{definition}
 	The \emph{shadow} of a station $s$ is the set of all terminals $z\in \mathcal J$ that are the endpoints of itineraries starting at $s$.
 \end{definition}
 
 Using this definition, we claim:
+\end{comment}
+
 \begin{proposition} \label{prop:finite-length}
 	Let $z \in \mathcal J$, and let $\eta_z=\eta_1+\dots+\eta_k$ be its reduced decomposition. Then we have $\Length(\eta_j)\lesssim \theta^j$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are accessible from infinity.
 \end{proposition}
 
+For the proof, call $s_{-1}:=s_{1,1}$ the pre-main station and let $\mathcal U_{-1}$ be the Jordan domain whose boundary lies on the unit circle, the rightmost itinerary starting from the pre-main station and the leftmost one. This domain was constructed so that it contains all itineraries that start at the pre-main station.
+
+\begin{lemma} \label{lemma-enough-visits-of-premain_station}
+	Let $\gamma = \gamma_1 \cup \delta_1 \cup \dots $ be the reduced decomposition of an itinerary $\gamma$. Let $n_\gamma$ be the minimal iterate of $f$ such that $f^{\circ {n_\gamma}}(\gamma)$ lies on the real axis. Then there are $k$ iterates $1  \leq n_1 < \dots < n_k \leq n_\gamma$ such that $f^{\circ {n_i}}(\gamma_k) \subset \mathcal U_{-1}$.
+\end{lemma}
+
+\begin{proof}[Proof (\cref{lemma-enough-visits-of-premain_station})]
+Every express track $\gamma_i$, for $i = 1, \ldots, k$, has a first iterate $n_i$ such that $f^{\circ n_i}(\gamma_i)$ is contained in the negative real axis, and in particular is contained in $\mathcal U_{-1}$. By definition of $\,\mathcal U_{-1}$ we also have $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$, since both are tracks of the itinerary $f^{\circ n_i}(\gamma)$.
+\end{proof}
+\begin{proof}
+The map $f^{-1}$ is a strict contraction in the hyperbolic metric away from the postcritical set. 
+Let $0<\theta<1$ be a constant such that $|(f^{-1})'| < \theta$ 
+on $\mathcal U_{-1}$ for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. Then $\HypLength(\gamma) \leq \theta \HypLength(f(\gamma))$. 
+By \cref{lemma-enough-visits-of-premain_station} we thus have $\HypLength(\gamma_k) \lesssim \theta^k$. 
+The hyperbolic metric is locally equivalent to the Euclidean metric, so $\HypLength \asymp \Length$ on $\{ z \leq 2\}$ and we conclude that $\Length(\gamma_k) \lesssim \theta^k$.
+\end{proof}
+
+\begin{comment}
 \begin{proof}
 The idea is that peripheral tracks never turn twice in the same direction, so cannot approach the cusp $p$ in a parabolic manner. Thus at large scales the length decays by a definite factor, and by the self-similarity of itineraries the same happens in the small-scale.
 To make this rigorous, consider first the set $\Gamma_{\downarrow \downarrow \downarrow}$ of reduced tracks that start at the main station $s_{0,0}$ with at least three consecutive express tracks. Take a neighborhood $N$ of the union of all those tracks on which $f$ is univalent. % so in particular does not contain the critical point $0$
@@ -400,8 +421,8 @@ where $N_s$ is the preimage of $N$. Thus the length of $\eta_j$ decays at the sa
 
 We used the assumption that the itinerary starts with at least three express tracks in order to have the neighborhood $N$. For itineraries that do not start with three consecutive express tracks, we consider separately the family $\Gamma_{\downarrow \downarrow \leftarrow}$ of those itineraries which start with two express tracks followed by a left itinerary, and the similarly-defined $\Gamma_{\downarrow \downarrow \rightarrow}$. For each of these families the previous argument holds since there is such a neighborhood $N$ of univalence.
 \end{proof}
-
 The shadows were not strictly necessary for the preceding proof, but they draw an analogy with similar estimates for the Farey tesselation of the disk.
+\end{comment}
 
 We proceed to show quasiconvexity of the itineraries, as sketched above. The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 \input{"marker path 3.tex"}
