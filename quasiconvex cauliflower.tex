@@ -372,7 +372,7 @@ Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cr
 Unlike in the hyperbolic case, the postcritical set of $f$ has an accumulation point $p=\frac 12$ on $\mathcal J$. This complicates the argument because if the distance between iterates $w_1=f^{\circ n}(z_1)$ and $w_2=f^{\circ n}(z_2)$ is large in comparison to the distance between $w_1$ and $p$, then the distortion estimate on $f^{\circ (-n)}(\eta_{w_1,w_2})$ degenerates and we cannot deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$. We provide a direct argument for this case.
 
 \subsection{Itineraries have finite length}
-We first need to know that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks: for example, the tracks of the central itinerary $\eta_{\frac 12}$ have only a quadratic rate of length decay.
+We first need to show that each itinerary $\eta_{z_1,z_2}$ has finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks: for example, the tracks of the central itinerary $\eta_{\frac 12}$ have only a quadratic rate of length decay.
 
 \begin{definition}
 	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\eta_1+\dots+\eta_k$ where each $\eta_i$ is a concatenation of express tracks followed by a single peripheral track.
@@ -388,24 +388,32 @@ Using this definition, we claim:
 \end{comment}
 
 \begin{proposition} \label{prop:finite-length}
-	Let $z \in \mathcal J$, and let $\eta_z=\eta_1+\dots+\eta_k$ be its reduced decomposition. Then we have $\Length(\eta_j)\lesssim \theta^j$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are accessible from infinity.
+	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its itinerary. Then $\Length(\gamma_j)\lesssim \theta^j$ and $\Length(\delta_j)\lesssim \theta^j$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are accessible from infinity.
 \end{proposition}
 
-For the proof, call $s_{-1}:=s_{1,1}$ the pre-main station and let $\mathcal U_{-1}$ be the Jordan domain whose boundary lies on the unit circle, the rightmost itinerary starting from the pre-main station and the leftmost one. This domain was constructed so that it contains all itineraries that start at the pre-main station.
+For the proof, call $s_{-1}:=s_{1,1}$ the \emph{pre-main station} and let $\mathcal U_{-1}$ be the Jordan domain whose boundary lies on the unit circle, the rightmost itinerary starting from the pre-main station and the leftmost one. This domain was constructed so that it contains all itineraries that start at the pre-main station. We call an itinerary \emph{non-positive} if it is not contained in the positive real axis.
 
 \begin{lemma} \label{lemma-enough-visits-of-premain_station}
-	Let $\gamma = \gamma_1 \cup \delta_1 \cup \dots $ be the reduced decomposition of an itinerary $\gamma$. Let $n_\gamma$ be the minimal iterate of $f$ such that $f^{\circ {n_\gamma}}(\gamma)$ lies on the real axis. Then there are $k$ iterates $1  \leq n_1 < \dots < n_k \leq n_\gamma$ such that $f^{\circ {n_i}}(\gamma_k) \subset \mathcal U_{-1}$.
+	Let $\gamma = \gamma_1 + \delta_1 + \dots $ be the reduced decomposition of a non-positive itinerary $\gamma$. Then there are $k$ iterates $1  \leq n_1 < \dots < n_k \leq n_\gamma$ such that $f^{\circ {n_i}}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{lemma}
 
 \begin{proof}[Proof (\cref{lemma-enough-visits-of-premain_station})]
-Every express track $\gamma_i$, for $i = 1, \ldots, k$, has a first iterate $n_i$ such that $f^{\circ n_i}(\gamma_i)$ is contained in the negative real axis, and in particular is contained in $\mathcal U_{-1}$. By definition of $\,\mathcal U_{-1}$ we also have $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$, since both are tracks of the itinerary $f^{\circ n_i}(\gamma)$.
+	Every station $s \not \in [0,\infty)$ is a preimage of a station on the negative real axis. Thus every non-positive express track $\gamma_i$, for $i = 1, \ldots, k$, has a first iterate $n_i$ such that $f^{\circ n_i}(\gamma_i)$ is contained in the negative real axis, and in particular is contained in $\mathcal U_{-1}$. By definition of $\,\mathcal U_{-1}$, all tracks of the itinerary $f^{\circ n_i}(\gamma)$ that appear after $f^{\circ n_i}(\gamma_i)$ are contained in $\mathcal U_{-1}$ too, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
-\begin{proof}
-The map $f^{-1}$ is a strict contraction in the hyperbolic metric away from the postcritical set. 
-Let $0<\theta<1$ be a constant such that $|(f^{-1})'| < \theta$ 
-on $\mathcal U_{-1}$ for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. Then $\HypLength(\gamma) \leq \theta \HypLength(f(\gamma))$. 
-By \cref{lemma-enough-visits-of-premain_station} we thus have $\HypLength(\gamma_k) \lesssim \theta^k$. 
-The hyperbolic metric is locally equivalent to the Euclidean metric, so $\HypLength \asymp \Length$ on $\{ z \leq 2\}$ and we conclude that $\Length(\gamma_k) \lesssim \theta^k$.
+\begin{proof}[Proof (\cref{prop:finite-length})] Any branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$ is a contraction in the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, by the Schwarz lemma. The contraction is stict since it is a composition $ \iota \circ \tilde f^{-1}$ of the contraction $\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$and the embedding $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$ which is a strict contraction.
+	
+Fix a bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$ that holds for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. Then 
+$$\HypLength(\gamma) \leq \theta \HypLength(f(\gamma)).$$
+By \cref{lemma-enough-visits-of-premain_station} we thus have 
+$$\HypLength(\gamma_k) \lesssim \theta^k.$$
+The hyperbolic metric is locally equivalent to the Euclidean metric, so $\HypLength \asymp \Length$ on $\hat {\mathbb C} \setminus \Delta$ where $\Delta$ is a small neighborhood of the point $\tfrac 12 \in \PostCrit$. 
+We conclude that $\Length(\gamma_k) \lesssim \theta^k$ for paths $\gamma$ that are disjoint from $\Delta$. In particular, this holds for all paths that start at the pre-main station $s_{1,1}$.
+
+For such paths, we deduce a bound $\Length(\delta_i) \lesssim \theta^i$ from the corresponding bound on $\gamma_i$
+by applying Koebe's distortion theorem on a neighborhood of a given itinerary $\gamma$: The theorem gives
+$$\Length(\delta_i) \asymp \frac{\Length(f^{\circ n}(\delta_i))}{\Length(f^{\circ n}(\gamma_i))} \Length(\gamma_i)$$ for any $n$. We choose as before the minimal $n$ for which $f^{\circ n}(\gamma_i)$ lies on the real axis, and then both the numerator $\Length(f^{\circ n}(\delta_i))$ and the denominator $\Length(f^{\circ n}(\gamma_i))$ of the first term are bounded from above and below. Hence $\Length(\delta_i) \lesssim \Length(\gamma_i) \lesssim \theta ^i$.
+ 
+This concludes the proof for itineraries that start at the pre-main station. The result for a general itinerary follows by Koebe's distortion theorem: Given a non-positive itinerary $\gamma_s$ whose first station is $s \neq s_{\mathrm{main}}$, let $\mathcal U_s$ be the preimage of $\mathcal U_{-1}$ under $f$ corresponding to $s$. Koebe's distortion on the corresponding iterate $f^{\circ(-m)}: \mathcal U_{-1} \to \mathcal U_{-s}$ shows that $\Length(\gamma_{s,i}) \lesssim \theta ^i$ since this bound holds for $\gamma := f^{\circ m} (\gamma_s)$ by the previous case.
 \end{proof}
 
 \begin{comment}
@@ -437,7 +445,7 @@ Thus by applying the Böttcher map $\psi$ we obtain a corresponding departure de
 
 %Fix a small ball $B$ around the main cusp $1/2$ and trace its preimages until we encounter the points $z_1,z_2$.
 
-\subsection{Quasiconvexity for separated cusps}
+\subsection{Quasiconvexity in a special case}
 We now show that the itineraries $\eta_{w_1,w_2}$ are certificates for points $w_1,w_2$ that satisfy the condition 
 \begin{align} \label{parabolic separation}
 	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n \geq d,
@@ -551,19 +559,31 @@ Denote $w_i=f^{\circ N}(z_i)$. We already proved that the itinerary $\eta_{w_1,w
 \end{equation*}
 for some $A>0$. We now deduce that the original points $z_1,z_2$ enjoy a similar estimate,
 \begin{equation*}
-	\Length(\eta_{z_1,z_2}) \leq B |z_1-z_2|,
+	\Length(\eta_{z_1,z_2}) \leq C |z_1-z_2|,
 \end{equation*}
-where $B$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{-1}$, but some care is due in checking that the inverse branches at each step are defined in a neighborhood of the itinerary.
+where $C$ depends only on $A$. This follows from Koebe's distortion theorem applied $N$ times on the univalent function $f^{-1}$, but some care is due in constructing the inverse branches in a neighborhood of the itineraries.
+	
+Fix a small ball $B=B(\frac 12, 0.1)$ around the main cusp. Its preimages are topological balls centered at cusps $q$ of $\mathcal J$, and we index them by $B_{\zeta}$ where $\zeta=\frac q{|q|}$. 
 
-Fix a small ball $B_1=B(\frac 12, 0.1)$ around the main cusp. Its preimages are topological balls centered at all the cusps $q$ of $\mathcal J$, and we index them by $B_\zeta$ where $\zeta=\frac q{|q|}$. Each ball $B_{\zeta}$ has a \emph{level}, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $w_1,w_2$ until we reach $z_1,z_2$, we get two sequences $B^1_k, B^2_k$ of balls with $B^1_1=B^2_1=B$. 
-Suppose that stopping criterion (ii) happened. Observe that the two sequences  $B^1_k, B^2_k$ must coincide, otherwise the first index $j$ where $B^1_j \neq B^2_j$ would give points $f^{-j}(z_1), f^{-j}(z_2)$ that belong to two distinct preimages of the same ball $B^1_{j-1}, B^2_{j-1}$, but these two preimages are a positive distance apart so the same is true for $f^{-j}(z_1), f^{-j}(z_2)$, so stopping criterion (i) holds, which is a contradiction.
-Now, since the two sequences of balls coincide, we may apply Koebe's distortion on the corresponding branch of $f^{-N}$ to deduce the necessary bound on $\eta_{z_1,z_2}$.
+Each ball $B_{\zeta}$ has a \emph{level}, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. Repeatedly applying $f^{-1}$ on the pair $(w_1,w_2)$ until we reach $(z_1,z_2)$, we get two sequences of balls
+$B=B^1_1, B^1_2, \dots$ and $B=B^2_1,B^2_2,\dots$. We now consider several cases.
 
-\marginpar{From here it is even sketchier.} We are left with the case where stopping criterion (i) happened, i.e. the points $w_1,w_2$ are a positive distance apart and away from the cusp. Hence also the itinerary $\eta_{w_1,w_2}$ is away from the cusp. Choose a neighborhood $N_1$ of $w_1,w_2$  on which $f$ is univalent, Then choose a neighborhood $N_2 \supset N_1$ on which $f$ is univalent such that for every $w_1,w_2 \in N_1$ we have $\eta_{w_1,w_2} \subset N_2$.Next choose a neighborhood $N_3 \supset N_2$ such that there is a definite modulus to the annulus $N_3 \setminus N_2$. We choose these neighborhoods large enough so that finitely-many such $N_1$ neighborhoods suffice for every pair $w_1,w_2 \in \mathcal J$. We apply Koebe's distortion in these neighborhoods, choosing a branch of $f^{\circ -N}$ that sends $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$ in the previous case, to deduce that 
+\emph{Case (i).} Suppose stopping criterion (i) occured. \begin{comment}
+Namely, the points $w_1,w_2$ are a positive distance apart and away from the cusp. Hence also the itinerary $\eta_{w_1,w_2}$ is away from the cusp. 
+\end{comment}
+We choose a neighborhood $N_1$ of $w_1,w_2$ disjoint from the post-critical set $\wp$ and from $B$ on which $f$ is univalent. Next choose a neighborhood $N_2 \subset N_1$ such that for every $w_1,w_2 \in N_2$ we have $\eta_{w_1,w_2} \subset N_1$. Finally choose a neighborhood $N_3 \supset N_1$ disjoint from $\wp$ on which $f$ is univalent such that there is a definite modulus to the annulus $N_3 \setminus N_1$.
+
+Choosing a branch of $f^{\circ -N}$ in $N_3$ that sends $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$, Koebe's distortion theorem gives 
 \begin{equation}
-\frac{\Length(\eta_{z_1,z_2})}{|z_1-z_2|} \asymp \frac{\Length(\eta_{w_1,w_2})}{|w_1-w_2|}
+\frac{\Length(\eta_{z_1,z_2})}{|z_1-z_2|} \asymp \frac{\Length(\eta_{w_1,w_2})}{|w_1-w_2|}.
 \end{equation}
-which implies the quasiconvexity of $\eta_{z_1,z_2}$.
+
+By compactness of $\mathcal J \setminus B$, these neighborhoods can be chosen from a finite collection, hence the constant is uniform in the points $z_1, z_2$ and we obtain quasiconvexity of $\eta_{z_1,z_2}$ in case (\emph{i}).
+
+\emph{Case (ii).} Suppose that stopping criterion (ii) occured. We first claim that the two sequences of balls $(B^1_k), (B^2_k)$ coincide. Indeed, suppose otherwise and let $j$ be the first index for which $B^1_j \neq B^2_j$. The two points $f^{-j}(z_1), f^{-j}(z_2)$ belong to two distinct preimages of the same ball $B^1_{j-1}= B^2_{j-1}$, hence they are a positive distance apart and stopping criterion \emph{i} applies. This is a contradiction, hence the two sequences coincide. 
+
+There is thus a branch of $f^{\circ -N}$ sending $(w_1,w_2)$ to $(z_1,z_2)$, and the necessary bound on $\eta_{z_1,z_2}$ follows from applying Koebe's distortion theorem on this branch as in case (\emph{i}).
+
 %We define the level of each of $z_1, z_2$ to be the level of the corresponding ball containing them.
 %By the stopping criterion, 
 %, which implies that
