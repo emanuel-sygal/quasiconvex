@@ -495,11 +495,8 @@ To estimate the length of each summand, we introduce the notation
 	whenever $|m-n| \geq d$.
 \end{lemma}
 \begin{proof} \leavevmode
-	
-	\emph{(i)}
-	
-	\emph{(ii)} This follows from Koebe's distortion theorem
-	
+		%\emph{(i)}
+		\emph{(ii)} This follows from Koebe's distortion theorem and part (i). Alternatively,	
 	The map $f$ is affinely conjugate to the map $g: z\mapsto z^2+z$, and the fixed point $\frac 12$ of $f$ corresponds to the fixed point $0$ of $g$. A point near $0$ get repelled from $0$ at rate $\asymp 1/n$, so the distance between consecutive images in the trajectory is $\asymp  1/{k^2}$. Hence $\ell_k \asymp 1/{k^2}$.
 \end{proof}
 
@@ -565,7 +562,7 @@ which together with \eqref{eq:triang} concludes the proof.
 \end{theorem}
 
 \begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}
-Let $d\gg 1$ be a sufficiently large integer and let $z_1,z_2 \in \mathcal J$ be a pair of points. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
+Let $d\gg 1$ be a sufficiently large integer and let $(z_1,z_2)$ be a pair of points in $\mathcal J$. Repeatedly apply $f$ on $z_1,z_2$ until one of the following two stopping conditions happens:
 \begin{enumerate}[label=\normalfont(\roman*)]
 		\item $\left|f^{\circ N}(z_1)-f^{\circ N}(z_2)\right|>\epsilon$, where $\epsilon=\epsilon(d)>0$ is a constant to be chosen later
 
@@ -585,7 +582,7 @@ where $C$ depends only on $A$. This follows from Koebe's distortion theorem appl
 	
 We fix a small ball $B=B(p,\eta)$ around the main cusp $p=\tfrac 12$ of radius $\eta = \eta (\epsilon, d)$.
 We choose $\eta$ small enough so that any two points $w_1,w_2$ with $|w_1-w_2| \geq \epsilon$ and $w_1 \in B(p, \eta)$ must satisfy criterion \emph{(ii)} with strict inequality.
- The preimages of $B$ are topological balls centered at cusps $q$ of $\mathcal J$, and we index them by $B_{\zeta}$ for $\zeta=\phi^{-1}(q) \in \partial \mathbb D$ where $\phi$ is the Riemann map.
+ The preimages of $B$ are topological balls centered at cusps $q$ of $\mathcal J$, and we index them by $B_{\zeta}$ for $\zeta=\phi^{-1}(q) \in \partial \mathbb D$, where $\phi$ is the Riemann map.
 
 %Each ball $B_{\zeta}$ has a \emph{level}\,, which is the first iterate $k$ for which $f^{\circ k}(B_{\zeta}) = B$. 
 Repeatedly applying $f^{-1}$ to the pair $(w_1,w_2)$ until we reach $(z_1,z_2)$, we get two sequences of balls
@@ -595,12 +592,19 @@ $B=B^1_1, B^1_2, \dots$ and $B=B^2_1,B^2_2,\dots$. We now consider each case sep
 \begin{comment}
 Namely, the points $w_1,w_2$ are a positive distance apart and away from the cusp. Hence also the itinerary $\eta_{w_1,w_2}$ is away from the cusp. 
 \end{comment}
-We choose a neighborhood $N_1$ of $w_1,w_2$ such that its preimage $f^{-1}(N_1)$ under the branch sending $p=\tfrac 12 $ to $-\tfrac 12$ is disjoint from the post-critical set $\Postcrit$. Next we choose a neighborhood $N_2 \subset N_1$ such that the annulus $N_1 \setminus N_2$ has a definite modulus, and finally we choose a neighborhood $N_3 \subset N_2$ such that for every $w_1,w_2 \in N_3$ we have $\eta_{w_1,w_2} \subset N_2$. 
+By the stopping criterion we have $|f^{-1}(w_1)-f^{-1}(w_2)| < \epsilon$, so  $|w_1-w_2| < k \epsilon$ where we denote $k= \max_{z \in \mathcal J} |f'(z)|$. Thus $\Length(\eta_{w_1,w_2}) \leq k \epsilon A$ where $A$ is the quasiconvexity bound of $\eta_{w_1,w_2}$. It folllows that the itinerary $\eta_{w_1,w_2}$ is contained in the ball $N_1 := B(w_1, k \epsilon A)$.  By increasing $k$ if needed, we assume that $kA>1$.
+
+\emph{Sub-case (i.1).} Suppose that the ball $N_1$ is disjoint from the ball $B=B(p, \eta)$ around the cusp $p=\tfrac 12$.
+Choose a neighborhood $N_0$ of $N_1$ that is disjoint from $B$, and a neighborhood $N_2 \subset N_1$ such that for every pair of points $w,w'$ in $N_2$ the itinerary $\eta_{w,w'}$ is contained in $N_1$. Applying Koebe's distortion theorem on $N_2$ shows quasiconvexity in this sub-case directly. 
+
+By compactness of the set set of pairs $(w_1,w_2)$ in $\mathcal J \setminus B$ with distance $|w_1-w_2| \geq \epsilon$, these neighborhoods can be chosen from a finite collection, hence the quasiconvexity constant is uniform in the pair $(z_1, z_2)$ and sub-case \emph{(i.1)} is proven.
+
+\emph{Sub-case (i.2).}  We choose $\eta$ small enough so that we can't have both $w_1,w_2 \in B=B(p,\eta)$. Thus we are left with the case where $w_1 \in B$ and $w_2 \not \in B$. Here we use \cref{lem-ell_n}.
+%its preimage $f^{-1}(N_0)$ under the branch sending $p=\tfrac 12 $ to $-\tfrac 12$ is disjoint from the post-critical set $\Postcrit$. Next we choose a neighborhood $N_2 \subset N_1$ such that the annulus $N_1 \setminus N_2$ has a definite modulus, and finally we choose a neighborhood $N_3 \subset N_2$ such that for every $w_1,w_2 \in N_3$ we have $\eta_{w_1,w_2} \subset N_2$. 
 %Choosing a branch of $f^{\circ -N}$ in $N_3$ that sends $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$, 
-By compactness of $\mathcal J \setminus B$, these neighborhoods can be chosen from a finite collection, hence the quasiconvexity constant is uniform in the pair $()z_1, z_2)$.
+%
 
-
-\emph{Case (ii).} Suppose that stopping criterion (ii) occured. We can assume that $w_1,w_2$ are both inside the ball $B$, since $m-n>d$. We claim that the two sequences of balls $(B^1_k), (B^2_k)$ coincide. Indeed, suppose otherwise and let $j$ be the first index for which $B^1_j \neq B^2_j$. The two points $f^{-j}(z_1), f^{-j}(z_2)$ belong to two distinct preimages of the same ball $B^1_{j-1}= B^2_{j-1}$, hence they are a positive distance apart and stopping criterion \emph{i} applies. This is a contradiction, hence the two sequences coincide. 
+\emph{Case (ii).} Suppose that stopping criterion (ii) occurred. We can assume that $w_1,w_2$ are both inside the ball $B$, since $m-n>d$. We claim that the two sequences of balls $(B^1_k), (B^2_k)$ coincide. Indeed, suppose otherwise and let $j$ be the first index for which $B^1_j \neq B^2_j$. The two points $f^{-j}(z_1), f^{-j}(z_2)$ belong to two distinct preimages of the same ball $B^1_{j-1}= B^2_{j-1}$, hence they are a positive distance apart and stopping criterion \emph{i} applies. This is a contradiction, hence the two sequences coincide. 
 
 There is thus a branch of $f^{\circ -(N-1)}$ sending $B_{-1}$ to the preimage topological ball containing $(z_1,z_2)$ and sending $(w_1,w_2)$ to $(z_1,z_2)$. The necessary bound on $\eta_{z_1,z_2}$ follows from applying Koebe's distortion theorem on the composition $f^{-N}$ of this branch with the branch of $f^{-1}$ sending $p$ to $-p$. Explicitly, Koebe's distortion theorem gives 
 \begin{equation}
