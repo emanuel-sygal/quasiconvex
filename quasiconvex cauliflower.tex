@@ -495,14 +495,19 @@ To estimate the length of each summand, we introduce the notation
 	whenever $|m-n| \geq d$.
 \end{lemma}
 \begin{proof} \leavevmode
-		Both parts can be deduced explicitly as follows. The map $f$ is affinely conjugate to the map $g: z\mapsto z^2+z$, and the fixed point $\frac 12$ of $f$ corresponds to the fixed point $0$ of $g$. A point near $0$ get repelled from $0$ at rate $\asymp 1/n$, so the distance between consecutive images in the trajectory is $\asymp  1/{k^2}$. Hence $\ell_k \asymp 1/{k^2}$. We now give an alternative proof of \emph{ii} based on a distortion argument.
-		%\emph{(i)}
-		\emph{(ii)} For every $k \geq 1$, denote $c_k = \frac{\dist(p,s_k}{\ell _k})$ and $R_k= \dist(p,s_k)$. The ball $B_k = B(s_k, \dist(p,s_k)) = B(s_k, c_k \ell _k)$ is disjoint from the post-critical set $\PostCrit$, so for every $m \geq k$ we have a univalent map $g_{m,k}=f^{\circ -(m-k)}$ on $B_k$.  We have 
+		Both parts can be deduced explicitly as follows. The map $f$ is affinely conjugate to the map $g: z\mapsto z^2+z$, sending the fixed point $\frac 12$ of $f$ to $0$. A point near $0$ is attracted by $g^{-(\circ k)}$ at rate $\asymp 1/k$, hence the distance between consecutive points in the orbit decays at rate $\ell_k \asymp 1/{k^2}$. We now give an alternative proof of \emph{(ii)} based on a distortion argument.
+		
+		\emph{(ii)} For every $k \geq 1$, the ball $B_k = B(s_k, \dist(p,s_k))$
+		is disjoint from the post-critical set $\PostCrit$, hence for every $m \geq k$ we have 
+		a univalent map $g_{m,k}=f^{\circ -(m-k)}$ on $B_k$.  
+		
+		Denoting $R_k= \dist(p,s_k)$ and $r_k = \ell_k+\ell_{k+1}$, we apply Harnack's inequality on $|g_{m,k}'|$ in the ball $B_k$ to obtain 
 		\begin{equation*}
-			\frac{\ell_{m+1}}{\ell_m} \leq \frac{\ell_{k+1}}{\ell_k} \cdot \frac{\max_{z\in [s_k,s_{k+2}]} |g'(z)|}{\min_{z \in [s_k,s_{k+2}]} |g'(z)|} \leq \frac{\ell_{k+1}}{\ell_k} \cdot \frac{R_k+r_k}{R_k-r_k}
+			\frac{\ell_{m+1}}{\ell_m} \leq \frac{\ell_{k+1}}{\ell_k} \cdot \frac{\max_{z\in [s_k,s_{k+2}]} |g'(z)|}{\min_{z \in [s_k,s_{k+2}]} |g'(z)|} \leq \frac{\ell_{k+1}}{\ell_k} \cdot \frac{R_k+r_k}{R_k-r_k}.
 		\end{equation*}
-		where we have used Harnack's inequality on the derivative of the function $g_{m,k}$ in the ball $B_k$. By part \emph{i} we have $\frac{R_k+r_k}{R_k-r_k} \to 1$ as $k \ to \infty$. Together with the analogous lower bound, we showed that the sequence $a_m = \frac{\ell_{m+1}}{\ell_m}$ satisfies the following condition: for every $\epsilon >0$, for every large enough $k \geq 1$ we have $\left | \frac {a_m}{a_k}-1 \right | < \epsilon$ for every $m \geq k$.
-		Notice that the sequence $a_n$ is bounded and hence this shows that $a_n$ is Cauchy. Denote the limit by $L$. We cannot have $L>1$ since $\sum_{\ell_n} < \infty$ and we cannot have $L<1$ by part \emph{i}. Thus $\ell_n \asymp \ell _{n+1}$ as desired.
+		By part \emph{(i)} we have $\frac{R_k+r_k}{R_k-r_k} \to 1$ as $k \to \infty$. Together with the analogous lower bound, we thus showed that the sequence $a_k = \frac{\ell_{k+1}}{\ell_k}$ satisfies the following: for every $\epsilon >0$, for every large enough $k \geq 1$ we have $\left | \frac {a_m}{a_k}-1 \right | < \epsilon$ for every $m \geq k$.
+		
+		This property implies first that the sequence $a_k$ is bounded and then that it is Cauchy. Let $L$ be the limit, then we cannot have $L>1$ since $\sum_{}\ell_k < \infty$. On the other hand we cannot have $L<1$ either since this would imply that $\ell_k \asymp \sum_{n=k}^\infty \ell_n$, contradicting part \emph{(i)}. Thus $\ell_k \asymp \ell _{k+1}$ as desired.
 \end{proof}
 
 %\begin{definition}
