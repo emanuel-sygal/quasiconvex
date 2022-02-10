@@ -434,6 +434,11 @@ We used the assumption that the itinerary starts with at least three express tra
 The shadows were not strictly necessary for the preceding proof, but they draw an analogy with similar estimates for the Farey tesselation of the disk.
 \end{comment}
 
+The following corollary says that nearby points are connected by a short itinerary.
+\begin{corollary}
+For every $\epsilon>0$ there exists $\delta$ such that for any pair points $(w_1,w_2)$ with distance $|w_1-w_2|<\delta$, we have $\Length(\eta_{w_1,w_2}) < \epsilon$.
+\end{corollary}
+
 We proceed to show quasiconvexity of the itineraries, as sketched above. The purpose of the following definition is to organize points according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary made a turn.
 \input{"marker path 3.tex"}
 
@@ -507,7 +512,7 @@ To estimate the length of each summand, we introduce the notation
 		\end{equation*}
 		By part \emph{(i)} we have $\frac{R_k+r_k}{R_k-r_k} \to 1$ as $k \to \infty$. Together with the analogous lower bound, we thus showed that the sequence $a_k = \frac{\ell_{k+1}}{\ell_k}$ satisfies the following: for every $\epsilon >0$, for every large enough $k \geq 1$ we have $\left | \frac {a_m}{a_k}-1 \right | < \epsilon$ for every $m \geq k$.
 		
-		This property implies first that the sequence $a_k$ is bounded and then that it is Cauchy. Let $L$ be the limit, then we cannot have $L>1$ since $\sum_{}\ell_k < \infty$. On the other hand we cannot have $L<1$ either since this would imply that $\ell_k \asymp \sum_{n=k}^\infty \ell_n$, contradicting part \emph{(i)}. Thus $\ell_k \asymp \ell _{k+1}$ as desired.
+		This property implies first that the sequence $(a_k)$ is bounded and then that it is Cauchy. Let $L$ be its limit, then we cannot have $L>1$ since $\sum_{}\ell_k < \infty$. On the other hand we cannot have $L<1$ either since this would imply that $\ell_k \asymp \sum_{n=k}^\infty \ell_n$, contradicting part \emph{(i)}. Thus $\ell_k \asymp \ell _{k+1}$ as desired.
 \end{proof}
 
 %\begin{definition}
