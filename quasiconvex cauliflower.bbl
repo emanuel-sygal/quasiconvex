@@ -5,17 +5,14 @@
 \newblock Julia and {John}.
 \newblock {\em Bol. Soc. Bras. Mat 25}, 1 (Mar. 1994), 1--30.
 
+\bibitem{strong_bv_extension_2022}
+{\sc García-Bravo, M., and Rajala, T.}
+\newblock Strong {$BV$}-extension and {$W^{1,1}$}-extension domains.
+
 \bibitem{hakobyan_euclidean_2008}
 {\sc Hakobyan, H., and Herron, D.}
 \newblock Euclidean quasiconvexity.
 \newblock {\em Annales Academiae Scientiarum Fennicae Mathematica 33\/} (Jan.
   2008).
-
-\bibitem{koskela_geometric_2010}
-{\sc Koskela, P., Miranda, M., and Shanmugalingam, N.}
-\newblock Geometric {Properties} of {Planar} {BV} -{Extension} {Domains}.
-\newblock In {\em Around the {Research} of {Vladimir} {Maz}'ya {I}: {Function}
-  {Spaces}}, A.~Laptev, Ed., International {Mathematical} {Series}. Springer,
-  New York, NY, 2010, pp.~255--272.
 
 \end{thebibliography}
