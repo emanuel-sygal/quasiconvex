@@ -1,0 +1,578 @@
+\input{preamble.tex}
+\usepackage{subcaption}
+
+\begin{document}
+
+\section{Introduction}
+
+% \input{"Cauliflower.tex"}
+%\cref{fig:Cauliflower_tikz}
+
+Let $f_c(z) = z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of points in the complex plane with bounded orbit
+under iteration by $f_c$:
+$$
+\mathcal K(f_c) = \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \}.
+$$
+Its complement $A_\infty(f_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The
+ {\em Julia set} $\mathcal J(f_c) = \partial \mathcal K(f_c)$ is defined as the boundary of the filled Julia set. 
+It is well known in complex dynamics that $\mathcal J(f_c), \mathcal K(f_c)$ are closed sets while $A_\infty(f_c)$ is an open set. Furthermore, each\
+  of the three sets
+$\mathcal J(f_c), \mathcal K(f_c)$ and $A_\infty(f_c)$ are both forward and backward invariant under the dynamics of $f$.
+ 
+ The {\em Mandelbrot set} $\mathcal{M}$ consists of parameters $c \in \mathbb{C}$ for which $\mathcal J_c$ is connected.
+The {\em main cardioid}
+$$
+\heartsuit = \bigl  \{c \in \mathbb{C}: c = \lambda/2 - \lambda^2/4,\, \lambda \in \mathbb{D} \bigr \}
+$$
+ is a connected component of the interior of $\mathcal M$, which consists of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
+When $c \in \heartsuit$, the Julia set $\mathcal J(f_c)$ is a Jordan curve. In fact, more is true. Parameters $c \in \heartsuit$ are 
+{\em hyperbolic}. Loosely speaking, this means that $\mathcal J(f_c)$ satisfies the principle of the conformal elevator: 
+up to bounded distortion, a small piece of $\mathcal J(f_c)$ looks like a large piece $\mathcal J(f_c)$.
+Using the principle of the conformal elevator, it can be show that is $\mathcal J(f_c)$ a quasicircle: a condition which roughly means that $\mathcal J(f_c)$ has no \enquote{cusps}.
+
+In this work, we study the \emph{Cauliflower}\/, which is the filled Julia set of $f_{1/4}(z) = z^2+\frac{1}{4}$. In this case the Julia set
+$\mathcal J(f_{1/4})$ is no longer a quasicircle, as it has an inward-pointing cusp at the point $p=1/2$.
+However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
+the Cauliflower is a so-called John domain, which roughly says that it has no outward-pointing cusps.
+
+A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} if its intrinsic metric is comparable to the ambient Euclidean metric. Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$ are connected by a rectifiable path $\gamma:\left[0,1\right]\to\Omega$ which satisfies
+$$
+\Length(\gamma)\leq A\cdot\left|z_{1}-z_{2}\right|.
+$$
+We call such a path $\gamma$ a \emph{quasiconvexity certificate} for $z_{1}$ and $z_{2}$.
+
+If $\Omega$ is the interior of a Jordan curve, then by \cite[Corollary F]{hakobyan_euclidean_2008},
+it is enough to find certificates for points $z_{1},z_{2}$ that lie
+on the boundary curve $\partial\Omega$.
+
+If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
+In this work, we strengthen the result of \cite[Theorem 6.1]{carleson_julia_1994} by showing:
+
+\begin{theorem}
+The exterior of the Cauliflower, $A_\infty(f_{1/4})$, is quasiconvex.
+\end{theorem}
+
+\input{plot_julia_sets.tex}
+
+%One motivation to study quasiconvexity stems from its connection with the John property:
+
+Our result also has a function-theoretic interpretation.
+A domain $\Omega$ is called a \emph{$\it{W^{1,1}}$-extension domain} if every $u \in W^{1,1}(\Omega)$ extends to a function
+in $W^{1,1}(\mathbb{C})$.
+
+In \cite[Equation (1.1) and Theorem 1.4]{strong_bv_extension_2022}, 
+it is shown that a bounded, simply connected domain
+is a $W^{1,1}$ extension domain if and only if its complement is quasiconvex.
+Thus our result can be rephrased as follows:
+
+% Or as a consequence of \cite[Theorem 1.1]{koskela_geometric_2010} and \cite[Theorem 1.4]{strong_bv_extension_2022}, we have:
+
+ \begin{theorem}
+ The Cauliflower is a $W^{1,1}$ extension domain.
+ \end{theorem}
+ 
+\subsection{Sketch of the argument}
+We show quasiconvexity by an explicit construction of certificates connecting any given pair of points on the Julia set.
+We first build the certificates in the exterior unit disk $\mathbb D ^*$, 
+then we transport them to the exterior of the Cauliflower by the Böttcher coordinate $\psi: \mathbb D ^* \to A_\infty(f_{1 / 4})$, which is a conjugacy between the map $f_0$ and $f_{1/4}$.
+
+To retain control of the certificates after applying $\psi$, we build the certificates on $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
+This makes the image of a certificate $\eta$ in $\mathbb D^{*}$ under the conjugacy $\psi$ invariant under $f_{1/4}$. We use this invariance to show that $\psi(\eta)$ is indeed a certificate, by employing a parabolic variant of the principle of the conformal elevator.
+
+To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where  $c\in\left(-\frac {3}{4},\frac{1}{4}\right)$. In this case, the usual conformal elevator applies. We subsequently treat the parabolic case of $c=\frac{1}{4}$.
+
+\section{The exterior disk}
+
+We connect boundary points in $\partial \mathbb D^*$ by moving along the boundaries of Carleson boxes:
+\begin{definition}
+Let $n\in\N_{0}$ and $k\in\left\{ 0,\ldots,2^{n}-1\right\} $. We call the set
+$$
+B_{n,k}=\left\{ z:\quad\left|z\right|\in\biggl(2^{1/2^{n+1}}, 2^{1/2^{n}} \biggl],\qquad\mathrm{arg}(z)\in\biggl(\frac{k}{2^{n}} \, 2\pi,\frac{k+1}{2^{n}} \, 2\pi\biggl]\right\} 
+$$
+a \emph{Carleson box}\,.
+Observe that for a fixed $n$, the union $\bigsqcup_{k=0}^{2^{n}-1}B_{k,n}$
+is a partition of the annulus 
+$$
+\left\{ 2^{1/2^{n+1}} <\left|z\right|\leq 2^{1/2^{n}} \right\} 
+$$
+ into $2^{n}$ equally-spaced sectors.
+ 
+The \emph{Carleson box decomposition} is the partition of $\D^{*}$ into Carleson
+boxes:
+$$
+\D^{*}=\left\{ \zeta:\,\left|\zeta\right|>2\right\} \sqcup\bigsqcup_{n=0}^{\infty}\bigsqcup_{k=0}^{2^{n}-1}B_{n,k}.
+$$
+The crucial property of this decomposition is its invariance under $f_{0}$,
+stemming from the relation
+\begin{equation*}
+f_{0}\left(B_{n+1,k}\right)=B_{n,k \,(\operatorname{mod} \,2^n)}.
+\end{equation*}
+\end{definition}
+
+We describe paths that go along boundaries of Carleson boxes using the metaphor of a passenger who travels by train:
+
+\begin{definition}
+A \emph{terminal} is a point $\zeta \in \partial \mathbb D^*$ on the unit circle.
+\emph{Stations
+}are the iterated preimages of the central station under the map $f_{0}:\zeta\mapsto \zeta^{2}$.
+We index them as 
+$$
+s_{n,k}=2^{1/2^{n}} \exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\},
+$$
+and refer to $n$ as the \emph{generation} of the station $s_{n,k}$. The $2^{n}$ stations of generation $n$ are equally spaced on the circle $C_{n}=\left\{ \left|\zeta\right|=2^{1/2^{n}}\right\} $. 
+The \emph{central station} is the point $s_{0,0}=2$. 
+\end{definition}
+
+We next lay two types of \enquote{rail tracks} on the boundaries of Carleson boxes, which we use to travel between stations.
+
+\begin{definition}
+Let $s=s_{n,k}$ be a station.
+
+1. The \emph{peripheral neighbors} of $s$ are the two stations $s_{n,\left(k\pm1\right) (\mathrm{mod}\; 2^{n})}$ adjacent to $s_{n,k}$ on $C_{n}$.
+
+2. The \emph{peripheral track }$\gamma_{s,s'}$ from $s$ to a peripheral neighbor $s'$
+is the shorter arc of the circle $C_{n}$ connecting $s$ to $s'$.
+
+3. The \emph{radial successor} of $s$ is $\RadialSuccessor(s)=s_{n+1,2k}$, the unique station of generation $n+1$ on the radial segment $[0,s]$.
+
+4. The \emph{express track} $\gamma_{s,s'}$ from $s$ to its radial successor $s'$ is the radial segment $[s,s']$.
+\end{definition}
+
+Notice that the tracks preserve the dynamics: applying $f_0$ to a peripheral track between stations $s,s'$ gives a peripheral track between the \enquote{parents} of $s,s'$, and likewise for an express track. This holds unless one of the stations is of generation $0$; this will bear no consequence for the proof.
+
+When a passenger travels between two stations $s_1$ and $s_2$, they must follow a particular itinerary from $s_1$ to $s_2$.
+If $s_1$ is the central station, then this itinerary is determined by the rule that the passenger stays as close as possible to its destination $s_2$ in the angular distance.
+This also determines how to travel from the central station to a terminal $\zeta\in \partial \mathbb D^*$, by continuity. See \cref{fig:Carleson1} and the next definition.
+
+
+\begin{definition}
+Let $\zeta=\exp(2\pi i\theta)\in\partial\D$. The \emph{central itinerary} of $\zeta$ is a path $\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ from the central station to $\zeta$, made of tracks between stations $\sigma_0,\sigma_1,\ldots$. It is defined inductively as follows:
+
+Start at the central station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning that
+$$
+\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
+< \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,
+$$
+then take $\sigma_{k+1}=\sigma$. Otherwise, take $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
+\end{definition}
+
+\input{"marker path.tex"}
+
+We identify the central itinerary $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$. We record two properties of central itineraries:
+
+\begin{itemize}
+	\item There are no two consecutive peripheral tracks in $\eta_{\zeta}$, and in particular
+	\begin{equation}
+	\label{generation-lower-bound}
+		\operatorname{Generation}(\sigma_k)\geq \frac k2;
+	\end{equation}
+	
+	\item Central itineraries are essentially invariant under $f_{0}$, in the sense that
+	\begin{equation*}
+		f_{0}(\eta_{\zeta})=\eta{}_{f_{0}(\zeta)}\cup[s_{0,0},f_0(s_{0,0})]
+	\end{equation*}
+	for every $\zeta\in \partial \mathbb D^*$.
+\end{itemize}
+
+\begin{definition}
+\label{def-disk-itinerary}
+Given two distinct terminals $\zeta_{1},\zeta_{2}\in\partial\D^*$, form the central itineraries $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty}$ and $\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$ and let  $\sigma=\sigma^1_i=\sigma^2_j$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$.  
+	 We define the \emph{itinerary} between  $\zeta_{1}$ and $\zeta_{2}$ to be the path 
+$$
+ \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right).
+$$
+	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$, see \cref{fig:Carleson2}. Note that itineraries are equivariant under the dynamics: we have  \begin{equation}
+		f(\eta_{\zeta_1,\zeta_2})=\eta_{f(\zeta_1),f(\zeta_2)}
+	\end{equation} for every pair of terminals $\zeta_1,\zeta_2 \in \partial \mathbb D^*$ with $|\zeta_1-\zeta_2| < \sqrt{2}$.
+\end{definition}
+\input{"marker path 2.tex"}
+
+% \section{Complex-analytic tools} \label{complex-analysis-prels}
+% We will need the following classical theorems.
+% \begin{theorem}
+% Let $U$ be a topological disk with modulus at least $m$ inside of a topological disk $V$.
+% Then for all univalent maps in $V$ we have the bound 
+% $$\frac{|f(x)-f(y)|}{|x-y|} \asymp_m |f'(z)|$$
+% valid inside $U$.
+% \end{theorem}
+
+\section{Transporting the Rails} \label{rails-section}
+Let $c\in\left[-\frac 34,\frac{1}{4}\right]$. For these values of $c$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve, and $f_c$ has 
+a Böttcher coordinate $\psi$ at infinity; 
+namely, $\psi$ is the unique conformal map $\D^{*}\to\mathrm{Exterior}(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
+$$
+f\circ\psi=\psi\circ f_{0}.
+$$
+The map $\psi$ is constructed explicitly by the limit
+$$\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} \sqrt[n]{f^{\circ n}},$$
+% where the square root can be made meaningful.
+and it extends to a homeomorphism between the circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
+theorem.
+
+We apply $\psi$ to the rails that we constructed in $\mathbb D^*$ to obtain the corresponding rails in $\mathrm{Exterior}(\mathcal{J}_c)$:
+\begin{definition} \leavevmode
+\begin{enumerate}
+	\item The 	\emph{stations} of $f_c$ are the points $\psi(s_{n,k})$.
+
+
+\item The \emph{tracks} of $f_c$ are the curves of the form $\psi \left(\gamma_{s,s'}\right)$, where $\gamma_{s,s'}$ is a track. They are classified as express or peripheral according to the corresponding classification of $\gamma_{s,s'}$. 
+Express tracks lie on the external rays of the filled Julia set $\mathcal K_c$, while peripheral tracks lie on the equipotentials of $\mathcal K_c$.
+
+\item The \emph{itinerary} between a pair of points $(z_1,z_2)$ on $\mathcal J_c$ is
+$\eta_{z_1,z_2}=\psi(\eta_{\zeta_1,\zeta_2})$, 
+where $\zeta_i=\psi^{-1}(z_i)$ are the corresponding points on $\partial \mathbb D^*$. 
+\end{enumerate}
+
+We omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\mathrm{Exterior}(\mathcal J)$.
+
+%These itineraries can equivalently be obtained directly as in the case of $\mathbb D^*$, in terms of following the central itineraries from the common ancestor in the tree structure.
+%Trivially since $\psi$ is a bijective correspondence between the two decompositions.
+\end{definition}
+
+Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular the central station $\psi(s_{0,0})$ lies on the real axis.
+
+
+\section{Hyperbolic Maps}
+
+A rational map is \emph{hyperbolic} if under iteration, every critical point converges to an attracting cycle.
+Hyperbolic maps enjoy the principle of the conformal elevator, which roughly says that any ball centered on the Julia set can be blown up to a definite size. More precisely, we have the following proposition:
+
+\begin{proposition}[The Principle of the Conformal Elevator] \label{elevator}
+	Let $f$ be a hyperbolic rational map, $z\in \mathcal J$ be a point on the Julia set of $f$ and $r>0$. There exists some forward iterate $f^{\circ n}$ of $f$ which is injective on the ball $B(z,2r)$ such that
+	$\diam {f^{\circ n}(B(z,r))}$ is bounded from below uniformly in $z$ and $r$. 
+\end{proposition}
+
+\begin{corollary} \label{elevator for points on julia}
+	Let $f$ be a hyperbolic rational map. There exists  $\epsilon > 0$ such that every pair of points $z,w\in\mathcal{J}(f)$ has a forward iterate $f^{\circ n}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.	
+\end{corollary}
+
+\begin{definition}
+	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\mathrm{Exterior}(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \mathrm{Exterior}(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
+\end{definition}
+
+We are now ready to show quasiconvexity in the hyperbolic case:
+\begin{theorem}  Let $f:z \mapsto z^2+c$ be a hyperbolic map. \leavevmode
+\begin{enumerate}[label=\normalfont(\roman*)]
+
+\item Given $z\in\mathcal{J}$ decompose its central itinerary into tracks, 
+\begin{equation*}
+\eta_z = \gamma _1 +\gamma_2 +\dots.
+\end{equation*}
+We have the estimate
+\begin{equation*}
+\Length(\gamma_{k})\lesssim\theta^{k},
+\end{equation*}
+uniformly in $z$, for some constant $\theta=\theta(c)<1$. 
+In particular,any point on \(\mathcal{J}\) is rectifiably accessible.
+
+\item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof} \leavevmode
+(i) For $c=0$ this is a direct computation. 
+Suppose $c \neq0$, and let $\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}$ be the post-critical set of $f$.
+
+% The map $f: \hat {\mathbb C} \setminus f^{-1}(\PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$ is an isometry,
+
+% Since $\# \mathcal P \geq 3$,  the Schwarz lemma implies that $f: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is expanding in the hyperbolic metric of $\hat{\mathbb C} \setminus \Postcrit$.
+
+
+%In particular, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is a strict contraction.
+
+Any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$, 
+potentially defined only in a subdomain of $\hat{\mathbb C} \setminus \Postcrit$, % By the Schwarz lemma, a
+is a strict contraction in the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$. 
+
+Indeed, we may decompose this map as the hyperbolic isometry 
+$\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$,
+composed with the strict inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$,
+which is contracting by Schwarz's lemma.
+See \cite[Theorem 3.5]{mcmullen_1994} for further details.
+
+Let $B(0,R) \subset \mathbb{C}$ be a ball large enough that it contains every central itinerary. 
+By hyperbolicity, $\hat{\mathbb C} \setminus \PostCrit$ contains $\overline{\Exterior(\mathcal{J})}$.
+Thus $\mathrm{Exterior}(\mathcal{J}) \cap B(0,R)$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, and
+there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta$ on $\mathrm{Exterior}(\mathcal{J}) \cap B(0,R)$. Therefore,
+\begin{align*}
+\HypLength(\gamma_k)  & \leq \theta \cdot \HypLength(f(\gamma_k))\\ & \leq  \dots
+	\\ & \leq \theta^k \cdot \HypLength(f^{\circ k}(\gamma_k)),
+	\\ & \lesssim \theta^k,
+\end{align*}
+where the last inequality holds since $f^{\circ k}(\gamma_k)$ lies 
+on the real axis in case $\gamma_k$ is an express track, 
+or on the equipotetial $\psi(\{ |z| = \sqrt 2\})$ otherwise.
+
+As the hyperbolic metric is equivalent to the Euclidean metric on compact subsets, 
+we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
+
+% The corresponding bound $\Length(\delta_k) \lesssim \theta^k$ for peripheral tracks 
+% follows in an analogous manner. 
+% Alternatively, it can be obtained from the bound for $\Length(\gamma_k)$ 
+% using Koebe's distortion theorem.
+Thus any point on $\mathcal J$ can be reached from the central station $s_{0,0}$ by a curve of bounded length.
+
+(ii) By \cref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f$. 
+Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon,$ we are done since the length of $\eta_{z_1,z_2}$ is bounded above by part (i).
+
+On the other hand, if $\left|z_{1}-z_{2}\right|<\epsilon$, then
+we may use  \cref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
+\begin{equation}
+	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon.
+\end{equation}
+Koebe's distortion theorem implies that 
+\begin{equation}
+	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}.
+\end{equation}
+Since the itineraries $\eta_{w_1,w_2}$ are certificates, the original itineraries $\eta_{z_1, z_2}$ are also certificates. 
+\end{proof}
+
+\section{The Cauliflower}
+In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
+%The Cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
+Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. This is more complicated than the hyperbolic case because the postcritical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. Since one no longer has a uniform bound on the distortion of inverse iterates, we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$ using Koebe's distortion theorem. As a substitute, we present an analog of the principle of the conformal elevator in this parabolic setting.
+
+\subsection{Itineraries have finite length}
+We first show that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks: for example, the tracks in the central itinerary $\eta_{\tfrac 12}$ have only a quadratic rate of length decay.
+
+\begin{definition}
+	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\gamma_1 + \delta_1 + \dots$ where each $\gamma_i$ is a concatenation of express tracks and is followed by a single peripheral track $\delta_i$.
+\end{definition}
+
+\begin{proposition} \label{prop:finite-length}
+	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
+\end{proposition}
+
+For the proof, call $s_{-1}:=s_{1,1}$ the \emph{pre-central station} and let $\mathcal U_{-1}$ be the Jordan domain enclosed by the unit circle, the rightmost itinerary starting from the pre-central station and the leftmost one. This domain is constructed so that it contains all itineraries that start at the pre-central station.  
+
+\begin{lemma} \label{lemma-enough-visits-of-premain_station}
+	Let $\gamma = \gamma_1 + \delta_1 + \dots $ be the reduced decomposition of an itinerary $\gamma$. Then for every $k > 1$, there exist $k-1$ iterates $n_1 < \dots < n_{k-1}$ such that $f^{\circ {n_i}}(\gamma_k) \subset \mathcal U_{-1}$. % This is actually an off-by-1 lie, since n_1=0 has no predecessor.
+\end{lemma}
+
+\begin{proof}
+	Every station $s \not \in (0, \infty)$ has a first iterate $f^{\circ n_s}(s)$ lying on the negative real axis $(-\infty, 0)$.
+	For any $i \in \{2, \dots, k-1\}$, let $s_i$ be the first station of $\gamma _i$ and take $n_i := n_{s_i}$.
+	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
+\end{proof}
+\begin{proof}[Proof (\cref{prop:finite-length})] 
+	By the Schwarz lemma, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$
+	is a strict contraction in the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$. 
+%The contraction is strict as it is a composition of the contraction $\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$ and the inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$. The inclusion is a strict contraction as $f^{-1}(\PostCrit) \supsetneq \mathcal \PostCrit$.
+
+As $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, there is a bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$ that holds for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have 
+\begin{equation}
+	\begin{split}
+	\HypLength(\gamma_k)  &  \leq \HypLength(f^{\circ (n_1-1)}(\gamma_k)) \\ & \leq \theta \cdot \HypLength(f^{\circ n_1}(\gamma_k))\\ & \leq  \dots
+	\\ & \leq \theta^k \cdot \HypLength(f^{\circ n_k}(\gamma_k))
+		\\ & \leq C \theta^k.
+	\end{split}
+\end{equation}
+
+As the Euclidean metric is bounded above by a constant multiple of the hyperbolic metric on $B(0,R) \setminus \mathcal P$,  
+we a fortiori have $\Length(\gamma_k) \leq C \theta^k$, possibly with a larger constant. This proves the bound for express tracks. The analogous bound $\Length(\delta_k)\lesssim \theta^k$ for peripheral tracks is similar.
+\end{proof}
+
+
+\subsection{Some Estimates and Notation}
+
+To estimate the length of express tracks, we introduce the notations $s_n := s_{n, 0}$ and 
+\begin{equation}
+	\ell_n := \Length([s_{n},s_{n+1}]) = s_{n}-s_{n+1}.
+\end{equation}
+
+\begin{lemma} \label{lem-ell_n}
+	The lengths ${\ell_n}$ satisfy:
+	
+	{\em (i)}
+	\begin{equation}
+	\label{eq:ell_n1}
+		\frac {|p-s_n|}{\ell_n} \to \infty,
+	\end{equation}
+	
+	{\em (ii)}
+	\begin{equation}
+	\label{eq:ell_n2}
+		\frac{\ell_n}{\ell_{n+1}} \to 1.
+	\end{equation}
+	In particular, for any $C > 0$, there is a sufficiently large integer $d$ such that
+	\begin{align*}
+		\ell_{m}+\ldots+\ell_{n} \geq C (\ell_m+\ell_n)
+	\end{align*}
+	whenever $|m-n| \geq d$.
+\end{lemma}
+
+\begin{proof}
+Using the affine conjugacy of the map $f$ to the map $g: z\mapsto z^2+z$, which sends the parabolic fixed point $\frac{1}{2}$ of $f$ to $0$, one can show that
+$$
+\ell_n \asymp \frac{1}{n^2} \qquad \text{and} \qquad |p - s_n| \asymp \frac{1}{n}.
+$$
+After a little arithmetic, we get (\ref{eq:ell_n1}) and (\ref{eq:ell_n2}).
+\end{proof}
+
+\begin{definition}
+The \emph{relative distance} of a curve $\gamma$ to the post-critical set $\PostCrit$ is 
+$$
+\Delta (\gamma, \mathcal P) = \frac {\dist(\gamma, \mathcal P)}{\min (\diam (\gamma), \diam (\mathcal P))}.
+$$
+
+We say that the curve $\gamma$ is \emph{$\eta$-relatively separated} from the post-critical set if $\Delta (\gamma, \mathcal P) \geq \eta$.  
+\end{definition}
+ 
+If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. In particular, if $\gamma$ is a quasiconvexity certificate, then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
+
+\begin{lemma}
+There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
+\end{lemma}
+
+\begin{proof}
+By Lagrange's theorem, we may take $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
+\end{proof}
+ 
+\subsection{Dynamics near the parabolic fixed point}
+
+The purpose of the following definition is to organize points on the Julia set $\mathcal J$ according to their distance from the main cusp in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary makes a turn.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{cauliflower_equipotentials2.png}
+    \caption{The Cauliflower near the parabolic point $p=1/2$.}
+    \label{fig:my_figure}
+\end{figure}
+\input{"marker path 3.tex"}
+\begin{definition}
+
+Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_{n, \mathbb D} \subset \partial \mathbb D ^*$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
+See \cref{fig:departure-decomposition}.
+\end{definition}
+
+This decomposition is invariant under $f_0$ in the sense that $f_0(I_{n+1, \mathbb D})=I_{n, \mathbb D}$, because of the invariance of $\eta _\zeta$.
+Applying the Böttcher map $\psi$, we obtain a corresponding departure decomposition $I_n = \psi(I_{n, \mathbb D})$ of $\mathcal J$ that is invariant under $f$.
+
+We now use this decomposition to analyze the case where the points $w_1,w_2$ lie in ``well-separated cusps''. Namely, suppose that
+\begin{align} \label{parabolic separation}
+	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n > d,
+\end{align}
+where $d$ is a sufficiently large integer, to be chosen later. 
+This gives some control from below on $|w_1-w_2|$. 
+We represent the itinerary $\eta=\eta_{w_1,w_2}$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta} for the picture in the exterior unit disk.
+Thus we have
+\begin{equation}
+	\Length(\eta)=\Length(\gamma_m)+\Length(\gamma_{m,n})+\Length(\gamma_n).
+\end{equation}
+
+\input{"departure-decomposition.tex"}
+
+The condition $m-n \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to $\gamma_m$ and $\gamma_n$:
+\begin{proposition}
+\label {case-3-proof}
+There exists a sufficiently large integer $d$ so that 
+	\begin{equation}
+	\label{eq:triangle-comparison}
+		\Length(\gamma_{m,n}) \asymp |w_1-w_2|,
+	\end{equation}
+	whenever $m-n \geq d$.
+\end{proposition}
+
+We henceforth fix a value of $d$ as in the proposition.
+\begin{proof}
+We first make two elementary observations. Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that
+\begin{equation} \label{eq:gamma_m_not_large}
+		\Length(\gamma_m) \leq C \ell_m,
+	\end{equation}
+for some constant $C \geq 0$. Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
+
+Meanwhile, by \cref{lem-ell_n}, there exists an integer $d$ such that
+\begin{align}
+C(\ell_m + \ell _n) \leq \frac{\Length(\gamma_{m,n})}{2}
+\end{align}
+whenever $m-n \geq d$.
+
+By the triangle inequality, we have
+\begin{align*} 
+		\bigl | \Length(\gamma_{m,n}) - |w_1-w_2| \bigr | & \le \Length(\gamma_m)+\Length(\gamma_n) \\
+		& \le \frac{\Length(\gamma_{m,n})}{2},
+\end{align*}
+which clearly implies (\ref{eq:triangle-comparison}).
+\end{proof}
+
+\subsection{Quasiconvexity: three special cases}
+
+We now show that the itineraries $\eta_{w_1,w_2}$ are certificates in three special cases. To state them, we introduce some notation.
+
+\subsubsection{Notation}
+For each $n$, we denote by  $\alpha_n$ the union of the two outermost tracks emanating from the station $s_{n,0}$. 
+Notice that the curves $\alpha_n$ are pairwise disjoint since this is true for their pullbacks to the exterior unit disk.
+
+We define the constants $C_1, C_2, \epsilon$ as follows. We first choose $C_1 \ge 2$, then we let $C_2 = C_1 + d+2$ and choose $\epsilon >0$ small enough so that we have 
+\begin{equation}
+	\dist(\alpha_{C_2}, \alpha_{C_1}) \geq k \epsilon.
+\end{equation}
+
+The constant $C_2$ was chosen so that for any pair $(m,n)$ of integers, we have at least one of the following three cases: either $m,n$ are both greater than $C_1$, or both are smaller than $C_2$, or $|m-n| > d$.
+
+\subsubsection{Three Special Cases}
+In this section we treat the following special cases:
+\begin{enumerate}
+	\item $|w_1-w_2| \geq  \epsilon$, $\quad |m-n|<d$, $\quad m,n < C_2$, $\quad m,n \geq 2$; %relatively separated
+	\item $|w_1-w_2| \geq \epsilon$, $\quad |m-n|<d$, $\quad  m,n> C_1$; %relatively separated
+	\item $|w_1-w_2| \leq k \epsilon$, $\quad |m-n| \geq d$.
+\end{enumerate}
+
+Notice that Case 2 overlaps with Case 1.
+ We denote the domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$ by $\mathcal K_{m,n}$, and denote the domain enclosed by $\mathcal J$ and $\alpha_n$ by $\mathcal K_n$.
+
+\begin{lemma}
+Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $\eta_{w_1,w_2}$ is contained in the domain $\mathcal K_{m,n+1}$.
+\end{lemma}
+
+\begin{lemma}
+\label{case 1 rel. sep}
+Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\gamma _{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\gamma _{w_1,w_2}$ is relatively separated.
+\end{lemma}
+
+\begin{proof}
+\emph{Case 1.} In this case, the itinerary is contained in the domain $\mathcal K_{2, C_2+1}$.
+Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\gamma _{w_1,w_2}$ is $\eta$-relatively separated for some $\eta>0$. 
+
+\emph{Case 2.}
+Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By Koebe's distortion theorem, $\gamma _{w_1,w_2}$ is also relatively separated.
+
+\emph{Case 3} is the content of \cref{case-3-proof}.
+\end{proof}
+
+\subsection{Quasiconvexity: general case}
+We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$, thereby proving the following theorem:
+
+\begin{theorem} \label{quasiconvex-Cauliflower}
+	The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex, with the itineraries $\eta_{z_1,z_2}$ as certificates.
+\end{theorem}
+
+\begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}
+Let  $(z_1,z_2)$ be a pair of points in $\mathcal J$. Repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs. Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
+\begin{equation*}
+	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|,
+\end{equation*}
+for some $A>0$. We deduce that the original pair of points $(z_1,z_2)$ enjoys a similar estimate,
+\begin{equation*}
+	\Length(\eta_{z_1,z_2}) \leq C |z_1-z_2|,
+\end{equation*}
+where $C$ depends only on $A$.
+
+In Cases 1 and 2, we are done by \cref{case 1 rel. sep}. In Case 3, 
+the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_2$. Let $\mathcal K_{-2}$ be the preimage of $\mathcal K_2$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
+As the domain $\mathcal K_{-2}$ is relatively separated from $\PostCrit$ and contains the curve 
+$f^{\circ (N-1)}(\eta_{z_1,z_2}) = \eta_{f^{-1}(w_1),f^{-1}(w_2)}$,
+we may use Koebe's distortion theorem to conclude that
+\begin{equation}
+	\frac{\Length(\eta_{z_1,z_2})}{|z_1-z_2|} \, \asymp \,
+		\frac{\Length(\eta_{f^{-1}(w_1),f^{-1}(w_2)})}{|f^{-1}(w_1)-f^{-1}(w_2)|} \, \asymp \,
+		\frac{\Length(\eta_{w_1,w_2})}{|w_1-w_2|}
+\end{equation}
+as desired.
+\end{proof}
+
+
+\bibliographystyle{acm}
+\bibliography{quasiconvex_Cauliflower}
+\printnomenclature
+\end{document}

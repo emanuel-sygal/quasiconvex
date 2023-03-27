@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx,color,mathtools}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\usepackage[all,cmtip]{xy}
+\usepackage{epstopdf, comment}
+
+\usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{hyperref}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\linespread{1.2}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\DeclareMathOperator{\crit}{crit}
+
+\DeclareMathOperator{\Hdim}{H.dim }
+\DeclareMathOperator{\supp}{supp }
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\idiam}{i.diam}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\hol}{Hol}
+\DeclareMathOperator{\hyp}{hyp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\area}{Area}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\sphere}{\hat{\mathbb{C}}}
+ 
+\begin{document}
+
+
+ 
+
+\section{Exterior of the developed deltoid}
+
+We now turn to showing that the exterior of the developed deltoid is quasiconvex. Since the proof is quite similar to the case of the cauliflower, we only sketch the relevant changes.
+
+Let $\psi: \mathbb{D}^e \to \Omega^e$ be the conformal map from the exterior of the unit disk to the exterior of the developed deltoid, normalized so that
+$$
+\psi(z) = z + O(1/z), \qquad \text{as }z \to \infty.
+$$
+We first define the system of railways in $\mathbb{D^e}$. As before, we use the circular railways
+$$
+\delta_k = \{ z : |z| = 2^{1/k} \}, \qquad k = 0,1,2,\dots
+$$
+This time, there will be three main express routes -- one for each of the three main cusps of the developed deltoid:
+$$
+\gamma_i = [1,2] \cdot e^{2\pi i/3}, \qquad i =1,2,3.
+$$
+By symmetry considerations, the main express routes are line segments (and hence are chord-arc curves).
+The other express lines are laid at the iterated pre-images of the $\gamma_i$ under the map $z \to \overline{z}^2$.
+
+The Riemann map $\psi$ allows us to transfer the  system of railways from $\mathbb{D}^e$ to $\Omega^e$. In light of the conjugacy relation 
+$$
+\psi \circ \overline{z}^2 = g \circ \psi,
+$$
+ the system of railways is backward-invariant under the dynamics of
+$
+g: \mathbb{C} \setminus \Delta \to \mathbb{C}.
+$
+Let $\gamma_{1,n} = \psi \bigl ([2^{1/(n+1)}, 2^{1/n}] \bigr  )$ be the $n$-th part of the track of the main express route to the cusp $p  = \psi(1)$
+and $\ell_n = \diam \gamma_{1,n}$.
+
+\begin{lemma} The relative distance
+ \begin{equation}
+\label{eq:deltoid-qc1}
+\frac{\dist(\gamma_{1,n}, p)}{\ell_{n}} \to \infty.
+\end{equation}
+\end{lemma}
+
+To show (\ref{eq:deltoid-qc1}), it is enough to construct a function of small energy which is $<1-\delta$ on $\gamma_{1,n}$ and $1$ on the deltoid.
+Fortunately for us, this function  was already constructed by Peter (the construction involved the Riemann map to the upper half-plane).
+
+\begin{corollary}
+\begin{equation}
+\label{eq:deltoid-qc2}
+\frac{\ell_{n+1}}{\ell_{n}} \to 1.
+\end{equation}
+\end{corollary}
+
+
+\begin{proof}
+The map $g$ is an anti-conformal and takes $\gamma_{1, n+1} \to \gamma_{1,n}$ for each $n = 1, 2, \dots$. By Koebe's distortion theorem, it follows  that
+$$
+\frac{\ell_{n+1}}{\ell_n} \, \to \, c \, \in \, (0,\infty).
+$$
+ Since the $\gamma_{1,n}$ shrink down to $p$ as $n \to \infty$, the constant $c$ cannot be larger than 1. On the other hand, if $c < 1$, then
+$$
+\dist(\gamma_{1,n}, p) \, \le \, \sum_{k = n+1}^\infty  \ell_{k} \,  \le  \,  \frac{c}{1-c} \cdot \ell_n
+$$
+would violate (\ref{eq:deltoid-qc2}). Hence, $c = 1$ as desired. The proof is complete.
+\end{proof}
+
+Let $F_0$ be the union of all routes from 2  to points on the unit circle, whose initial segment goes along a peripheral track. More generally, let $F_n$ be the union of all routes from 2 which go exactly $k$ stops along the express track to $1$ before turning.
+The intersection $\psi(F_n) \cap \partial \Omega$ is composed of two arcs $I_n$ and $I_{-n}$ (positive numbers indicate a right turn while negative numbers indicate a left turn). The proof of (\ref{eq:deltoid-qc1}) shows that
+\begin{equation}
+\frac{\dist(\psi(F_n), p)}{\ell_{n}} \to \infty.
+\end{equation}
+
+Koebe's distortion theorem gives:
+
+\begin{lemma}
+\begin{equation}
+\ell_n \,  \asymp \, \diam \psi(F_n) \, \asymp \, \idiam \psi(F_n),
+\end{equation}
+where $\idiam$ denotes the inner diameter.
+\end{lemma}
+From here, the proof of quasiconvexity proceeds as in the case of the cauliflower.
+
+
+
+
+
+
+\end{document}
+
+
+%%%
+\begin{comment}
+
+
+Set $z_n := e^{2\pi i/(6n)}$ for $n > 0$ and  $z_n := e^{-2\pi i/(6n)}$ for $n < 0$. Let $I_n := [z_{n}, z_{n+1}]$ for $n > 0$ and $I_{-n} := [z_{-n}, z_{-(n+1)}]$ for $n < 0$. 
+
+Let $\tau_n$ be the hyperbolic geodesic in the $\hat{\mathbb{C}} \setminus \mathbb{D}$ joining $e^{2\pi i/(6n)}$ and $e^{-2\pi i/(6n)}$. Let $A_n$ be the region in $\mathbb{D}^e$ between $\gamma_n$ and $\gamma_{n+1}$.
+Define the $n$-th tile as
+$$
+T_n = \psi(A_n)  \subset \Omega^e.
+$$
+
+\begin{lemma}
+We  have:
+\begin{equation}
+\ell_n \,  \asymp \, \diam T_n \, \asymp \, \idiam T_n.
+\end{equation}
+\end{lemma}
+\end{comment}
+%%%
+
+\begin{equation}
+\label{eq:deltoid-qc1}
+\Mod(\mathbb{C} \setminus (\Delta \cap \gamma_{1,n})) \to \infty.
+\end{equation}
+To get a lower bound on the modulus, we look at the curve family of curves that connects the two boundary components. This follows from Peter's function which is 1 near the cusp and 0 ...
+
