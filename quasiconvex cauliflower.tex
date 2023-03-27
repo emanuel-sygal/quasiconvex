@@ -312,28 +312,40 @@ we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
 % using Koebe's distortion theorem.
 Thus any point on $\mathcal J$ can be reached from the central station $s_{0,0}$ by a curve of bounded length.
 
-(ii) By \cref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f$. 
-Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon,$ we are done since the length of $\eta_{z_1,z_2}$ is bounded above by part (i).
+(ii) By \cref{elevator for points on julia}, there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart under some iterate $f^{\circ n}$. 
+Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon,$ 
+we are done since the length of $\eta_{z_1,z_2}$ is bounded from above uniformly by part (i).
+Thus we may assume that 
+$\left|z_{1}-z_{2}\right|<\epsilon$. 
 
-On the other hand, if $\left|z_{1}-z_{2}\right|<\epsilon$, then
-we may use  \cref{elevator for points on julia} to find an iterate $f^{\circ n}$ such that 
+We have 
 \begin{equation}
-	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon.
+	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon,
 \end{equation}
-Koebe's distortion theorem implies that 
+and by Koebe's distortion theorem
 \begin{equation}
 	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}.
 \end{equation}
-Since the itineraries $\eta_{w_1,w_2}$ are certificates, the original itineraries $\eta_{z_1, z_2}$ are also certificates. 
+We already know that the itineraries $\eta_{w_1,w_2}$ are certificates, 
+so it follows that the original itineraries $\eta_{z_1, z_2}$ are also certificates. 
 \end{proof}
 
 \section{The Cauliflower}
 In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The Cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
-Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. This is more complicated than the hyperbolic case because the postcritical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. Since one no longer has a uniform bound on the distortion of inverse iterates, we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$ using Koebe's distortion theorem. As a substitute, we present an analog of the principle of the conformal elevator in this parabolic setting.
+Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. 
+This is more complicated than the hyperbolic case, 
+because the postcritical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
+One no longer has a uniform bound on the distortion of inverse iterates, 
+and we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$ using Koebe's distortion theorem. 
+As a substitute, we present an analogue of the principle of the conformal elevator in this parabolic setting.
 
 \subsection{Itineraries have finite length}
-We first show that each itinerary $\eta_{z_1,z_2}$ has a finite length. We will in fact show an exponential decay of the lengths of the constituent tracks. For this to hold it is necessary to glue together consecutive express tracks: for example, the tracks in the central itinerary $\eta_{\tfrac 12}$ have only a quadratic rate of length decay.
+We first show that each itinerary $\eta_{z_1,z_2}$ has a finite length. 
+We will in fact show an exponential decay of the lengths of the constituent tracks. 
+For this to hold it is necessary to glue together consecutive express tracks: 
+for example, the tracks in the central itinerary that lies on the real axis, $\eta_{1/2}$, 
+have only a quadratic rate of length decay. To fix this, we introduce:
 
 \begin{definition}
 	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\gamma_1 + \delta_1 + \dots$ where each $\gamma_i$ is a concatenation of express tracks and is followed by a single peripheral track $\delta_i$.
@@ -355,21 +367,21 @@ For the proof, call $s_{-1}:=s_{1,1}$ the \emph{pre-central station} and let $\m
 	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
 \begin{proof}[Proof (\cref{prop:finite-length})] 
-	By the Schwarz lemma, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$
-	is a strict contraction in the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$. 
-%The contraction is strict as it is a composition of the contraction $\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$ and the inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$. The inclusion is a strict contraction as $f^{-1}(\PostCrit) \supsetneq \mathcal \PostCrit$.
-
-As $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, there is a bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$ that holds for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have 
+	As in the previous hyperbolic case,
+since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, there is a uniform bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$
+with respect to the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
+Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have 
 \begin{equation}
 	\begin{split}
 	\HypLength(\gamma_k)  &  \leq \HypLength(f^{\circ (n_1-1)}(\gamma_k)) \\ & \leq \theta \cdot \HypLength(f^{\circ n_1}(\gamma_k))\\ & \leq  \dots
 	\\ & \leq \theta^k \cdot \HypLength(f^{\circ n_k}(\gamma_k))
-		\\ & \leq C \theta^k.
+		\\ & \lesssim \theta^k.
 	\end{split}
 \end{equation}
 
-As the Euclidean metric is bounded above by a constant multiple of the hyperbolic metric on $B(0,R) \setminus \mathcal P$,  
-we a fortiori have $\Length(\gamma_k) \leq C \theta^k$, possibly with a larger constant. This proves the bound for express tracks. The analogous bound $\Length(\delta_k)\lesssim \theta^k$ for peripheral tracks is similar.
+As in the hyperbolic case, we infer that $\Length(\gamma_k) \leq C \theta^k$ 
+by the local equivalence of the Euclidean metric and the hyperbolic metric on $B(0,R) \setminus \mathcal P$. 
+% This proves the bound for express tracks. The analogous bound $\Length(\delta_k)\lesssim \theta^k$ for peripheral tracks is similar.
 \end{proof}
 
 
