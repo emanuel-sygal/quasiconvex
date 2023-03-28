@@ -238,8 +238,14 @@ A quadratic map $f_c$ is (dynamically) \emph{hyperbolic} if
  its postcritical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
  This is equivalent to $f$ being expanding on its Julia set:
 
- \begin{theorem}
-Let $f_c$ be a hyperbolic quadratic map, and let $\lVert \cdot \rVert_\mathrm{hyp}$ be the 
+ \begin{theorem}\label{theorem:hyperbolic_expanding}
+Let $f_c$ be a hyperbolic quadratic map, 
+let 
+\begin{equation*}
+	\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}
+\end{equation*}
+ be the (closed) post-critical set of $f$,
+and let $\lVert \cdot \rVert_\mathrm{hyp}$ be the 
 hyperbolic (Poincaré) metric of the domain $\hat {\mathbb C} \setminus \PostCrit$. Suppose $f$ is not conjugate to $f_0: z\mapsto z^2$.
 Then we have 
 \begin{equation}
@@ -259,15 +265,24 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular
 % \end{proposition}
 
 \begin{corollary} \label{elevator for points on julia}
-	Let $f_c$ be a hyperbolic quadratic map. 
-	There exists  $\epsilon > 0$ such that every pair of points $z,w\in\mathcal{J}(f)$ has a forward iterate $f^{\circ n}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.	
+	Let $f_c$ be a hyperbolic quadratic map.
+	There exists  $\epsilon > 0$ such that 
+	every pair of points $z,w\in\mathcal{J}$
+	 has a forward iterate $f^{\circ n}$ for which 
+	 \begin{equation*}
+		\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon.	
+	 \end{equation*}
+	 
 \end{corollary}
 
 \begin{definition}
 	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\mathrm{Exterior}(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \mathrm{Exterior}(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
 \end{definition}
 
+% To show quasiconvexity, 
+% we need to first show that every point of $\mathcal J$ is rectifiably accessible.
 We are now ready to show quasiconvexity in the hyperbolic case:
+
 \begin{theorem}  Let $f:z \mapsto z^2+c$ be a hyperbolic map. \leavevmode
 \begin{enumerate}[label=\normalfont(\roman*)]
 
@@ -288,7 +303,7 @@ In particular,any point on \(\mathcal{J}\) is rectifiably accessible.
 
 \begin{proof} \leavevmode
 (i) For $c=0$ this is a direct computation. 
-Suppose $c \neq0$, and let $\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}$ be the post-critical set of $f$.
+Suppose $c \neq0$, and let $\Postcrit$ as before be the post-critical set of $f$.
 
 % The map $f: \hat {\mathbb C} \setminus f^{-1}(\PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$ is an isometry,
 
@@ -298,14 +313,14 @@ Suppose $c \neq0$, and let $\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}
 %In particular, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is a strict contraction.
 
 Any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$, 
-potentially defined only in a subdomain of $\hat{\mathbb C} \setminus \Postcrit$, % By the Schwarz lemma, a
-is a strict contraction in the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$. 
+potentially defined only in a subdomain,
+is a strict hyperbolic contraction by \cref{theorem:hyperbolic_expanding}.
 
-Indeed, we may decompose this map as the hyperbolic isometry 
-$\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$,
-composed with the strict inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$,
-which is contracting by Schwarz's lemma.
-See \cite[Theorem 3.5]{mcmullen_1994} for further details.
+% Indeed, we may decompose this map as the hyperbolic isometry 
+% $\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$,
+% composed with the strict inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$,
+% which is contracting by Schwarz's lemma.
+% See \cite[Theorem 3.5]{mcmullen_1994} for further details.
 
 Let $B(0,R) \subset \mathbb{C}$ be a ball large enough that it contains every central itinerary. 
 By hyperbolicity, $\hat{\mathbb C} \setminus \PostCrit$ contains $\overline{\Exterior(\mathcal{J})}$.
