@@ -234,16 +234,33 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 \section{Hyperbolic Maps}
 
-A rational map is \emph{hyperbolic} if under iteration, every critical point converges to an attracting cycle.
-Hyperbolic maps enjoy the principle of the conformal elevator, which roughly says that any ball centered on the Julia set can be blown up to a definite size. More precisely, we have the following proposition:
+A quadratic map $f_c$ is (dynamically) \emph{hyperbolic} if
+ its postcritical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
+ This is equivalent to $f$ being expanding on its Julia set:
 
-\begin{proposition}[The Principle of the Conformal Elevator] \label{elevator}
-	Let $f$ be a hyperbolic rational map, $z\in \mathcal J$ be a point on the Julia set of $f$ and $r>0$. There exists some forward iterate $f^{\circ n}$ of $f$ which is injective on the ball $B(z,2r)$ such that
-	$\diam {f^{\circ n}(B(z,r))}$ is bounded from below uniformly in $z$ and $r$. 
-\end{proposition}
+ \begin{theorem}
+Let $f_c$ be a hyperbolic quadratic map, and let $\lVert \cdot \rVert_\mathrm{hyp}$ be the 
+hyperbolic (Poincaré) metric of the domain $\hat {\mathbb C} \setminus \PostCrit$. Suppose $f$ is not conjugate to $f_0: z\mapsto z^2$.
+Then we have 
+\begin{equation}
+	\lVert f'(z) \rVert_\mathrm{hyp} > 1
+\end{equation}
+for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular for every $z \in \mathcal J$.
+ \end{theorem}
+ For two proofs, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
+
+%  Hyperbolic maps enjoy the principle of the conformal elevator, 
+%  which roughly says that any ball centered on the Julia set can be blown up to a definite size. 
+%  More precisely, we have the following proposition:
+
+% \begin{proposition}[The Principle of the Conformal Elevator] \label{elevator}
+% 	Let $f$ be a hyperbolic rational map, $z\in \mathcal J$ be a point on the Julia set of $f$ and $r>0$. There exists some forward iterate $f^{\circ n}$ of $f$ which is injective on the ball $B(z,2r)$ such that
+% 	$\diam {f^{\circ n}(B(z,r))}$ is bounded from below uniformly in $z$ and $r$. 
+% \end{proposition}
 
 \begin{corollary} \label{elevator for points on julia}
-	Let $f$ be a hyperbolic rational map. There exists  $\epsilon > 0$ such that every pair of points $z,w\in\mathcal{J}(f)$ has a forward iterate $f^{\circ n}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.	
+	Let $f_c$ be a hyperbolic quadratic map. 
+	There exists  $\epsilon > 0$ such that every pair of points $z,w\in\mathcal{J}(f)$ has a forward iterate $f^{\circ n}$ for which $\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon$.	
 \end{corollary}
 
 \begin{definition}
