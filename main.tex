@@ -206,10 +206,11 @@ $$
 f\circ\psi=\psi\circ f_{0}.
 $$
 The map $\psi$ is constructed explicitly by the limit
-$$\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} \sqrt[n]{f^{\circ n}},$$
+$$\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n},$$
 % where the square root can be made meaningful.
 and it extends to a homeomorphism between the circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
-theorem.
+theorem. See \cite[Theorem 9.5]{milnor_book} for a detailed proof.
+% which is equivalent to our setting after conjugating by the map $z\mapsto \frac 1z$.
 
 \input{draw_dyadic_grid.tex}
 
@@ -392,7 +393,12 @@ have only a quadratic rate of length decay. To fix this, we introduce:
 	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
 \end{proposition}
 
-For the proof, call $s_{-1}:=s_{1,1}$ the \emph{pre-central station} and let $\mathcal U_{-1}$ be the Jordan domain enclosed by the unit circle, the rightmost itinerary starting from the pre-central station and the leftmost one. This domain is constructed so that it contains all itineraries that start at the pre-central station.  
+For the proof, let $\mathcal U_{-1}$ be the Jordan domain enclosed by the unit circle, 
+the rightmost itinerary starting from the pre-central station and the leftmost one. 
+See \cref{fig:dyadic_grid}.
+This domain is constructed so that it contains all itineraries that start at the station 
+$s_{1,1} = \psi(-1/2)$, the preimage of the central station under $f$. Its crucial property is: 
+% call $s_{-1}:=s_{1,1}$ the \emph{pre-central station}
 
 \begin{lemma} \label{lemma-enough-visits-of-premain_station}
 	Let $\gamma = \gamma_1 + \delta_1 + \dots $ be the reduced decomposition of an itinerary $\gamma$. Then for every $k > 1$, there exist $k-1$ iterates $n_1 < \dots < n_{k-1}$ such that $f^{\circ {n_i}}(\gamma_k) \subset \mathcal U_{-1}$. % This is actually an off-by-1 lie, since n_1=0 has no predecessor.
@@ -404,9 +410,11 @@ For the proof, call $s_{-1}:=s_{1,1}$ the \emph{pre-central station} and let $\m
 	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
 \begin{proof}[Proof (\cref{prop:finite-length})] 
-	As in the previous hyperbolic case,
-since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, there is a uniform bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$
+There is a uniform bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$
 with respect to the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
+This follows from \cref{theorem:hyperbolic_expanding}, in the slightly stronger formulation of \cite{mcmullen} 
+since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, t
+
 Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have 
 \begin{equation}
 	\begin{split}
