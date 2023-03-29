@@ -31,9 +31,5 @@ plt.figure(figsize=(8,8))
 plt.imshow(count, cmap='Blues', extent=(xmin, xmax, ymin, ymax))
 #plt.axis('off')
 
-# Plot the equipotentials
-levels = np.arange(0, maxiter+1, 5)
-#plt.contour(x, y, count, levels=levels, colors='red', linewidths=0.5)
-
 plt.savefig("julia_026.png")
 plt.show()
