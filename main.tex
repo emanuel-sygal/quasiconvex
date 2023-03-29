@@ -412,10 +412,10 @@ $s_{1,1} = \psi(-1/2)$, the preimage of the central station under $f$. Its cruci
 \begin{proof}[Proof (\cref{prop:finite-length})] 
 There is a uniform bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$
 with respect to the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
-This follows from \cref{theorem:hyperbolic_expanding}, in the slightly stronger formulation of \cite{mcmullen} 
-since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, t
+This follows from \cref{theorem:hyperbolic_expanding}, in the slightly more general formulation of \cite[Theorem 3.5]{mcmullen_1994},
+since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$.
 
-Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have 
+In the notation of \cref{lemma-enough-visits-of-premain_station}, we then have 
 \begin{equation}
 	\begin{split}
 	\HypLength(\gamma_k)  &  \leq \HypLength(f^{\circ (n_1-1)}(\gamma_k)) \\ & \leq \theta \cdot \HypLength(f^{\circ n_1}(\gamma_k))\\ & \leq  \dots
@@ -424,8 +424,9 @@ Then, in the notation of \cref{lemma-enough-visits-of-premain_station}, we have
 	\end{split}
 \end{equation}
 
-As in the hyperbolic case, we infer that $\Length(\gamma_k) \leq C \theta^k$ 
-by the local equivalence of the Euclidean metric and the hyperbolic metric on $B(0,R) \setminus \mathcal P$. 
+As in the hyperbolic case, we infer that $\Length(\gamma_k) \lesssim \theta^k$ 
+by the equivalence on $B(0,R) \setminus \mathcal P$ 
+of the Euclidean metric and the hyperbolic metric. 
 % This proves the bound for express tracks. The analogous bound $\Length(\delta_k)\lesssim \theta^k$ for peripheral tracks is similar.
 \end{proof}
 
@@ -482,7 +483,11 @@ There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \ma
 \end{lemma}
 
 \begin{proof}
-By the Newton-Leibniz formula, we may take $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
+	We have 
+	\begin{equation}
+		|f(z_1)-f(z_2)| = |\int_{z_1} ^{z_2} f| \leq k|z_1-z_2|	
+	\end{equation}
+for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
  
 \subsection{Dynamics near the parabolic fixed point}
