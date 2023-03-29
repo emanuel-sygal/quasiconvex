@@ -10,42 +10,46 @@
 % \input{"Cauliflower.tex"}
 %\cref{fig:Cauliflower_tikz}
 
-Let $f_c(z) = z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of points in the complex plane with bounded orbit
+Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of the points in the complex plane with bounded orbit
 under iteration by $f_c$:
 $$
-\mathcal K(f_c) = \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \}.
+\mathcal K_c = \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \}.
 $$
-Its complement $A_\infty(f_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The
- {\em Julia set} $\mathcal J(f_c) = \partial \mathcal K(f_c)$ is defined as the boundary of the filled Julia set. 
-It is well known in complex dynamics that $\mathcal J(f_c), \mathcal K(f_c)$ are closed sets while $A_\infty(f_c)$ is an open set. Furthermore, each\
+Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}, and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. 
+
+The set $\mathcal K_c$ is compact, and each\
   of the three sets
-$\mathcal J(f_c), \mathcal K(f_c)$ and $A_\infty(f_c)$ are both forward and backward invariant under the dynamics of $f$.
+$\mathcal J_c, \mathcal K_c$ and $\Exterior(\mathcal{J}_c)$ are both forward and backward invariant under the dynamics of $f$.
  
  The {\em Mandelbrot set} $\mathcal{M}$ consists of parameters $c \in \mathbb{C}$ for which $\mathcal J_c$ is connected.
 The {\em main cardioid}
 $$
 \heartsuit = \bigl  \{c \in \mathbb{C}: c = \lambda/2 - \lambda^2/4,\, \lambda \in \mathbb{D} \bigr \}
 $$
- is a connected component of the interior of $\mathcal M$, which consists of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
-When $c \in \heartsuit$, the Julia set $\mathcal J(f_c)$ is a Jordan curve. In fact, more is true. Parameters $c \in \heartsuit$ are 
-{\em hyperbolic}. Loosely speaking, this means that $\mathcal J(f_c)$ satisfies the principle of the conformal elevator: 
-up to bounded distortion, a small piece of $\mathcal J(f_c)$ looks like a large piece $\mathcal J(f_c)$.
-Using the principle of the conformal elevator, it can be show that is $\mathcal J(f_c)$ a quasicircle: a condition which roughly means that $\mathcal J(f_c)$ has no \enquote{cusps}.
+ is a connected component of the interior of $\mathcal M$, which consists of the parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
+When $c \in \heartsuit$, the Julia set $\mathcal J_c$ is quasidisk: the image of the unit disk under a quasiconformal map.
+This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
-In this work, we study the \emph{Cauliflower}\/, which is the filled Julia set of $f_{1/4}(z) = z^2+\frac{1}{4}$. In this case the Julia set
-$\mathcal J(f_{1/4})$ is no longer a quasicircle, as it has an inward-pointing cusp at the point $p=1/2$.
+% Parameters $c \in \heartsuit$ are 
+% {\em hyperbolic}. Loosely speaking, this means that $\mathcal J_c$ satisfies the principle of the conformal elevator: 
+% up to bounded distortion, a small piece of $\mathcal J_c$ looks like a large piece $\mathcal J_c$.
+
+% $\mathcal J_c$ is a \emph{quasicircle}, which roughly means that $\mathcal J_c$ has no \enquote{cusps}.
+
+In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
+The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
+is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. See \cref{fig:julia_sets}.
+
 However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
-the Cauliflower is a so-called John domain, which roughly says that it has no outward-pointing cusps.
+the Cauliflower is a so-called \emph{John domain}, meaning intuitively that it has no outward-pointing cusps.
 
-A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} if its intrinsic metric is comparable to the ambient Euclidean metric. Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$ are connected by a rectifiable path $\gamma:\left[0,1\right]\to\Omega$ which satisfies
+A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
+if its intrinsic metric is comparable to the ambient Euclidean metric. 
+Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$ are connected by a rectifiable path $\gamma:\left[0,1\right]\to\Omega$ which satisfies
 $$
 \Length(\gamma)\leq A\cdot\left|z_{1}-z_{2}\right|.
 $$
-We call such a path $\gamma$ a \emph{quasiconvexity certificate} for $z_{1}$ and $z_{2}$.
-
-If $\Omega$ is the interior of a Jordan curve, then by \cite[Corollary F]{hakobyan_euclidean_2008},
-it is enough to find certificates for points $z_{1},z_{2}$ that lie
-on the boundary curve $\partial\Omega$.
+We call such a path $\gamma$ a \emph{quasiconvexity certificate} for the pair $(z_{1}, z_{2})$.
 
 If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
 In this work, we strengthen the result of \cite[Theorem 6.1]{carleson_julia_1994} by showing:
@@ -74,6 +78,10 @@ Thus our result can be rephrased as follows:
  \end{theorem}
  
 \subsection{Sketch of the argument}
+If $\Omega$ is the interior of a Jordan curve, then by \cite[Corollary F]{hakobyan_euclidean_2008},
+it is enough to find certificates for points $z_{1},z_{2}$ that lie
+on the boundary curve $\partial\Omega$.
+
 We show quasiconvexity by an explicit construction of certificates connecting any given pair of points on the Julia set.
 We first build the certificates in the exterior unit disk $\mathbb D ^*$, 
 then we transport them to the exterior of the Cauliflower by the Böttcher coordinate $\psi: \mathbb D ^* \to A_\infty(f_{1 / 4})$, which is a conjugacy between the map $f_0$ and $f_{1/4}$.
@@ -477,7 +485,7 @@ There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \ma
 \begin{proof}
 	We have 
 	\begin{equation}
-		|f(z_1)-f(z_2)| = |\int_{z_1} ^{z_2} f| \leq k|z_1-z_2|	
+		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f \right | \leq k|z_1-z_2|	
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
