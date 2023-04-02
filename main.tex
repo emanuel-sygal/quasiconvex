@@ -21,13 +21,12 @@ The set $\mathcal K_c$ is compact, and each\
   of the three sets
 $\mathcal J_c, \mathcal K_c$ and $\Exterior(\mathcal{J}_c)$ are both forward and backward invariant under the dynamics of $f$.
  
- The {\em Mandelbrot set} $\mathcal{M}$ consists of parameters $c \in \mathbb{C}$ for which $\mathcal J_c$ is connected.
 The {\em main cardioid}
 $$
 \heartsuit = \bigl  \{c \in \mathbb{C}: c = \lambda/2 - \lambda^2/4,\, \lambda \in \mathbb{D} \bigr \}
 $$
- is a connected component of the interior of $\mathcal M$, which consists of the parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
-When $c \in \heartsuit$, the Julia set $\mathcal J_c$ is quasidisk: the image of the unit disk under a quasiconformal map.
+is the set of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
+When $c \in \heartsuit$, the Julia set $\mathcal J_c$ is a \emph{quasidisk}, the image of a round disk under a quasiconformal map.
 This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 % Parameters $c \in \heartsuit$ are 
@@ -38,24 +37,23 @@ This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
-is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. See \cref{fig:julia_sets}.
-
-However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
-the Cauliflower is a so-called \emph{John domain}, meaning intuitively that it has no outward-pointing cusps.
+is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
+the Cauliflower is a so-called \emph{John domain}, meaning intuitively that it has no outward-pointing cusps. See \cref{fig:julia_sets}.
 
 A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
-Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$ are connected by a rectifiable path $\gamma:\left[0,1\right]\to\Omega$ which satisfies
+Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$
+ are connected by a rectifiable path $\gamma_{z_1,z_2}:\left[0,1\right]\to\Omega$ which satisfies
 $$
-\Length(\gamma)\leq A\cdot\left|z_{1}-z_{2}\right|.
+\Length(\gamma_{z_1,z_2})\leq A\cdot\left|z_{1}-z_{2}\right|.
 $$
-We call such a path $\gamma$ a \emph{quasiconvexity certificate} for the pair $(z_{1}, z_{2})$.
+We refer to such a family of paths $\gamma_{z_1,z_2}$ as \emph{quasiconvexity certificates} for $\Omega$.
 
 If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
 In this work, we strengthen the result of \cite[Theorem 6.1]{carleson_julia_1994} by showing:
 
 \begin{theorem}
-The exterior of the Cauliflower, $A_\infty(f_{1/4})$, is quasiconvex.
+The exterior of the Cauliflower is quasiconvex.
 \end{theorem}
 
 \input{figures/plot_julia_sets.tex}
@@ -78,18 +76,36 @@ Thus our result can be rephrased as follows:
  \end{theorem}
  
 \subsection{Sketch of the argument}
-If $\Omega$ is the interior of a Jordan curve, then by \cite[Corollary F]{hakobyan_euclidean_2008},
-it is enough to find certificates for points $z_{1},z_{2}$ that lie
-on the boundary curve $\partial\Omega$.
+To show that a Jordan domain $\Omega$ is quasiconvex, it is enough to find certificates for points $z_{1},z_{2}$ that lie
+on the boundary curve $\partial\Omega$. For a proof, see \cite[Corollary F]{hakobyan_euclidean_2008}.
 
 We show quasiconvexity by an explicit construction of certificates connecting any given pair of points on the Julia set.
 We first build the certificates in the exterior unit disk $\mathbb D ^*$, 
-then we transport them to the exterior of the Cauliflower by the Böttcher coordinate $\psi: \mathbb D ^* \to A_\infty(f_{1 / 4})$, which is a conjugacy between the map $f_0$ and $f_{1/4}$.
+then we transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
+which conjugates $f_0$ with $f_{1/4}$.
 
-To retain control of the certificates after applying $\psi$, we build the certificates on $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
-This makes the image of a certificate $\eta$ in $\mathbb D^{*}$ under the conjugacy $\psi$ invariant under $f_{1/4}$. We use this invariance to show that $\psi(\eta)$ is indeed a certificate, by employing a parabolic variant of the principle of the conformal elevator.
+To retain control of the certificates after applying $\psi$, we build the certificates of $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
+This makes the image of a certificate $\eta$ in $\mathbb D^{*}$ under the conjugacy $\psi$ invariant under $f_{1/4}$. 
+We use this invariance to show that $\psi(\eta)$ are indeed certificates for $\Exterior(\mathcal J_{/4})$, 
+by employing a parabolic variant of the so-called principle of the conformal elevator.
 
-To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where  $c\in\left(-\frac {3}{4},\frac{1}{4}\right)$. In this case, the usual conformal elevator applies. We subsequently treat the parabolic case of $c=\frac{1}{4}$.
+To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where 
+$c\in \heartsuit)$, in which the usual conformal elevator applies, 
+and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
+
+\section{Complex Analytic Tools}
+% \subsection{The Böttcher coordinate}
+
+\subsection{The Distortion Principle}
+We record here for convenience a form of Koebe's distortion principle that will be used repeatedly.
+\begin{theorem}\cite[Theorem 2.9]{mcmullen_1994} \label{Koebe}
+	Let $D \subset U $ be topological disks with modulus $\mathrm {Mod}(D, U) >m>0$ and let $f$ be a map univalent in $U$,
+	then we have the bound 
+	\begin{equation}
+		\frac {|f(y)-f(z)|}{|y-z|} \asymp |f'(x)|
+	\end{equation}
+	for all $x,y,z \in D$.
+\end{theorem}
 
 \section{The exterior disk}
 
@@ -102,7 +118,7 @@ We describe these paths using the metaphor of a passenger who travels by train:
 $$
 s_{n,k}=2^{1/2^{n}} \exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\}.
 $$ 
-These are exactly the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
+These are the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
 We refer to $n$ as the \emph{generation} of the station $s_{n,k}$. 
 The $2^{n}$ stations of generation $n$ are equally spaced on the circle $C_{n}=\left\{ \left|\zeta\right|=2^{1/2^{n}}\right\} $. 
 \end{definition}
@@ -196,7 +212,9 @@ The map $\psi$ extends to a homeomorphism between the circle $\partial\D$ and $\
 theorem. Uniqueness is obvious from the uniqueness of the Riemann map up to rotation; 
 see \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
 relying on the explicit construction 
-$$\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.$$
+\begin{equation}
+	\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
+\end{equation}
 
 % which is equivalent to our setting after conjugating by the map $z\mapsto \frac 1z$.
 
@@ -228,6 +246,8 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 \section{Hyperbolic Maps}
 
+Throughout this section we take $c$ in the main cardioid $\heartsuit$.
+
 A quadratic map $f_c$ is (dynamically) \emph{hyperbolic} if
  its postcritical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
  This is equivalent to $f$ being expanding on its Julia set:
@@ -238,16 +258,22 @@ let
 \begin{equation*}
 	\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}
 \end{equation*}
- be the (closed) post-critical set of $f$,
-and let $\lVert \cdot \rVert_\mathrm{hyp}$ be the 
-hyperbolic (Poincaré) metric of the domain $\hat {\mathbb C} \setminus \PostCrit$. Suppose $f$ is not conjugate to $f_0: z\mapsto z^2$.
+ be the (closed) post-critical set of $f$, and suppose that $f$ is not conjugate to $f_0: z\mapsto z^2$.
 Then we have 
 \begin{equation}
 	\lVert f'(z) \rVert_\mathrm{hyp} > 1
 \end{equation}
 for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular for every $z \in \mathcal J$.
  \end{theorem}
- For two proofs, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
+  
+ Here 
+ \begin{equation}
+	\lVert g'(z) \rVert_\mathrm{hyp} := \frac {\rho (g(z))}{\rho(z)} |g'(z)|,	
+ \end{equation}
+ is the hyperbolic \enquote{change of scale} of $f$ at the point $z$,
+  where $\rho$ is the 
+ hyperbolic (Poincaré) metric of the domain $\hat {\mathbb C} \setminus \PostCrit$.
+ For two proofs of this theorem, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
 
 %  Hyperbolic maps enjoy the principle of the conformal elevator, 
 %  which roughly says that any ball centered on the Julia set can be blown up to a definite size. 
@@ -266,8 +292,13 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular
 	 \begin{equation*}
 		\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon.	
 	 \end{equation*}
-	 
 \end{corollary}
+
+\begin{proof}
+	There is an iterate $g = f^{\circ m}$ of $f$ for which there is a uniform bound
+	$|g'| > \kappa$ on $\mathcal J$, for some constant $\kappa  > 1$. 
+	By iterating $g$, the claim follows for all sufficiently small values of $\epsilon$.
+\end{proof}
 
 \begin{definition}
 	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\mathrm{Exterior}(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \mathrm{Exterior}(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
@@ -277,7 +308,7 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular
 % we need to first show that every point of $\mathcal J$ is rectifiably accessible.
 We are now ready to show quasiconvexity in the hyperbolic case:
 
-\begin{theorem}  Let $f:z \mapsto z^2+c$ be a hyperbolic map. \leavevmode
+\begin{theorem}  Let $f:z \mapsto z^2+c$ be a quadratic map with $c \in \heartsuit$. \leavevmode
 \begin{enumerate}[label=\normalfont(\roman*)]
 
 \item Given $z\in\mathcal{J}$ decompose its central itinerary into tracks, 
@@ -350,22 +381,34 @@ then there is an iterate $f^{\circ n}$ for which
 	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon
 \end{equation}
 and we have a uniform bound on 
-$\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}$.
-
-Since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$, 
-a distortion argument gives that
+$$\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}$$ as before.
+Thus we are left with showing that 
 \begin{equation}
-	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}.
+	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|},
 \end{equation}
-and we are done. Indeed, since $z_1$ and $z_2$ are $\epsilon$-close, 
+which follows from a distortion argument,
+since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
+
+Indeed, as $z_1$ and $z_2$ are $\epsilon$-close, 
 we may find a topological ball $B$ containing the points $z_1,z_2$ 
 and the itinerary $\eta_{z_1,z_2}$
-with a definite modulus inside of $\hat{\mathbb C }\setminus \PostCrit$, 
-on which the map $f^{\circ n}$ is univalent, 
-and apply Koebe's distortion theorem in the version of \cite[Theorem 2.9]{mcmullen_1994} 
-to deduce that $\frac {|w_1-w_2|}{z_1-z_2} \asymp |(f^{\circ n})'(x)|$ 
-for any point $x \in B$, but applying $f^{\circ n}$ on the itinerary $\Length\left(\eta_{z_1,z_2}\right)$ 
-makes its length grow by the same factor.
+such that $B$ has a definite modulus inside of $\hat{\mathbb C }\setminus \PostCrit$, 
+and on which the map $f^{\circ n}$ is univalent.
+
+We apply \cref{Koebe}
+to deduce that 
+\begin{equation}
+	\frac {|w_1-w_2|}{|z_1-z_2|} \asymp |(f^{\circ n})'(x)|	
+\end{equation}
+
+for any point $x \in B$. On the other hand, applying $f^{\circ n}$ on the itinerary $\eta_{z_1,z_2}$ 
+makes its length grow by the same factor, and we conclude that 
+\begin{equation}
+	\frac{|w_1-w_2|}{|z_1-z_2|}
+	\asymp
+	\frac{\Length\left(\eta_{w_1,w_2}\right)}{\Length\left(\eta_{z_{1},z_{2}}\right)},
+\end{equation}
+as needed.
 \end{proof}
 
 \section{The Cauliflower}
