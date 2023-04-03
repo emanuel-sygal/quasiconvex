@@ -38,15 +38,23 @@ This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
 is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
-the Cauliflower is a so-called \emph{John domain}, meaning intuitively that it has no outward-pointing cusps. See \cref{fig:julia_sets}.
+the Cauliflower is a \emph{John domain}, a condition which rules out \enquote{outward-pointing cusps}. 
+Formally, a domain $\Omega$ is John if there exists a \enquote{center} point 
+$z_0 \in \Omega$ that can be connected 
+to any other point $z_1\in \Omega$ by a curve $\gamma$ which stays away from the boundary:
+\begin{equation}
+	\mathrm{dist}(z, \partial \Omega) \gtrsim |z_1-z|
+\end{equation} for all $z\in \gamma$.
+ See \cref{fig:julia_sets}.
 
 A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
 Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$
  are connected by a rectifiable path $\gamma_{z_1,z_2}:\left[0,1\right]\to\Omega$ which satisfies
-$$
-\Length(\gamma_{z_1,z_2})\leq A\cdot\left|z_{1}-z_{2}\right|.
-$$
+\begin{equation}
+\Length(\gamma_{z_1,z_2})\leq A\cdot\left|z_{1}-z_{2}\right|.	
+\end{equation}
+
 We refer to such a family of paths $\gamma_{z_1,z_2}$ as \emph{quasiconvexity certificates} for $\Omega$.
 
 If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
@@ -60,8 +68,13 @@ The exterior of the Cauliflower is quasiconvex.
 
 %One motivation to study quasiconvexity stems from its connection with the John property:
 
-Our result also has a function-theoretic interpretation.
-A domain $\Omega$ is called a \emph{$\it{W^{1,1}}$-extension domain} if every $u \in W^{1,1}(\Omega)$ extends to a function
+Our result also has a function-theoretic interpretation. 
+For a planar domain $\Omega \subset \mathbb R ^2$,
+the \emph{Sobolev space} $W^{1,1}(\Omega)$ 
+ is the set of functions $u \in L^1(\Omega)$ for which 
+ both weak derivatives $\partial_1 u, \partial_2 u$ exist and are in $L^1(\Omega)$.
+
+We call $\Omega$ a \emph{$\it{W^{1,1}}$ extension domain} if every $u \in W^{1,1}(\Omega)$ extends to a function
 in $W^{1,1}(\mathbb{C})$.
 
 In \cite[Equation (1.1) and Theorem 1.4]{strong_bv_extension_2022}, 
@@ -93,18 +106,43 @@ To facilitate the reading, we first demonstrate the proof in the hyperbolic case
 $c\in \heartsuit)$, in which the usual conformal elevator applies, 
 and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
 
-\section{Complex Analytic Tools}
+\section{Complex-analytic preliminaries}
 % \subsection{The Böttcher coordinate}
 
 \subsection{The Distortion Principle}
-We record here for convenience a form of Koebe's distortion principle that will be used repeatedly.
-\begin{theorem}\cite[Theorem 2.9]{mcmullen_1994} \label{Koebe}
-	Let $D \subset U $ be topological disks with modulus $\mathrm {Mod}(D, U) >m>0$ and let $f$ be a map univalent in $U$,
+We record here for convenience a form of Koebe's distortion principle that will be used repeatedly. 
+
+\begin{definition}
+	Every topological annulus $A \subset \hat{\mathbb C}$ is biholomorphic to 
+	a unique round annulus of the form $\{ 1<|z|<R \}$. 
+	The (conformal) \emph{modulus} of $A$ is the value $\mathrm {Mod}(A) = \frac 1{2\pi} \log R$.
+\end{definition}
+\begin{theorem}[{Koebe's Distortion Principle, \cite[Theorem 2.9]{mcmullen_1994}}]  \label{Koebe}
+	Let $D \subset U $ be topological disks with $\mathrm {Mod}(U \setminus D)  \geq m>0$
+	 and let $f$ be a map univalent in $U$,
 	then we have the bound 
 	\begin{equation}
-		\frac {|f(y)-f(z)|}{|y-z|} \asymp |f'(x)|
+		\frac {|f(y)-f(z)|}{|y-z|} \asymp_m |f'(x)|
 	\end{equation}
 	for all $x,y,z \in D$.
+\end{theorem}
+
+\subsection{The hyperbolic metric}
+\begin{theorem}
+	The \emph{Poincaré metric}
+	$$\mathrm{ds} = \frac {|\mathrm {dz}|}{1-|z|^2} $$
+	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
+	by a positive constant, which is invariant under conformal automorphisms.
+
+	There exists a Riemannian metric on the unit disk $\mathbb D$ which is invariant 
+	under conformal automorphisms, and it is unique up to  multiplication by a positive constant.
+\end{theorem}
+
+\begin{theorem}
+	Let $U$ be a planar domain whose complement $\mathbb C \setminus U$ has at least three points.
+	Then the universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$. This defines the 
+	Poincaré metric on $U$ as the unique Riemannian metric for which the projection 
+	$\tilde U \to U$ is a local isometry.
 \end{theorem}
 
 \section{The exterior disk}
@@ -245,34 +283,42 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 
 \section{Hyperbolic Maps}
+In this section we prove quasiconvexity for parameters $c$ in the main cardioid $\heartsuit$.
 
-Throughout this section we take $c$ in the main cardioid $\heartsuit$.
+\begin{definition}
+	The \emph{post-critical set} of $f_c$ is the closure of the forward orbits 
+	of the critical points of $f_c$
+	in $\hat{\mathbb C}$:
+	\begin{equation*}
+		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
+	\end{equation*}	
+\end{definition}
 
-A quadratic map $f_c$ is (dynamically) \emph{hyperbolic} if
+
+A quadratic map $f_c$ is called \emph{hyperbolic} if
  its postcritical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
- This is equivalent to $f$ being expanding on its Julia set:
+ This is equivalent to $f_c$ being expanding on $\mathcal J$:
 
  \begin{theorem}\label{theorem:hyperbolic_expanding}
-Let $f_c$ be a hyperbolic quadratic map, 
-let 
-\begin{equation*}
-	\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\}}
-\end{equation*}
- be the (closed) post-critical set of $f$, and suppose that $f$ is not conjugate to $f_0: z\mapsto z^2$.
+Suppose $f_c: z\mapsto z^2+c$ is hyperbolic and $c \neq0$. 
+Let $\norm{\cdot}_{\mathrm{hyp}}$ be the norm induced by the hyperbolic metric of the domain 
+$\hat {\mathbb C} \setminus \PostCrit$.
 Then we have 
 \begin{equation}
-	\lVert f'(z) \rVert_\mathrm{hyp} > 1
+	\norm {Df_z(v)}_\mathrm{hyp} > \norm v_\mathrm{hyp}
 \end{equation}
 for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular for every $z \in \mathcal J$.
+
+
  \end{theorem}
   
- Here 
- \begin{equation}
-	\lVert g'(z) \rVert_\mathrm{hyp} := \frac {\rho (g(z))}{\rho(z)} |g'(z)|,	
- \end{equation}
- is the hyperbolic \enquote{change of scale} of $f$ at the point $z$,
-  where $\rho$ is the 
- hyperbolic (Poincaré) metric of the domain $\hat {\mathbb C} \setminus \PostCrit$.
+%  Here 
+%  \begin{equation}
+% 	\lVert g'(z) \rVert_\mathrm{hyp} := \frac {\rho (g(z))}{\rho(z)} |g'(z)|,	
+%  \end{equation}
+%  is the hyperbolic \enquote{change of scale} of $f$ at the point $z$,
+%   where $\rho$ is the 
+ 
  For two proofs of this theorem, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
 
 %  Hyperbolic maps enjoy the principle of the conformal elevator, 
@@ -297,7 +343,10 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular
 \begin{proof}
 	There is an iterate $g = f^{\circ m}$ of $f$ for which there is a uniform bound
 	$|g'| > \kappa$ on $\mathcal J$, for some constant $\kappa  > 1$. 
-	By iterating $g$, the claim follows for all sufficiently small values of $\epsilon$.
+	% For every $z \in \mathcal J$, there exists $\epsilon(z) >0$ such that $|z-w| < \epsilon(z)$ implies 
+	% $|g(z)-g(w)| > \kappa |z-w|$.
+	By compactness, there exists $\epsilon>0$ such that whenever $|z-w| < \epsilon$ on $\mathcal J$,
+	we have $|g(z)-g(w)| \geq \kappa |z-w|$. The claim follows by iterating $g$.
 \end{proof}
 
 \begin{definition}
@@ -367,7 +416,8 @@ we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
 % follows in an analogous manner. 
 % Alternatively, it can be obtained from the bound for $\Length(\gamma_k)$ 
 % using Koebe's distortion theorem.
-Thus any point on $\mathcal J$ can be reached from the central station $s_{0,0}$ by a curve of bounded length.
+Thus any point on $\mathcal J$ can be reached from the central station 
+$s_{0,0}$ by a curve of bounded length.
 
 (ii) By \cref{elevator for points on julia}, 
 there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart 

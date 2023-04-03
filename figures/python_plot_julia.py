@@ -7,7 +7,7 @@ def f(z, c):
     return z**2 + c
 
 # Define the parameters
-c = 0.26
+c = 0.25
 xmin, xmax, ymin, ymax = -1.5,1.5,-1.5,1.5 # 0.48, 0.7, -0.15, 0.15
 npoints = 2000
 maxiter = 50
@@ -29,7 +29,7 @@ for i in range(maxiter):
 # Plot the Julia set
 plt.figure(figsize=(8,8))
 plt.imshow(count, cmap='Blues', extent=(xmin, xmax, ymin, ymax))
-#plt.axis('off')
+plt.axis('off')
 
-plt.savefig("julia_026.png")
+plt.savefig("julia_025.png")
 plt.show()
