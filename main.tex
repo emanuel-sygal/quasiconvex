@@ -283,20 +283,23 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 \section{Hyperbolic Maps}
 In this section we prove quasiconvexity for parameters $c$ in the main cardioid $\heartsuit$.
+Since the argument will involve iterating $f_c$ and then iterating $f_c^{-1}$, 
+we will need to exclude points around which there is no holomorphic inverse for some iterate $f_c^{\circ n}$ of $f_c$:
 
 \begin{definition}
 	The \emph{post-critical set} of $f_c$ is the closure of the forward orbits 
-	of the critical points:
+	of the critical points,
 	\begin{equation*}
 		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
 	\end{equation*}	
 \end{definition}
-
+% As an indication for its relevance, notice that at points 
+% $\hat{\mathbb C} \setminus \PostCrit$ there is a local inverse of $f^{\circ n}$ for all $n \geq 0$.
 For every $c \neq 0$, the post-critical set $\PostCrit$ of $f_c$ contains at least $3$ points 
 and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
 is a hyperbolic domain by \cref{thm:criterion-hyperbolic-domain}.
 
-We call $f_c$ \emph{hyperbolic} if
+The map $f_c$ \emph{hyperbolic} if
  its post-critical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
  This is equivalent to $f_c$ being expanding on $\mathcal J$:
 

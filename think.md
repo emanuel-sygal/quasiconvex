@@ -1,3 +1,5 @@
+
+
 2. If $c \in \heartsuit$ then $\mathcal J_c$ is a quasicircle.
 
 3. If $c$ is on the boundary, $\mathcal J$ is still a Jordan curve.
