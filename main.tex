@@ -128,20 +128,20 @@ We record here for convenience a form of Koebe's distortion principle that will 
 \end{theorem}
 
 \subsection{The hyperbolic metric}
+Even though quasiconvexity is defined using the Euclidean metric, 
+the arguments will involve the hyperbolic metric, which is better-behaved in our setting.
+
 \begin{theorem}
-	The \emph{Poincaré metric}
+	The hyperbolic metric
 	$$\mathrm{ds} = \frac {|\mathrm {dz}|}{1-|z|^2} $$
 	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
 	by a positive constant, which is invariant under conformal automorphisms.
-
-	There exists a Riemannian metric on the unit disk $\mathbb D$ which is invariant 
-	under conformal automorphisms, and it is unique up to  multiplication by a positive constant.
 \end{theorem}
 
-\begin{theorem}
-	Let $U$ be a planar domain whose complement $\mathbb C \setminus U$ has at least three points.
-	Then the universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$. This defines the 
-	Poincaré metric on $U$ as the unique Riemannian metric for which the projection 
+\begin{theorem}\label{thm:criterion-hyperbolic-domain}
+	Let $U$ be a planar domain whose complement $\mathbb C \setminus U$ has at least two points.
+	The universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$; this defines the 
+	hyperbolic metric on $U$ as the unique Riemannian metric for which the projection 
 	$\tilde U \to U$ is a local isometry.
 \end{theorem}
 
@@ -287,40 +287,45 @@ In this section we prove quasiconvexity for parameters $c$ in the main cardioid 
 
 \begin{definition}
 	The \emph{post-critical set} of $f_c$ is the closure of the forward orbits 
-	of the critical points of $f_c$
-	in $\hat{\mathbb C}$:
+	of the critical points:
 	\begin{equation*}
 		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
 	\end{equation*}	
 \end{definition}
 
+For every $c \neq 0$, the post-critical set $\PostCrit$ of $f_c$ contains at least $3$ points 
+and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
+is a hyperbolic domain by \cref{thm:criterion-hyperbolic-domain}.
 
-A quadratic map $f_c$ is called \emph{hyperbolic} if
- its postcritical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
+We call $f_c$ \emph{hyperbolic} if
+ its post-critical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
  This is equivalent to $f_c$ being expanding on $\mathcal J$:
 
  \begin{theorem}\label{theorem:hyperbolic_expanding}
-Suppose $f_c: z\mapsto z^2+c$ is hyperbolic and $c \neq0$. 
+Let $f_c: z\mapsto z^2+c$  be a map with $c \neq0$. 
 Let $\norm{\cdot}_{\mathrm{hyp}}$ be the norm induced by the hyperbolic metric of the domain 
-$\hat {\mathbb C} \setminus \PostCrit$.
-Then we have 
-\begin{equation}
+$\hat {\mathbb C} \setminus \PostCrit$, 
+then we have 
+\begin{equation}\label{eq:hyp-derivative-bound}
 	\norm {Df_z(v)}_\mathrm{hyp} > \norm v_\mathrm{hyp}
-\end{equation}
-for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, and in particular for every $z \in \mathcal J$.
-
-
+\end{equation} 
+for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
  \end{theorem}
-  
-%  Here 
-%  \begin{equation}
-% 	\lVert g'(z) \rVert_\mathrm{hyp} := \frac {\rho (g(z))}{\rho(z)} |g'(z)|,	
-%  \end{equation}
-%  is the hyperbolic \enquote{change of scale} of $f$ at the point $z$,
-%   where $\rho$ is the 
- 
  For two proofs of this theorem, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
 
+\begin{corollary}
+	If $c \in \heartsuit$ and $c \neq 0$, then we have 
+	\begin{equation}
+		\norm {Df_z(v)}_\mathrm{hyp} \geq \kappa \norm v_\mathrm{hyp}
+	\end{equation} 
+	for all $z \in \mathcal J$, for some constant $\kappa >1$.
+\end{corollary}
+\begin{proof}
+	By hyperbolicity 
+	$ \mathcal J \subseteq f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, 
+	and the claim follows by compactness.
+\end{proof} 
+ 
 %  Hyperbolic maps enjoy the principle of the conformal elevator, 
 %  which roughly says that any ball centered on the Julia set can be blown up to a definite size. 
 %  More precisely, we have the following proposition:
@@ -466,7 +471,7 @@ In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The Cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
 Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. 
 This is more complicated than the hyperbolic case, 
-because the postcritical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
+because the post-critical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
 One no longer has a uniform bound on the distortion of inverse iterates, 
 and we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$ using Koebe's distortion theorem. 
 As a substitute, we present an analogue of the principle of the conformal elevator in this parabolic setting.
