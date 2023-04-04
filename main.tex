@@ -452,16 +452,22 @@ which we rewrite as
 	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(\eta_{w_1,w_2}\right)}.
 \end{equation}
 
-We deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argument.
+We shall now deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argument.
 % since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
-
-Indeed, denote $g=f^{\circ n}$. We may find a topological ball $B$ containing the points $w_1,w_2$ 
+Let $B=B(z_1,z_2)$ be a topological ball containing the points $w_1,w_2$ 
 and the itinerary $\eta_{w_1,w_2}$
-but with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(g)$.
+with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(f)$.
+
+% Denote $g=f^{\circ n}$. 
 % TODO: this contains at least two frustrating details for showing why it exists. 
 % Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain?
 
-We apply \cref{Koebe} on a branch of $g^{-1}$ in $B$ sending $(w_1,w_2)$ to $(z_1,z_2)$.
+Denoting $f^{\circ n}$ by $g$, 
+we want to apply \cref{Koebe} on a branch of $g^{-1}$ in $B$ sending $(w_1,w_2)$ to $(z_1,z_2)$.
+However, such a branch cannot exists in all of $B$ for large $n$, since in Böttcher coordinates
+we are confined to a sector of angle $\frac \pi {2^n}$. Thus we must work locally. 
+This hopefully doesn't break anything.
+
 It follows that
 \begin{equation}
 	\frac {|z_1-z_2|}{|w_1-w_2|} \asymp |(g^{-1})'(x)| \asymp
