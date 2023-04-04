@@ -240,15 +240,14 @@ $$
 % \end{theorem}
 
 \section{Transporting the Rails} \label{rails-section}
-Let $c\in\left[-\frac 34,\frac{1}{4}\right]$. For these values of $c$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve, and $f_c$ has 
+Let $c\in \heartsuit$. For these values of $c$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve, and $f_c$ has 
 a Böttcher coordinate $\psi$ at infinity; 
 namely, $\psi$ is the unique conformal map $\D^{*}\to\mathrm{Exterior}(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
 $$
 f\circ\psi=\psi\circ f_{0}.
 $$
-The map $\psi$ extends to a homeomorphism between the circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
-theorem. Uniqueness is obvious from the uniqueness of the Riemann map up to rotation; 
-see \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
+The Böttcher coordinate $\psi$ extends to a homeomorphism between the unit circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
+theorem.See \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
 relying on the explicit construction 
 \begin{equation}
 	\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
@@ -374,15 +373,15 @@ We have the estimate
 \Length(\gamma_{k})\lesssim\theta^{k},
 \end{equation*}
 uniformly in $z$, for some constant $\theta=\theta(c)<1$. 
-In particular,any point on \(\mathcal{J}\) is rectifiably accessible.
+In particular, any point on \(\mathcal{J}\) is rectifiably accessible.
 
 \item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \leavevmode
-(i) For $c=0$ this is a direct computation. 
-Suppose $c \neq0$, and let $\Postcrit$ as before be the post-critical set of $f$.
+(i) For $c=0$, this is a direct computation. 
+Suppose $c \neq 0$, and let $\Postcrit$ be the post-critical set of $f$.
 
 % The map $f: \hat {\mathbb C} \setminus f^{-1}(\PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$ is an isometry,
 
@@ -391,8 +390,8 @@ Suppose $c \neq0$, and let $\Postcrit$ as before be the post-critical set of $f$
 
 %In particular, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is a strict contraction.
 
-Any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$, 
-potentially defined only in a subdomain,
+Any branch of $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$
+% potentially defined only in a subdomain
 is a strict hyperbolic contraction by \cref{theorem:hyperbolic_expanding}.
 
 % Indeed, we may decompose this map as the hyperbolic isometry 
@@ -414,7 +413,8 @@ where the last inequality holds since $f^{\circ k}(\gamma_k)$ lies
 on the real axis in case $\gamma_k$ is an express track, 
 or on the equipotetial $\psi(\{ |z| = \sqrt 2\})$ otherwise.
 
-As the hyperbolic metric is equivalent to the Euclidean metric on compact subsets, 
+As the hyperbolic metric is equivalent to the Euclidean metric on compact subsets
+of $\hat{\mathbb C} \setminus \PostCrit$,
 we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
 
 % The corresponding bound $\Length(\delta_k) \lesssim \theta^k$ for peripheral tracks 
@@ -435,35 +435,36 @@ then there is an iterate $f^{\circ n}$ for which
 \begin{equation}
 	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon
 \end{equation}
-and we have a uniform bound on 
+and we have a uniform bound on
 $$\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}$$ as before.
-Thus we are left with showing that 
+Thus we are left with showing that
 \begin{equation}
 	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|},
 \end{equation}
-which follows from a distortion argument,
-since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
-
-Indeed, as $z_1$ and $z_2$ are $\epsilon$-close, 
-we may find a topological ball $B$ containing the points $z_1,z_2$ 
-and the itinerary $\eta_{z_1,z_2}$
-such that $B$ has a definite modulus inside of $\hat{\mathbb C }\setminus \PostCrit$, 
-and on which the map $f^{\circ n}$ is univalent.
-
-We apply \cref{Koebe}
-to deduce that 
-\begin{equation}
-	\frac {|w_1-w_2|}{|z_1-z_2|} \asymp |(f^{\circ n})'(x)|	
-\end{equation}
-
-for any point $x \in B$. On the other hand, applying $f^{\circ n}$ on the itinerary $\eta_{z_1,z_2}$ 
-makes its length grow by the same factor, and we conclude that 
-\begin{equation}
-	\frac{|w_1-w_2|}{|z_1-z_2|}
+which we rewrite as
+% , denoting $g=f^{\circ n}$, that 
+\begin{equation} \label{eq:hyperbolic-distortion-goal}
+	\frac{|z_1-z_2|}{|w_1-w_2|}
 	\asymp
-	\frac{\Length\left(\eta_{w_1,w_2}\right)}{\Length\left(\eta_{z_{1},z_{2}}\right)},
+	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(\eta_{w_1,w_2}\right)}.
 \end{equation}
-as needed.
+
+We deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argument.
+% since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
+
+Indeed, denote $g=f^{\circ n}$. We may find a topological ball $B$ containing the points $w_1,w_2$ 
+and the itinerary $\eta_{w_1,w_2}$
+but with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(g)$.
+% TODO: this contains at least two frustrating details for showing why it exists. 
+% Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain?
+
+We apply \cref{Koebe} on a branch of $g^{-1}$ in $B$ sending $(w_1,w_2)$ to $(z_1,z_2)$.
+It follows that
+\begin{equation}
+	\frac {|z_1-z_2|}{|w_1-w_2|} \asymp |(g^{-1})'(x)| \asymp
+	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(g(\eta_{z_1,z_2})\right)}.
+\end{equation}
+for any point $x \in B$, as needed.
 \end{proof}
 
 \section{The Cauliflower}
