@@ -206,7 +206,7 @@ The following notion will be used for showing the existence of a Koebe space, i.
 	\emph{$\eta$-relatively separated.}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem} \label{thm: rel-dist-bounds-modulus}
 	Let $E,F \subset \mathbb C$ be compact connected sets.
 	If $E,F$ are $\eta$-relatively separated, for some constant $\eta>0$,
 	then there exists a topological ball $B$ containing $E$ with a definite modulus inside $\hat{\mathbb C} \setminus F$:
@@ -220,7 +220,7 @@ The following notion will be used for showing the existence of a Koebe space, i.
 \end{theorem}
 
 \begin{proof}
-	\textcolor{red}{To-do. This is close to saying "the plane is a Loewner space".} 
+	\textcolor{red}{To-do.} This is close to saying "the plane is a Loewner space".
 	Also need to replace later the post-critical set by a connected super-set.
 \end{proof}
 	 
@@ -351,7 +351,7 @@ $\eta_{z_1,z_2}=\psi(\eta_{\zeta_1,\zeta_2})$,
 where $\zeta_i=\psi^{-1}(z_i)$ are the corresponding points on $\partial \mathbb D^*$. 
 \end{enumerate}
 
-We omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\mathrm{Exterior}(\mathcal J)$.
+We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\mathrm{Exterior}(\mathcal J)$.
 
 %These itineraries can equivalently be obtained directly as in the case of $\mathbb D^*$, in terms of following the central itineraries from the common ancestor in the tree structure.
 %Trivially since $\psi$ is a bijective correspondence between the two decompositions.
@@ -549,10 +549,13 @@ which we rewrite as
 \end{equation}
 
 We shall now deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argument.
+Since $\Postcrit$ is compactly contained in $\mathcal K$, we may enlarge $\Postcrit$ to a compact connected set 
+$\tilde {\PostCrit} \subset \mathcal K$ while maintaining a definite distance from the boundary $\mathcal J$.
+By \cref{thm: rel-dist-bounds-modulus},
 % since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
-Let $B=B(z_1,z_2)$ be a topological ball containing the points $w_1,w_2$ 
-and the itinerary $\eta_{w_1,w_2}$
-with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(f)$.
+there is a topological ball $B=B(z_1,z_2)$ containing the itinerary $\eta_{w_1,w_2}$ and having
+a definite modulus inside $\hat{\mathbb C }\setminus \tilde{\PostCrit}$.
+
 % To construct the part of $B$ outside $\mathcal K$ it to enough treat the round case $c=0$ and then apply 
 % the conjugacy $\psi$. The part inside $\mathcal K$ can just be a path that stays closer
 % to $\mathcal J$ that $\dist{\mathcal J, \Postcrit}$.
@@ -561,21 +564,9 @@ with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(f)$.
 % Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain or its preimage or what?
 
 Denoting $f^{\circ n}$ by $g$, 
-we want to apply \cref{Koebe} on a branch of $g^{-1}$ in $B$ sending $(w_1,w_2)$ to $(z_1,z_2)$.
-
-\textcolor{red}{Such a branch indeed exists in all of $B$, since $n$ is small relative to the \enquote{depth} of the itinerary,
-so that $f^{\circ n}$ is indeed injective on a preimage of $B$?}
-% since in Böttcher coordinates
-% $f^{\circ n}$ is automatically injective on sectors away from $0$
-%  of external angle smaller than $\frac {2\pi} {2^n}$, and 
-%  indeed we cannot have $n$ larger than the depth of the itinerary 
-%  $\eta_{w_1,w_2}$ because we stop soonner than that.
-
-% Such a branch may not exist in all of $B$ if $n$ is large, since in Böttcher coordinates
-% $f^{\circ n}$ is not injective on sectors of external angle larger than $\frac {2\pi} {2^n}$.
-% Thus we work locally, using the inverse defined near each point of $\overline B$. by compactness a 
-% finite number of such branches covers all of $B$.
-% This hopefully doesn't break anything.
+we apply \cref{Koebe} on a branch of $g^{-1}$ defined in all of $B$ and sending $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$.
+Such a branch exists because $B$ is disjoint from $\PostCrit$ and since we can ensure that $B$ does not encircle the origin by 
+removing an external ray disjoint from $\eta_{w_1,w_2}$. \textcolor{red}{(Can I prove it?)}
 
 It follows that
 \begin{equation}
