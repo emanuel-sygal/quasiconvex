@@ -138,20 +138,55 @@ the arguments will involve the hyperbolic metric, which is better-behaved in our
 	by a positive constant, which is invariant under conformal automorphisms.
 \end{theorem}
 
-Notice that the hyperbolic metric is equivalent to the Euclidean metric on compact subsets of $\mathbb D$.
+This defines the hyperbolic metric on topological balls, by requiring that the Riemann map
+will be an isometry. Notice that this metric is locally equivalent to the Euclidean metric.
+We will need the hyperbolic metric in more general domains:
+
+\begin{definition}
+	A domain $U \subset \mathbb C$ is \emph{hyperbolic} if its 
+	universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$.
+\end{definition}
 
 \begin{theorem}\label{thm:criterion-hyperbolic-domain}
-	Let $U$ be a planar domain. If the complement $\mathbb C \setminus U$ has at least two points
-	then the universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$.
+	Let $U \subset \mathbb C$ be a domain. If the complement $\mathbb C \setminus U$ has at least two points
+	then the domain $U$ is hyperbolic.
 \end{theorem}
 
 \begin{definition}
-	Let $U$ be a planar domain whose universal covering $\tilde U$ is biholomorphic to $\mathbb D$,
+	Let $U$ be a hyperbolic domain, 
 	and equip $\tilde U$ with the hyperbolic metric defined in \cref{thm: hyp-metric-in-disk}.
 	The \emph{hyperbolic metric} on $U$ is the unique Riemannian metric for which the projection 
 	$\tilde U \to U$ is a local isometry.
 \end{definition}
 
+\begin{theorem}[The Schwarz-Pick theorem]
+	Let $f:U_1 \to U_2$ be a holomorphic map between two hyperbolic domains $U_1,U_2 \subset \mathbb C$.
+	Then $f$ is a hyperbolic contraction, meaning that
+	\begin{equation}
+		\dist(f(z),f(w)) \leq \dist (z,w)
+	\end{equation}
+	for all $z,w \in U_1$. If $f$ is not a covering map, then the inequality is strict for all $z \neq w$.
+\end{theorem}
+
+\begin{proof}
+	The classical Schwarz lemma gives the case $f:\mathbb D \to \mathbb D$.
+	If $f$ is not a covering map, then the lift of $f$
+	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$, 
+	again by the classical Schwarz lemma.
+\end{proof}
+
+\begin{definition}
+	Let $f:U_1\to U_2$ be holomorphic map between hyperbolic domains, and 
+	let $z\in U_1$. The \emph{hyperbolic derivative} of $f$ at the point $z$ 
+	is the operator norm of derivative of $f$
+	at $z$:
+	\begin{equation} \label{def:hyp-derivative}
+		\norm {f'(z)}_{\mathrm hyp} = 
+		\frac{\norm{Df(z)(v)}_{\mathrm{hyp}(U_2)}}
+		{\norm{v}_{\mathrm{hyp}(U_1)}},
+	\end{equation}
+	where $v$ is any nonzero tangent vector at the point $z$.
+\end{definition}
 \section{The exterior disk}
 
 We connect any two boundary points $\zeta_1, \zeta_2 \in \partial \mathbb D^*$ by a path in $\mathbb D^*$ in a manner that respects the map 
@@ -316,16 +351,18 @@ Let $\norm{\cdot}_{\mathrm{hyp}}$ be the norm induced by the hyperbolic metric o
 $\hat {\mathbb C} \setminus \PostCrit$, 
 then we have 
 \begin{equation}\label{eq:hyp-derivative-bound}
-	\norm {Df_z(v)}_\mathrm{hyp} > \norm v_\mathrm{hyp}
+	\norm {f'(z)}_\mathrm{hyp} > 1
 \end{equation} 
 for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
  \end{theorem}
  For two proofs of this theorem, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
 
+For the next corollary, recall the definition of the hyperbolic derivative in \cref{def:hyp-derivative}.
+
 \begin{corollary}
 	If $c \in \heartsuit$ and $c \neq 0$, then we have 
 	\begin{equation}
-		\norm {Df_z(v)}_\mathrm{hyp} \geq \kappa \norm v_\mathrm{hyp}
+		\norm {f'(z)}_\mathrm{hyp} \geq \kappa
 	\end{equation} 
 	for all $z \in \mathcal J$, for some constant $\kappa >1$.
 \end{corollary}
@@ -359,11 +396,11 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
 	to the Euclidean metric by passing to an iterate of $f$. 
 	Indeed, for every iterate $f^{\circ m}$ we have
 	\begin{equation}
-		\norm {Df_z^{\circ m}(v)}_\mathrm{hyp} \geq \kappa^m \norm v_\mathrm{hyp}
+		\norm {(f^{\circ m})'(z)}_\mathrm{hyp} \geq \kappa^m
 	\end{equation} 
 	for every point $z \in \mathcal J$ and every tangent vector $v$ at $z$.
 	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
-	we may take $n$ large enough so that for $g=f^{\circ m}$ there is a uniform bound
+	we may take $m$ large enough so that for $g=f^{\circ m}$ there is a uniform bound
 	$|g'| > \mu$ on $\mathcal J$, for some constant $\mu  > 1$. 
 	% For every $z \in \mathcal J$, there exists $\epsilon(z) >0$ such that $|z-w| < \epsilon(z)$ implies 
 	% $|g(z)-g(w)| > \kappa |z-w|$.
