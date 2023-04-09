@@ -29,11 +29,8 @@ is the set of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fi
 When $c \in \heartsuit$, the Julia set $\mathcal J_c$ is a \emph{quasidisk}, the image of a round disk under a quasiconformal map.
 This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
-% Parameters $c \in \heartsuit$ are 
-% {\em hyperbolic}. Loosely speaking, this means that $\mathcal J_c$ satisfies the principle of the conformal elevator: 
+% Parameters $c \in \heartsuit$ are {\em hyperbolic}. Loosely speaking, this means that $\mathcal J_c$ satisfies the principle of the conformal elevator: 
 % up to bounded distortion, a small piece of $\mathcal J_c$ looks like a large piece $\mathcal J_c$.
-
-% $\mathcal J_c$ is a \emph{quasicircle}, which roughly means that $\mathcal J_c$ has no \enquote{cusps}.
 
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
@@ -133,17 +130,27 @@ the arguments will involve the hyperbolic metric, which is better-behaved in our
 
 \begin{theorem}
 	The hyperbolic metric
-	$$\mathrm{ds} = \frac {|\mathrm {dz}|}{1-|z|^2} $$
+	\begin{equation} \label{thm: hyp-metric-in-disk}
+		\mathrm{ds} = \frac {|\mathrm {dz}|}{1-|z|^2}
+	\end{equation}
+	
 	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
 	by a positive constant, which is invariant under conformal automorphisms.
 \end{theorem}
 
+Notice that the hyperbolic metric is equivalent to the Euclidean metric on compact subsets of $\mathbb D$.
+
 \begin{theorem}\label{thm:criterion-hyperbolic-domain}
-	Let $U$ be a planar domain whose complement $\mathbb C \setminus U$ has at least two points.
-	The universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$; this defines the 
-	hyperbolic metric on $U$ as the unique Riemannian metric for which the projection 
-	$\tilde U \to U$ is a local isometry.
+	Let $U$ be a planar domain. If the complement $\mathbb C \setminus U$ has at least two points
+	then the universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$.
 \end{theorem}
+
+\begin{definition}
+	Let $U$ be a planar domain whose universal covering $\tilde U$ is biholomorphic to $\mathbb D$,
+	and equip $\tilde U$ with the hyperbolic metric defined in \cref{thm: hyp-metric-in-disk}.
+	The \emph{hyperbolic metric} on $U$ is the unique Riemannian metric for which the projection 
+	$\tilde U \to U$ is a local isometry.
+\end{definition}
 
 \section{The exterior disk}
 
@@ -247,7 +254,7 @@ $$
 f\circ\psi=\psi\circ f_{0}.
 $$
 The Böttcher coordinate $\psi$ extends to a homeomorphism between the unit circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
-theorem.See \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
+theorem. See \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
 relying on the explicit construction 
 \begin{equation}
 	\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
@@ -283,11 +290,11 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 \section{Hyperbolic Maps}
 In this section we prove quasiconvexity for parameters $c$ in the main cardioid $\heartsuit$.
-Since the argument will involve iterating $f_c$ and then iterating $f_c^{-1}$, 
-we will need to exclude points around which there is no holomorphic inverse for some iterate $f_c^{\circ n}$ of $f_c$:
+Since the argument will involve iterating $f$ and then iterating $f^{-1}$, 
+we will need to exclude points around which there is no holomorphic inverse for some iterate $f^{\circ n}$:
 
 \begin{definition}
-	The \emph{post-critical set} of $f_c$ is the closure of the forward orbits 
+	The \emph{post-critical set} of $f$ is the closure of the forward orbits 
 	of the critical points,
 	\begin{equation*}
 		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
@@ -295,13 +302,13 @@ we will need to exclude points around which there is no holomorphic inverse for 
 \end{definition}
 % As an indication for its relevance, notice that at points 
 % $\hat{\mathbb C} \setminus \PostCrit$ there is a local inverse of $f^{\circ n}$ for all $n \geq 0$.
-For every $c \neq 0$, the post-critical set $\PostCrit$ of $f_c$ contains at least $3$ points 
+For every $c \neq 0$, the post-critical set $\PostCrit$ of the map $f: z\mapsto z^2+c$ contains at least $3$ points 
 and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
 is a hyperbolic domain by \cref{thm:criterion-hyperbolic-domain}.
 
-The map $f_c$ \emph{hyperbolic} if
+The map $f$ \emph{hyperbolic} if
  its post-critical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
- This is equivalent to $f_c$ being expanding on $\mathcal J$:
+ This is equivalent to $f$ being expanding on $\mathcal J$:
 
  \begin{theorem}\label{theorem:hyperbolic_expanding}
 Let $f_c: z\mapsto z^2+c$  be a map with $c \neq0$. 
@@ -338,7 +345,7 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
 % \end{proposition}
 
 \begin{corollary} \label{elevator for points on julia}
-	Let $f_c$ be a hyperbolic quadratic map.
+	Let $f$ be a hyperbolic quadratic map.
 	There exists  $\epsilon > 0$ such that 
 	every pair of points $z,w\in\mathcal{J}$
 	 has a forward iterate $f^{\circ n}$ for which 
@@ -347,13 +354,21 @@ for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
 	 \end{equation*}
 \end{corollary}
 
-\begin{proof}
-	There is an iterate $g = f^{\circ m}$ of $f$ for which there is a uniform bound
-	$|g'| > \kappa$ on $\mathcal J$, for some constant $\kappa  > 1$. 
+\begin{proof}	
+	We first convert the bound of \cref{elevator for points on julia} from the hyperbolic metric
+	to the Euclidean metric by passing to an iterate of $f$. 
+	Indeed, for every iterate $f^{\circ m}$ we have
+	\begin{equation}
+		\norm {Df_z^{\circ m}(v)}_\mathrm{hyp} \geq \kappa^m \norm v_\mathrm{hyp}
+	\end{equation} 
+	for every point $z \in \mathcal J$ and every tangent vector $v$ at $z$.
+	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
+	we may take $n$ large enough so that for $g=f^{\circ m}$ there is a uniform bound
+	$|g'| > \mu$ on $\mathcal J$, for some constant $\mu  > 1$. 
 	% For every $z \in \mathcal J$, there exists $\epsilon(z) >0$ such that $|z-w| < \epsilon(z)$ implies 
 	% $|g(z)-g(w)| > \kappa |z-w|$.
 	By compactness, there exists $\epsilon>0$ such that whenever $|z-w| < \epsilon$ on $\mathcal J$,
-	we have $|g(z)-g(w)| \geq \kappa |z-w|$. The claim follows by iterating $g$.
+	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows by iterating $g$.
 \end{proof}
 
 \begin{definition}
@@ -457,16 +472,29 @@ We shall now deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argum
 Let $B=B(z_1,z_2)$ be a topological ball containing the points $w_1,w_2$ 
 and the itinerary $\eta_{w_1,w_2}$
 with a definite modulus inside $\hat{\mathbb C }\setminus \PostCrit(f)$.
+% To construct the part of $B$ outside $\mathcal K$ it to enough treat the round case $c=0$ and then apply 
+% the conjugacy $\psi$. The part inside $\mathcal K$ can just be a path that stays closer
+% to $\mathcal J$ that $\dist{\mathcal J, \Postcrit}$.
 
-% Denote $g=f^{\circ n}$. 
-% TODO: this contains at least two frustrating details for showing why it exists. 
-% Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain?
+% TODO: details for why it exists.
+% Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain or its preimage or what?
 
 Denoting $f^{\circ n}$ by $g$, 
 we want to apply \cref{Koebe} on a branch of $g^{-1}$ in $B$ sending $(w_1,w_2)$ to $(z_1,z_2)$.
-However, such a branch cannot exists in all of $B$ for large $n$, since in Böttcher coordinates
-we are confined to a sector of angle $\frac \pi {2^n}$. Thus we must work locally. 
-This hopefully doesn't break anything.
+
+\textcolor{red}{Such a branch indeed exists in all of $B$, since $n$ is small relative to the \enquote{depth} of the itinerary,
+so that $f^{\circ n}$ is indeed injective on a preimage of $B$?}
+% since in Böttcher coordinates
+% $f^{\circ n}$ is automatically injective on sectors away from $0$
+%  of external angle smaller than $\frac {2\pi} {2^n}$, and 
+%  indeed we cannot have $n$ larger than the depth of the itinerary 
+%  $\eta_{w_1,w_2}$ because we stop soonner than that.
+
+% Such a branch may not exist in all of $B$ if $n$ is large, since in Böttcher coordinates
+% $f^{\circ n}$ is not injective on sectors of external angle larger than $\frac {2\pi} {2^n}$.
+% Thus we work locally, using the inverse defined near each point of $\overline B$. by compactness a 
+% finite number of such branches covers all of $B$.
+% This hopefully doesn't break anything.
 
 It follows that
 \begin{equation}
