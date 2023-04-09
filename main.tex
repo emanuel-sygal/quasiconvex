@@ -107,24 +107,6 @@ and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
 \section{Complex-analytic preliminaries}
 % \subsection{The Böttcher coordinate}
 
-\subsection{The Distortion Principle}
-We record here for convenience a form of Koebe's distortion principle that will be used repeatedly. 
-
-\begin{definition}
-	Every topological annulus $A \subset \hat{\mathbb C}$ is biholomorphic to 
-	a unique round annulus of the form $\{ 1<|z|<R \}$. 
-	The (conformal) \emph{modulus} of $A$ is the value $\mathrm {Mod}(A) = \frac 1{2\pi} \log R$.
-\end{definition}
-\begin{theorem}[{Koebe's Distortion Principle, \cite[Theorem 2.9]{mcmullen_1994}}]  \label{Koebe}
-	Let $D \subset U $ be topological disks with $\mathrm {Mod}(U \setminus D)  \geq m>0$
-	 and let $f$ be a map univalent in $U$,
-	then we have the bound 
-	\begin{equation}
-		\frac {|f(y)-f(z)|}{|y-z|} \asymp_m |f'(x)|
-	\end{equation}
-	for all $x,y,z \in D$.
-\end{theorem}
-
 \subsection{The hyperbolic metric}
 Even though quasiconvexity is defined using the Euclidean metric, 
 the arguments will involve the hyperbolic metric, which is better-behaved in our setting.
@@ -190,6 +172,58 @@ We will need the hyperbolic metric in more general domains:
 	\end{equation}
 	where $v$ is any nonzero tangent vector at the point $z$.
 \end{definition}
+
+\subsection{The Distortion Principle}
+We record here for convenience a form of Koebe's distortion principle that will be used repeatedly. 
+
+\begin{definition}
+	Every topological annulus $A \subset \hat{\mathbb C}$ is biholomorphic to 
+	a unique round annulus of the form $\{ 1<|z|<R \}$. 
+	The (conformal) \emph{modulus} of $A$ is the value $\mathrm {Mod}(A) = \frac 1{2\pi} \log R$. 
+
+
+\end{definition}
+\begin{theorem}[{Koebe's Distortion Principle, \cite[Theorem 2.9]{mcmullen_1994}}]  \label{Koebe}
+	Let $D \subset U $ be topological disks with $\mathrm {Mod}(U \setminus D)  \geq m>0$
+	 and let $f$ be a map univalent in $U$,
+	then we have the bound 
+	\begin{equation}
+		\frac {|f(y)-f(z)|}{|y-z|} \asymp_m |f'(x)|
+	\end{equation}
+	for all $x,y,z \in D$.
+\end{theorem}
+
+\subsection{The relative distance}
+
+The following notion will be used for showing the existence of a Koebe space, i.e. lower bounding the conformal modulus between two sets.
+\begin{definition}
+	The \emph{relative distance} between two sets $E,F \subset \mathbb C$ is 
+	\begin{equation}
+		\Delta(E,F) = \frac{\dist(E,F)}{\min(\diam(E), \diam(F))},	
+	\end{equation}
+	and $\Delta(E,F) = \infty$ if the denominator vanishes.
+	If $\Delta(E,F) \geq \eta$, we say that $E$ and $F$ are 
+	\emph{$\eta$-relatively separated.}
+\end{definition}
+
+\begin{theorem}
+	Let $E,F \subset \mathbb C$ be compact connected sets.
+	If $E,F$ are $\eta$-relatively separated, for some constant $\eta>0$,
+	then there exists a topological ball $B$ containing $E$ with a definite modulus inside $\hat{\mathbb C} \setminus F$:
+	\begin{equation}
+		\Mod (\hat{\mathbb C} \setminus (B \cup F)) \gtrsim _\eta 1.
+	\end{equation}
+
+	% There exists a decreasing homeomorphism $\psi$ of $(0,\infty)$ such that for every ball
+	% $B=B(p,r)$ and every continuum disjoint from $B$, we have 
+	% $\Mod (B,E) \leq \psi (\Delta(B,E))$.
+\end{theorem}
+
+\begin{proof}
+	\textcolor{red}{To-do. This is close to saying "the plane is a Loewner space".} 
+	Also need to replace later the post-critical set by a connected super-set.
+\end{proof}
+	 
 \section{The exterior disk}
 
 We connect any two boundary points $\zeta_1, \zeta_2 \in \partial \mathbb D^*$ by a path in $\mathbb D^*$ in a manner that respects the map 
@@ -650,16 +684,9 @@ $$
 After a little arithmetic, we get (\ref{eq:ell_n1}) and (\ref{eq:ell_n2}).
 \end{proof}
 
-\begin{definition}
-The \emph{relative distance} of a curve $\gamma$ to the post-critical set $\PostCrit$ is 
-$$
-\Delta (\gamma, \mathcal P) = \frac {\dist(\gamma, \mathcal P)}{\min (\diam (\gamma), \diam (\mathcal P))}.
-$$
-
-We say that the curve $\gamma$ is \emph{$\eta$-relatively separated} from the post-critical set if $\Delta (\gamma, \mathcal P) \geq \eta$.  
-\end{definition}
- 
-If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. In particular, if $\gamma$ is a quasiconvexity certificate, then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
+% If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
+% In particular, if $\gamma$ is a quasiconvexity certificate, 
+% then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
 
 \begin{lemma}
 There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have 
