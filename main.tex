@@ -1,124 +1,14 @@
 % !TEX root = main.tex
 
-\RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[12pt]{article}
-\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}
-\usepackage[autostyle=false, style=english]{csquotes}
-\usepackage{mathtools}
-%\MakeOuterQuote{"}
-\setlength{\marginparwidth}{2cm}
-
-\usepackage{nomencl}
-\makenomenclature
-% Run the following command in terminal to update:
-% makeindex "main.nlo" -s nomencl.ist -o "main.nls"
-\nomenclature{$f, f_c$}{The map $z \mapsto z^2+c.$}
-\nomenclature{$\mathcal J$}{The Julia set of $f$.}
-\nomenclature{$K$}{The filled Julia set of $f$.}
-\nomenclature{$\gamma_{z_1, z_2}$}{The track connecting $z_1$ and $z_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
-\nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, this is the same as $\gamma_{z_1,z_2}$.}
-\nomenclature{$A_\infty(f_c)$}{The exterior of the Julia set of $f_c$. The complement of $K_c$.}
-\nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An Alternative notation for $A_\infty(f_c)$.}
-\nomenclature{$\psi$}{The Böttcher coordinate $\mathbb D ^* \to \Exterior(\mathcal J)$ conjugating $f_0$ and $f$.}
-\nomenclature{$s_{n,k}$}{A station in $\mathbb D^*$ or its image under $\psi$.}
-\nomenclature{$\Delta (\gamma, \mathcal P)$}{The relative distance to the post-critical set.}
-\nomenclature{$I_{n}$}{The $n$-th departure set.}
-\nomenclature{$\ell_n$ }{$\Length([s_{n},s_{n+1}]) = s_{n,0}-s_{n+1,0}.$}
-\nomenclature{$\alpha_n$}{the union of the two outermost tracks emanating from the station $s_{n,0}$.}
-
-
-% Prevents line breaks at math inline
-\relpenalty=9999
-\binoppenalty=9999
-
-\usepackage{graphicx,color,mathtools}
-\usepackage{amssymb,amsmath,amsthm,mathrsfs}
-%\usepackage[all,cmtip]{xy}
-\usepackage{comment}
-%\usepackage{todonotes}
-\usepackage{enumitem}   
-\usepackage{tikz} 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{graphicx}
-\usepackage{xcolor}
-
-\usepackage{hyperref}
-\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
-
-\usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{}
-
-
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
-\linespread{1.2}
-
-\numberwithin{equation}{section}
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-
-\DeclareMathOperator{\crit}{crit}
-
-\DeclareMathOperator{\Hdim}{H.dim }
-\DeclareMathOperator{\supp}{supp }
-\DeclareMathOperator{\diam}{diam}
-\DeclareMathOperator{\BV}{BV}
-\DeclareMathOperator{\shadow}{Shadow}
-\DeclareMathOperator{\idiam}{i.diam}
-\DeclareMathOperator{\aut}{Aut}
-\DeclareMathOperator{\hol}{Hol}
-\DeclareMathOperator{\hyp}{hyp}
-\DeclareMathOperator{\dist}{dist}
-\DeclareMathOperator{\area}{Area}
-\DeclareMathOperator{\loc}{loc}
-\DeclareMathOperator{\Mod}{Mod}
-\DeclareMathOperator{\Arg}{Arg}
-\DeclareMathOperator{\Length}{Length}
-\DeclareMathOperator{\HypLength}{HypLength}
-\DeclareMathOperator{\CriticalOrbit}{CriticalOrbit}
-\DeclareMathOperator{\Postcrit}{\mathcal P}
-\DeclareMathOperator{\PostCrit}{\mathcal P}
-\DeclareMathOperator{\Closure}{Closure}
-\DeclareMathOperator{\RadialSuccessor}{RadialSuccessor}
-\DeclareMathOperator{\Exterior}{Exterior}
-
-\global\long\def\R{\mathbb{R}}%
-\global\long\def\C{\mathbb{C}}%
-\global\long\def\N{\mathbb{N}}%
-\global\long\def\Z{\mathbb{Z}}%
-\global\long\def\D{\mathbb{D}}%
-\global\long\def\H{\mathbb{H}}%
-\global\long\def\do#1#2{\frac{\partial#1}{\partial#2}}%
-\global\long\def\nor#1{\left|#1\right|}%
-\global\long\def\o#1{\overline{#1}}%
-\global\long\def\norm#1{\left\Vert #1\right\Vert }%
-\global\long\def\\sphere{\hat{\mathbb{C}}}%
-\global\long\def\ep{\varepsilon}%
-\global\long\def\mp#1{\left\langle #1\right\rangle }%
-\global\long\def\lap{\triangle}%
-\global\long\def\dz{\mathrm{\mathrm{dz}}}%
-\global\long\def\dt{\mathrm{\mathrm{dt}}}%
-\global\long\def\dtheta{\mathrm{\mathrm{d\theta}}}%
-\global\long\def\dx{\mathrm{\mathrm{dx}}}%
-\global\long\def\dw{\mathrm{\mathrm{dw}}}%
-\global\long\def\T{\mathrm{\mathbb{T}}}%
+\input{preamble.tex}
 \usepackage{subcaption}
 
 \begin{document}
 
 \section{Introduction}
+
+% \input{"Cauliflower.tex"}
+%\cref{fig:Cauliflower_tikz}
 
 Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of the points in the complex plane with bounded orbit
 under iteration by $f_c$:
@@ -144,13 +34,13 @@ This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
-is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. However, according to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
+is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. According to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
 the Cauliflower is a \emph{John domain}, a condition which rules out \enquote{outward-pointing cusps}. 
 Formally, a domain $\Omega$ is John if there exists a \enquote{center} point 
 $z_0 \in \Omega$ that can be connected 
 to any other point $z_1\in \Omega$ by a curve $\gamma$ which stays away from the boundary:
 \begin{equation}
-	\mathrm{dist}(z, \partial \Omega) \gtrsim |z_1-z|
+	\dist(z, \partial \Omega) \gtrsim |z_1-z|
 \end{equation} for all $z\in \gamma$.
  See \cref{fig:julia_sets}.
 
@@ -214,8 +104,7 @@ To facilitate the reading, we first demonstrate the proof in the hyperbolic case
 $c\in \heartsuit)$, in which the usual conformal elevator applies, 
 and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
 
-\section{Complex-analytic preliminaries}
-% \subsection{The Böttcher coordinate}
+\section{Preliminaries}
 
 \subsection{The hyperbolic metric}
 Even though quasiconvexity is defined using the Euclidean metric, 
@@ -224,9 +113,8 @@ the arguments will involve the hyperbolic metric, which is better-behaved in our
 \begin{theorem}
 	The hyperbolic metric
 	\begin{equation} \label{thm: hyp-metric-in-disk}
-		\mathrm{ds} = \frac {2}{1-|z|^2}\;|\mathrm {dz}|
+		\rho = \frac {2|dz|}{1-|z|^2}
 	\end{equation}
-	
 	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
 	by a positive constant, which is invariant under conformal automorphisms.
 \end{theorem}
@@ -237,7 +125,7 @@ We will need the hyperbolic metric in more general domains:
 
 \begin{definition}
 	A domain $U \subset \mathbb C$ is \emph{hyperbolic} if its 
-	universal covering $\tilde U$ of $U$ is biholomorphic to $\mathbb D$.
+	universal covering space $\tilde U$ is biholomorphic to $\mathbb D$.
 \end{definition}
 
 \begin{theorem}\label{thm:criterion-hyperbolic-domain}
@@ -246,8 +134,7 @@ We will need the hyperbolic metric in more general domains:
 \end{theorem}
 
 \begin{definition}
-	Let $U$ be a hyperbolic domain, 
-	and equip $\tilde U$ with the hyperbolic metric defined in \cref{thm: hyp-metric-in-disk}.
+	Let $U$ be a hyperbolic domain. We equip $\tilde U \cong \mathbb{D}$ with the hyperbolic metric defined in \cref{thm: hyp-metric-in-disk}.
 	The \emph{hyperbolic metric} on $U$ is the unique Riemannian metric for which the projection 
 	$\tilde U \to U$ is a local isometry.
 \end{definition}
@@ -271,16 +158,14 @@ We will need the hyperbolic metric in more general domains:
 \end{proof}
 
 \begin{definition}
-	Let $f:U_1\to U_2$ be holomorphic map between hyperbolic domains, and 
-	let $z\in U_1$. The \emph{hyperbolic derivative} of $f$ at the point $z$ 
-	is the operator norm of derivative of $f$
-	at $z$:
+	Let $f:U_1\to U_2$ be holomorphic map between hyperbolic domains. The \emph{hyperbolic derivative} of $f$ at the point $z$ 
+	is given by
 	\begin{equation} \label{def:hyp-derivative}
-		\norm {f'(z)}_{\mathrm hyp} = 
-		\frac{\norm{Df(z)(v)}_{\mathrm{hyp}(U_2)}}
-		{\norm{v}_{\mathrm{hyp}(U_1)}},
+		\norm {f'(z)}_{\hyp} = 
+		\frac{\norm{Df(z)(v)}_{\hyp(U_2)}}
+		{\norm{v}_{\hyp(U_1)}},
 	\end{equation}
-	where $v$ is any nonzero tangent vector at the point $z$.
+	where $v$ is a nonzero tangent vector at the point $z$.
 \end{definition}
 
 \subsection{The Distortion Principle}
@@ -289,12 +174,12 @@ We record here for convenience a form of Koebe's distortion principle that will 
 \begin{definition}
 	Every topological annulus $A \subset \hat{\mathbb C}$ is biholomorphic to 
 	a unique round annulus of the form $\{ 1<|z|<R \}$. 
-	The (conformal) \emph{modulus} of $A$ is the value $\mathrm {Mod}(A) = \frac 1{2\pi} \log R$. 
+	The (conformal) \emph{modulus} of $A$ is the value $\Mod(A) = \frac 1{2\pi} \log R$. 
 
 
 \end{definition}
 \begin{theorem}[{Koebe's Distortion Principle, \cite[Theorem 2.9]{mcmullen_1994}}]  \label{Koebe}
-	Let $D \subset U $ be topological disks with $\mathrm {Mod}(U \setminus D)  \geq m>0$
+	Let $D \subset U $ be topological disks with $\Mod(U \setminus D)  \geq m>0$
 	 and let $f$ be a map univalent in $U$,
 	then we have the bound 
 	\begin{equation}
@@ -328,6 +213,38 @@ The following notion will be used for showing the existence of a Koebe space, i.
 \begin{proof}
 	\textcolor{red}{To-do.} This might be related to "the plane is a Loewner space".
 \end{proof}
+
+\begin{lemma}
+\label{koebe-quasiconvexity}
+Suppose $\gamma$ is a rectifiable curve which efficiently connects two points $w_1, w_2 \in \mathbb{C}$, i.e.~satisfies $$\Length(\gamma) \le C |w_1 - w_2|$$
+for some $C > 0$.
+Let $U$ be a connected open set that contains $\gamma$ with $\Mod(U, \gamma) \ge m$, and $\varphi: U \to \mathbb{C}$ is a conformal map.
+Then, $\varphi \circ \gamma$ connects the points  $z_1 = \varphi(w_1)$ and $z_2 = \varphi(w_2)$ efficiently:
+$$
+\Length(\varphi \circ \gamma) \le A |z_1 - z_2|,
+$$
+where the constant $A > 0$ depends on $C$ and $m$.
+\end{lemma}
+
+\begin{proof}
+The assumption implies that for any point $w \in \gamma$, the ball $B(w, 2c|w_1 - w_2|)$ is contained in $U$, for some $c > 0$ depending on $m$.
+Without loss of generality, we may assume that $c < 1/3$. 
+
+Covering $\gamma$ by a uniformly bounded number of balls of radius $c|w_1-w_2|$ and applying Koebe's distortion theorem on each ball shows that
+$|\varphi'(p)| \asymp |\varphi'(q)|$ for any two points $p, q \in \gamma$. In particular,
+\begin{equation}
+\label{upper-bound-rel-distance}
+\Length(\varphi \circ \gamma) \asymp |\varphi'(w_1)| \cdot \Length(\gamma) \asymp |\varphi'(w_1)| \cdot |w_1 - w_2|.
+\end{equation}
+
+Since the ball $B(w_1, 2c|w_1 - w_2|)$ does not contain $w_2$, Koebe's distortion theorem implies that $z_2 \notin B(z_1, c_2 |\varphi'(w_1)| \cdot |w_1 - w_2|)$ for some $c_2 > 0$. This gives the lower bound
+\begin{equation}
+\label{lower-bound-rel-distance}
+|z_1-z_2| \gtrsim |\varphi'(w_1)| \cdot |w_1 - w_2|.
+\end{equation}
+Putting (\ref{upper-bound-rel-distance}) and (\ref{lower-bound-rel-distance}) two statements together completes the proof.
+\end{proof}
+
 	 
 \section{The exterior disk}
 
@@ -338,7 +255,7 @@ We describe these paths using the metaphor of a passenger who travels by train:
 \begin{definition}
 \emph{Stations} are the points in $\mathbb D ^*$ of the form 
 $$
-s_{n,k}=2^{1/2^{n}} \exp\left(\frac{k}{2^{n}}2\pi i\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\}.
+s_{n,k}=2^{1/2^{n}} \exp\left(2\pi i \cdot \frac{k}{2^{n}}\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\}.
 $$ 
 These are the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
 We refer to $n$ as the \emph{generation} of the station $s_{n,k}$. 
@@ -372,7 +289,7 @@ Let $\zeta=\exp(2\pi i\theta)\in\partial\D$.
 The \emph{central itinerary} of $\zeta$ is a path 
 $\eta_\zeta = \gamma _{\sigma_0,\sigma_1} + \gamma_{\sigma_1,\sigma_2}+\ldots$ 
 from the central station to $\zeta$, made of tracks between the stations 
-$\sigma_0,\sigma_1,\ldots$. It is defined inductively as follows:
+$\sigma_0,\sigma_1,\dots$. It is defined inductively as follows:
 
 Start at the central station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning that
 $$
@@ -387,7 +304,7 @@ then take $\sigma_{k+1}=\sigma$. Otherwise, take $\sigma_{k+1}=\RadialSuccessor(
 We identify the central itinerary $\eta_{\zeta}$ with its sequence of stations $(\sigma_0,\ldots)$. We record two properties of central itineraries:
 
 \begin{itemize}
-	\item There are no two consecutive peripheral tracks in $\eta_{\zeta}$, and in particular
+	\item No central itinerary $\eta_{\zeta}$ uses two consecutive peripheral tracks. In particular,
 	\begin{equation}
 	\label{generation-lower-bound}
 		\operatorname{Generation}(\sigma_k)\geq \frac k2;
@@ -414,19 +331,8 @@ $$
 \end{definition}
 \input{"figures/marker path 2.tex"}
 
-% \section{Complex-analytic tools} \label{complex-analysis-prels}
-% We will need the following classical theorems.
-% \begin{theorem}
-% Let $U$ be a topological disk with modulus at least $m$ inside of a topological disk $V$.
-% Then for all univalent maps in $V$ we have the bound 
-% $$\frac{|f(x)-f(y)|}{|x-y|} \asymp_m |f'(z)|$$
-% valid inside $U$.
-% \end{theorem}
-
-\section{Transporting the Rails} \label{rails-section}
-Let $c\in \heartsuit$. For these values of $c$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve, and $f_c$ has 
-a Böttcher coordinate $\psi$ at infinity; 
-namely, $\psi$ is the unique conformal map $\D^{*}\to\mathrm{Exterior}(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
+\section{Transporting the tracks} \label{rails-section}
+For $c \in \heartsuit$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve. The {\em Böttcher coordinate} $\psi$ is the unique conformal map $\D^{*}\to\Exterior(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
 $$
 f\circ\psi=\psi\circ f_{0}.
 $$
@@ -434,15 +340,13 @@ The Böttcher coordinate $\psi$ extends to a homeomorphism between the unit circ
 theorem. See \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
 relying on the explicit construction 
 \begin{equation}
-	\psi(z)=\lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}=\lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
+	\psi(z) \, = \, \lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}\, = \, \lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
 \end{equation}
-
-% which is equivalent to our setting after conjugating by the map $z\mapsto \frac 1z$.
 
 \input{figures/draw_dyadic_grid.tex}
 
-We apply $\psi$ to the rails that we constructed in $\mathbb D^*$ 
-to obtain the corresponding rails in $\mathrm{Exterior}(\mathcal{J}_c)$:
+We apply $\psi$ to the tracks that we constructed in $\mathbb D^*$ 
+to obtain the corresponding tracks in $\Exterior(\mathcal{J}_c)$:
 \begin{definition} \leavevmode
 \begin{enumerate}
 	\item The 	\emph{stations} of $f_c$ are the points $\psi(s_{n,k})$.
@@ -456,18 +360,18 @@ $\eta_{z_1,z_2}=\psi(\eta_{\zeta_1,\zeta_2})$,
 where $\zeta_i=\psi^{-1}(z_i)$ are the corresponding points on $\partial \mathbb D^*$. 
 \end{enumerate}
 
-We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\mathrm{Exterior}(\mathcal J)$.
+We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\Exterior(\mathcal J)$.
 
 %These itineraries can equivalently be obtained directly as in the case of $\mathbb D^*$, in terms of following the central itineraries from the common ancestor in the tree structure.
 %Trivially since $\psi$ is a bijective correspondence between the two decompositions.
 \end{definition}
 
-Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular the central station $\psi(s_{0,0})$ lies on the real axis.
+When $c \in (-3/4, 1/4)$, $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular, the central station $\psi(s_{0,0})$ lies on the real axis.
 
 
 \section{Hyperbolic Maps}
 In this section we prove the quasiconvexity of $\Exterior(\mathcal J)$ for parameters $c$ in the main cardioid $\heartsuit$.
-Since the argument will involve iterating $f$ and then iterating $f^{-1}$, 
+Since the argument will involve iterating $f^{-1}$, 
 we will need to exclude points around which there is no holomorphic inverse for some iterate $f^{\circ n}$:
 
 \begin{definition}
@@ -479,8 +383,7 @@ we will need to exclude points around which there is no holomorphic inverse for 
 \end{definition}
 % As an indication for its relevance, notice that at points 
 % $\hat{\mathbb C} \setminus \PostCrit$ there is a local inverse of $f^{\circ n}$ for all $n \geq 0$.
-For every $c \neq 0$, the post-critical set $\PostCrit$ of the map $f: z\mapsto z^2+c$ contains at least $3$ points 
-and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
+For every $c \neq 0$, the post-critical set $\PostCrit$ of the map $f: z\mapsto z^2+c$ contains at least $3$ points (e.g.~$0$, $c$ and $\infty$) and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
 is a hyperbolic domain by \cref{thm:criterion-hyperbolic-domain}.
 
 The map $f$ \emph{hyperbolic} if
@@ -492,9 +395,9 @@ Let $c \neq0$, and view $f: z\mapsto z^2+c$ as the map
 $$f: f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \to \hat {\mathbb C} \setminus \PostCrit,$$
 with the corresponding hyperbolic metrics. Then we have 
 \begin{equation}\label{eq:hyp-derivative-bound}
-	\norm {f'(z)}_\mathrm{hyp} > 1
+	\norm {f'(z)}_{\hyp} > 1
 \end{equation} 
-for every $z\in \hat {\mathbb C} \setminus \PostCrit$,
+for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$,
 where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
  \end{theorem}
  
@@ -511,7 +414,7 @@ where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
 \begin{corollary}
 	If $c \in \heartsuit$ and $c \neq 0$, then we have 
 	\begin{equation}
-		\norm {f'(z)}_\mathrm{hyp} \geq \kappa
+		\norm {f'(z)}_{\hyp} \geq \kappa
 	\end{equation} 
 	for all $z \in \mathcal J$, for some constant $\kappa >1$.
 \end{corollary}
@@ -545,7 +448,7 @@ where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
 	to the Euclidean metric by passing to an iterate of $f$. 
 	Indeed, for every iterate $f^{\circ m}$ we have
 	\begin{equation}
-		\norm {(f^{\circ m})'(z)}_\mathrm{hyp} \geq \kappa^m
+		\norm {(f^{\circ m})'(z)}_{\hyp} \geq \kappa^m
 	\end{equation} 
 	for every point $z \in \mathcal J$ and every tangent vector $v$ at $z$.
 	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
@@ -558,7 +461,7 @@ where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
 \end{proof}
 
 \begin{definition}
-	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\mathrm{Exterior}(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \mathrm{Exterior}(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
+	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\Exterior(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \Exterior(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
 \end{definition}
 
 % To show quasiconvexity, 
@@ -579,7 +482,7 @@ We have the estimate
 uniformly in $z$, for some constant $\theta=\theta(c)<1$. 
 In particular, any point on \(\mathcal{J}\) is rectifiably accessible.
 
-\item The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
+\item The domain $\Exterior(\mathcal{J})$ is quasiconvex with the itineraries $\eta_{z_1,z_2}$ as certificates.
 	\end{enumerate}
 \end{theorem}
 
@@ -606,8 +509,8 @@ is a strict hyperbolic contraction by \cref{theorem:hyperbolic_expanding}.
 
 Let $B(0,R) \subset \mathbb{C}$ be a ball large enough that it contains every central itinerary. 
 By hyperbolicity, $\hat{\mathbb C} \setminus \PostCrit$ contains $\overline{\Exterior(\mathcal{J})}$.
-Thus $\mathrm{Exterior}(\mathcal{J}) \cap B(0,R)$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, and
-there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta$ on $\mathrm{Exterior}(\mathcal{J}) \cap B(0,R)$. Therefore,
+Thus $\Exterior(\mathcal{J}) \cap B(0,R)$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, and
+there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert_{\hyp}< \theta$ on $\Exterior(\mathcal{J}) \cap B(0,R)$. Therefore,
 \begin{align*}
 \HypLength(\gamma_k)  & \leq \theta \cdot \HypLength(f(\gamma_k))\\ & \leq  \dots
 	\\ & \leq \theta^k \cdot \HypLength(f^{\circ k}(\gamma_k)),
@@ -615,7 +518,7 @@ there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}<
 \end{align*}
 where the last inequality holds since $f^{\circ k}(\gamma_k)$ lies 
 on the real axis in case $\gamma_k$ is an express track, 
-or on the equipotetial $\psi(\{ |z| = \sqrt 2\})$ otherwise.
+or on the equipotential $\psi(\{ |z| = \sqrt 2\})$ otherwise.
 
 As the hyperbolic metric is equivalent to the Euclidean metric on compact subsets
 of $\hat{\mathbb C} \setminus \PostCrit$,
@@ -632,7 +535,7 @@ $s_{0,0}$ by a curve of bounded length.
 there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart 
 under some iterate of $f$. 
 Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon,$ 
-we are done since the length of $\eta_{z_1,z_2}$ is bounded from above uniformly by part (i).
+we are done since the length of $\eta_{z_1,z_2}$ is uniformly bounded above by part (i).
 On the other hand, if 
 $\left|z_{1}-z_{2}\right|<\epsilon$,
 then there is an iterate $f^{\circ n}$ for which
@@ -641,6 +544,12 @@ then there is an iterate $f^{\circ n}$ for which
 \end{equation}
 and we have a uniform bound on
 $$\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}$$ as before.
+As $\eta_{w_1, w_2}$ is contained in $B(0,R) \cap \Exterior(\mathcal J)$, it is relatively separated from the post-critical set. We are done by Lemma \ref{koebe-quasiconvexity}.
+\end{proof}
+
+%%--BEGIN COMMENT
+\begin{comment}
+
 Thus we are left with showing that
 \begin{equation}
 	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|},
@@ -679,12 +588,14 @@ It follows that
 	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(g(\eta_{z_1,z_2})\right)}.
 \end{equation}
 for any point $x \in B$, as needed.
-\end{proof}
+
+\end{comment}
+%% END COMMENT
 
 \section{The Cauliflower}
 In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The Cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
-Our goal is to prove the quasiconvexity of $\mathrm{Exterior}(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. 
+Our goal is to prove the quasiconvexity of $\Exterior(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. 
 This is more complicated than the hyperbolic case, 
 because the post-critical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
 One no longer has a uniform bound on the distortion of inverse iterates, 
@@ -699,18 +610,18 @@ for example, the tracks in the central itinerary that lies on the real axis, $\e
 have only a quadratic rate of length decay. To fix this, we introduce:
 
 \begin{definition}
-	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\gamma_1 + \delta_1 + \dots$ where each $\gamma_i$ is a concatenation of express tracks and is followed by a single peripheral track $\delta_i$.
+	The \emph{reduced decomposition} of an itinerary $\eta$ is the unique decomposition $\eta=\gamma_1 + \delta_1 + \dots$ where each $\gamma_i$ is a concatenation of express tracks and $\delta_i$ consists of a single peripheral track.
 \end{definition}
 
 \begin{proposition} \label{prop:finite-length}
-	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
+	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its central itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
 \end{proposition}
 
 For the proof, let $\mathcal U_{-1}$ be the Jordan domain enclosed by the unit circle, 
 the rightmost itinerary starting from the pre-central station and the leftmost one. 
 See \cref{fig:dyadic_grid}.
 This domain is constructed so that it contains all itineraries that start at the station 
-$s_{1,1} = \psi(-1/2)$, the preimage of the central station under $f$. Its crucial property is: 
+$s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. Its crucial property is: 
 % call $s_{-1}:=s_{1,1}$ the \emph{pre-central station}
 
 \begin{lemma} \label{lemma-enough-visits-of-premain_station}
@@ -723,7 +634,7 @@ $s_{1,1} = \psi(-1/2)$, the preimage of the central station under $f$. Its cruci
 	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
 \begin{proof}[Proof (\cref{prop:finite-length})] 
-There is a uniform bound $\Vert (f^{-1})' \Vert _{\mathrm{hyp}}< \theta < 1$ on $\mathcal U_{-1}$
+There is a uniform bound $\Vert (f^{-1})' \Vert_{\hyp}< \theta < 1$ on $\mathcal U_{-1}$
 with respect to the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
 This follows from \cref{theorem:hyperbolic_expanding}, in the slightly more general formulation of \cite[Theorem 3.5]{mcmullen_1994},
 since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$.
@@ -792,7 +703,7 @@ $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 \begin{proof}
 	We have 
 	\begin{equation}
-		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f(z)\mathrm{dz} \right | \leq k|z_1-z_2|	
+		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f(z) dz \right | \leq k|z_1-z_2|	
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
@@ -882,7 +793,7 @@ The constant $C_2$ was chosen so that for any pair $(m,n)$ of integers, we have 
 \subsubsection{Three Special Cases}
 In this section we treat the following special cases:
 \begin{enumerate}
-	\item $|w_1-w_2| \geq  \epsilon$, $\quad |m-n|<d$, $\quad m,n < C_2$, $\quad m,n \geq 2$; %relatively separated
+	\item $|w_1-w_2| \geq  \epsilon$, $\quad |m-n|<d$, $\quad 2 \le m,n < C_2$; %relatively separated
 	\item $|w_1-w_2| \geq \epsilon$, $\quad |m-n|<d$, $\quad  m,n> C_1$; %relatively separated
 	\item $|w_1-w_2| \leq k \epsilon$, $\quad |m-n| \geq d$.
 \end{enumerate}
@@ -913,7 +824,7 @@ Assuming without loss of generality that $n \geq m$, the itinerary is contained 
 We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$, thereby proving the following theorem:
 
 \begin{theorem} \label{quasiconvex-Cauliflower}
-	The domain $\mathrm{Exterior}(\mathcal{J})$ is quasiconvex, with the itineraries $\eta_{z_1,z_2}$ as certificates.
+	The domain $\Exterior(\mathcal{J})$ is quasiconvex, with the itineraries $\eta_{z_1,z_2}$ as certificates.
 \end{theorem}
 
 \begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}

@@ -1,0 +1,114 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}
+\usepackage[autostyle=false, style=english]{csquotes}
+\usepackage{mathtools}
+%\MakeOuterQuote{"}
+\setlength{\marginparwidth}{2cm}
+
+\usepackage{nomencl}
+\makenomenclature
+% Run the following command in terminal to update:
+% makeindex "main.nlo" -s nomencl.ist -o "main.nls"
+\nomenclature{$f, f_c$}{The map $z \mapsto z^2+c.$}
+\nomenclature{$\mathcal J$}{The Julia set of $f$.}
+\nomenclature{$K$}{The filled Julia set of $f$.}
+\nomenclature{$\gamma_{z_1, z_2}$}{The track connecting $z_1$ and $z_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
+\nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, this is the same as $\gamma_{z_1,z_2}$.}
+\nomenclature{$A_\infty(f_c)$}{The exterior of the Julia set of $f_c$. The complement of $K_c$.}
+\nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An Alternative notation for $A_\infty(f_c)$.}
+\nomenclature{$\psi$}{The Böttcher coordinate $\mathbb D ^* \to \Exterior(\mathcal J)$ conjugating $f_0$ and $f$.}
+\nomenclature{$s_{n,k}$}{A station in $\mathbb D^*$ or its image under $\psi$.}
+\nomenclature{$\Delta (\gamma, \mathcal P)$}{The relative distance to the post-critical set.}
+\nomenclature{$I_{n}$}{The $n$-th departure set.}
+\nomenclature{$\ell_n$ }{$\Length([s_{n},s_{n+1}]) = s_{n,0}-s_{n+1,0}.$}
+\nomenclature{$\alpha_n$}{the union of the two outermost tracks emanating from the station $s_{n,0}$.}
+
+
+% Prevents line breaks at math inline
+\relpenalty=9999
+\binoppenalty=9999
+
+\usepackage{graphicx,color,mathtools}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+%\usepackage[all,cmtip]{xy}
+\usepackage{comment}
+%\usepackage{todonotes}
+\usepackage{enumitem}   
+\usepackage{tikz} 
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.18}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
+
+\usepackage[pdftex,bookmarks,pdfnewwindow,plainpages=false,unicode,pdfencoding=auto]{}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\linespread{1.2}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\DeclareMathOperator{\crit}{crit}
+
+\DeclareMathOperator{\Hdim}{H.dim }
+\DeclareMathOperator{\supp}{supp }
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\BV}{BV}
+\DeclareMathOperator{\shadow}{Shadow}
+\DeclareMathOperator{\idiam}{i.diam}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\hol}{Hol}
+\DeclareMathOperator{\hyp}{hyp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\area}{Area}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Length}{Length}
+\DeclareMathOperator{\HypLength}{HypLength}
+\DeclareMathOperator{\CriticalOrbit}{CriticalOrbit}
+\DeclareMathOperator{\Postcrit}{\mathcal P}
+\DeclareMathOperator{\PostCrit}{\mathcal P}
+\DeclareMathOperator{\Closure}{Closure}
+\DeclareMathOperator{\RadialSuccessor}{RadialSuccessor}
+\DeclareMathOperator{\Exterior}{Exterior}
+
+\global\long\def\R{\mathbb{R}}%
+\global\long\def\C{\mathbb{C}}%
+\global\long\def\N{\mathbb{N}}%
+\global\long\def\Z{\mathbb{Z}}%
+\global\long\def\D{\mathbb{D}}%
+\global\long\def\H{\mathbb{H}}%
+\global\long\def\do#1#2{\frac{\partial#1}{\partial#2}}%
+\global\long\def\nor#1{\left|#1\right|}%
+\global\long\def\o#1{\overline{#1}}%
+\global\long\def\norm#1{\left\Vert #1\right\Vert }%
+\global\long\def\\sphere{\hat{\mathbb{C}}}%
+\global\long\def\ep{\varepsilon}%
+\global\long\def\mp#1{\left\langle #1\right\rangle }%
+\global\long\def\lap{\triangle}%
+\global\long\def\dz{\mathrm{\mathrm{dz}}}%
+\global\long\def\dt{\mathrm{\mathrm{dt}}}%
+\global\long\def\dtheta{\mathrm{\mathrm{d\theta}}}%
+\global\long\def\dx{\mathrm{\mathrm{dx}}}%
+\global\long\def\dw{\mathrm{\mathrm{dw}}}%
+\global\long\def\T{\mathrm{\mathbb{T}}}%
