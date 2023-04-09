@@ -159,7 +159,7 @@ We will need the hyperbolic metric in more general domains:
 	$\tilde U \to U$ is a local isometry.
 \end{definition}
 
-\begin{theorem}[The Schwarz-Pick theorem]
+\begin{theorem}[The Schwarz-Pick theorem] \label{thm:Schwarz}
 	Let $f:U_1 \to U_2$ be a holomorphic map between two hyperbolic domains $U_1,U_2 \subset \mathbb C$.
 	Then $f$ is a hyperbolic contraction, meaning that
 	\begin{equation}
@@ -168,11 +168,11 @@ We will need the hyperbolic metric in more general domains:
 	for all $z,w \in U_1$. If $f$ is not a covering map, then the inequality is strict for all $z \neq w$.
 \end{theorem}
 
-\begin{proof}
-	The classical Schwarz lemma gives the case $f:\mathbb D \to \mathbb D$.
+\begin{proof}[Proof. (\cite{milnor_book}, Theorem 2.11)]
+	The classical Schwarz lemma is the case $f:\mathbb D \to \mathbb D$.
+	It implies the general case since the projections are local isometries by construction.
 	If $f$ is not a covering map, then the lift of $f$
-	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$, 
-	again by the classical Schwarz lemma.
+	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$.
 \end{proof}
 
 \begin{definition}
@@ -346,18 +346,25 @@ The map $f$ \emph{hyperbolic} if
  This is equivalent to $f$ being expanding on $\mathcal J$:
 
  \begin{theorem}\label{theorem:hyperbolic_expanding}
-Let $f_c: z\mapsto z^2+c$  be a map with $c \neq0$. 
-Let $\norm{\cdot}_{\mathrm{hyp}}$ be the norm induced by the hyperbolic metric of the domain 
-$\hat {\mathbb C} \setminus \PostCrit$, 
-then we have 
+Let $c \neq0$, and view $f: z\mapsto z^2+c$ as the map 
+$$f: f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \to \hat {\mathbb C} \setminus \PostCrit,$$
+with the corresponding hyperbolic metrics. Then we have 
 \begin{equation}\label{eq:hyp-derivative-bound}
 	\norm {f'(z)}_\mathrm{hyp} > 1
 \end{equation} 
-for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$.
+for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$,
+where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
  \end{theorem}
- For two proofs of this theorem, see \cite[Theorem 19.1]{milnor_book}, which also proves the converse.
-
-For the next corollary, recall the definition of the hyperbolic derivative in \cref{def:hyp-derivative}.
+ 
+ \begin{proof}{(Proof. \cite[Theorem 19.1]{milnor_book})}
+	The map $f$ is a covering map, hence it is a local isometry as a map
+	$$f: f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$$
+	by \cref{thm:Schwarz}.
+	We conclude by composing with the inclusion 
+	$f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \xhookrightarrow{} 
+	\hat {\mathbb C} \setminus \PostCrit$, 
+	which is a strict contraction by \cref{thm:Schwarz}.
+ \end{proof}
 
 \begin{corollary}
 	If $c \in \heartsuit$ and $c \neq 0$, then we have 
