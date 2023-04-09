@@ -69,13 +69,14 @@ Our result also has a function-theoretic interpretation.
 For a planar domain $\Omega \subset \mathbb R ^2$,
 the \emph{Sobolev space} $W^{1,1}(\Omega)$ 
  is the set of functions $u \in L^1(\Omega)$ for which 
- both weak derivatives $\partial_1 u, \partial_2 u$ exist and are in $L^1(\Omega)$.
-
-We call $\Omega$ a \emph{$\it{W^{1,1}}$ extension domain} if every $u \in W^{1,1}(\Omega)$ extends to a function
+ the distributional derivatives $\partial_1 u, \partial_2 u$ exist and are in $L^1(\Omega)$.
+We call $\Omega$ a 
+\emph{$\textit{W}^\textit{\;1,1}$ extension domain}
+ if every 
+$u \in W^{1,1}(\Omega)$ extends to a function
 in $W^{1,1}(\mathbb{C})$.
-
 In \cite[Equation (1.1) and Theorem 1.4]{strong_bv_extension_2022}, 
-it is shown that a bounded, simply connected domain
+it is shown that a bounded simply connected domain
 is a $W^{1,1}$ extension domain if and only if its complement is quasiconvex.
 Thus our result can be rephrased as follows:
 
@@ -94,10 +95,10 @@ We first build the certificates in the exterior unit disk $\mathbb D ^*$,
 then we transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
 which conjugates $f_0$ with $f_{1/4}$.
 
-To retain control of the certificates after applying $\psi$, we build the certificates of $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
-This makes the image of a certificate $\eta$ in $\mathbb D^{*}$ under the conjugacy $\psi$ invariant under $f_{1/4}$. 
-We use this invariance to show that $\psi(\eta)$ are indeed certificates for $\Exterior(\mathcal J_{/4})$, 
-by employing a parabolic variant of the so-called principle of the conformal elevator.
+To retain control of the certificates after applying $\psi$, 
+we build the certificates of $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
+This translates after applying $\psi$ to an invariance under $f_{1/4}$,
+which allows us to employ a parabolic variant of the principle of the conformal elevator.
 
 To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where 
 $c\in \heartsuit)$, in which the usual conformal elevator applies, 
@@ -131,7 +132,7 @@ the arguments will involve the hyperbolic metric, which is better-behaved in our
 \begin{theorem}
 	The hyperbolic metric
 	\begin{equation} \label{thm: hyp-metric-in-disk}
-		\mathrm{ds} = \frac {|\mathrm {dz}|}{1-|z|^2}
+		\mathrm{ds} = \frac {2}{1-|z|^2}\;|\mathrm {dz}|
 	\end{equation}
 	
 	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
@@ -170,9 +171,11 @@ We will need the hyperbolic metric in more general domains:
 
 \begin{proof}[Proof. (\cite{milnor_book}, Theorem 2.11)]
 	The classical Schwarz lemma is the case $f:\mathbb D \to \mathbb D$.
-	It implies the general case since the projections are local isometries by construction.
+	It implies the general case since the projections from the universal coverings 
+	are local isometries.
 	If $f$ is not a covering map, then the lift of $f$
-	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$.
+	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$, 
+	again by the classical case.
 \end{proof}
 
 \begin{definition}
@@ -324,7 +327,7 @@ Note that $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmet
 
 
 \section{Hyperbolic Maps}
-In this section we prove quasiconvexity for parameters $c$ in the main cardioid $\heartsuit$.
+In this section we prove the quasiconvexity of $\Exterior(\mathcal J)$ for parameters $c$ in the main cardioid $\heartsuit$.
 Since the argument will involve iterating $f$ and then iterating $f^{-1}$, 
 we will need to exclude points around which there is no holomorphic inverse for some iterate $f^{\circ n}$:
 
@@ -659,13 +662,14 @@ We say that the curve $\gamma$ is \emph{$\eta$-relatively separated} from the po
 If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. In particular, if $\gamma$ is a quasiconvexity certificate, then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
 
 \begin{lemma}
-There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
+There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have 
+$|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 \end{lemma}
 
 \begin{proof}
 	We have 
 	\begin{equation}
-		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f \right | \leq k|z_1-z_2|	
+		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f(z)\mathrm{dz} \right | \leq k|z_1-z_2|	
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
