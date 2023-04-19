@@ -10,23 +10,19 @@
 % \input{"Cauliflower.tex"}
 %\cref{fig:Cauliflower_tikz}
 
-Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of the points in the complex plane with bounded orbit
+Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of points in the complex plane with bounded orbit
 under iteration by $f_c$:
 $$
 \mathcal K_c = \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \}.
 $$
-Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}, and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. 
-
-The set $\mathcal K_c$ is compact, and each\
-  of the three sets
-$\mathcal J_c, \mathcal K_c$ and $\Exterior(\mathcal{J}_c)$ are both forward and backward invariant under the dynamics of $f$.
+Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set} and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f$.
  
 The {\em main cardioid}
 $$
 \heartsuit = \bigl  \{c \in \mathbb{C}: c = \lambda/2 - \lambda^2/4,\, \lambda \in \mathbb{D} \bigr \}
 $$
 is the set of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
-When $c \in \heartsuit$, the Julia set $\mathcal J_c$ is a \emph{quasidisk}, the image of a round disk under a quasiconformal map.
+When $c \in \heartsuit$, the filled Julia set $\mathcal K_c$ is a \emph{quasidisk}\/, the image of a round disk under a quasiconformal map, \cite[Theorem VI.2.1]{gamelin2003complex}.
 This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 % Parameters $c \in \heartsuit$ are {\em hyperbolic}. Loosely speaking, this means that $\mathcal J_c$ satisfies the principle of the conformal elevator: 
@@ -34,24 +30,26 @@ This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
-is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. According to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
-the Cauliflower is a \emph{John domain}, a condition which rules out \enquote{outward-pointing cusps}. 
-Formally, a domain $\Omega$ is John if there exists a \enquote{center} point 
+is a Jordan domain with an inward-pointing cusp at the point $p=1/2$.
+
+According to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
+the Cauliflower is a \emph{John domain}\/, a condition which rules out \enquote{outward-pointing cusps}. 
+Formally, a domain $\Omega$ is John if there exists a \enquote{center} 
 $z_0 \in \Omega$ that can be connected 
 to any other point $z_1\in \Omega$ by a curve $\gamma$ which stays away from the boundary:
 \begin{equation}
-	\dist(z, \partial \Omega) \gtrsim |z_1-z|
+	\dist(z, \partial \Omega) \gtrsim |z_1-z|,
 \end{equation} for all $z\in \gamma$.
  See \cref{fig:julia_sets}.
 
 A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
-Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in\Omega$
- are connected by a rectifiable path $\gamma_{z_1,z_2}:\left[0,1\right]\to\Omega$ which satisfies
+Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in \overline \Omega$
+ are connected by a rectifiable path $\gamma_{z_1,z_2}: [0,1]\to \overline \Omega$ which satisfies
 \begin{equation}
-\Length(\gamma_{z_1,z_2})\leq A\cdot\left|z_{1}-z_{2}\right|.	
+\Length(\gamma_{z_1,z_2})\leq A\cdot |z_{1}-z_{2} |	
 \end{equation}
-
+and  $\gamma_{z_1,z_2}(w) \in \Omega$ for all $w \in (0,1)$.
 We refer to such a family of paths $\gamma_{z_1,z_2}$ as \emph{quasiconvexity certificates} for $\Omega$.
 
 If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
@@ -76,7 +74,7 @@ We call $\Omega$ a
 $u \in W^{1,1}(\Omega)$ extends to a function
 in $W^{1,1}(\mathbb{C})$.
 In \cite[Equation (1.1) and Theorem 1.4]{strong_bv_extension_2022}, 
-it is shown that a bounded simply connected domain
+it is proved that a bounded simply connected domain
 is a $W^{1,1}$ extension domain if and only if its complement is quasiconvex.
 Thus our result can be rephrased as follows:
 
@@ -87,8 +85,8 @@ Thus our result can be rephrased as follows:
  \end{theorem}
  
 \subsection{Sketch of the argument}
-To show that a Jordan domain $\Omega$ is quasiconvex, it is enough to find certificates for points $z_{1},z_{2}$ that lie
-on the boundary curve $\partial\Omega$. For a proof, see \cite[Corollary F]{hakobyan_euclidean_2008}.
+By \cite[Corollary F]{hakobyan_euclidean_2008}, to show that a Jordan domain $\Omega$ is quasiconvex, it is enough to find certificates for points $z_{1},z_{2}$ that lie
+on the boundary curve $\partial\Omega$.
 
 We show quasiconvexity by an explicit construction of certificates connecting any given pair of points on the Julia set.
 We first build the certificates in the exterior unit disk $\mathbb D ^*$, 
@@ -99,6 +97,7 @@ To retain control of the certificates after applying $\psi$,
 we build the certificates of $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
 This translates after applying $\psi$ to an invariance under $f_{1/4}$,
 which allows us to employ a parabolic variant of the principle of the conformal elevator.
+This principle says that small balls around points of $\mathcal J$ can be blown up to a definite size by repeatedly applying $f$, while roughly retaining their shape; we exploit this self-similarity to analyze certificates connecting nearby points using their iterated images, which are itineraries connecting points that are far apart. For a general set-up of the principle, see \cite[pages 20-21]{bonk2014quasisymmetries}.
 
 To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where 
 $c\in \heartsuit)$, in which the usual conformal elevator applies, 
@@ -106,91 +105,73 @@ and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
 
 \section{Preliminaries}
 
+In this section, we gather a number of tools from complex analysis and dynamics that will be used throughout this work.
+
 \subsection{The hyperbolic metric}
-Even though quasiconvexity is defined using the Euclidean metric, 
-the arguments will involve the hyperbolic metric, which is better-behaved in our setting.
-
-\begin{theorem}
-	The hyperbolic metric
-	\begin{equation} \label{thm: hyp-metric-in-disk}
-		\rho = \frac {2|dz|}{1-|z|^2}
+	The {\em hyperbolic metric} on the unit disk $\mathbb D$ is given by
+	\begin{equation}
+	\label{eq:hyp-metric-in-disk}
+		\rho = \frac {2|dz|}{1-|z|^2}.
 	\end{equation}
-	is the unique Riemannian metric on the unit disk $\mathbb D$, up to multiplication
-	by a positive constant, which is invariant under conformal automorphisms.
-\end{theorem}
-
-This defines the hyperbolic metric on topological balls, by requiring that the Riemann map
-will be an isometry. Notice that this metric is locally equivalent to the Euclidean metric.
-We will need the hyperbolic metric in more general domains:
+It is the unique Riemannian metric on the unit disk, up to multiplication by a positive constant, which is invariant under conformal automorphisms $\aut \mathbb{D}$. The factor 2 makes the curvature $-1$ instead of $-4$. One may transfer the hyperbolic metric to any simply-connected domain in the plane using the Riemann map.
 
 \begin{definition}
-	A domain $U \subset \mathbb C$ is \emph{hyperbolic} if its 
-	universal covering space $\tilde U$ is biholomorphic to $\mathbb D$.
+	A domain $U \subset \widehat{\mathbb C}$ is \emph{hyperbolic} if its 
+	universal covering space $\widetilde U$ is biholomorphic to $\mathbb D$.
 \end{definition}
 
-\begin{theorem}\label{thm:criterion-hyperbolic-domain}
-	Let $U \subset \mathbb C$ be a domain. If the complement $\mathbb C \setminus U$ has at least two points
-	then the domain $U$ is hyperbolic.
-\end{theorem}
-
-\begin{definition}
-	Let $U$ be a hyperbolic domain. We equip $\tilde U \cong \mathbb{D}$ with the hyperbolic metric defined in \cref{thm: hyp-metric-in-disk}.
-	The \emph{hyperbolic metric} on $U$ is the unique Riemannian metric for which the projection 
-	$\tilde U \to U$ is a local isometry.
-\end{definition}
+It is well known that if $U \subset \widehat{\mathbb C}$ is a domain which omits at least three points, then it is hyperbolic.
+One may define the \emph{hyperbolic metric} on any hyperbolic domain $U$ by asking that the projection 
+	$\mathbb{D} \cong \widetilde U \to U$ is a local isometry.
 
 \begin{theorem}[The Schwarz-Pick theorem] \label{thm:Schwarz}
-	Let $f:U_1 \to U_2$ be a holomorphic map between two hyperbolic domains $U_1,U_2 \subset \mathbb C$.
+	Let $f:U_1 \to U_2$ be a holomorphic map between two hyperbolic domains $U_1,U_2 \subset \widehat{\mathbb C}$.
 	Then $f$ is a hyperbolic contraction, meaning that
 	\begin{equation}
-		\dist(f(z),f(w)) \leq \dist (z,w)
+		\dist_{U_2}(f(z),f(w)) \leq \dist_{U_1} (z,w),
 	\end{equation}
 	for all $z,w \in U_1$. If $f$ is not a covering map, then the inequality is strict for all $z \neq w$.
 \end{theorem}
 
 \begin{proof}[Proof. (\cite{milnor_book}, Theorem 2.11)]
-	The classical Schwarz lemma is the case $f:\mathbb D \to \mathbb D$.
-	It implies the general case since the projections from the universal coverings 
-	are local isometries.
-	If $f$ is not a covering map, then the lift of $f$
-	to the universal coverings is a strict contraction $\mathbb D \to \mathbb D$, 
-	again by the classical case.
+	The classical Schwarz-Pick lemma is the case when $f:\mathbb D \to \mathbb D$.
+	The general case follows after lifting $f$ to a map between the universal covering spaces of $U_1$ and $U_2$.
 \end{proof}
 
 \begin{definition}
-	Let $f:U_1\to U_2$ be holomorphic map between hyperbolic domains. The \emph{hyperbolic derivative} of $f$ at the point $z$ 
+	Let $f:U_1\to U_2$ be holomorphic map between hyperbolic domains. The \emph{hyperbolic derivative} of $f$ at a point $z \in U_1$ 
 	is given by
 	\begin{equation} \label{def:hyp-derivative}
-		\norm {f'(z)}_{\hyp} = 
+		\norm {f'(z)}_{\hyp} \, = \, 
 		\frac{\norm{Df(z)(v)}_{\hyp(U_2)}}
-		{\norm{v}_{\hyp(U_1)}},
+		{\norm{v}_{\hyp(U_1)}}
+		\, = \, \frac{\rho_{U_2}(f(z))}{\rho_{U_1}(z)} \cdot |f'(z)|, 
 	\end{equation}
 	where $v$ is a nonzero tangent vector at the point $z$.
 \end{definition}
 
-\subsection{The Distortion Principle}
-We record here for convenience a form of Koebe's distortion principle that will be used repeatedly. 
+\subsection{Koebe's distortion theorem}
+One important tool in complex dynamics is Koebe's distortion theorem, which says that on a compact set, a conformal map resembles a linear map:
 
-\begin{definition}
-	Every topological annulus $A \subset \hat{\mathbb C}$ is biholomorphic to 
-	a unique round annulus of the form $\{ 1<|z|<R \}$. 
-	The (conformal) \emph{modulus} of $A$ is the value $\Mod(A) = \frac 1{2\pi} \log R$. 
-
-
-\end{definition}
-\begin{theorem}[{Koebe's Distortion Principle, \cite[Theorem 2.9]{mcmullen_1994}}]  \label{Koebe}
-	Let $D \subset U $ be topological disks with $\Mod(U \setminus D)  \geq m>0$
-	 and let $f$ be a map univalent in $U$,
-	then we have the bound 
+\begin{theorem}[Koebe distortion theorem] 
+\label{koebe}
+Let $\varphi: \mathbb{D} \to \mathbb{C}$ be a conformal map. There exist $C_1, C_2 > 0$ so that
+$$
+C_1 \, |\varphi'(0)| \, \le \, |\varphi'(z)| \, \le \, C_2 \, |\varphi'(0)|, \qquad \text{for any }z \in B(0,1/2).
+%\frac{1-|z|}{(1+|z|)^3} \cdot |\varphi'(0)| \, \le \, |\varphi'(z)| \, \le \, \frac{1+|z|}{(1-|z|)^3} \cdot  |\varphi'(0)|.
+$$
+In particular,
 	\begin{equation}
-		\frac {|f(y)-f(z)|}{|y-z|} \asymp_m |f'(x)|
+		\frac {|\varphi(y)-\varphi(z)|}{|y-z|} \asymp |\varphi'(x)|
 	\end{equation}
-	for all $x,y,z \in D$.
+	for all $x,y,z \in B(0,1/2)$.
 \end{theorem}
 
-\subsection{The relative distance}
 
-The following notion will be used for showing the existence of a Koebe space, i.e. lower bounding the conformal modulus between two sets.
+
+\subsection{Relative distance}
+
+The following notion will be used for showing the existence of Koebe space, i.e.~room to apply Koebe's distortion theorem:
 \begin{definition}
 	The \emph{relative distance} between two sets $E,F \subset \mathbb C$ is 
 	\begin{equation}
@@ -201,65 +182,121 @@ The following notion will be used for showing the existence of a Koebe space, i.
 	\emph{$\eta$-relatively separated.}
 \end{definition}
 
-\begin{theorem} \label{thm: rel-dist-bounds-modulus}
-	Let $E,F \subset \mathbb C$ be compact connected sets.
-	If $E,F$ are $\eta$-relatively separated, for some constant $\eta>0$,
-	then there exists a topological ball $B$ containing $E$ with a definite modulus inside $\hat{\mathbb C} \setminus F$:
-	\begin{equation}
-		\Mod (\hat{\mathbb C} \setminus (B \cup F)) \gtrsim _\eta 1.
-	\end{equation}
-\end{theorem}
-
-\begin{proof}
-	\textcolor{red}{To-do.} This might be related to "the plane is a Loewner space".
-\end{proof}
-
 \begin{lemma}
 \label{koebe-quasiconvexity}
-Suppose $\gamma$ is a rectifiable curve which efficiently connects two points $w_1, w_2 \in \mathbb{C}$, i.e.~satisfies $$\Length(\gamma) \le C |w_1 - w_2|$$
-for some $C > 0$.
-Let $U$ be a connected open set that contains $\gamma$ with $\Mod(U, \gamma) \ge m$, and $\varphi: U \to \mathbb{C}$ is a conformal map.
-Then, $\varphi \circ \gamma$ connects the points  $z_1 = \varphi(w_1)$ and $z_2 = \varphi(w_2)$ efficiently:
+Suppose $\gamma$ is a rectifiable curve  which efficiently connects two points $w_1, w_2 \in \mathbb{C}$, i.e.~satisfies
+$$\Length(\gamma) \le C |w_1 - w_2|.
+$$
+If $\gamma$ is contained in a simply connected domain $U$ with
+$$
+\dist(\gamma, \partial U) \ge \eta |w_1 - w_2|
+$$
+and $\varphi: U \to \mathbb{C}$ is a univalent map, then its image
+$\varphi \circ \gamma$ connects the points  $z_1 = \varphi(w_1)$ and $z_2 = \varphi(w_2)$ efficiently:
 $$
 \Length(\varphi \circ \gamma) \le A |z_1 - z_2|,
 $$
-where the constant $A > 0$ depends on $C$ and $m$.
+for some constant $A > 0$ which depends only on $C, \eta > 0$.
 \end{lemma}
 
 \begin{proof}
-The assumption implies that for any point $w \in \gamma$, the ball $B(w, 2c|w_1 - w_2|)$ is contained in $U$, for some $c > 0$ depending on $m$.
-Without loss of generality, we may assume that $c < 1/3$. 
-
-Covering $\gamma$ by a uniformly bounded number of balls of radius $c|w_1-w_2|$ and applying Koebe's distortion theorem on each ball shows that
+We can cover $\gamma$ by at most $M = \lceil 2C/\eta \rceil$ balls of radius $(\eta/2)|w_1-w_2|$, centered at points of $\gamma$.
+Applying Koebe's distortion theorem on each ball shows that
 $|\varphi'(p)| \asymp |\varphi'(q)|$ for any two points $p, q \in \gamma$. In particular,
 \begin{equation}
 \label{upper-bound-rel-distance}
-\Length(\varphi \circ \gamma) \asymp |\varphi'(w_1)| \cdot \Length(\gamma) \asymp |\varphi'(w_1)| \cdot |w_1 - w_2|.
+\Length(\varphi \circ \gamma) \, \asymp \, |\varphi'(w_1)| \cdot \Length(\gamma) \, \asymp \, |\varphi'(w_1)| \cdot |w_1 - w_2|.
 \end{equation}
-
-Since the ball $B(w_1, 2c|w_1 - w_2|)$ does not contain $w_2$, Koebe's distortion theorem implies that $z_2 \notin B(z_1, c_2 |\varphi'(w_1)| \cdot |w_1 - w_2|)$ for some $c_2 > 0$. This gives the lower bound
+Without loss of generality, we may assume that $\eta < 1$. Since the ball $$B \bigl (w_1, (\eta/2) |w_1 - w_2| \bigr )$$ does not contain $w_2$, Koebe's distortion theorem implies that
 \begin{equation}
 \label{lower-bound-rel-distance}
 |z_1-z_2| \gtrsim |\varphi'(w_1)| \cdot |w_1 - w_2|.
 \end{equation}
-Putting (\ref{upper-bound-rel-distance}) and (\ref{lower-bound-rel-distance}) two statements together completes the proof.
+Putting the statements (\ref{upper-bound-rel-distance}) and (\ref{lower-bound-rel-distance}) together completes the proof.
 \end{proof}
 
+
+\subsection{The post-critical set}
+
+Let $f: z\mapsto z^2+c$ be a quadratical polynomial. 
+Since our argument will involve applying Koebe's distortion theorem to the iterates of $f^{-1}$, 
+we will need to exclude points around which some iterate $f^{\circ n}$ does not have a holomorphic inverse:
+
+\begin{definition}
+	The \emph{post-critical set} of $f$ is the closure of the forward orbits 
+	of the critical points,
+	\begin{equation*}
+		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
+	\end{equation*}	
+\end{definition}
+
+If $c \neq 0$, then the post-critical set $\PostCrit$ contains at least $3$ points, e.g.~$0$, $c$ and $\infty$, and consequently its complement $\widehat{\mathbb C} \setminus \PostCrit$
+admits a hyperbolic metric.
+
+ \begin{theorem}\label{theorem:hyperbolic_expanding}
+For $c \neq 0$, the map
+$f: \widehat {\mathbb C} \setminus \PostCrit \to \widehat {\mathbb C} \setminus \PostCrit,$
+is expanding with respect to the hyperbolic metric of $\widehat {\mathbb C} \setminus \PostCrit$, in the sense that the hyperbolic derivative
+\begin{equation}\label{eq:hyp-derivative-bound}
+	\norm {f'(z)}_{\hyp} > 1, \qquad z\in \widehat {\mathbb C} \setminus \PostCrit.
+\end{equation}
+ \end{theorem}
+ 
+ \begin{proof}[Proof. (\cite{mcmullen_1994}, Theorem 3.5)]
+	To see the theorem, notice that
+	$$f: \widehat {\mathbb C} \setminus  f^{-1}(\PostCrit) \to \widehat {\mathbb C} \setminus \PostCrit,
+	$$
+	is a local isometry, while the  inclusion 
+	$\widehat {\mathbb C} \setminus f^{-1}(\PostCrit) \xhookrightarrow{} 
+	\widehat {\mathbb C} \setminus \PostCrit$ is a strict contraction by  \cref{thm:Schwarz}.
+ \end{proof}
 	 
+A map $f$ is \emph{hyperbolic} if
+ its post-critical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
+ By the above theorem, this is equivalent to $f$ being expanding on $\mathcal J$:
+	\begin{equation}
+	\label{eq:hyperbolic-maps-expand-on-J}
+		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in \mathcal J,
+	\end{equation} 
+ for some constant $\kappa >1$.
+ 
+ \begin{corollary} \label{elevator for points on julia}
+	Let $f$ be a hyperbolic quadratic map.
+	There exists an $\epsilon > 0$ such that 
+	every pair of points $z,w\in\mathcal{J}$
+	 has a forward iterate $f^{\circ n}$ for which 
+	 \begin{equation*}
+		|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.	
+	 \end{equation*}
+\end{corollary}
+
+\begin{proof}	
+	By (\ref{eq:hyperbolic-maps-expand-on-J}), for every iterate $f^{\circ m}$, we have
+	\begin{equation}
+		\norm {(f^{\circ m})'(z)}_{\hyp} \geq \kappa^m, \qquad z \in \mathcal J.
+	\end{equation} 
+	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
+	we may take $m$ large enough so that for $g=f^{\circ m}$, the Euclidean derivative
+	$$|g'(z)| > \mu, \qquad z \in \mathcal J,$$
+	 for some constant $\mu  > 1$. 
+	By compactness, there exists an $\epsilon>0$ such that for $z, w \in \mathcal J$ with $|z-w| < \epsilon$ on $\mathcal J$,
+	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows with this value of $\epsilon$ by iterating $g$.
+\end{proof}
+
 \section{The exterior disk}
 
-We connect any two boundary points $\zeta_1, \zeta_2 \in \partial \mathbb D^*$ by a path in $\mathbb D^*$ in a manner that respects the map 
+We write $\mathbb D^* = \mathbb{C} \setminus \mathbb{D}$ for the exterior of the unit disk. We connect any two boundary points $\zeta_1, \zeta_2 \in \partial \mathbb D^*$ by a path in $\mathbb D^*$ in a manner that respects the map 
 $f_0: \zeta \mapsto \zeta^2$.
 We describe these paths using the metaphor of a passenger who travels by train:
 
 \begin{definition}
 \emph{Stations} are the points in $\mathbb D ^*$ of the form 
 $$
-s_{n,k}=2^{1/2^{n}} \exp\left(2\pi i \cdot \frac{k}{2^{n}}\right),\qquad n\in\N_{0},\quad k\in\left\{ 0,\ldots,2^{n}-1\right\}.
+s_{n,k}=2^{1/2^{n}} \exp \biggl (2\pi i \cdot \frac{k}{2^{n}} \biggr),\qquad n\in\N_{0},\quad k\in \{ 0,\ldots,2^{n}-1 \}.
 $$ 
 These are the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
 We refer to $n$ as the \emph{generation} of the station $s_{n,k}$. 
-The $2^{n}$ stations of generation $n$ are equally spaced on the circle $C_{n}=\left\{ \left|\zeta\right|=2^{1/2^{n}}\right\} $. 
+The $2^{n}$ stations of generation $n$ are equally spaced on the circle $C_{n}=\bigl \{ |\zeta|=2^{1/2^{n}} \bigr \} $. 
 \end{definition}
 
 We next lay two types of \enquote{rail tracks}, which we use to travel between stations.
@@ -267,7 +304,7 @@ We next lay two types of \enquote{rail tracks}, which we use to travel between s
 \begin{definition}
 Let $s=s_{n,k}$ be a station.
 
-1. The \emph{peripheral neighbors} of $s$ are the two stations $s_{n,\left(k\pm1\right) (\mathrm{mod}\; 2^{n})}$ adjacent to $s_{n,k}$ on $C_{n}$.
+1. The \emph{peripheral neighbors} of $s$ are the two stations $s_{n, (k\pm1) (\mathrm{mod}\; 2^{n})}$ adjacent to $s_{n,k}$ on $C_{n}$.
 
 2. The \emph{peripheral track }$\gamma_{s,s'}$ from $s$ to a peripheral neighbor $s'$
 is the shorter arc of the circle $C_{n}$ connecting $s$ to $s'$.
@@ -278,7 +315,7 @@ is the shorter arc of the circle $C_{n}$ connecting $s$ to $s'$.
 \end{definition}
 Notice that the tracks respect the dynamics: applying $f_0$ to a track gives a track of the previous generation.
 
-When a passenger travels between two stations $s_1$ and $s_2$, they must follow a particular itinerary from $s_1$ to $s_2$.
+When a passenger travels between two stations $s_1$ and $s_2$, he or she must follow a particular itinerary from $s_1$ to $s_2$.
 If $s_1$ is the central station, then this itinerary is determined by the rule that the passenger stays as close as possible to its destination $s_2$ in the angular distance.
 This also determines how to travel from the central station to a boundary point $\zeta\in \partial \mathbb D^*$, by continuity. 
 See \cref{fig:Carleson1} and the next definition.
@@ -293,8 +330,8 @@ $\sigma_0,\sigma_1,\dots$. It is defined inductively as follows:
 
 Start at the central station $\sigma_0=s_{0,0}$. Suppose that we already chose $\sigma_0,\ldots,\sigma_k$. If there is a peripheral neighbor $\sigma$ of $\sigma_k$ that is closer peripherally to $\zeta$, meaning that
 $$
-\left|\Arg\left(\zeta\right)-\Arg\left(\sigma\right)\right|
-< \left|\Arg\left(\zeta\right)-\Arg\left(\sigma_{k}\right)\right|,
+|\Arg(\zeta)-\Arg(\sigma)|
+< |\Arg(\zeta)-\Arg(\sigma_{k})|,
 $$
 then take $\sigma_{k+1}=\sigma$. Otherwise, take $\sigma_{k+1}=\RadialSuccessor(\sigma)$.
 \end{definition}
@@ -319,10 +356,10 @@ We identify the central itinerary $\eta_{\zeta}$ with its sequence of stations $
 
 \begin{definition}
 \label{def-disk-itinerary}
-Given two distinct boundary points $\zeta_{1},\zeta_{2}\in\partial\D^*$, form the central itineraries $\eta_{\zeta_{1}}=\left(\sigma_{n}^{1}\right)_{n=0}^{\infty}$ and $\eta_{\zeta_{2}}=\left(\sigma_{n}^{2}\right)_{n=0}^{\infty}$ and let  $\sigma=\sigma^1_i=\sigma^2_j$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$.  
+Given two distinct boundary points $\zeta_{1},\zeta_{2}\in\partial\D^*$, form the central itineraries $\eta_{\zeta_{1}}= (\sigma_{n}^{1} )_{n=0}^{\infty}$ and $\eta_{\zeta_{2}}= (\sigma_{n}^{2} )_{n=0}^{\infty}$ and let  $\sigma=\sigma^1_i=\sigma^2_j$ be the last station that is in both $\eta_{\zeta_{1}}$ and $\eta_{\zeta_{2}}$.  
 	 We define the \emph{itinerary} between  $\zeta_{1}$ and $\zeta_{2}$ to be the path 
 $$
- \eta_{\zeta_{1},\zeta_{2}}=  \left(\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots\right).
+ \eta_{\zeta_{1},\zeta_{2}}=   (\dots,\sigma_{i+2}^{1},\sigma_{i+1}^{1},\sigma,\sigma_{j+1}^{2},\sigma_{j+2}^{2},\dots ).
 $$
 
 	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$, see \cref{fig:Carleson2}. Note that itineraries are equivariant under the dynamics: we have  \begin{equation}
@@ -352,7 +389,7 @@ to obtain the corresponding tracks in $\Exterior(\mathcal{J}_c)$:
 	\item The 	\emph{stations} of $f_c$ are the points $\psi(s_{n,k})$.
 
 
-\item The \emph{tracks} of $f_c$ are the curves of the form $\psi \left(\gamma_{s,s'}\right)$, where $\gamma_{s,s'}$ is a track. They are classified as express or peripheral according to the corresponding classification of $\gamma_{s,s'}$. 
+\item The \emph{tracks} of $f_c$ are the curves of the form $\psi (\gamma_{s,s'})$, where $\gamma_{s,s'}$ is a track. They are classified as express or peripheral according to the corresponding classification of $\gamma_{s,s'}$. 
 Express tracks lie on the external rays of the filled Julia set $\mathcal K_c$, while peripheral tracks lie on the equipotentials of $\mathcal K_c$.
 
 \item The \emph{itinerary} between a pair of points $(z_1,z_2)$ on $\mathcal J_c$ is
@@ -366,64 +403,12 @@ We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will
 %Trivially since $\psi$ is a bijective correspondence between the two decompositions.
 \end{definition}
 
-When $c \in (-3/4, 1/4)$, $\psi\left((1,\infty)\right)\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular, the central station $\psi(s_{0,0})$ lies on the real axis.
+When $c \in (-3/4, 1/4)$, $\psi ((1,\infty))\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular, the central station $\psi(s_{0,0})$ lies on the real axis.
 
 
 \section{Hyperbolic Maps}
-In this section we prove the quasiconvexity of $\Exterior(\mathcal J)$ for parameters $c$ in the main cardioid $\heartsuit$.
-Since the argument will involve iterating $f^{-1}$, 
-we will need to exclude points around which there is no holomorphic inverse for some iterate $f^{\circ n}$:
+In this section we prove the quasiconvexity of $\Exterior(\mathcal J)$ for parameters $c$ in the main cardioid $\heartsuit$. For $c \in \heartsuit$, the dynamics is hyperbolic since the critical point at 0 converges to an attracting fixed point under iteration.
 
-\begin{definition}
-	The \emph{post-critical set} of $f$ is the closure of the forward orbits 
-	of the critical points,
-	\begin{equation*}
-		\Postcrit = \overline{\{f^{\circ n} (0): n \geq 1\} \cup \{\infty\}}.
-	\end{equation*}	
-\end{definition}
-% As an indication for its relevance, notice that at points 
-% $\hat{\mathbb C} \setminus \PostCrit$ there is a local inverse of $f^{\circ n}$ for all $n \geq 0$.
-For every $c \neq 0$, the post-critical set $\PostCrit$ of the map $f: z\mapsto z^2+c$ contains at least $3$ points (e.g.~$0$, $c$ and $\infty$) and consequently its complement $\hat{\mathbb C} \setminus \PostCrit$
-is a hyperbolic domain by \cref{thm:criterion-hyperbolic-domain}.
-
-The map $f$ \emph{hyperbolic} if
- its post-critical set $\PostCrit$ is disjoint from its Julia set $\mathcal J$.
- This is equivalent to $f$ being expanding on $\mathcal J$:
-
- \begin{theorem}\label{theorem:hyperbolic_expanding}
-Let $c \neq0$, and view $f: z\mapsto z^2+c$ as the map 
-$$f: f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \to \hat {\mathbb C} \setminus \PostCrit,$$
-with the corresponding hyperbolic metrics. Then we have 
-\begin{equation}\label{eq:hyp-derivative-bound}
-	\norm {f'(z)}_{\hyp} > 1
-\end{equation} 
-for every $z\in f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$,
-where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
- \end{theorem}
- 
- \begin{proof}{(Proof. \cite[Theorem 19.1]{milnor_book})}
-	The map $f$ is a covering map, hence it is a local isometry as a map
-	$$f: f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$$
-	by \cref{thm:Schwarz}.
-	We conclude by composing with the inclusion 
-	$f^{-1}(\hat {\mathbb C} \setminus \PostCrit) \xhookrightarrow{} 
-	\hat {\mathbb C} \setminus \PostCrit$, 
-	which is a strict contraction by \cref{thm:Schwarz}.
- \end{proof}
-
-\begin{corollary}
-	If $c \in \heartsuit$ and $c \neq 0$, then we have 
-	\begin{equation}
-		\norm {f'(z)}_{\hyp} \geq \kappa
-	\end{equation} 
-	for all $z \in \mathcal J$, for some constant $\kappa >1$.
-\end{corollary}
-\begin{proof}
-	By hyperbolicity 
-	$ \mathcal J \subseteq f^{-1}(\hat {\mathbb C} \setminus \PostCrit)$, 
-	and the claim follows by compactness.
-\end{proof} 
- 
 %  Hyperbolic maps enjoy the principle of the conformal elevator, 
 %  which roughly says that any ball centered on the Julia set can be blown up to a definite size. 
 %  More precisely, we have the following proposition:
@@ -433,32 +418,6 @@ where the hyperbolic derivative was defined in \cref{def:hyp-derivative}.
 % 	$\diam {f^{\circ n}(B(z,r))}$ is bounded from below uniformly in $z$ and $r$. 
 % \end{proposition}
 
-\begin{corollary} \label{elevator for points on julia}
-	Let $f$ be a hyperbolic quadratic map.
-	There exists  $\epsilon > 0$ such that 
-	every pair of points $z,w\in\mathcal{J}$
-	 has a forward iterate $f^{\circ n}$ for which 
-	 \begin{equation*}
-		\left|f^{\circ n}(z)-f^{\circ n}(w)\right|>\epsilon.	
-	 \end{equation*}
-\end{corollary}
-
-\begin{proof}	
-	We first convert the bound of \cref{elevator for points on julia} from the hyperbolic metric
-	to the Euclidean metric by passing to an iterate of $f$. 
-	Indeed, for every iterate $f^{\circ m}$ we have
-	\begin{equation}
-		\norm {(f^{\circ m})'(z)}_{\hyp} \geq \kappa^m
-	\end{equation} 
-	for every point $z \in \mathcal J$ and every tangent vector $v$ at $z$.
-	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
-	we may take $m$ large enough so that for $g=f^{\circ m}$ there is a uniform bound
-	$|g'| > \mu$ on $\mathcal J$, for some constant $\mu  > 1$. 
-	% For every $z \in \mathcal J$, there exists $\epsilon(z) >0$ such that $|z-w| < \epsilon(z)$ implies 
-	% $|g(z)-g(w)| > \kappa |z-w|$.
-	By compactness, there exists $\epsilon>0$ such that whenever $|z-w| < \epsilon$ on $\mathcal J$,
-	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows by iterating $g$.
-\end{proof}
 
 \begin{definition}
 	A point $z \in \mathcal J$ is \emph{rectifiably accessible} from $\Exterior(\mathcal J)$ if there is a rectifiable curve $\gamma: [0,1) \to \Exterior(\mathcal J)$ such that $\gamma (t) \to z$ as $t \to 1$.
@@ -489,27 +448,11 @@ In particular, any point on \(\mathcal{J}\) is rectifiably accessible.
 \begin{proof} \leavevmode
 (i) For $c=0$, this is a direct computation. 
 Suppose $c \neq 0$, and let $\Postcrit$ be the post-critical set of $f$.
-
-% The map $f: \hat {\mathbb C} \setminus f^{-1}(\PostCrit) \to \hat {\mathbb C} \setminus \PostCrit$ is an isometry,
-
-% Since $\# \mathcal P \geq 3$,  the Schwarz lemma implies that $f: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is expanding in the hyperbolic metric of $\hat{\mathbb C} \setminus \Postcrit$.
-
-
-%In particular, any inverse branch $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to\hat{\mathbb C} \setminus \Postcrit$ is a strict contraction.
-
-Any branch of $f^{-1}: \hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus \Postcrit$
-% potentially defined only in a subdomain
-is a strict hyperbolic contraction by \cref{theorem:hyperbolic_expanding}.
-
-% Indeed, we may decompose this map as the hyperbolic isometry 
-% $\tilde f^{-1}:\hat{\mathbb C} \setminus \Postcrit \to \hat{\mathbb C} \setminus f^{-1} (\Postcrit)$,
-% composed with the strict inclusion $\iota: \hat{\mathbb C} \setminus f^{-1} (\Postcrit)  \to \hat{\mathbb C} \setminus \Postcrit$,
-% which is contracting by Schwarz's lemma.
-% See \cite[Theorem 3.5]{mcmullen_1994} for further details.
+Recall that $f: \widehat{\mathbb C} \setminus \Postcrit \to \widehat{\mathbb C} \setminus \Postcrit$
+is expanding in the hyperbolic metric by \cref{theorem:hyperbolic_expanding}.
 
 Let $B(0,R) \subset \mathbb{C}$ be a ball large enough that it contains every central itinerary. 
-By hyperbolicity, $\hat{\mathbb C} \setminus \PostCrit$ contains $\overline{\Exterior(\mathcal{J})}$.
-Thus $\Exterior(\mathcal{J}) \cap B(0,R)$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$, and
+By hyperbolicity, $\Exterior(\mathcal{J}) \cap B(0,R)$ is compactly contained in $\widehat{\mathbb C} \setminus f(\Postcrit)$, and
 there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert_{\hyp}< \theta$ on $\Exterior(\mathcal{J}) \cap B(0,R)$. Therefore,
 \begin{align*}
 \HypLength(\gamma_k)  & \leq \theta \cdot \HypLength(f(\gamma_k))\\ & \leq  \dots
@@ -518,79 +461,31 @@ there is a constant $\theta<1$ such that $\Vert (f^{-1})' \Vert_{\hyp}< \theta$ 
 \end{align*}
 where the last inequality holds since $f^{\circ k}(\gamma_k)$ lies 
 on the real axis in case $\gamma_k$ is an express track, 
-or on the equipotential $\psi(\{ |z| = \sqrt 2\})$ otherwise.
+or on the equipotential $\psi \bigl (\{ |z| = \sqrt 2\} \bigr )$ otherwise.
 
-As the hyperbolic metric is equivalent to the Euclidean metric on compact subsets
-of $\hat{\mathbb C} \setminus \PostCrit$,
+
+As the Euclidean metric is bounded above by a constant multiple of the hyperbolic metric,
 we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
-
-% The corresponding bound $\Length(\delta_k) \lesssim \theta^k$ for peripheral tracks 
-% follows in an analogous manner. 
-% Alternatively, it can be obtained from the bound for $\Length(\gamma_k)$ 
-% using Koebe's distortion theorem.
 Thus any point on $\mathcal J$ can be reached from the central station 
 $s_{0,0}$ by a curve of bounded length.
 
-(ii) By \cref{elevator for points on julia}, 
+(ii) By (\ref{elevator for points on julia}), 
 there exists an $\epsilon>0$ such that any two points are $\epsilon$-apart 
 under some iterate of $f$. 
-Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $\left|z_{1}-z_{2}\right|\geq\epsilon,$ 
+Let $z_{1},z_{2}\in\mathcal{J}(f)$. If $ |z_{1}-z_{2} |\geq\epsilon,$ 
 we are done since the length of $\eta_{z_1,z_2}$ is uniformly bounded above by part (i).
 On the other hand, if 
-$\left|z_{1}-z_{2}\right|<\epsilon$,
+$ |z_{1}-z_{2} |<\epsilon$,
 then there is an iterate $f^{\circ n}$ for which
 \begin{equation}
-	|w_1-w_2|:=\left|f^{\circ n}(z_{1})-f^{\circ n}(z_{2})\right|\geq\epsilon
+	|w_1-w_2|:= |f^{\circ n}(z_{1})-f^{\circ n}(z_{2}) |\geq\epsilon,
 \end{equation}
-and we have a uniform bound on
-$$\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|}$$ as before.
-As $\eta_{w_1, w_2}$ is contained in $B(0,R) \cap \Exterior(\mathcal J)$, it is relatively separated from the post-critical set. We are done by Lemma \ref{koebe-quasiconvexity}.
+so that $\eta_{w_1, w_2}$ is a quasiconvexity certificate.
+As $\eta_{w_1, w_2}$ is contained in $\Exterior(\mathcal J) \cap B(0,R)$, it is relatively separated from the post-critical set.
+By \cref{koebe-quasiconvexity}, $\eta_{z_1,z_2}$ is also a quasiconvexity certificate.
 \end{proof}
 
-%%--BEGIN COMMENT
-\begin{comment}
-
-Thus we are left with showing that
-\begin{equation}
-	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{|z_1-z_2|}\asymp\frac{\Length\left(\eta_{w_1,w_2}\right)}{|w_1-w_2|},
-\end{equation}
-which we rewrite as
-% , denoting $g=f^{\circ n}$, that 
-\begin{equation} \label{eq:hyperbolic-distortion-goal}
-	\frac{|z_1-z_2|}{|w_1-w_2|}
-	\asymp
-	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(\eta_{w_1,w_2}\right)}.
-\end{equation}
-
-We shall now deduce \cref{eq:hyperbolic-distortion-goal} from a distortion argument.
-Since $\Postcrit$ is compactly contained in $\mathcal K$, we may enlarge $\Postcrit$ to a compact connected set 
-$\tilde {\PostCrit} \subset \mathcal K$ while maintaining a definite distance from the boundary $\mathcal J$.
-By \cref{thm: rel-dist-bounds-modulus},
-% since $f^{\circ n}$ sends $(z_1,z_2)$ to $(w_1,w_2)$ and sends $\eta_{z_{1},z_{2}}$ to $\eta_{w_1,w_2}$.
-there is a topological ball $B=B(z_1,z_2)$ containing the itinerary $\eta_{w_1,w_2}$ and having
-a definite modulus inside $\hat{\mathbb C }\setminus \tilde{\PostCrit}$.
-
-% To construct the part of $B$ outside $\mathcal K$ it to enough treat the round case $c=0$ and then apply 
-% the conjugacy $\psi$. The part inside $\mathcal K$ can just be a path that stays closer
-% to $\mathcal J$ that $\dist{\mathcal J, \Postcrit}$.
-
-% TODO: details for why it exists.
-% Also is $\hat{\mathbb C }\setminus \PostCrit(g)$ really the correct domain or its preimage or what?
-
-Denoting $f^{\circ n}$ by $g$, 
-we apply \cref{Koebe} on a branch of $g^{-1}$ defined in all of $B$ and sending $\eta_{w_1,w_2}$ to $\eta_{z_1,z_2}$.
-Such a branch exists because $B$ is disjoint from $\PostCrit$ and since we can ensure that $B$ does not encircle the origin by 
-removing an external ray disjoint from $\eta_{w_1,w_2}$. \textcolor{red}{(Can I prove it?)}
-
-It follows that
-\begin{equation}
-	\frac {|z_1-z_2|}{|w_1-w_2|} \asymp |(g^{-1})'(x)| \asymp
-	\frac{\Length\left(\eta_{z_{1},z_{2}}\right)}{\Length\left(g(\eta_{z_1,z_2})\right)}.
-\end{equation}
-for any point $x \in B$, as needed.
-
-\end{comment}
-%% END COMMENT
+ 
 
 \section{The Cauliflower}
 In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
@@ -603,6 +498,8 @@ and we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,
 As a substitute, we present an analogue of the principle of the conformal elevator in this parabolic setting.
 
 \subsection{Itineraries have finite length}
+\label{sec:finite-length}
+
 We first show that each itinerary $\eta_{z_1,z_2}$ has a finite length. 
 We will in fact show an exponential decay of the lengths of the constituent tracks. 
 For this to hold it is necessary to glue together consecutive express tracks: 
@@ -617,11 +514,14 @@ have only a quadratic rate of length decay. To fix this, we introduce:
 	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its central itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
 \end{proposition}
 
-For the proof, let $\mathcal U_{-1}$ be the Jordan domain enclosed by the unit circle, 
+For the proof, let $\mathcal U_{-1}$ be the Jordan domain enclosed by the Julia set $\mathcal J$, 
 the rightmost itinerary starting from the pre-central station and the leftmost one. 
 See \cref{fig:dyadic_grid}.
 This domain is constructed so that it contains all itineraries that start at the station 
-$s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. Its crucial property is: 
+$s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. 
+Notice that $\mathcal U_{-1}$ is compactly contained in $\widehat{\mathbb C} \setminus \Postcrit$, because the post-critical set $\PostCrit$ touches the Julia set $\mathcal J$ only at $p=1/2$, which is not contained in $\overline{\mathcal U_{-1}}$.
+
+The crucial property of the domain $\mathcal U_{-1}$ is: 
 % call $s_{-1}:=s_{1,1}$ the \emph{pre-central station}
 
 \begin{lemma} \label{lemma-enough-visits-of-premain_station}
@@ -634,24 +534,18 @@ $s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. Its 
 	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
 \begin{proof}[Proof (\cref{prop:finite-length})] 
-There is a uniform bound $\Vert (f^{-1})' \Vert_{\hyp}< \theta < 1$ on $\mathcal U_{-1}$
-with respect to the hyperbolic metric of the domain $\hat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
-This follows from \cref{theorem:hyperbolic_expanding}, in the slightly more general formulation of \cite[Theorem 3.5]{mcmullen_1994},
-since $\mathcal U_{-1}$ is compactly contained in $\hat{\mathbb C} \setminus \Postcrit$.
+By \cref{theorem:hyperbolic_expanding}, there is a uniform bound $\Vert (f^{-1})' \Vert_{\hyp}< \theta < 1$ on $\mathcal U_{-1}$
+with respect to the hyperbolic metric of the domain $\widehat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
 
 In the notation of \cref{lemma-enough-visits-of-premain_station}, we then have 
-\begin{equation}
-	\begin{split}
-	\HypLength(\gamma_k)  &  \leq \HypLength(f^{\circ (n_1-1)}(\gamma_k)) \\ & \leq \theta \cdot \HypLength(f^{\circ n_1}(\gamma_k))\\ & \leq  \dots
-	\\ & \leq \theta^k \cdot \HypLength(f^{\circ n_k}(\gamma_k))
-		\\ & \lesssim \theta^k.
-	\end{split}
-\end{equation}
-
-As in the hyperbolic case, we infer that $\Length(\gamma_k) \lesssim \theta^k$ 
-by the equivalence on $B(0,R) \setminus \mathcal P$ 
-of the Euclidean metric and the hyperbolic metric. 
-% This proves the bound for express tracks. The analogous bound $\Length(\delta_k)\lesssim \theta^k$ for peripheral tracks is similar.
+\begin{align*}
+	\HypLength(\gamma_k)  &  \leq \HypLength(f^{\circ (n_1-1)}(\gamma_k)) \\ 
+	& \leq \theta \cdot \HypLength(f^{\circ n_1}(\gamma_k))\\
+	& \leq  \dots \\
+	 & \leq \theta^k \cdot \HypLength(f^{\circ n_k}(\gamma_k)) \\
+	 & \lesssim \theta^k.
+\end{align*}
+As the Euclidean metric is bounded above by a constant multiple of the hyperbolic metric, we infer that $\Length(\gamma_k) \lesssim \theta^k$.
 \end{proof}
 
 
@@ -661,6 +555,7 @@ To estimate the length of express tracks, we introduce the notations $s_n := s_{
 \begin{equation}
 	\ell_n := \Length([s_{n},s_{n+1}]) = s_{n}-s_{n+1}.
 \end{equation}
+From the definition of the stations $s_n$, we have $f(s_{n+1}) = s_n$ for all $n \ge 0$. Since the Cauliflower is symmetric with respect to the real line, the $s_n$ are positive real numbers converging to the cusp at $p = \frac{1}{2}$.
 
 \begin{lemma} \label{lem-ell_n}
 	The lengths ${\ell_n}$ satisfy:
@@ -684,11 +579,23 @@ To estimate the length of express tracks, we introduce the notations $s_n := s_{
 \end{lemma}
 
 \begin{proof}
-Using the affine conjugacy of the map $f$ to the map $g: z\mapsto z^2+z$, which sends the parabolic fixed point $\frac{1}{2}$ of $f$ to $0$, one can show that
-$$
-\ell_n \asymp \frac{1}{n^2} \qquad \text{and} \qquad |p - s_n| \asymp \frac{1}{n}.
-$$
-After a little arithmetic, we get (\ref{eq:ell_n1}) and (\ref{eq:ell_n2}).
+The sequence of positive numbers
+$$a_n=|p-s_n|=s_n-\frac 12$$
+satisfies the recurrence 
+$$a_n = a_{n+1}^2+a_{n+1},$$
+or equivalently 
+\begin{equation}
+    a_{n+1} = \frac{-1+\sqrt{1+4a_n}}2.
+\end{equation}
+Since $a_n$ tends to zero, we may use the expansion 
+\begin{equation}
+    \sqrt {1+x} = 1+\frac x2 - \frac {x^2}8 + O(x^3)
+\end{equation}
+to deduce that for large $n$,
+\begin{equation}
+    a_{n+1} = a_n - a_n^2 + O(a_n^3).
+\end{equation}
+Routine calculations show that $a_n = \frac 1n + o\left (\frac 1n \right ) \asymp \frac 1n$, and consequently that $\ell_n = a_n - a_{n+1} \asymp \frac 1{n^2}$.
 \end{proof}
 
 % If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
@@ -696,6 +603,7 @@ After a little arithmetic, we get (\ref{eq:ell_n1}) and (\ref{eq:ell_n2}).
 % then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
 
 \begin{lemma}
+\label{expansion factor}
 There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have 
 $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 \end{lemma}
@@ -703,14 +611,15 @@ $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 \begin{proof}
 	We have 
 	\begin{equation}
-		|f(z_1)-f(z_2)| = \left |\int_{z_1} ^{z_2} f(z) dz \right | \leq k|z_1-z_2|	
+		|f(z_1)-f(z_2)| \, = \,  \biggl | \int_{z_1} ^{z_2} f(z) dz \biggr | 
+  \, \leq \, k|z_1-z_2|	
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
  
 \subsection{Dynamics near the parabolic fixed point}
 
-The purpose of the following definition is to organize points on the Julia set $\mathcal J$ according to their distance from the main cusp $z=1/2$ in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first time that the central itinerary makes a turn.
+The purpose of the following definition is to organize points on the Julia set $\mathcal J$ according to their distance from the main cusp $p=1/2$ in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first station at which the central itinerary makes a turn.
 
 \begin{figure}
     \centering
@@ -807,7 +716,7 @@ Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $
 
 \begin{lemma}
 \label{case 1 rel. sep}
-Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\gamma _{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\gamma _{w_1,w_2}$ is relatively separated.
+Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\gamma _{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\gamma _{w_1,w_2}$ is relatively separated from the post-critical set.
 \end{lemma}
 
 \begin{proof}
@@ -828,7 +737,12 @@ We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_
 \end{theorem}
 
 \begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}
-Let  $(z_1,z_2)$ be a pair of points in $\mathcal J$. Repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs. Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
+Let  $(z_1,z_2)$ be a pair of points in $\mathcal J$. 
+If $|z_{1}-z_{2}| \geq \epsilon,$ 
+we are done since the length of $\eta_{z_1,z_2}$ is uniformly bounded above by  \cref{prop:finite-length}.
+
+It remains to treat the case when $|z_{1}-z_{2}| \le \epsilon$. By  \cref{elevator for points on julia} and \cref{expansion factor}, we may repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs.
+Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|,
 \end{equation*}
@@ -842,7 +756,7 @@ In Cases 1 and 2, we are done by \cref{case 1 rel. sep}. In Case 3,
 the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_2$. Let $\mathcal K_{-2}$ be the preimage of $\mathcal K_2$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
 As the domain $\mathcal K_{-2}$ is relatively separated from $\PostCrit$ and contains the curve 
 $f^{\circ (N-1)}(\eta_{z_1,z_2}) = \eta_{f^{-1}(w_1),f^{-1}(w_2)}$,
-we may use Koebe's distortion theorem to conclude that
+we may use Koebe's distortion theorem and \cref{koebe-quasiconvexity} to conclude that
 \begin{equation}
 	\frac{\Length(\eta_{z_1,z_2})}{|z_1-z_2|} \, \asymp \,
 		\frac{\Length(\eta_{f^{-1}(w_1),f^{-1}(w_2)})}{|f^{-1}(w_1)-f^{-1}(w_2)|} \, \asymp \,
