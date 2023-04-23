@@ -11,18 +11,18 @@
 %\cref{fig:Cauliflower_tikz}
 
 Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of points in the complex plane with bounded orbit
-under iteration by $f_c$:
+under iteration by $f_c$\,:
 $$
-\mathcal K_c = \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \}.
+\mathcal K_c = \bigl \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \bigr \}.
 $$
-Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set} and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f$.
+Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}\/ and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f_c$.
  
 The {\em main cardioid}
 $$
 \heartsuit = \bigl  \{c \in \mathbb{C}: c = \lambda/2 - \lambda^2/4,\, \lambda \in \mathbb{D} \bigr \}
 $$
 is the set of parameters $c \in \mathbb{C}$ for which $f_c$ has an attracting fixed point.
-When $c \in \heartsuit$, the filled Julia set $\mathcal K_c$ is a \emph{quasidisk}\/, the image of a round disk under a quasiconformal map, \cite[Theorem VI.2.1]{gamelin2003complex}.
+When $c \in \heartsuit$, the filled Julia set $\mathcal K_c$ is a \emph{quasidisk}\/, the image of a round disk under a quasiconformal mapping of the plane, e.g.~see \cite[Theorem VI.2.1]{gamelin2003complex}.
 This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 % Parameters $c \in \heartsuit$ are {\em hyperbolic}. Loosely speaking, this means that $\mathcal J_c$ satisfies the principle of the conformal elevator: 
@@ -30,17 +30,16 @@ This intuitively means that $\mathcal K_c$ has no \enquote{cusps}.
 
 In this work we take $c=1/4$, which lies on the boundary of $\heartsuit$. 
 The filled Julia set $\mathcal K_{1/4}$, also called the \emph{Cauliflower}, 
-is a Jordan domain with an inward-pointing cusp at the point $p=1/2$.
+is a Jordan domain with an inward-pointing cusp at the point $p=1/2$. See \cref{fig:julia_sets}.
 
 According to a theorem of Carleson, Jones and Yoccoz \cite[Theorem 6.1]{carleson_julia_1994}, 
 the Cauliflower is a \emph{John domain}\/, a condition which rules out \enquote{outward-pointing cusps}. 
 Formally, a domain $\Omega$ is John if there exists a \enquote{center} 
 $z_0 \in \Omega$ that can be connected 
-to any other point $z_1\in \Omega$ by a curve $\gamma$ which stays away from the boundary:
+to any other point $z_1\in \Omega$ by a curve $\gamma$ which does not get too close to the boundary:
 \begin{equation}
 	\dist(z, \partial \Omega) \gtrsim |z_1-z|,
 \end{equation} for all $z\in \gamma$.
- See \cref{fig:julia_sets}.
 
 A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
@@ -88,20 +87,19 @@ Thus our result can be rephrased as follows:
 By \cite[Corollary F]{hakobyan_euclidean_2008}, to show that a Jordan domain $\Omega$ is quasiconvex, it is enough to find certificates for points $z_{1},z_{2}$ that lie
 on the boundary curve $\partial\Omega$.
 
-We show quasiconvexity by an explicit construction of certificates connecting any given pair of points on the Julia set.
-We first build the certificates in the exterior unit disk $\mathbb D ^*$, 
-then we transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
-which conjugates $f_0$ with $f_{1/4}$.
+We show quasiconvexity by explicitly constructing the certificates that connect pairs of points on the Julia set.
+We first build the certificates in the exterior unit disk $\mathbb D ^*$ in a  $f_0: z\mapsto z^2$ invariant manner, and then transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
+which conjugates the dynamics of $f_0$ and $f_{1/4}$. As the certificates in the exterior of the Cauliflower possess an invariance property under $f_{1/4}$, they may be analyzed using a parabolic variant of the principle of the conformal elevator.
 
-To retain control of the certificates after applying $\psi$, 
-we build the certificates of $\mathbb D^*$ in a manner invariant under the map $f_0: z\mapsto z^2$.
-This translates after applying $\psi$ to an invariance under $f_{1/4}$,
-which allows us to employ a parabolic variant of the principle of the conformal elevator.
-This principle says that small balls around points of $\mathcal J$ can be blown up to a definite size by repeatedly applying $f$, while roughly retaining their shape; we exploit this self-similarity to analyze certificates connecting nearby points using their iterated images, which are itineraries connecting points that are far apart. For a general set-up of the principle, see \cite[pages 20-21]{bonk2014quasisymmetries}.
+In the hyperbolic setting ($c \in \heartsuit$), the {\em principle of the conformal elevator} says that small balls centered at points of $\mathcal J_c$ can be blown up to a definite size by repeatedly applying $f_c$, while roughly retaining their shape. Put more colloquially, Julia sets of hyperbolic polynomials are self-similar with bounded distortion. We use this self-similarity to analyze certificates that connect nearby points by using certificates that connect their iterated images located a definite distance apart. 
 
-To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ where 
-$c\in \heartsuit)$, in which the usual conformal elevator applies, 
-and we subsequently treat the parabolic case of $c=\frac{1}{4}$.
+In the parabolic setting ($c=1/4$), we can only blow up balls to definite size as long as they stay away from the parabolic point. Nevertheless, we are able to control the certificates by exploiting the geometry of the cusp.
+
+%For a general set-up of the principle, see \cite[pages 20-21]{bonk2014quasisymmetries}.
+
+To facilitate the reading, we first demonstrate the proof in the hyperbolic case of maps $f_c(z)=z^2+c$ with 
+$c\in \heartsuit$, in which the usual conformal elevator applies, 
+and subsequently treat the parabolic case with $c= 1/4$.
 
 \section{Preliminaries}
 
@@ -113,7 +111,7 @@ In this section, we gather a number of tools from complex analysis and dynamics 
 	\label{eq:hyp-metric-in-disk}
 		\rho = \frac {2|dz|}{1-|z|^2}.
 	\end{equation}
-It is the unique Riemannian metric on the unit disk, up to multiplication by a positive constant, which is invariant under conformal automorphisms $\aut \mathbb{D}$. The factor 2 makes the curvature $-1$ instead of $-4$. One may transfer the hyperbolic metric to any simply-connected domain in the plane using the Riemann map.
+It is the unique Riemannian metric on the unit disk, up to multiplication by a positive constant, which is invariant under conformal automorphisms in $\aut \mathbb{D}$. The factor 2 makes the curvature $-1$ instead of $-4$. One may transfer the hyperbolic metric to any simply connected domain in the plane using the Riemann map.
 
 \begin{definition}
 	A domain $U \subset \widehat{\mathbb C}$ is \emph{hyperbolic} if its 
@@ -578,24 +576,30 @@ From the definition of the stations $s_n$, we have $f(s_{n+1}) = s_n$ for all $n
 	whenever $|m-n| \geq d$.
 \end{lemma}
 
-\begin{proof}
+\begin{proof}[Sketch of proof]
 The sequence of positive numbers
-$$a_n=|p-s_n|=s_n-\frac 12$$
+$$
+a_n = s_n-\frac{1}{2}
+$$
 satisfies the recurrence 
-$$a_n = a_{n+1}^2+a_{n+1},$$
-or equivalently 
 \begin{equation}
-    a_{n+1} = \frac{-1+\sqrt{1+4a_n}}2.
+a_n = a_{n+1}^2+a_{n+1}.
 \end{equation}
-Since $a_n$ tends to zero, we may use the expansion 
-\begin{equation}
-    \sqrt {1+x} = 1+\frac x2 - \frac {x^2}8 + O(x^3)
-\end{equation}
-to deduce that for large $n$,
-\begin{equation}
-    a_{n+1} = a_n - a_n^2 + O(a_n^3).
-\end{equation}
-Routine calculations show that $a_n = \frac 1n + o\left (\frac 1n \right ) \asymp \frac 1n$, and consequently that $\ell_n = a_n - a_{n+1} \asymp \frac 1{n^2}$.
+%or equivalently, 
+%$$
+%    a_{n+1} \, = \, \frac{-1+\sqrt{1+4a_n}}2
+%    \, = \, a_n - a_n^2 + O(a_n^3).
+%$$
+% Since $a_n$ tend to zero, we may use the expansion 
+% \begin{equation}
+%     \sqrt {1+x} = 1+\frac x2 - \frac {x^2}8 + O(x^3)
+% \end{equation}
+% to deduce that for large $n$,
+% \begin{equation}
+%     a_{n+1} = a_n - a_n^2 + O(a_n^3).
+% \end{equation}
+An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n = a_n - a_{n+1} \asymp 1/n^2$.
+% It is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
 \end{proof}
 
 % If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
@@ -642,11 +646,14 @@ We now use this decomposition to analyze the case where the points $w_1,w_2$ lie
 	w_1 \in I_n, \quad w_2 \in I_m, \quad m-n > d,
 \end{align}
 where $d$ is a sufficiently large integer, to be chosen later. 
-This gives some control from below on $|w_1-w_2|$. 
+This will give some control from below on $|w_1-w_2|$. 
 We represent the itinerary $\eta=\eta_{w_1,w_2}$ as a concatenation of three paths: the radial segment $\gamma_{m,n}=[s_{m,0},s_{n,0}]$ and the two other components, $\gamma _m$ and $\gamma_n$. See \cref{fig:Three-parts-of-eta} for the picture in the exterior unit disk.
 Thus we have
 \begin{equation}
-	\Length(\eta)=\Length(\gamma_m)+\Length(\gamma_{m,n})+\Length(\gamma_n).
+\begin{split}    
+\Length(\eta) &=\Length(\gamma_m)+\Length(\gamma_{m,n})+\Length(\gamma_n) \\ 
+&= \Length(\gamma_m)+\ell_m + \dots +\ell_{n-1}+\Length(\gamma_n).
+\end{split}
 \end{equation}
 
 \input{"figures/departure-decomposition.tex"}
@@ -767,5 +774,8 @@ as desired.
 
 \bibliographystyle{acm}
 \bibliography{main}
+
+\newpage
+
 \printnomenclature
 \end{document}
