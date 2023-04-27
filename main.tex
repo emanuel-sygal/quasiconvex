@@ -684,6 +684,7 @@ An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n
 % In particular, if $\gamma$ is a quasiconvexity certificate, 
 % then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
 
+
 \begin{lemma}
 \label{expansion factor}
 There exists a constant $k>0$ such that for any pair of points $z_1, z_2 \in \mathcal J$, we have 
@@ -748,7 +749,7 @@ There exists a sufficiently large integer $d$ so that
 \end{proposition}
 
 We henceforth fix a value of $d$ as in the proposition.
-\begin{proof}
+\begin{proof} 
 We first make two elementary observations. Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that
 \begin{equation} \label{eq:gamma_m_not_large}
 		\Length(\gamma_m) \leq C \ell_m,
@@ -768,6 +769,26 @@ By the triangle inequality, we have
 \end{align*}
 which clearly implies (\ref{eq:triangle-comparison}).
 \end{proof}
+
+
+\begin{tikzpicture}
+	% draw the points w1 and w2
+	\coordinate[label=below:$w_1$] (w1) at (0,0);
+	\coordinate[label=below:$w_2$] (w2) at (10,0);
+        \coordinate[] (s1) at (-1,3);
+        \coordinate[] (s2) at (12,3);
+
+ 
+	% draw a straight line between w1 and w2
+	\draw (w1) -- (w2);
+	
+	% draw a wiggly path from w1 to w2
+	\draw [decorate,decoration={snake,segment length=2mm,amplitude=1mm}, label=below:$\gamma_m$] (w1) -- node[left] {$\gamma_m$} (s1) -- node[below] {$\gamma_{m,n}$} (s2) -- node[left] {$\gamma_n$} (w2);
+\end{tikzpicture}
+\captionof{figure}{
+ Schematic illustration of the proof of \cref{case-3-proof}.
+ }  \label{fig:proof-triangle-ineq}
+
 
 \subsection{Quasiconvexity: three special cases}
 
