@@ -568,7 +568,7 @@ the rightmost itinerary starting from the pre-central station and the leftmost o
 See \cref{fig:dyadic_grid_regions}.
 This domain is constructed so that it contains all itineraries that start at the station 
 $s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. 
-Notice that $\mathcal U_{-1}$ is compactly contained in $\widehat{\mathbb C} \setminus \Postcrit$, because the post-critical set $\PostCrit$ touches the Julia set $\mathcal J$ only at $p=1/2$, which is not contained in $\overline{\mathcal U_{-1}}$.
+Notice that $\mathcal U_{-1}$ is compactly contained in $\widehat{\mathbb C} \setminus \Postcrit$, because the post-critical set $\PostCrit \subset [0,1/2] \cup \{\infty\}$ touches the Julia set $\mathcal J$ only at $p=1/2$, which is not contained in $\overline{\mathcal U_{-1}}$.
 
 The crucial property of the domain $\mathcal U_{-1}$ is: 
 % call $s_{-1}:=s_{1,1}$ the \emph{pre-central station}
@@ -627,8 +627,12 @@ From the definition of the stations $s_n$, we have $f(s_{n+1}) = s_n$ for all $n
 	whenever $|m-n| \geq d$.
 \end{lemma}
 
-\begin{proof}[Sketch of proof]
-The sequence of positive numbers
+\begin{proof}[Sketch of proof] Recall that $s_n$ satisfy the recurrence
+\begin{equation}
+s_{n+1}^2 + 1/4 =f(s_{n+1})= s_n.
+\end{equation}
+Consequently, 
+the sequence of positive numbers
 $$
 a_n = s_n-\frac{1}{2}
 $$
@@ -636,21 +640,44 @@ satisfies the recurrence
 \begin{equation}
 a_n = a_{n+1}^2+a_{n+1}.
 \end{equation}
-%or equivalently, 
-%$$
-%    a_{n+1} \, = \, \frac{-1+\sqrt{1+4a_n}}2
-%    \, = \, a_n - a_n^2 + O(a_n^3).
-%$$
-% Since $a_n$ tend to zero, we may use the expansion 
-% \begin{equation}
-%     \sqrt {1+x} = 1+\frac x2 - \frac {x^2}8 + O(x^3)
-% \end{equation}
-% to deduce that for large $n$,
-% \begin{equation}
-%     a_{n+1} = a_n - a_n^2 + O(a_n^3).
-% \end{equation}
+
 An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n = a_n - a_{n+1} \asymp 1/n^2$.
-% It is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
+% Notice that it is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
+
+% % The full proof by induction:
+% % It is enough to prove that for every $\epsilon>0$ there exists $k = k(\epsilon)$
+% % for which $a_n \overset{\epsilon}{\asymp}  \frac 1{n+k}$,
+% % meaning that for all large enough $n$,
+% % we have 
+% % \[e^{-\epsilon} \leq \left | \frac {a_n}{1/(n+k)} \right |\leq e^\epsilon.\]
+% % This is enough because then since $\frac 1n \overset{\epsilon}{\asymp} \frac 1{n+k}$ we deduce 
+% % $$
+% % a_n \overset{2\epsilon}{\asymp} \frac 1n.
+% % $$
+% % % Can this technicality be avoided?
+% % Let $\epsilon >0$, and assume that 
+% % $$\frac 1n \leq a_k \leq \frac {1+\epsilon}n.$$
+% % We deduce from it that
+% % $$\frac 1{n+1} \leq a_{k+1} \leq \frac {1+\epsilon}{n+1}.$$
+% % Notice that such an element $a_k$ exists in some range of the form $[\frac 1n, \frac {1+\epsilon}n]$ because $a_n \to 0$. 
+% % For the induction step, we have two parts:
+
+% % For the first inequality, assume by contradiction that $a_{k+1}<\frac 1{n+1}$. Then 
+% % $$\frac 1n \leq a_k < \frac 1{n+1} + \frac 1{(n+1)^2}$$
+% % which is a contradiction.
+
+% % For the second inequality, assume by contradiction that 
+% % $$a_{k+1}> \frac {1+\epsilon}{n+1}.$$
+% % Then 
+% % $$
+% % \frac {1+\epsilon}n \geq a_k > \frac {1+\epsilon}{n+1}
+% % + \frac {(1+\epsilon)^2}{(n+1)^2},
+% % $$
+% % which is equivalent to
+% % $\frac {1}{n} >
+% % \epsilon.$ 
+% % This is again a contradiction, and we are done.
+
 \end{proof}
 
 % If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
@@ -666,7 +693,7 @@ $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 \begin{proof}
 	We have 
 	\begin{equation}
-		|f(z_1)-f(z_2)| \, = \,  \biggl | \int_{z_1} ^{z_2} f(z) dz \biggr | 
+		|f(z_1)-f(z_2)| \, = \,  \biggl | \int_{z_1} ^{z_2} f'(z) dz \biggr | 
   \, \leq \, k|z_1-z_2|	
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
