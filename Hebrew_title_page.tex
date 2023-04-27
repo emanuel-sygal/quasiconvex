@@ -1,0 +1,145 @@
+% Necessarily a separate file because babel interferes with amsmath. The pdfs will be concatenated manually.
+
+\documentclass[11pt]{article}
+
+\title{קבוצת ז׳וליה של $z^2+1/4$ היא כמעט-קמורה}
+
+\date{Month and Year}
+
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[hebrew,english]{babel}
+\usepackage{biblatex}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{lipsum}  
+
+\parskip 2mm
+\addtolength{\textwidth}{1.4in} \addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.8in}
+\addtolength{\topmargin}{-0.5in} \addtolength{\textheight}{0.1in}
+
+\DeclareUnicodeCharacter{05D0}{\hebalef}
+\DeclareUnicodeCharacter{05D1}{\hebbet}
+\DeclareUnicodeCharacter{05D2}{\hebgimel}
+\DeclareUnicodeCharacter{05D3}{\hebdalet}
+\DeclareUnicodeCharacter{05D4}{\hebhe}
+\DeclareUnicodeCharacter{05D5}{\hebvav}
+\DeclareUnicodeCharacter{05D6}{\hebzayin}
+\DeclareUnicodeCharacter{05D7}{\hebhet}
+\DeclareUnicodeCharacter{05D8}{\hebtet}
+\DeclareUnicodeCharacter{05D9}{\hebyod}
+\DeclareUnicodeCharacter{05DA}{\hebfinalkaf}
+\DeclareUnicodeCharacter{05DB}{\hebkaf}
+\DeclareUnicodeCharacter{05DC}{\heblamed}
+\DeclareUnicodeCharacter{05DD}{\hebfinalmem}
+\DeclareUnicodeCharacter{05DE}{\hebmem}
+\DeclareUnicodeCharacter{05DF}{\hebfinalnun}
+\DeclareUnicodeCharacter{05E0}{\hebnun}
+\DeclareUnicodeCharacter{05E1}{\hebsamekh}
+\DeclareUnicodeCharacter{05E2}{\hebayin}
+\DeclareUnicodeCharacter{05E3}{\hebfinalpe}
+\DeclareUnicodeCharacter{05E4}{\hebpe}
+\DeclareUnicodeCharacter{05E5}{\hebfinaltsadi}
+\DeclareUnicodeCharacter{05E6}{\hebtsadi}
+\DeclareUnicodeCharacter{05E7}{\hebqof}
+\DeclareUnicodeCharacter{05E8}{\hebresh}
+\DeclareUnicodeCharacter{05E9}{\hebshin}
+\DeclareUnicodeCharacter{05EA}{\hebtav}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\selectlanguage{hebrew}
+\pagenumbering{gobble}
+\begin{abstract}
+{\large
+
+    לכל מספר מרוכב
+    $z \in \mathbb C$
+    ,
+    נגדיר באופן אינדוקטיבי סדרה
+$a_n=a_n(z)$
+ על ידי
+ כלל הנסיגה
+    $$a_{n+1} = a_n ^2 + 1/4,$$
+    עם נקודת ההתחלה
+        $$a_0 = z.$$
+    
+    \textbf{אגן המשיכה לאינסוף}
+    של הפולינום
+    $$f(z)=z^2+1/4$$        
+    % תהי $A \subset \mathbb C$
+    הוא
+    קבוצת נקודות ההתחלה 
+    $z$
+    שעבורן
+    $a_n(z) \to \infty$,
+    כלומר
+הקבוצה
+     $$A_\infty(f)=\{z\in \mathbb C: f^{\circ n}(z)=((z^2+1/4)^2+1/4)^2+\dots \to \infty\}.$$
+אגן המשיכה של 
+$f$
+הוא
+תחום ששפתו 
+$\mathcal J=\partial A_\infty(f)$
+היא עקומת ז'ורדן.
+
+העקומה $\mathcal J$
+היא פרקטל:
+ממד האוסדורף של $\mathcal J$
+הוא בקירוב 
+$1.0812$.
+% https://abel.math.harvard.edu/~ctm/papers/home/text/papers/dimIII/dimIII.pdf appendix A
+
+
+עבודה זו מוכיחה שאגן המשיכה של 
+$f$
+ הוא 
+\textbf{כמעט-קמור}:
+ניתן לחבר כל שתי נקודות בו באמצעות עקומה
+$\eta$
+שמוכלת באגן המשיכה, 
+ושהאורך שלה גדול רק פי קבוע מאורך הקו הישר שמחבר בין הנקודות.
+
+    
+    % \textbf{אגן המשיכה לאינסוף} של פולינום $f$ הוא אוסף המספרים המרוכבים ששואפים לאינסוף תחת הפעלה נשנית של 
+    % $f$.
+    
+    %  עבודה זו עוסקת באגן המשיכה לאינסוף של הפולינום 
+    %  $f(z)=z^2+1/4$,
+    %  כלומר בקבוצה 
+    %  $$A=\{z\in \mathbb C: f^{\circ n}(z)=((z^2+1/4)^2+1/4)^2+\dots \to \infty\}.$$
+     
+    }
+    
+\end{abstract}
+
+\selectlanguage{english}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.05cm}
+        \includegraphics[width=0.8\textwidth]{figures/Logo_Exact_Sciences_Hebrew_Black.jpeg}\\
+        \selectlanguage{hebrew}
+        \vspace{3cm}
+        % {\huge קבוצת ז'וליה של $z^2+1/4$ היא כמעט-קמורה \par}
+        {\huge אגן המשיכה לאינסוף של $z^2+1/4$ הוא כמעט-קמור \par}
+        \vspace{1cm}
+        {\large חיבור זה הוגש כחלק מהדרישות לקבלת התואר\\
+        \textquotedblright מוסמך אוניברסיטה\textquotedblleft\text{ }\textendash \text{ }.cS.M}\\
+        \vspace{2cm}
+        { על ידי}\\
+        \vspace{0.3cm}
+        {\large {עמנואל סגל}}\\
+        \vspace{1.5cm}
+        {\large העבודה נכתבה בהדרכתם של}\\
+        \vspace{0.3cm}
+        {\huge דר' אולג עברי} \\
+        {\huge פרופ' מיכאיל סודין\\
+        \vspace{1cm}
+        {\Large בית הספר למדעי המתמטיקה \\ אוניברסיטת תל אביב}}
+    \end{center}
+\end{titlepage}
+
+\end{document}

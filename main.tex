@@ -1,9 +1,57 @@
-% !TEX root = main.tex
+% x
 
 \input{preamble.tex}
 \usepackage{subcaption}
 
 \begin{document}
+
+\begin{figure}[H]
+\centering{}\includegraphics[width=0.8\textwidth]{figures/Logo_Exact_Sciences_Hebrew_Black.jpeg}
+\end{figure}
+
+\begin{center}
+The Raymond and Beverly Sackler\\
+Faculty of Exact Sciences\\
+School of Mathematical Sciences
+\par\end{center}
+
+\begin{doublespace}
+\begin{center}
+{\LARGE{}The basin of attraction to infinity of $z^2+1/4$ is quasiconvex}{\LARGE\par}
+\par\end{center}
+\end{doublespace}
+
+\begin{center}
+Thesis submitted in partial fulfillment of the requirements for the
+M.Sc. degree in the School of Mathematical Sciences, Tel-Aviv University
+\par\end{center}
+
+\begin{doublespace}
+\begin{center}
+by
+\par\end{center}
+
+\begin{center}
+{\large{}Emanuel Sygal}{\large\par}
+\par\end{center}
+\end{doublespace}
+
+\begin{center}
+Under the supervision of\\
+{\huge{}Dr. Oleg Ivrii}{\huge\par}
+{\huge{}Prof. Mikhail Sodin}{\huge\par}
+
+\par\end{center}
+
+\begin{onehalfspace}
+\begin{center}
+April 2023
+\par\end{center}
+\end{onehalfspace}
+
+
+
+
 
 \section{Introduction}
 
@@ -234,7 +282,7 @@ admits a hyperbolic metric.
  \begin{theorem}\label{theorem:hyperbolic_expanding}
 For $c \neq 0$, the map
 $f: \widehat {\mathbb C} \setminus \PostCrit \to \widehat {\mathbb C} \setminus \PostCrit,$
-is expanding with respect to the hyperbolic metric of $\widehat {\mathbb C} \setminus \PostCrit$, in the sense that the hyperbolic derivative
+is strictly expanding with respect to the hyperbolic metric of $\widehat {\mathbb C} \setminus \PostCrit$, in the sense that the hyperbolic derivative
 \begin{equation}\label{eq:hyp-derivative-bound}
 	\norm {f'(z)}_{\hyp} > 1, \qquad z\in \widehat {\mathbb C} \setminus \PostCrit.
 \end{equation}
@@ -292,7 +340,7 @@ We describe these paths using the metaphor of a passenger who travels by train:
 $$
 s_{n,k}=2^{1/2^{n}} \exp \biggl (2\pi i \cdot \frac{k}{2^{n}} \biggr),\qquad n\in\N_{0},\quad k\in \{ 0,\ldots,2^{n}-1 \}.
 $$ 
-These are the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
+ See \cref{fig:Carleson1}. These are the iterated preimages of the \emph{central station} $s_{0,0} = 2$ under the map $f_{0}$.
 We refer to $n$ as the \emph{generation} of the station $s_{n,k}$. 
 The $2^{n}$ stations of generation $n$ are equally spaced on the circle $C_{n}=\bigl \{ |\zeta|=2^{1/2^{n}} \bigr \} $. 
 \end{definition}
@@ -362,7 +410,8 @@ $$
 
 	This is a simple bi-infinite path connecting $\zeta_{1}$ and $\zeta_{2}$, see \cref{fig:Carleson2}. Note that itineraries are equivariant under the dynamics: we have  \begin{equation}
 		f(\eta_{\zeta_1,\zeta_2})=\eta_{f(\zeta_1),f(\zeta_2)}
-	\end{equation} for every pair of boundary points $\zeta_1,\zeta_2 \in \partial \mathbb D^*$ with $|\zeta_1-\zeta_2| < \sqrt{2}$.
+	\end{equation} for every pair of boundary points $\zeta_1,\zeta_2 \in \partial \mathbb D^*$ with $|\zeta_1-\zeta_2| < \sqrt{2}$. 
+ %In this work we will only need to apply $f$ on itineraries between points that satisfy this condition.
 \end{definition}
 \input{"figures/marker path 2.tex"}
 
@@ -509,12 +558,14 @@ have only a quadratic rate of length decay. To fix this, we introduce:
 \end{definition}
 
 \begin{proposition} \label{prop:finite-length}
-	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its central itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. In particular, $\Length(\eta_z)<\infty$ and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
+	Let $z \in \mathcal J$, and let $\eta_z= \gamma_1 + \delta_1 + \dots  $ be the reduced decomposition of its central itinerary. Then $\Length(\gamma_k)\lesssim \theta^k$ and $\Length(\delta_k)\lesssim \theta^k$ for some $\theta < 1$. Thus $\Length(\eta_z)$ is finite and uniformly bounded over $z \in \mathcal J$, and all points $z\mathcal \in \mathcal J$ are rectifiably accessible.
 \end{proposition}
+
+\input{figures/draw_dyadic_regions.tex}
 
 For the proof, let $\mathcal U_{-1}$ be the Jordan domain enclosed by the Julia set $\mathcal J$, 
 the rightmost itinerary starting from the pre-central station and the leftmost one. 
-See \cref{fig:dyadic_grid}.
+See \cref{fig:dyadic_grid_regions}.
 This domain is constructed so that it contains all itineraries that start at the station 
 $s_{1,1} = \psi(-\sqrt{2})$, the preimage of the central station under $f$. 
 Notice that $\mathcal U_{-1}$ is compactly contained in $\widehat{\mathbb C} \setminus \Postcrit$, because the post-critical set $\PostCrit$ touches the Julia set $\mathcal J$ only at $p=1/2$, which is not contained in $\overline{\mathcal U_{-1}}$.
@@ -528,12 +579,12 @@ The crucial property of the domain $\mathcal U_{-1}$ is:
 
 \begin{proof}
 	Every station $s \not \in (0, \infty)$ has a first iterate $f^{\circ n_s}(s)$ lying on the negative real axis $(-\infty, 0)$.
-	For any $i \in \{2, \dots, k-1\}$, let $s_i$ be the first station of $\gamma _i$ and take $n_i := n_{s_i}$.
+	For any $i \in \{2, \dots, k-1\}$, let $s_i$ be the first station of $\gamma _i$ and take $n_i := n_{s_i}$. % Note s_i is not on the positive axis since $i \geq 2$. 
 	By the definition of $\,\mathcal U_{-1}$, the itinerary $f^{\circ n_i}(\gamma)$ is contained in  $\,\mathcal U_{-1}$ from the station $f^{\circ n_i}(s_i)$ onwards, and in particular $f^{\circ n_i}(\gamma_k) \subset \mathcal U_{-1}$.
 \end{proof}
 \begin{proof}[Proof (\cref{prop:finite-length})] 
 By \cref{theorem:hyperbolic_expanding}, there is a uniform bound $\Vert (f^{-1})' \Vert_{\hyp}< \theta < 1$ on $\mathcal U_{-1}$
-with respect to the hyperbolic metric of the domain $\widehat{\mathbb C} \setminus \Postcrit$, for both branches $f^{-1}: \mathcal U_{-1} \to \mathcal U_{\pm i}$. 
+with respect to the hyperbolic metric of the domain $\widehat{\mathbb C} \setminus \Postcrit$, for both branches of $f^{-1}$ defined in $\mathcal U_{-1}$. 
 
 In the notation of \cref{lemma-enough-visits-of-premain_station}, we then have 
 \begin{align*}
@@ -721,6 +772,10 @@ Notice that Case 2 overlaps with Case 1.
 Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $\eta_{w_1,w_2}$ is contained in the domain $\mathcal K_{m,n+1}$.
 \end{lemma}
 
+\begin{proof}
+    This follows from the combinatorics of the construction in the exterior unit disk. 
+\end{proof}
+
 \begin{lemma}
 \label{case 1 rel. sep}
 Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\gamma _{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\gamma _{w_1,w_2}$ is relatively separated from the post-critical set.
@@ -753,7 +808,7 @@ Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved th
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|,
 \end{equation*}
-for some $A>0$. We deduce that the original pair of points $(z_1,z_2)$ enjoys a similar estimate,
+for some $A>0$. We now show that the original pair of points $(z_1,z_2)$ enjoys a similar estimate,
 \begin{equation*}
 	\Length(\eta_{z_1,z_2}) \leq C |z_1-z_2|,
 \end{equation*}
@@ -775,7 +830,7 @@ as desired.
 \bibliographystyle{acm}
 \bibliography{main}
 
-\newpage
+ 
 
 \printnomenclature
 \end{document}
