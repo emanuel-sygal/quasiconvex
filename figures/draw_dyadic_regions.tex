@@ -45,6 +45,17 @@
   -- (0,\ylimit-7)
   --cycle;  
 
+\fill [blue, opacity=0.4] 
+(\xlimit/4+\xlimit/8, \ylimit-3)
+-- (\xlimit/4+\xlimit/8, 0)
+-- (\xlimit/4+\xlimit/8+\xlimit/16, 0)
+-- (\xlimit/4+\xlimit/8+\xlimit/16, \ylimit-4)
+-- (\xlimit/4+\xlimit/4+\xlimit/16, \ylimit-4)
+-- (\xlimit/4+\xlimit/4+\xlimit/16, 0)
+-- (\xlimit/4+\xlimit/4+\xlimit/8, 0)
+-- (\xlimit/4+\xlimit/4+\xlimit/8, \ylimit-3)
+--cycle; 
+
 \fill[blue, opacity=0.4]
 (\xlimit, 6) circle (0.3);
 
@@ -71,29 +82,7 @@
 \captionof{figure}{
  The domain $\mathcal U_{-1}$ is highlighted in green, using the dyadic representation from \cref{fig:dyadic_grid}. 
  The station $s_{1,1}$ is highlighted; recall that points with external angle $\pm \pi$ appear twice in this representation. 
+ The domain $\mathcal K_{3,4}$ is shown in purple.
  %Also notice that every itinerary passing through the station $s_{1,1}$ must continue vertically from it.
  }  \label{fig:dyadic_grid_regions}
 \end{figure} 
-
-
-
-% % Previously there was a wrong representation of U_{-1}:
-% % \fill [green, opacity=0.4] 
-% %   (0,\ylimit-2)
-% %   --(0,\ylimit-3) -- (\xlimit/8,\ylimit-3)
-% %   --(\xlimit/8,\ylimit-4) -- (\xlimit/8+\xlimit/16,\ylimit-4)
-% %   --(\xlimit/8+\xlimit/16,\ylimit-5) -- (\xlimit/8+\xlimit/16+\xlimit/32,\ylimit-5)
-% %   --(\xlimit/8+\xlimit/16+\xlimit/32,\ylimit-6) -- (\xlimit/8+\xlimit/16+\xlimit/32+\xlimit/64,\ylimit-6)
-% %   -- (\xlimit/8+\xlimit/16+\xlimit/32+\xlimit/64, \ylimit-7)
-% %   -- (0,\ylimit-7)
-% %   --cycle;  
-
-% % \fill [green, opacity=0.4] 
-% %         (\xlimit-0,\ylimit-2)
-% %    --(\xlimit-0,\ylimit-3) -- (\xlimit-\xlimit/48,\ylimit-23)
-% %   --(\xlimit-\xlimit/8,\ylimit-4) -- (\xlimit-\xlimit/8-\xlimit/16,\ylimit-4)
-% %   --(\xlimit-\xlimit/8-\xlimit/16,\ylimit-5) -- (\xlimit-\xlimit/8-\xlimit/16-\xlimit/32,\ylimit-5)
-% %   --(\xlimit-\xlimit/8-\xlimit/16-\xlimit/32,\ylimit-6) -- (\xlimit-\xlimit/8-\xlimit/16-\xlimit/32-\xlimit/64,\ylimit-6) -- (\xlimit-\xlimit/8-\xlimit/16-\xlimit/32-\xlimit/64,\ylimit-7) --
-% %     --(\xlimit-\xlimit/4, \ylimit-7)
-% %     --(\xlimit, \ylimit-7) --
-% %     -- cycle;

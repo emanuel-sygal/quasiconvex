@@ -89,12 +89,12 @@ to any other point $z_1\in \Omega$ by a curve $\gamma$ which does not get too cl
 A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
 Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in \overline \Omega$
- are connected by a rectifiable path $\gamma_{z_1,z_2}: [0,1]\to \overline \Omega$ which satisfies
+ are connected by a rectifiable path $\eta_{z_1,z_2}: [0,1]\to \overline \Omega$ which satisfies
 \begin{equation}
-\Length(\gamma_{z_1,z_2})\leq A\cdot |z_{1}-z_{2} |	
-\end{equation}
-and  $\gamma_{z_1,z_2}(w) \in \Omega$ for all $w \in (0,1)$.
-We refer to such a family of paths $\gamma_{z_1,z_2}$ as \emph{quasiconvexity certificates} for $\Omega$.
+\Length(\eta_{z_1,z_2})\leq A\cdot |z_{1}-z_{2} |	
+\label{eq:certificate}\end{equation}
+and  $\eta_{z_1,z_2}(w) \in \Omega$ for all $w \in (0,1)$.
+We refer to a family of paths $\eta_{z_1,z_2}$ satisfying \cref{eq:certificate} with a uniform constant $A$ as \emph{quasiconvexity certificates}.
 
 If $\Omega$ is a quasiconvex Jordan domain, then its complement has a John interior; see \cite[Corollary 3.4]{hakobyan_euclidean_2008} for a proof.
 In this work, we strengthen the result of \cite[Theorem 6.1]{carleson_julia_1994} by showing:
@@ -737,21 +737,20 @@ Thus we have
 The condition $m-n \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to $\gamma_m$ and $\gamma_n$:
 \begin{proposition}
 \label {case-3-proof}
-There exists a sufficiently large integer $d$ so that 
+There exists a sufficiently large integer $d$ so that whenever $m-n \geq d$, we have
 	\begin{equation}
 	\label{eq:triangle-comparison}
-		\Length(\gamma_{m,n}) \asymp |w_1-w_2|,
+		\Length(\gamma_{m,n}) \asymp |w_1-w_2|.
 	\end{equation}
-	whenever $m-n \geq d$.
 \end{proposition}
 
 We henceforth fix a value of $d$ as in the proposition.
 \begin{proof} 
-We first make two elementary observations. Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows \textcolor{red}{How?} that
+We first make two elementary observations. Since both the paths $\gamma_m$ and the segments $[s_{n,0},s_{n+1}]$ of length $\ell_n$ are equivariant under $f$, Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that $\Length(\gamma_m) \asymp \ell_m$. In particular,
 \begin{equation} \label{eq:gamma_m_not_large}
 		\Length(\gamma_m) \leq C \ell_m,
 	\end{equation}
-for some constant $C \geq 0$. Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
+for some constant $C \geq 0$.  \textcolor{red}{Maybe there is no branch of $f^{\circ -(m-n)}$ defined in a neighborhood of both?} Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
 
 Meanwhile, by \cref{lem-ell_n}, there exists an integer $d$ such that
 \begin{align}
