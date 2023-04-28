@@ -49,14 +49,11 @@ April 2023
 \par\end{center}
 \end{onehalfspace}
 
-
-
+% \input{figures/etc/abstract}
+\newpage
 
 
 \section{Introduction}
-
-% \input{"Cauliflower.tex"}
-%\cref{fig:Cauliflower_tikz}
 
 Let $f_c: z\mapsto z^2 + c$ be a quadratic polynomial. Its {\em filled Julia set} consists of points in the complex plane with bounded orbit
 under iteration by $f_c$\,:
@@ -750,7 +747,7 @@ There exists a sufficiently large integer $d$ so that
 
 We henceforth fix a value of $d$ as in the proposition.
 \begin{proof} 
-We first make two elementary observations. Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that
+We first make two elementary observations. Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows \textcolor{red}{How?} that
 \begin{equation} \label{eq:gamma_m_not_large}
 		\Length(\gamma_m) \leq C \ell_m,
 	\end{equation}
@@ -770,6 +767,7 @@ By the triangle inequality, we have
 which clearly implies (\ref{eq:triangle-comparison}).
 \end{proof}
 
+\bigskip
 
 \begin{tikzpicture}
 	% draw the points w1 and w2
@@ -795,14 +793,15 @@ which clearly implies (\ref{eq:triangle-comparison}).
 We now show that the itineraries $\eta_{w_1,w_2}$ are certificates in three special cases. To state them, we introduce some notation.
 
 \subsubsection{Notation}
+
 For each $n$, we denote by  $\alpha_n$ the union of the two outermost tracks emanating from the station $s_{n,0}$. 
 Notice that the curves $\alpha_n$ are pairwise disjoint since this is true for their pullbacks to the exterior unit disk.
 
 We define the constants $C_1, C_2, \epsilon$ as follows. We first choose $C_1 \ge 2$, then we let $C_2 = C_1 + d+2$ and choose $\epsilon >0$ small enough so that we have 
 \begin{equation}
-	\dist(\alpha_{C_2}, \alpha_{C_1}) \geq k \epsilon.
+	\dist(\alpha_{C_2}, \alpha_{C_1}) \geq k \cdot \epsilon,
 \end{equation}
-
+where the constant $k$ was defined in \cref{expansion factor}.
 The constant $C_2$ was chosen so that for any pair $(m,n)$ of integers, we have at least one of the following three cases: either $m,n$ are both greater than $C_1$, or both are smaller than $C_2$, or $|m-n| > d$.
 
 \subsubsection{Three Special Cases}
@@ -826,15 +825,16 @@ Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $
 
 \begin{lemma}
 \label{case 1 rel. sep}
-Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\gamma _{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\gamma _{w_1,w_2}$ is relatively separated from the post-critical set.
+Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set.
 \end{lemma}
 
 \begin{proof}
 \emph{Case 1.} In this case, the itinerary is contained in the domain $\mathcal K_{2, C_2+1}$.
-Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\gamma _{w_1,w_2}$ is $\eta$-relatively separated for some $\eta>0$. 
+Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\eta_{w_1,w_2}$ is $\eta$-relatively separated for some $\eta>0$. 
 
 \emph{Case 2.}
-Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By Koebe's distortion theorem, $\gamma _{w_1,w_2}$ is also relatively separated.
+Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By Koebe's distortion theorem, $\eta_{w_1,w_2}$ is also relatively separated.
+{\large \textcolor{red}{Why?}}
 
 \emph{Case 3} is the content of \cref{case-3-proof}.
 \end{proof}
