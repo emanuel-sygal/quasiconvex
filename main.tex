@@ -60,7 +60,7 @@ under iteration by $f_c$\,:
 $$
 \mathcal K_c = \bigl \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \bigr \}.
 $$
-Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}\/ and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f_c$.
+Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}\/, and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f_c$.
  
 The {\em main cardioid}
 $$
@@ -326,7 +326,7 @@ A map $f$ is \emph{hyperbolic} if
 	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows with this value of $\epsilon$ by iterating $g$.
 \end{proof}
 
-We establish \cref{elevator for points on julia} in the parabolic case:
+We also establish \cref{elevator for points on julia} in the parabolic case:
  \begin{corollary} \label{parabolic elevator for points on julia}
 	Let $f(z)=z^2+1/4$. 
 	There exists an $\epsilon > 0$ such that 
@@ -338,11 +338,21 @@ We establish \cref{elevator for points on julia} in the parabolic case:
 \end{corollary}
 
 \begin{proof}
-    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$ then we may iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m+1}$ for $m \geq 2$.
+    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$, we iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m-1}$ for $m \geq 2$.
     Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
 
-    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, 
-    \textcolor{red}{Maybe the proof of \cref{elevator for points on julia} works now? I am not convinced.}
+    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, there is a uniform bound 
+    \begin{equation}
+		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in \mathcal I_1 \cup I_2,
+	\end{equation} 
+    as in \cref{elevator for points on julia}.
+
+    Applying $f$, we get new points $f(z),f(w)$ that are again mapped to $I_1\cup I_3$ under some iterate of $f$.
+    After repeating the process $j$ times, we get an iterate $f^{\circ {n_j}}$ of $f$ for which 
+	\begin{equation}
+		\norm {(f^{\circ n_j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J,
+	\end{equation} 
+    and we are done as in the proof of \cref{parabolic elevator for points on julia}.
 \end{proof}
 
 \section{The exterior disk}
@@ -756,7 +766,7 @@ Thus we have
 The condition $m-n \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to $\gamma_m$ and $\gamma_n$:
 \begin{proposition}
 \label {case-3-proof}
-There exists a sufficiently large integer $d$ so that for every pair of points $w_1,w2 \in \mathcal J$ satisfying $w_1\in I_m$ and $w_2 \in I_n$ with $m-n \geq d$, we have
+There exists a sufficiently large integer $d$ so that for every pair of points $w_1,w_2 \in \mathcal J$ satisfying $w_1\in I_m$ and $w_2 \in I_n$ with $m-n \geq d$, we have
 	\begin{equation}
 	\label{eq:triangle-comparison}
 		\Length(\gamma_{m,n}) \asymp |w_1-w_2|.
@@ -871,11 +881,11 @@ We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_
 \end{theorem}
 
 \begin{proof}[Proof. (Parabolic Conformal Elevator on $\mathcal J$)] \label{parabolic-elevator}
-Let  $(z_1,z_2)$ be a pair of points in $\mathcal J$. 
+Let  $(z_1,z_2)$ be a pair of points on $\mathcal J$. 
 If $|z_{1}-z_{2}| \geq \epsilon,$ 
 we are done since the length of $\eta_{z_1,z_2}$ is uniformly bounded above by  \cref{prop:finite-length}.
 
-It remains to treat the case when $|z_{1}-z_{2}| \le \epsilon$. By  \cref{elevator for points on julia} and \cref{expansion factor}, we may repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs.
+It remains to treat the case when $|z_{1}-z_{2}| \le \epsilon$. By  \cref{parabolic elevator for points on julia} and \cref{expansion factor}, we may repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs.
 Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|,
