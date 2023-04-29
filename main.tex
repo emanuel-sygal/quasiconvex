@@ -326,35 +326,6 @@ A map $f$ is \emph{hyperbolic} if
 	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows with this value of $\epsilon$ by iterating $g$.
 \end{proof}
 
-We also establish \cref{elevator for points on julia} in the parabolic case:
- \begin{corollary} \label{parabolic elevator for points on julia}
-	Let $f(z)=z^2+1/4$. 
-	There exists an $\epsilon > 0$ such that 
-	every pair of points $z,w\in\mathcal{J}$
-	 has a forward iterate $f^{\circ n}$ for which 
-	 \begin{equation*}
-		|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.	
-	 \end{equation*}
-\end{corollary}
-
-\begin{proof}
-    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$, we iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m-1}$ for $m \geq 2$.
-    Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
-
-    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, there is a uniform bound 
-    \begin{equation}
-		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in \mathcal I_1 \cup I_2,
-	\end{equation} 
-    as in \cref{elevator for points on julia}.
-
-    Applying $f$, we get new points $f(z),f(w)$ that are again mapped to $I_1\cup I_3$ under some iterate of $f$.
-    After repeating the process $j$ times, we get an iterate $f^{\circ {n_j}}$ of $f$ for which 
-	\begin{equation}
-		\norm {(f^{\circ n_j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J,
-	\end{equation} 
-    and we are done as in the proof of \cref{parabolic elevator for points on julia}.
-\end{proof}
-
 \section{The exterior disk}
 
 We write $\mathbb D^* = \mathbb{C} \setminus \mathbb{D}$ for the exterior of the unit disk. We connect any two boundary points $\zeta_1, \zeta_2 \in \partial \mathbb D^*$ by a path in $\mathbb D^*$ in a manner that respects the map 
@@ -845,7 +816,7 @@ In this section we treat the following special cases:
 \end{enumerate}
 
 Notice that Case 2 overlaps with Case 1.
- We denote the domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$ by $\mathcal K_{m,n}$, and denote the domain enclosed by $\mathcal J$ and $\alpha_n$ by $\mathcal K_n$.
+ We denote the domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$ by $\mathcal K_{m,n}$, and denote the domain enclosed by $\mathcal J$ and $\alpha_n$ by $\mathcal K_{n,\infty}$.
 
 \begin{lemma}
 Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $\eta_{w_1,w_2}$ is contained in the domain $\mathcal K_{m,n+1}$.
@@ -874,7 +845,39 @@ Thus the itineraries in Case 1 and in Case2 are certificates, by \cref{koebe-qua
 \end{proof}
 
 \subsection{Quasiconvexity: general case}
-We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$, thereby proving the following theorem:
+We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$: given a pair of points $(z_1,z_2)$ on $\mathcal J$, we apply $f$ until the Euclidean distance between the points exceeds $\epsilon$.
+
+We first show that this stopping time is finite. This is a minor adaptation of \cref{elevator for points on julia} to the parabolic case:
+ \begin{lemma} \label{parabolic elevator for points on julia}
+	Let $f(z)=z^2+1/4$. 
+	There exists an $\epsilon > 0$ such that 
+	every pair of points $z,w\in\mathcal{J}$
+	 has a forward iterate $f^{\circ n}$ for which 
+	 \begin{equation*}
+		|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.	
+	 \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$, we iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m-1}$ for $m \geq 2$.
+    Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
+
+    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, there is a uniform bound 
+    \begin{equation}
+		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in \mathcal I_1 \cup I_2,
+	\end{equation} 
+    as in \cref{elevator for points on julia}.
+
+    Applying $f$, we get new points $f(z),f(w)$ that are again mapped to $I_1\cup I_3$ under some iterate of $f$.
+    After repeating the process $j$ times, we get an iterate $f^{\circ {n_j}}$ of $f$ for which 
+	\begin{equation}
+		\norm {(f^{\circ n_j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J,
+	\end{equation} 
+    and we are done as in the proof of \cref{parabolic elevator for points on julia}.
+\end{proof}
+
+
+thereby proving the following theorem:
 
 \begin{theorem} \label{quasiconvex-Cauliflower}
 	The domain $\Exterior(\mathcal{J})$ is quasiconvex, with the itineraries $\eta_{z_1,z_2}$ as certificates.
@@ -897,8 +900,8 @@ for some $A>0$. We now show that the original pair of points $(z_1,z_2)$ enjoys 
 where $C$ depends only on $A$.
 
 In Cases 1 and 2, we are done by \cref{case 1 rel. sep}. In Case 3, 
-the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_2$. Let $\mathcal K_{-2}$ be the preimage of $\mathcal K_2$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
-As the domain $\mathcal K_{-2}$ is relatively separated from $\PostCrit$ and contains the curve 
+the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_2$. Let $\mathcal K_{-2,\infty}$ be the preimage of $\mathcal K_{2,\infty}$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
+As the domain $\mathcal K_{-2,\infty}$ is relatively separated from $\PostCrit$ and contains the curve 
 $f^{\circ (N-1)}(\eta_{z_1,z_2}) = \eta_{f^{-1}(w_1),f^{-1}(w_2)}$,
 we may use Koebe's distortion theorem and \cref{koebe-quasiconvexity} to conclude that
 \begin{equation}
@@ -932,6 +935,9 @@ as desired.
 \nomenclature{$I_{n}$}{The $n$-th departure set.}
 \nomenclature{$\ell_n$ }{$\Length([s_{n},s_{n+1}]) = s_{n,0}-s_{n+1,0}.$}
 \nomenclature{$\alpha_n$}{The union of the two outermost tracks emanating from the station $s_{n,0}$.}
+\nomenclature{$\mathcal K_{m,n}$}{The domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$.}
+\nomenclature{$\mathcal K_{m,\infty}$}{The domain enclosed by $\alpha_m$ and $\mathcal J$.}
+
 
 \printnomenclature
 \end{document}
