@@ -56,11 +56,10 @@
 -- (\xlimit/4+\xlimit/4+\xlimit/8, \ylimit-3)
 --cycle; 
 
-\fill[blue, opacity=0.4]
-(\xlimit, 6) circle (0.3);
+\fill[orange, opacity=0.4] (\xlimit, 6) circle (0.3) node[label={[]:$s_{1,1}$}]{};
 
-\fill[blue, opacity=0.4]
-(0, 6) circle (0.3);
+\fill[orange, opacity=0.4]
+(0, 6) circle (0.3) node[label={[]:$s_{1,1}$}]{};
 
 
 \fill [green, opacity=0.4] 
@@ -80,9 +79,9 @@
   
 \end{tikzpicture}
 \captionof{figure}{
- The domain $\mathcal U_{-1}$ is highlighted in green, using the dyadic representation from \cref{fig:dyadic_grid}. 
- The station $s_{1,1}$ is highlighted; recall that points with external angle $\pm \pi$ appear twice in this representation. 
- The domain $\mathcal K_{3,4}$ is shown in purple.
+Using the dyadic representation from \cref{fig:dyadic_grid},
+ the domain $\mathcal U_{-1}$ is highlighted in green, and the domain $\mathcal K_{3,4}$ is highlighted in purple.
+ The station $s_{1,1}$ is highlighted in orange; recall that points with external angle $\pm \pi$ appear twice in this representation. 
  %Also notice that every itinerary passing through the station $s_{1,1}$ must continue vertically from it.
  }  \label{fig:dyadic_grid_regions}
 \end{figure} 

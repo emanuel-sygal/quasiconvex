@@ -314,16 +314,35 @@ A map $f$ is \emph{hyperbolic} if
 \end{corollary}
 
 \begin{proof}	
-	By (\ref{eq:hyperbolic-maps-expand-on-J}), for every iterate $f^{\circ m}$, we have
+	By (\ref{eq:hyperbolic-maps-expand-on-J}), for every iterate $f^{\circ j}$, we have
 	\begin{equation}
-		\norm {(f^{\circ m})'(z)}_{\hyp} \geq \kappa^m, \qquad z \in \mathcal J.
+		\norm {(f^{\circ j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J.
 	\end{equation} 
 	As the hyperbolic metric and the Euclidean metric are equivalent on $\mathcal J$,
-	we may take $m$ large enough so that for $g=f^{\circ m}$, the Euclidean derivative
+	we may take $j$ large enough so that for $g=f^{\circ j}$, the Euclidean derivative
 	$$|g'(z)| > \mu, \qquad z \in \mathcal J,$$
 	 for some constant $\mu  > 1$. 
 	By compactness, there exists an $\epsilon>0$ such that for $z, w \in \mathcal J$ with $|z-w| < \epsilon$ on $\mathcal J$,
 	we have $|g(z)-g(w)| \geq \mu |z-w|$. The claim follows with this value of $\epsilon$ by iterating $g$.
+\end{proof}
+
+We establish \cref{elevator for points on julia} in the parabolic case:
+ \begin{corollary} \label{parabolic elevator for points on julia}
+	Let $f(z)=z^2+1/4$. 
+	There exists an $\epsilon > 0$ such that 
+	every pair of points $z,w\in\mathcal{J}$
+	 has a forward iterate $f^{\circ n}$ for which 
+	 \begin{equation*}
+		|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.	
+	 \end{equation*}
+\end{corollary}
+
+\begin{proof}
+    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$ then we may iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m+1}$ for $m \geq 2$.
+    Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
+
+    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, 
+    \textcolor{red}{Maybe the proof of \cref{elevator for points on julia} works now? I am not convinced.}
 \end{proof}
 
 \section{The exterior disk}
@@ -737,11 +756,12 @@ Thus we have
 The condition $m-n \geq d$ prevents the line segment $\gamma _{m,n}$ from being small in comparison to $\gamma_m$ and $\gamma_n$:
 \begin{proposition}
 \label {case-3-proof}
-There exists a sufficiently large integer $d$ so that whenever $m-n \geq d$, we have
+There exists a sufficiently large integer $d$ so that for every pair of points $w_1,w2 \in \mathcal J$ satisfying $w_1\in I_m$ and $w_2 \in I_n$ with $m-n \geq d$, we have
 	\begin{equation}
 	\label{eq:triangle-comparison}
 		\Length(\gamma_{m,n}) \asymp |w_1-w_2|.
 	\end{equation}
+Moreover, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate.
 \end{proposition}
 
 We henceforth fix a value of $d$ as in the proposition.
@@ -750,7 +770,7 @@ We first make two elementary observations. Since both the paths $\gamma_m$ and t
 \begin{equation} \label{eq:gamma_m_not_large}
 		\Length(\gamma_m) \leq C \ell_m,
 	\end{equation}
-for some constant $C \geq 0$.  \textcolor{red}{Maybe there is no branch of $f^{\circ -(m-n)}$ defined in a neighborhood of both?} Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
+for some constant $C \geq 0$.  \textcolor{red}{Maybe there is no branch of $f^{\circ -(m-n)}$ defined in a neighborhood of both $\gamma_m$ and $\ell_m$?} Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
 
 Meanwhile, by \cref{lem-ell_n}, there exists an integer $d$ such that
 \begin{align}
@@ -763,11 +783,13 @@ By the triangle inequality, we have
 		\bigl | \Length(\gamma_{m,n}) - |w_1-w_2| \bigr | & \le \Length(\gamma_m)+\Length(\gamma_n) \\
 		& \le \frac{\Length(\gamma_{m,n})}{2},
 \end{align*}
-which clearly implies (\ref{eq:triangle-comparison}).
+which clearly implies (\ref{eq:triangle-comparison}) and thereby that $\eta_{w_1,w_2}$ is a certificate.
 \end{proof}
 
 \bigskip
 
+\begin{figure}
+    \centering
 \begin{tikzpicture}
 	% draw the points w1 and w2
 	\coordinate[label=below:$w_1$] (w1) at (0,0);
@@ -785,6 +807,7 @@ which clearly implies (\ref{eq:triangle-comparison}).
 \captionof{figure}{
  Schematic illustration of the proof of \cref{case-3-proof}.
  }  \label{fig:proof-triangle-ineq}
+\end{figure}
 
 
 \subsection{Quasiconvexity: three special cases}
@@ -824,7 +847,7 @@ Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $
 
 \begin{lemma}
 \label{case 1 rel. sep}
-Let $w_1,w_2 \in \mathcal J$. In each of the three special cases, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate. In Cases 1 and 2, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set.
+Let $w_1,w_2 \in \mathcal J$. In Cases 1 and 2, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set. In each of the three special cases, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate. 
 \end{lemma}
 
 \begin{proof}
@@ -834,6 +857,8 @@ Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\eta_{w_1,w_2}$ is $\eta$-r
 \emph{Case 2.}
 Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By Koebe's distortion theorem, $\eta_{w_1,w_2}$ is also relatively separated.
 {\large \textcolor{red}{Why?}}
+
+Thus the itineraries in Case 1 and in Case2 are certificates, by \cref{koebe-quasiconvexity}.
 
 \emph{Case 3} is the content of \cref{case-3-proof}.
 \end{proof}
@@ -874,10 +899,29 @@ we may use Koebe's distortion theorem and \cref{koebe-quasiconvexity} to conclud
 as desired.
 \end{proof}
 
-\bibliographystyle{acm}
+% \bibliographystyle{acm}
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{main}
 
  
+\nomenclature{$k$}{The constant guaranteed by 
+\cref{expansion factor}.}
+% \nomenclature{$\mathbb{D}^*$}{The exterior of the unit disk, $\{|z| >1 \}$.}
+\nomenclature{$\mathbb{D}^*$}{The exterior of the unit disk.}
+\nomenclature{$d$}{An integer for which itineraries connecting $w_1\in I_m$ with $w_2\in I_n$ for $m-n \geq d$ are certificates. Defined in \cref{case-3-proof}.}
+\nomenclature{$f, f_c$}{The map $z \mapsto z^2+c.$}
+\nomenclature{$\mathcal J$}{The Julia set of $f$.}
+\nomenclature{$\mathcal K$}{The filled Julia set of $f$.}
+\nomenclature{$\gamma_{z_1, z_2}$}{The track connecting $z_1$ and $z_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
+\nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, this is the same as $\gamma_{z_1,z_2}$.}
+\nomenclature{$A_\infty(f)$}{The exterior of the Julia set of $f$. The complement of $\mathcal K$.}
+\nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An alternative notation for $A_\infty(f_c)$.}
+\nomenclature{$\psi$}{The Böttcher coordinate $\mathbb D ^* \to \Exterior(\mathcal J)$ conjugating $f_0$ and $f$.}
+\nomenclature{$s_{n,k}$}{A station in $\mathbb D^*$ or its image under $\psi$.}
+\nomenclature{$\Delta (\gamma, \mathcal P)$}{The relative distance to the post-critical set.}
+\nomenclature{$I_{n}$}{The $n$-th departure set.}
+\nomenclature{$\ell_n$ }{$\Length([s_{n},s_{n+1}]) = s_{n,0}-s_{n+1,0}.$}
+\nomenclature{$\alpha_n$}{The union of the two outermost tracks emanating from the station $s_{n,0}$.}
 
 \printnomenclature
 \end{document}
