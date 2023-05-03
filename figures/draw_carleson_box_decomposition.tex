@@ -1,0 +1,16 @@
+% The circles C_n
+\draw (0,0) circle (1);
+\foreach \i in {1,(1.0/2),(1.0/4),(1.0/8), (1.0/16), (1.0/32), (1.0/64)}{
+\draw[black!30!white] (0,0) circle (2^\i);
+}
+   
+\foreach \j in {0,1,2,3,4}{
+    \pgfmathsetmacro{\jtwo}{2.0^\j}
+    \pgfmathsetmacro{\jthree}{(1.0/\jtwo)}
+    \pgfmathsetmacro{\twopower}{2^\jthree}
+    \foreach \angleone in {1,...,\jtwo}{
+    \pgfmathsetmacro{\anglez}{360*\angleone}
+    \fill[orange!50!white] (\anglez * \jthree: \twopower) circle (0.5pt)[opacity=0.4];
+    \draw[black!30!white] (\anglez * \jthree: \twopower) -- (\anglez * \jthree: 1);	
+    }
+}

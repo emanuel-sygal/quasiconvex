@@ -1,0 +1,29 @@
+  \foreach \yunscaled in {0,..., \ylimit} 
+  {
+    \pgfmathsetmacro{\y}{\yunscaled}
+    \pgfmathsetmacro{\lognumpoints}{\ylimit-\y}
+    \pgfmathsetmacro{\numpoints}{2^\lognumpoints}
+    \pgfmathsetmacro{\z}{\xlimit/\numpoints}
+    \ifnum\y=\ylimit{
+      % Do nothing!
+    }
+    \else{
+      \draw  [color=black!50!white] (0,\y) -- (\xlimit,\y);
+      \foreach \i in {0,...,\numpoints}{
+        \pgfmathsetmacro{\x}{\z * \i}
+        \draw (\x,\y) node[circle,fill,inner sep=1.1pt, color=purple!70!white, opacity=0.8]{}; % Marked point
+      \draw [color=black!70!white]  (\x,\y) -- (\x,0); % Vertical line
+      }
+    }
+    \fi
+  }
+  \draw (\xlimit/2,\ylimit) node[circle,fill,inner sep=1.1pt, color=purple,opacity=0.8]{}; % Marked point
+  \draw [color=black!70!white] (\xlimit/2,\ylimit) -- (\xlimit/2,0); % Vertical line
+
+
+  % Label horizontal lines
+  \draw (0,-0.1) node[below] {$-\pi$};
+  \draw (\xlimit/4,-0.1) node[below] {$-\frac \pi 2$};
+  \draw (\xlimit/2,-0.1) node[below] {$0$};
+  \draw (\xlimit*3/4,-0.1) node[below] {$\frac \pi 2$};
+  \draw (\xlimit,-0.1) node[below] {$\pi$};
