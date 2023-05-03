@@ -813,9 +813,28 @@ which clearly implies (\ref{eq:triangle-comparison}) and thereby that $\eta_{w_1
  
 	% draw a straight line between w1 and w2
 	\draw (w1) -- (w2);
-	
-	% draw a wiggly path from w1 to w2
-	\draw [decorate,decoration={snake,segment length=2mm,amplitude=1mm}, label=below:$\gamma_m$] (w1) -- node[left] {$\gamma_m$} (s1) -- node[below] {$\gamma_{m,n}$} (s2) -- node[left] {$\gamma_n$} (w2);
+
+
+	\draw [red!70!white, decorate,decoration={snake,segment length=2mm,amplitude=1mm}]
+    (w1) -- node[left] {$\gamma_m$} (s1);
+    \draw [red!70!white]
+    (s1) -- node[above, yshift = 4]{$\ell m$} (0,3);
+    \draw []
+    (0,3) -- node[above] {$\gamma_{m,n}$} (11,3);
+    \draw [orange!70!white]
+    (11,3) -- node[above, yshift = 4]{$\ell_n$} (s2);
+    \draw [orange!70!white, decorate,decoration={snake,segment length=2mm,amplitude=1mm}]    
+    (s2) -- node[right] {$\gamma_n$} (w2);
+
+
+ 
+	% % draw a wiggly path from w1 to w2
+	% \draw [decorate,decoration={snake,segment length=2mm,amplitude=1mm}]
+ %    (w1) -- node[left] {$\gamma_m$} (s1) 
+ %    -- node[below] {$\gamma_{m,n}$} (s2) 
+ %    -- node[left] {$\gamma_n$} (w2);
+
+
 \end{tikzpicture}
 \captionof{figure}{
  Schematic illustration of the proof of \cref{case-3-proof}.
