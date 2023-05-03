@@ -39,7 +39,8 @@
 
 \definecolor{mygreen}{RGB}{0, 128, 0}
 
-\fill [mygreen, opacity=0.4] (\xlimit/2, 7) circle (0.3);
+\fill [mygreen, opacity=0.4] (\xlimit/2, 7) circle (0.3)
+node[left] {$s_{0,0}$};
 
   % \tikzmath{
   %   \curx = 0;
@@ -53,6 +54,6 @@
  The rightmost edge is glued to the leftmost edge.
  Stations are marked in red, and the segments connecting adjacent stations are tracks. An express track is a vertical segment, 
  while a peripheral track is a horizontal segment.
- The central station is highlighted in green.
+ The central station is highlighted in green. The bottom row represents the Julia set $\mathcal J$.
   }  \label{fig:dyadic_grid}
 \end{figure} 

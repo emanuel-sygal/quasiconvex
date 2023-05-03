@@ -4,21 +4,15 @@
 
 \title{קבוצת ז׳וליה של $z^2+1/4$ היא כמעט-קמורה}
 
-\date{Month and Year}
-
 \usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\usepackage[hebrew,english]{babel}
-\usepackage{biblatex}
+\usepackage[hebrew]{babel}
 \usepackage{amsmath}
 \usepackage{tikz}
-\usepackage{indentfirst}
-\usepackage{lipsum}  
 
-\parskip 2mm
-\addtolength{\textwidth}{1.4in} \addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.8in}
-\addtolength{\topmargin}{-0.5in} \addtolength{\textheight}{0.1in}
+% \parskip 2mm
+% \addtolength{\textwidth}{1.4in} \addtolength{\oddsidemargin}{-0.5in}
+% \addtolength{\evensidemargin}{-0.8in}
+% \addtolength{\topmargin}{-0.5in} \addtolength{\textheight}{0.1in}
 
 \DeclareUnicodeCharacter{05D0}{\hebalef}
 \DeclareUnicodeCharacter{05D1}{\hebbet}
@@ -53,64 +47,44 @@
 
 \selectlanguage{hebrew}
 \pagenumbering{gobble}
-\begin{abstract}
-{\large
 
-    לכל מספר מרוכב
-    $z \in \mathbb C$
-    ,
-    נגדיר באופן אינדוקטיבי סדרה
-$a_n=a_n(z)$
- על ידי
- כלל הנסיגה
-    $$a_{n+1} = a_n ^2 + 1/4,$$
-    עם נקודת ההתחלה
-        $$a_0 = z.$$ 
-    \textbf{אגן המשיכה לאינסוף}
-    של הפולינום
-    $$f(z)=z^2+1/4$$        
-    % תהי $A \subset \mathbb C$
-    הוא
-    קבוצת נקודות ההתחלה 
-    $z$
-    שעבורן
-    $a_n(z) \to \infty$,
-    כלומר
-הקבוצה
-     $$A_\infty(f)=\{z\in \mathbb C: f^{\circ n}(z)=((z^2+1/4)^2+1/4)^2+\dots \to \infty\}.$$
-% אגן המשיכה של 
+% \begin{abstract}
+% {\large
+%     לכל מספר מרוכב
+%     $z \in \mathbb C$,
+%     נגדיר באופן אינדוקטיבי סדרה
+% $a_n=a_n(z)$
+%  על ידי
+%  כלל הנסיגה
+%     $$a_{n+1} = a_n ^2 + 1/4,$$
+%     עם נקודת ההתחלה
+%         $$a_0 = z.$$ 
+%     \textbf{אגן המשיכה לאינסוף}
+%     של הפולינום
+%     $$f(z)=z^2+1/4$$        
+%     % תהי $A \subset \mathbb C$
+%     הוא
+%     קבוצת נקודות ההתחלה 
+%     $z$
+%     שעבורן
+%     $a_n(z) \to \infty$,
+%     כלומר
+% הקבוצה
+%      $$\{z\in \mathbb C: f^{\circ n}(z)=((z^2+1/4)^2+1/4)^2+\dots \to \infty\}.$$
+% % ממד האוסדורף של $\mathcal J$
+% % הוא בקירוב 
+% % $1.0812$.
+% % https://abel.math.harvard.edu/~ctm/papers/home/text/papers/dimIII/dimIII.pdf appendix A
+% עבודה זו מוכיחה שאגן המשיכה של 
 % $f$
-% הוא
-% תחום ששפתו 
-% $\mathcal J=\partial A_\infty(f)$
-% היא עקומת ז'ורדן.
-% העקומה $\mathcal J$
-% היא פרקטל:
-% ממד האוסדורף של $\mathcal J$
-% הוא בקירוב 
-% $1.0812$.
-% https://abel.math.harvard.edu/~ctm/papers/home/text/papers/dimIII/dimIII.pdf appendix A
-עבודה זו מוכיחה שאגן המשיכה של 
-$f$
- הוא 
-\textbf{כמעט-קמור}:
-ניתן לחבר כל שתי נקודות בו באמצעות עקומה
-$\eta$
-שמוכלת באגן המשיכה, 
-ושהאורך שלה גדול רק פי קבוע מאורך הקו הישר שמחבר בין הנקודות.
-
-    
-    % \textbf{אגן המשיכה לאינסוף} של פולינום $f$ הוא אוסף המספרים המרוכבים ששואפים לאינסוף תחת הפעלה נשנית של 
-    % $f$.
-    
-    %  עבודה זו עוסקת באגן המשיכה לאינסוף של הפולינום 
-    %  $f(z)=z^2+1/4$,
-    %  כלומר בקבוצה 
-    %  $$A=\{z\in \mathbb C: f^{\circ n}(z)=((z^2+1/4)^2+1/4)^2+\dots \to \infty\}.$$
-     
-    }
-    
-\end{abstract}
+%  הוא 
+% \textbf{כמעט-קמור}:
+% ניתן לחבר כל שתי נקודות בו באמצעות עקומה
+% $\eta$
+% שמוכלת באגן המשיכה, 
+% ושהאורך שלה גדול רק פי קבוע מאורך הקו הישר שמחבר בין הנקודות.
+% }
+% \end{abstract}
 
 \selectlanguage{english}
 \begin{titlepage}

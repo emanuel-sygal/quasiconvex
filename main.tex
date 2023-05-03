@@ -265,7 +265,7 @@ Let $f: z\mapsto z^2+c$ be a quadratical polynomial.
 Since our argument will involve applying Koebe's distortion theorem to the iterates of $f^{-1}$, 
 we will need to exclude points around which some iterate $f^{\circ n}$ does not have a holomorphic inverse:
 
-\begin{definition}
+\begin{definition} \label{def:post-crit}
 	The \emph{post-critical set} of $f$ is the closure of the forward orbits 
 	of the critical points,
 	\begin{equation*}
@@ -639,6 +639,7 @@ a_n = a_{n+1}^2+a_{n+1}.
 \end{equation}
 
 An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n = a_n - a_{n+1} \asymp 1/n^2$.
+\end{proof}
 % Notice that it is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
 
 % % The full proof by induction:
@@ -675,8 +676,6 @@ An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n
 % % \epsilon.$ 
 % % This is again a contradiction, and we are done.
 
-\end{proof}
-
 % If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
 % In particular, if $\gamma$ is a quasiconvexity certificate, 
 % then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
@@ -696,7 +695,38 @@ $|f(z_1)-f(z_2)| \leq k|z_1-z_2|$.
 	\end{equation}
 for $k=\max_{z \in B} |f'(z)|$, where $B$ is any ball containing $\mathcal J$. 
 \end{proof}
- 
+
+% This is a minor adaptation of \cref{elevator for points on julia} to the parabolic case:
+ \begin{lemma} \label{parabolic elevator for points on julia}
+	%Let $f(z)=z^2+1/4$. 
+	There exists an $\epsilon > 0$ such that 
+	every pair of points $z,w\in\mathcal{J}$
+	 has a forward iterate $f^{\circ n}$ for which 
+$|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.$
+  \end{lemma}
+
+The proof is similar to that of \cref{elevator for points on julia}. We leave the details to the reader.
+
+\begin{comment}
+\begin{proof}
+    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$, we iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m-1}$ for $m \geq 2$.
+    Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
+
+    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, there is a uniform bound 
+    \begin{equation}
+		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in I_1 \cup I_2,
+	\end{equation} 
+    as in \cref{elevator for points on julia}.
+
+    Applying $f$, we get new points $f(z),f(w)$ that are again mapped to $I_1\cup I_3$ under some iterate of $f$.
+    After repeating the process $j$ times, we get an iterate $f^{\circ {n_j}}$ of $f$ for which 
+	\begin{equation}
+		\norm {(f^{\circ n_j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J,
+	\end{equation} 
+    and we are done as in the proof of \cref{elevator for points on julia}.
+\end{proof}
+\end{comment}
+
 \subsection{Dynamics near the parabolic fixed point}
 
 The purpose of the following definition is to organize points on the Julia set $\mathcal J$ according to their distance from the main cusp $p=1/2$ in an $f$-invariant way. We decompose the points of $\mathcal J$ according to the first \emph{departure}\,: the first station at which the central itinerary makes a turn.
@@ -708,7 +738,7 @@ The purpose of the following definition is to organize points on the Julia set $
     \label{fig:my_figure}
 \end{figure}
 \input{"figures/marker path 3.tex"}
-\begin{definition}
+\begin{definition}\label{def:departure-set}
 
 Let $n \in \mathbb N$. We define the $n$-th \emph{departure set} $I_{n, \mathbb D} \subset \partial \mathbb D ^*$ to be the set of points $\zeta \in \partial \mathbb D^*$ whose central itinerary $\eta_{\zeta}$ starts with $n$ express tracks, followed by a peripheral track.
 See \cref{fig:departure-decomposition}.
@@ -747,11 +777,13 @@ Moreover, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate.
 
 We henceforth fix a value of $d$ as in the proposition.
 \begin{proof} 
-We first make two elementary observations. Since both the paths $\gamma_m$ and the segments $[s_{n,0},s_{n+1}]$ of length $\ell_n$ are equivariant under $f$, Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that $\Length(\gamma_m) \asymp \ell_m$. In particular,
+We first make two elementary observations. %Since both the paths $\gamma_m$ and the segments $[s_{n,0},s_{n+1}]$ of length $\ell_n$ are equivariant under $f$,
+Koebe's distortion theorem applied to the iterates of $f^{-1}$ shows that $\Length(\gamma_m) \asymp \ell_m$. In particular,
 \begin{equation} \label{eq:gamma_m_not_large}
 		\Length(\gamma_m) \leq C \ell_m,
 	\end{equation}
-for some constant $C \geq 0$.  \textcolor{red}{Maybe there is no branch of $f^{\circ -(m-n)}$ defined in a neighborhood of both $\gamma_m$ and $\ell_m$?} Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
+for some constant $C \geq 0$. 
+Notice that (\ref{eq:gamma_m_not_large}) holds for $m=1$ by \cref{prop:finite-length}, which gives a uniform bound on the length of an itinerary.
 
 Meanwhile, by \cref{lem-ell_n}, there exists an integer $d$ such that
 \begin{align}
@@ -795,7 +827,7 @@ which clearly implies (\ref{eq:triangle-comparison}) and thereby that $\eta_{w_1
 
 We now show that the itineraries $\eta_{w_1,w_2}$ are certificates in three special cases. To state them, we introduce some notation.
 
-\subsubsection{Notation}
+\subsubsection{Notation} \label{sec:notation}
 
 For each $n$, we denote by  $\alpha_n$ the union of the two outermost tracks emanating from the station $s_{n,0}$. 
 Notice that the curves $\alpha_n$ are pairwise disjoint since this is true for their pullbacks to the exterior unit disk.
@@ -816,7 +848,7 @@ In this section we treat the following special cases:
 \end{enumerate}
 
 Notice that Case 2 overlaps with Case 1.
- We denote the domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$ by $\mathcal K_{m,n}$, and denote the domain enclosed by $\mathcal J$ and $\alpha_n$ by $\mathcal K_{n,\infty}$.
+ We denote the domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$ by $\mathcal K_{m,n}$, and the domain enclosed by $\mathcal J$ and $\alpha_n$ by $\mathcal K_{n,\infty}$. See \cref{fig:dyadic_grid_regions}.
 
 \begin{lemma}
 Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $\eta_{w_1,w_2}$ is contained in the domain $\mathcal K_{m,n+1}$.
@@ -826,58 +858,38 @@ Let $w_1 \in I_m$ and $w_2 \in I_n$, for $n \geq m \geq 2$. Then the itinerary $
     This follows from the combinatorics of the construction in the exterior unit disk. 
 \end{proof}
 
-\begin{lemma}
-\label{case 1 rel. sep}
-Let $w_1,w_2 \in \mathcal J$. In Cases 1 and 2, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set. In each of the three special cases, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate. 
+\begin{lemma} \label{lem:K-rel-sep}
+ Let $n \ge m$ be integers satisfying $n-m \leq d$. The domain $\mathcal K_{m,n}$ is $\eta$-relatively separated from $\PostCrit$, for some $\eta=\eta(d)>0$ independent of $m,n$.
 \end{lemma}
 
 \begin{proof}
+For convenience of exposition, we assume that $n = m+1$. The general case follows from the special case.
+
+Let $U \subset \mathbb{C} \setminus \mathcal P$ be any simply-connected domain which contains $\overline{K_{1, 2}}$. Since $U$ is disjoint from the post-critical set, for any $m \ge 1$, there exists a branch $g$ of the inverse of $f^{\circ(m-1)}$ which takes $s_1$ to $s_m$.
+Since the sets $K_{m, m+1}$ have been defined in an $f$-equivariant way, $g$ takes $K_{1,2}$ to $K_{m, m+1}$. The lemma follows after applying Koebe's distortion theorem to $g$.
+\end{proof}
+
+
+\begin{lemma}
+\label{case 1 rel. sep}
+Let $w_1,w_2 \in \mathcal J$. In Cases 1 and 2, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set $\PostCrit$. In each of the three special cases, the itinerary $\eta_{w_1,w_2}$ is a quasiconvexity certificate. 
+\end{lemma}
+
+\begin{proof}
+In Cases 1 and 2, the Euclidean distance $|w_1 - w_2| \ge \varepsilon$ is bounded from below, so that $\eta_{w_1,w_2}$ is a quasiconvexity certificate by \cref{prop:finite-length}.
+
 \emph{Case 1.} In this case, the itinerary is contained in the domain $\mathcal K_{2, C_2+1}$.
-Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\eta_{w_1,w_2}$ is $\eta$-relatively separated for some $\eta>0$. 
+Since $\dist(\mathcal K_{2, C_2+1}, \mathcal P)>0$, $\eta_{w_1,w_2}$ is relatively separated from $\PostCrit$.
 
 \emph{Case 2.}
-Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By Koebe's distortion theorem, $\eta_{w_1,w_2}$ is also relatively separated.
-{\large \textcolor{red}{Why?}}
-
-Thus the itineraries in Case 1 and in Case2 are certificates, by \cref{koebe-quasiconvexity}.
+Assuming without loss of generality that $n \geq m$, the itinerary is contained in $\mathcal K_{m,n+1}$. By \cref{lem:K-rel-sep}, $\eta_{w_1,w_2}$ is relatively separated from the post-critical set.
 
 \emph{Case 3} is the content of \cref{case-3-proof}.
 \end{proof}
 
 \subsection{Quasiconvexity: general case}
-We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$: given a pair of points $(z_1,z_2)$ on $\mathcal J$, we apply $f$ until the Euclidean distance between the points exceeds $\epsilon$.
-
-We first show that this stopping time is finite. This is a minor adaptation of \cref{elevator for points on julia} to the parabolic case:
- \begin{lemma} \label{parabolic elevator for points on julia}
-	Let $f(z)=z^2+1/4$. 
-	There exists an $\epsilon > 0$ such that 
-	every pair of points $z,w\in\mathcal{J}$
-	 has a forward iterate $f^{\circ n}$ for which 
-	 \begin{equation*}
-		|f^{\circ n}(z)-f^{\circ n}(w)|>\epsilon.	
-	 \end{equation*}
-\end{lemma}
-
-\begin{proof}
-    If $z \in I_m$ and $w \in I_n$ for $n \geq m \geq 2$, we iterate $f$ finitely many times until $m=1$, since $f(I_m)=I_{m-1}$ for $m \geq 2$.
-    Since $\operatorname{dist}(I_1,I_3)>0$, we are left with the case in which $z \in I_1$ and $w \in I_1\cup I_2$.
-
-    Since $I_1\cup I_2$ has a neighborhood relatively separated from $\PostCrit$, there is a uniform bound 
-    \begin{equation}
-		\norm {f'(z)}_{\hyp} \geq \kappa, \qquad z \in \mathcal I_1 \cup I_2,
-	\end{equation} 
-    as in \cref{elevator for points on julia}.
-
-    Applying $f$, we get new points $f(z),f(w)$ that are again mapped to $I_1\cup I_3$ under some iterate of $f$.
-    After repeating the process $j$ times, we get an iterate $f^{\circ {n_j}}$ of $f$ for which 
-	\begin{equation}
-		\norm {(f^{\circ n_j})'(z)}_{\hyp} \geq \kappa^j, \qquad z \in \mathcal J,
-	\end{equation} 
-    and we are done as in the proof of \cref{parabolic elevator for points on julia}.
-\end{proof}
-
-
-thereby proving the following theorem:
+We apply a stopping time argument to promote the quasiconvexity of $\eta_{w_1,w_2}$ to the quasiconvexity of $\eta_{z_1,z_2}$: 
+%given a pair of points $(z_1,z_2)$ on $\mathcal J$, we apply $f$ until the Euclidean distance between the points exceeds $\epsilon$. Note that the stopping time is finite by \cref{parabolic elevator for points on julia}. 
 
 \begin{theorem} \label{quasiconvex-Cauliflower}
 	The domain $\Exterior(\mathcal{J})$ is quasiconvex, with the itineraries $\eta_{z_1,z_2}$ as certificates.
@@ -888,7 +900,7 @@ Let  $(z_1,z_2)$ be a pair of points on $\mathcal J$.
 If $|z_{1}-z_{2}| \geq \epsilon,$ 
 we are done since the length of $\eta_{z_1,z_2}$ is uniformly bounded above by  \cref{prop:finite-length}.
 
-It remains to treat the case when $|z_{1}-z_{2}| \le \epsilon$. By  \cref{parabolic elevator for points on julia} and \cref{expansion factor}, we may repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs.
+It remains to treat the case when $|z_{1}-z_{2}| \le \epsilon$. By Lemmas \ref{expansion factor} and \ref{parabolic elevator for points on julia}, we may repeatedly apply $f$ to $(z_1, z_2)$ until either of the three special cases occurs.
 Denote by $w_i=f^{\circ N}(z_i)$ the resulting points. We have already proved that the itinerary $\eta_{w_1,w_2}$ satisfies
 \begin{equation*}
 	\Length(\eta_{w_1,w_2}) \leq A |w_1-w_2|,
@@ -900,7 +912,7 @@ for some $A>0$. We now show that the original pair of points $(z_1,z_2)$ enjoys 
 where $C$ depends only on $A$.
 
 In Cases 1 and 2, we are done by \cref{case 1 rel. sep}. In Case 3, 
-the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_2$. Let $\mathcal K_{-2,\infty}$ be the preimage of $\mathcal K_{2,\infty}$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
+the itinerary $\eta_{w_1,w_2}$ is contained in $\mathcal K_{2,\infty}$. Let $\mathcal K_{-2,\infty}$ be the preimage of $\mathcal K_{2,\infty}$ under $f$ that contains the negative preimage $f^{-1}(p)=-\tfrac 12$ of the cusp $p$. 
 As the domain $\mathcal K_{-2,\infty}$ is relatively separated from $\PostCrit$ and contains the curve 
 $f^{\circ (N-1)}(\eta_{z_1,z_2}) = \eta_{f^{-1}(w_1),f^{-1}(w_2)}$,
 we may use Koebe's distortion theorem and \cref{koebe-quasiconvexity} to conclude that
@@ -913,10 +925,13 @@ as desired.
 \end{proof}
 
 % \bibliographystyle{acm}
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{amsalpha}
 \bibliography{main}
 
- 
+
+\nomenclature{$\PostCrit$}{The post-critical set, the closure of the forward critical orbits. See \cref{def:post-crit}.}
+\nomenclature{$C_1,C_2,\epsilon$}{Constants defined in 
+\cref{sec:notation}.}
 \nomenclature{$k$}{The constant guaranteed by 
 \cref{expansion factor}.}
 % \nomenclature{$\mathbb{D}^*$}{The exterior of the unit disk, $\{|z| >1 \}$.}
@@ -925,14 +940,14 @@ as desired.
 \nomenclature{$f, f_c$}{The map $z \mapsto z^2+c.$}
 \nomenclature{$\mathcal J$}{The Julia set of $f$.}
 \nomenclature{$\mathcal K$}{The filled Julia set of $f$.}
-\nomenclature{$\gamma_{z_1, z_2}$}{The track connecting $z_1$ and $z_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
-\nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, this is the same as $\gamma_{z_1,z_2}$.}
-\nomenclature{$A_\infty(f)$}{The exterior of the Julia set of $f$. The complement of $\mathcal K$.}
-\nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An alternative notation for $A_\infty(f_c)$.}
+\nomenclature{$\gamma_{s_1, s_2}$}{The track connecting stations $s_1$ and $s_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
+\nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, $\eta_{z_1, z_2}$ coincides with $\gamma_{z_1,z_2}$.}
+\nomenclature{$\mathrm{Exterior}(\mathcal{J}), \; A_\infty(f)$}{The exterior of the Julia set of $f$. The complement of $\mathcal K$.}
+% \nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An alternative notation for $A_\infty(f_c)$.}
 \nomenclature{$\psi$}{The Böttcher coordinate $\mathbb D ^* \to \Exterior(\mathcal J)$ conjugating $f_0$ and $f$.}
 \nomenclature{$s_{n,k}$}{A station in $\mathbb D^*$ or its image under $\psi$.}
 \nomenclature{$\Delta (\gamma, \mathcal P)$}{The relative distance to the post-critical set.}
-\nomenclature{$I_{n}$}{The $n$-th departure set.}
+\nomenclature{$I_{n}$}{The $n$-th departure set, see \cref{def:departure-set}.}
 \nomenclature{$\ell_n$ }{$\Length([s_{n},s_{n+1}]) = s_{n,0}-s_{n+1,0}.$}
 \nomenclature{$\alpha_n$}{The union of the two outermost tracks emanating from the station $s_{n,0}$.}
 \nomenclature{$\mathcal K_{m,n}$}{The domain enclosed by $\alpha_m, \alpha_n$ and $\mathcal J$.}
