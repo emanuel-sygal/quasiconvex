@@ -1,32 +1,33 @@
 \begin{figure}
-	\centering
+\centering
 	
-	\begin{tikzpicture}[scale=2.0]
+\begin{tikzpicture}[scale=2.0]
 
 \input{figures/draw_carleson_box_decomposition}	
 
+\draw [orange!70!white,-,
+	double=orange!70!white,
+	double distance=4\pgflinewidth, opacity=0.4,
+	] 
+(1.41,0) arc (0:180:1.4) -- (-1.189,0) arc (180:90:1.189) -- (0,1.0905)
+node[midway, above, opacity=1] {$\gamma_m$};
+
 \draw [red!70!white,-,
 double=red!70!white,
-double distance=4\pgflinewidth, opacity=0.4,
-] (1.41,0) arc (0:180:1.4) -- (-1.189,0) arc (180:90:1.189) -- (0,1.0905)
-node[midway, above] {$\gamma_m$};
+double distance=4\pgflinewidth,opacity=0.4
+]  (1.0905,0) arc (0:45:1.0905) -- (45:1) 
+node[midway, left, yshift=-3, opacity=1] {$\gamma_{n}$};
 
-\draw [cyan,-,
-double=cyan,
-double distance=4\pgflinewidth,
-] (1.4,0) -- (1.0905,0) arc (0:45:1.0905) -- (45:1) 
-node[midway, left] {$\gamma_{n}$};;;
-
-
-\draw [green!40!white,-,
-double=green!40!white,
-double distance=6\pgflinewidth,
-] (1.0905,0) -- (1.4,0)
-node[midway, below] {$\gamma_{m,n}$};
+\draw [blue!70!white,-,
+	double=blue!70!white,
+	double distance=4\pgflinewidth, opacity=0.4,
+	] 
+(1.0905,0) -- (1.4,0)
+node[midway, below, opacity=1] {$\gamma_{m,n}$};
 	
 \end{tikzpicture}
 	
-	\caption{The three parts of an itinerary $\eta$. The green path is  $\gamma _{m,n}$,  the cyan and magenta are $\gamma _m$ and $\gamma_n$.
-	} \label{fig:Three-parts-of-eta}
+\caption{The three parts of an itinerary $\eta$.} 
+\label{fig:Three-parts-of-eta}
 \end{figure}
 

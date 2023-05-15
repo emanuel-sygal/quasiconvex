@@ -14,7 +14,7 @@
 % The central itinerary
 % \draw [blue!70!white,-,
 % 	double=blue!70!white,
-% 	double distance=4\pgflinewidth, opacity=0.4,
+% 	double distance=6\pgflinewidth, opacity=0.4,
 % 	] 
 %     (2,0) 
 %  -- (2^0.5,0) 
@@ -38,36 +38,42 @@
     }
 }
 
-  		\draw [magenta!60!white,-,
-			double=magenta!60!white,
-			double distance=4\pgflinewidth, opacity=0.4,
+% \draw [blue!70!white,-,
+	% double=blue!70!white,
+	% double distance=4\pgflinewidth, opacity=0.4,
+	% ] 
+
+
+  		\draw [orange!60!white,-,
+			double=orange!60!white,
+			double distance=6\pgflinewidth, opacity=0.4,
 			] (0,1) arc (90:270:1)
-   node[midway, right] {$I_1$};
+   node[midway, right,opacity=1, text=orange] {$I_1$};
 		
-		\draw [green!40!white,-,
-			double=green!50!white,
-			double distance=4\pgflinewidth, opacity=0.4,
+		\draw [blue!40!white,-,
+			double=blue!50!white,
+			double distance=6\pgflinewidth, opacity=0.4,
 			] (0,1) arc (90:45:1)
-      node[midway, below] {$I_2$};
+      node[midway, below,opacity=1, text=blue] {$I_2$};
 
-		\draw [green!40!white,-,
-			double=green!50!white,
-			double distance=4\pgflinewidth, opacity=0.4,
+		\draw [blue!40!white,-,
+			double=blue!50!white,
+			double distance=6\pgflinewidth, opacity=0.4,
 			] (0,-1) arc (270:315:1)
-   node[midway, above] {$I_2$};
+   node[midway, above,opacity=1,text=blue] {$I_2$};
 
-		\draw [orange!70!white,-,
-			double=orange!70!white,
-			double distance=4\pgflinewidth, opacity=0.4,
+		\draw [red!70!white,-,
+			double=red!70!white,
+			double distance=6\pgflinewidth, opacity=0.4,
 			] (45:1) arc (45:22:1)
-   node[midway, below] {$I_3$};
+   node[midway, below,opacity=1,xshift=-3, yshift=1] {$I_3$};
 
    
-		\draw [orange!70!white,-,
-			double=orange!70!white,
-			double distance=4\pgflinewidth, opacity=0.4,
+		\draw [red!   70!white,-,
+			double=red!70!white,
+			double distance=6\pgflinewidth, opacity=0.4,
 			] (-45:1) arc (-45:-22:1)
-   node[midway, above, xshift=-2] {$I_3$};
+   node[midway, above, xshift=-3,opacity=1] {$I_3$};
 
 \end{tikzpicture}
 

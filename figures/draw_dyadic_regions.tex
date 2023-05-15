@@ -9,16 +9,18 @@
 
 \input{figures/draw_dyadic}
 
-\fill [green, opacity=0.4] 
+
+\definecolor{darkgreen}{RGB}{0,100,0}
+\fill [green, opacity=0.25] 
   (0,\ylimit-1)
   --(0,\ylimit-2) 
   -- (\xlimit/4,\ylimit-2)
    -- (\xlimit/4,\ylimit-7)
   -- (0,\ylimit-7)
   --cycle
-  node[midway, left] {$\mathcal U_{-1}$};;  
+  node[midway, left, opacity=1,text=darkgreen] {$\mathcal U_{-1}$};;  
 
-\fill [blue, opacity=0.4] 
+    \fill [blue, opacity=0.25] 
 (\xlimit/4+\xlimit/8, \ylimit-3)
 -- (\xlimit/4+\xlimit/8, 0)
 -- (\xlimit/4+\xlimit/8+\xlimit/16, 0)
@@ -28,22 +30,21 @@
 -- (\xlimit/4+\xlimit/4+\xlimit/8, 0)
 -- (\xlimit/4+\xlimit/4+\xlimit/8, \ylimit-3)
 --cycle
-       node[midway, below] {$\mathcal K_{3,4}$};
+       node[midway, below, yshift=-12,opacity=1, xshift=-10] {$\mathcal K_{3,4}$};
 ; 
 
-\fill[orange, opacity=0.4] (\xlimit, 6) circle (0.3) node[label={[]:$s_{1,1}$}]{};
+\fill[orange, opacity=0.4] (\xlimit, 6) circle (0.3) node[label={[opacity=1]:$s_{1,1}$}]{};
 
-\fill[orange, opacity=0.4]
-(0, 6) circle (0.3) node[label={[]:$s_{1,1}$}]{};
+\fill[orange, opacity=0.4] (0, 6) circle (0.3) node[label={[opacity=1]:$s_{1,1}$}]{};
 
 
-\fill [green, opacity=0.4] 
+\fill [green, opacity=0.25] 
         (\xlimit-0,\ylimit-2)
     -- (\xlimit-\xlimit/4,\ylimit-2)
     --(\xlimit-\xlimit/4, \ylimit-7)
     --(\xlimit, \ylimit-7)
     -- cycle
-       node[midway, right] {$\mathcal U_{-1}$};
+       node[midway, right, opacity=1, text=darkgreen] {$\mathcal U_{-1}$};
 ;
 
 \end{tikzpicture}

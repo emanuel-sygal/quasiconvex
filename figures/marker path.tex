@@ -23,11 +23,13 @@
  --(112.5:2^0.03125);
 
 
-\node[circle,inner sep=1pt,fill=purple,label=below:{$\zeta$}] at (-0.3,0.953) {};
+\node[circle,inner sep=1pt,fill=purple!70!white,label={[below,color=purple!70!white]:$\zeta$}] at (-0.3,0.953) {};
 
-\node[circle,inner sep=1pt,label=right:{$s_{0,0}$}] at (2,0) {};
-
-\node[circle,inner sep=1pt,label=below:{$s_{1,0}$}] at (1.4,0) {};
+\node[circle,inner sep=1pt,fill=orange!30!white,label={[below,color=orange, xshift=9]:$s_{0,0}$}] at  (2,0) {};
+\node[circle,inner sep=1pt,fill=orange!30!white,label={[below,color=orange, xshift=9, yshift=-2]:$s_{1,0}$}] at  (2^0.5,0) {};
+\node[circle,inner sep=1pt,fill=orange!30!white,label={[below,color=orange, xshift=-8]:$s_{1,1}$}] at  (-2^0.5,0) {};
+% \node[circle,inner sep=1pt,label=right:{$s_{0,0}$}] at (2,0) {};
+% \node[circle,inner sep=1pt,label=below:{$s_{1,0}$}] at (1.4,0) {};
 
 \end{tikzpicture}
 

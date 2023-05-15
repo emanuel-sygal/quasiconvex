@@ -4,13 +4,14 @@
 \draw[black!30!white] (0,0) circle (2^\i);
 }
    
-\foreach \j in {0,1,2,3,4}{
+\foreach \j in {0,1,2,3,4,5}{
     \pgfmathsetmacro{\jtwo}{2.0^\j}
     \pgfmathsetmacro{\jthree}{(1.0/\jtwo)}
     \pgfmathsetmacro{\twopower}{2^\jthree}
     \foreach \angleone in {1,...,\jtwo}{
     \pgfmathsetmacro{\anglez}{360*\angleone}
-    \fill[orange!50!white] (\anglez * \jthree: \twopower) circle (0.5pt)[opacity=0.4];
+    \pgfmathsetmacro{\size}{1-\j/7.0}
+    \fill[orange!70!white] (\anglez * \jthree: \twopower) circle (\size pt)[opacity=0.4];
     \draw[black!30!white] (\anglez * \jthree: \twopower) -- (\anglez * \jthree: 1);	
     }
 }

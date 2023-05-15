@@ -45,7 +45,7 @@ Under the supervision of\\
 
 \begin{onehalfspace}
 \begin{center}
-April 2023
+May 2023
 \par\end{center}
 \end{onehalfspace}
 
@@ -135,7 +135,7 @@ By \cite[Corollary F]{hakobyan_euclidean_2008}, to show that a Jordan domain $\O
 on the boundary curve $\partial\Omega$.
 
 We show quasiconvexity by explicitly constructing the certificates that connect pairs of points on the Julia set.
-We first build the certificates in the exterior unit disk $\mathbb D ^*$ in a  $f_0: z\mapsto z^2$ invariant manner, and then transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
+We first build the certificates in the exterior unit disk $\mathbb D ^*$ in an $f_0: z\mapsto z^2$ invariant manner, and then transport them to the exterior of the Cauliflower by the Riemann map $\psi: \mathbb D ^* \to \Exterior(\mathcal J_{1 / 4})$, 
 which conjugates the dynamics of $f_0$ and $f_{1/4}$. As the certificates in the exterior of the Cauliflower possess an invariance property under $f_{1/4}$, they may be analyzed using a parabolic variant of the principle of the conformal elevator.
 
 In the hyperbolic setting ($c \in \heartsuit$), the {\em principle of the conformal elevator} says that small balls centered at points of $\mathcal J_c$ can be blown up to a definite size by repeatedly applying $f_c$, while roughly retaining their shape. Put more colloquially, Julia sets of hyperbolic polynomials are self-similar with bounded distortion. We use this self-similarity to analyze certificates that connect nearby points by using certificates that connect their iterated images located a definite distance apart. 
@@ -200,7 +200,7 @@ One important tool in complex dynamics is Koebe's distortion theorem, which says
 
 \begin{theorem}[Koebe distortion theorem] 
 \label{koebe}
-Let $\varphi: \mathbb{D} \to \mathbb{C}$ be a conformal map. There exist $C_1, C_2 > 0$ so that
+Let $\varphi: \mathbb{D} \to \mathbb{C}$ be a univalent map. There exist $C_1, C_2 > 0$ so that
 $$
 C_1 \, |\varphi'(0)| \, \le \, |\varphi'(z)| \, \le \, C_2 \, |\varphi'(0)|, \qquad \text{for any }z \in B(0,1/2).
 %\frac{1-|z|}{(1+|z|)^3} \cdot |\varphi'(0)| \, \le \, |\varphi'(z)| \, \le \, \frac{1+|z|}{(1-|z|)^3} \cdot  |\varphi'(0)|.
@@ -227,6 +227,9 @@ The following notion will be used for showing the existence of Koebe space, i.e.
 	\emph{$\eta$-relatively separated.}
 \end{definition}
 
+% If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
+% In particular, if $\gamma$ is a quasiconvexity certificate, 
+% then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant:
 \begin{lemma}
 \label{koebe-quasiconvexity}
 Suppose $\gamma$ is a rectifiable curve  which efficiently connects two points $w_1, w_2 \in \mathbb{C}$, i.e.~satisfies
@@ -260,6 +263,18 @@ Without loss of generality, we may assume that $\eta < 1$. Since the ball $$B \b
 Putting the statements (\ref{upper-bound-rel-distance}) and (\ref{lower-bound-rel-distance}) together completes the proof.
 \end{proof}
 
+The following corollary is essentially a variation of Lemma \ref{koebe-quasiconvexity}:
+\begin{corollary}
+    Let $K$ be a compact subset of a domain $U \subset \mathbb{C}$, $P$ be a compact set disjoint from $U$, and $g$ be a function univalent in $U$.
+    
+    {\em (i)} The sets $g(K)$ and $g(P)$ are $\eta$-relatively separated, for some $\eta=\eta(K)$ independent of g.
+        
+    {\em (ii)} For rectifiable curves $\gamma_{1},\gamma_{2} \subset K$, 
+    $$
+    \frac{\Length(g(\gamma_1))}{\Length(g(\gamma_2))} \asymp \frac{\Length(\gamma_1)}{\Length(\gamma_2)},
+    $$
+    where the implicit constant depends on $K$ but not on $g$.
+\end{corollary}
 
 \subsection{The post-critical set}
 
@@ -280,8 +295,8 @@ admits a hyperbolic metric.
 
  \begin{theorem}\label{theorem:hyperbolic_expanding}
 For $c \neq 0$, the map
-$f: \widehat {\mathbb C} \setminus \PostCrit \to \widehat {\mathbb C} \setminus \PostCrit,$
-is strictly expanding with respect to the hyperbolic metric of $\widehat {\mathbb C} \setminus \PostCrit$, in the sense that the hyperbolic derivative
+$f: \widehat {\mathbb C} \setminus \PostCrit \to \widehat {\mathbb C} \setminus \PostCrit$
+is strictly expanding with respect to the hyperbolic metric of $\widehat {\mathbb C} \setminus \PostCrit$, in the sense that the hyperbolic derivative satisfies
 \begin{equation}\label{eq:hyp-derivative-bound}
 	\norm {f'(z)}_{\hyp} > 1, \qquad z\in \widehat {\mathbb C} \setminus \PostCrit.
 \end{equation}
@@ -415,15 +430,15 @@ $$
 \input{"figures/marker path 2.tex"}
 
 \section{Transporting the tracks} \label{rails-section}
-For $c \in \heartsuit$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve. The {\em Böttcher coordinate} $\psi$ is the unique conformal map $\D^{*}\to\Exterior(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
+For $c \in \heartsuit$, the Julia set of $f_c: z\mapsto z^2+c$ is a Jordan curve. The {\em Böttcher coordinate} $\psi=\psi_c$ is the unique conformal map $\D^{*}\to\Exterior(\mathcal{J}_c)$  which fixes $\infty$ and satisfies the conjugacy relation 
 $$
-f\circ\psi=\psi\circ f_{0}.
+f_c\circ\psi=\psi\circ f_{0}.
 $$
 The Böttcher coordinate $\psi$ extends to a homeomorphism between the unit circle $\partial\D$ and $\mathcal{J}_c$ by Carathéodory's
 theorem. See \cite[Theorem 9.5]{milnor_book} for a proof of existence, 
 relying on the explicit construction 
 \begin{equation}
-	\psi(z) \, = \, \lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f^{\circ n}\, = \, \lim_{n\to \infty} {(f^{\circ n})}^{1/2^n}.	
+	\psi(z) \, = \, \lim_{n\to \infty} (f_0)^{\circ (-n)} \circ f_c^{\circ n}\, = \, \lim_{n\to \infty} {(f_c^{\circ n})}^{1/2^n}.	
 \end{equation}
 
 \input{figures/draw_dyadic_grid.tex}
@@ -442,14 +457,12 @@ Express tracks lie on the external rays of the filled Julia set $\mathcal K_c$, 
 $\eta_{z_1,z_2}=\psi(\eta_{\zeta_1,\zeta_2})$, 
 where $\zeta_i=\psi^{-1}(z_i)$ are the corresponding points on $\partial \mathbb D^*$. 
 \end{enumerate}
-
-We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\Exterior(\mathcal J)$.
-
 %These itineraries can equivalently be obtained directly as in the case of $\mathbb D^*$, in terms of following the central itineraries from the common ancestor in the tree structure.
-%Trivially since $\psi$ is a bijective correspondence between the two decompositions.
 \end{definition}
 
-When $c \in (-3/4, 1/4)$, $\psi ((1,\infty))\subseteq\R$ since $\mathcal{J}$ is symmetric with respect to the real line, and in particular, the central station $\psi(s_{0,0})$ lies on the real axis.
+Notice that by symmetry $\psi ((1,\infty))\subseteq\R$. In particular, the central station $\psi(s_{0,0})$ lies on the real axis.
+
+We henceforth omit $c$ and $\psi$ from the notation for ease of reading. It will be clear from the context whether we work in $\mathbb D^*$ or in $\Exterior(\mathcal J)$.
 
 
 \section{Hyperbolic maps}
@@ -509,7 +522,6 @@ where the last inequality holds since $f^{\circ k}(\gamma_k)$ lies
 on the real axis in case $\gamma_k$ is an express track, 
 or on the equipotential $\psi \bigl (\{ |z| = \sqrt 2\} \bigr )$ otherwise.
 
-
 As the Euclidean metric is bounded above by a constant multiple of the hyperbolic metric,
 we conclude that $\Length(\gamma_k) \lesssim \theta^k$ as well.
 Thus any point on $\mathcal J$ can be reached from the central station 
@@ -531,14 +543,14 @@ As $\eta_{w_1, w_2}$ is contained in $\Exterior(\mathcal J) \cap B(0,R)$, it is 
 By \cref{koebe-quasiconvexity}, $\eta_{z_1,z_2}$ is also a quasiconvexity certificate.
 \end{proof}
 
- 
+
 
 \section{The Cauliflower}
 In this section, $c=\frac 14$ and $f=f_{1/4}: z\mapsto z^2+ \frac 14$.
 %The Cauliflower has cusps at the landing points of the dyadic external rays, i.e. the points whose central itinerary has only finitely-many peripheral tracks.
-Our goal is to prove the quasiconvexity of $\Exterior(\mathcal{J})$, \cref{quasiconvex-Cauliflower}. 
+Our goal is to prove the quasiconvexity of $\Exterior(\mathcal{J})$. %\cref{quasiconvex-Cauliflower}. 
 This is more complicated than the hyperbolic case, 
-because the post-critical set $\PostCrit$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
+because the post-critical set $\PostCrit \subset [0,1/2] \cup \{\infty\}$ of $f$ accumulates at the parabolic fixed point $p=\frac 12$. 
 One no longer has a uniform bound on the distortion of inverse iterates, 
 and we cannot immediately deduce the quasiconvexity of the itinerary $\eta_{z_1,z_2}$ from the quasiconvexity of $\eta_{w_1,w_2}$ using Koebe's distortion theorem. 
 As a substitute, we present an analogue of the principle of the conformal elevator in this parabolic setting.
@@ -630,8 +642,7 @@ From the definition of the stations $s_n$, we have $f(s_{n+1}) = s_n$ for all $n
 \begin{equation}
 s_{n+1}^2 + 1/4 =f(s_{n+1})= s_n.
 \end{equation}
-Consequently, 
-the sequence of positive numbers
+Equivalently, the sequence of positive numbers
 $$
 a_n = s_n-\frac{1}{2}
 $$
@@ -643,45 +654,41 @@ a_n = a_{n+1}^2+a_{n+1}.
 An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n = a_n - a_{n+1} \asymp 1/n^2$.
 \end{proof}
 % Notice that it is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
+\begin{comment}
+The full proof by induction:
+It is enough to prove that for every $\epsilon>0$ there exists $k = k(\epsilon)$
+for which $a_n \overset{\epsilon}{\asymp}  \frac 1{n+k}$,
+meaning that for all large enough $n$,
+we have 
+\[e^{-\epsilon} \leq \left | \frac {a_n}{1/(n+k)} \right |\leq e^\epsilon.\]
+This is enough because then since $\frac 1n \overset{\epsilon}{\asymp} \frac 1{n+k}$ we deduce 
+$$
+a_n \overset{2\epsilon}{\asymp} \frac 1n.
+$$
+% Can this technicality be avoided?
+Let $\epsilon >0$, and assume that 
+$$\frac 1n \leq a_k \leq \frac {1+\epsilon}n.$$
+We deduce from it that
+$$\frac 1{n+1} \leq a_{k+1} \leq \frac {1+\epsilon}{n+1}.$$
+Notice that such an element $a_k$ exists in some range of the form $[\frac 1n, \frac {1+\epsilon}n]$ because $a_n \to 0$. 
+For the induction step, we have two parts:
 
-% % The full proof by induction:
-% % It is enough to prove that for every $\epsilon>0$ there exists $k = k(\epsilon)$
-% % for which $a_n \overset{\epsilon}{\asymp}  \frac 1{n+k}$,
-% % meaning that for all large enough $n$,
-% % we have 
-% % \[e^{-\epsilon} \leq \left | \frac {a_n}{1/(n+k)} \right |\leq e^\epsilon.\]
-% % This is enough because then since $\frac 1n \overset{\epsilon}{\asymp} \frac 1{n+k}$ we deduce 
-% % $$
-% % a_n \overset{2\epsilon}{\asymp} \frac 1n.
-% % $$
-% % % Can this technicality be avoided?
-% % Let $\epsilon >0$, and assume that 
-% % $$\frac 1n \leq a_k \leq \frac {1+\epsilon}n.$$
-% % We deduce from it that
-% % $$\frac 1{n+1} \leq a_{k+1} \leq \frac {1+\epsilon}{n+1}.$$
-% % Notice that such an element $a_k$ exists in some range of the form $[\frac 1n, \frac {1+\epsilon}n]$ because $a_n \to 0$. 
-% % For the induction step, we have two parts:
+For the first inequality, assume by contradiction that $a_{k+1}<\frac 1{n+1}$. Then 
+$$\frac 1n \leq a_k < \frac 1{n+1} + \frac 1{(n+1)^2}$$
+which is a contradiction.
 
-% % For the first inequality, assume by contradiction that $a_{k+1}<\frac 1{n+1}$. Then 
-% % $$\frac 1n \leq a_k < \frac 1{n+1} + \frac 1{(n+1)^2}$$
-% % which is a contradiction.
-
-% % For the second inequality, assume by contradiction that 
-% % $$a_{k+1}> \frac {1+\epsilon}{n+1}.$$
-% % Then 
-% % $$
-% % \frac {1+\epsilon}n \geq a_k > \frac {1+\epsilon}{n+1}
-% % + \frac {(1+\epsilon)^2}{(n+1)^2},
-% % $$
-% % which is equivalent to
-% % $\frac {1}{n} >
-% % \epsilon.$ 
-% % This is again a contradiction, and we are done.
-
-% If an itinerary $\gamma$ is relatively separated from $\PostCrit$, then the preimages of $\gamma$ under $f$ have bounded distortion. 
-% In particular, if $\gamma$ is a quasiconvexity certificate, 
-% then Koebe's distortion theorem implies that $f^{-1}(\gamma)$ is also a certificate with a comparable constant.
-
+For the second inequality, assume by contradiction that 
+$$a_{k+1}> \frac {1+\epsilon}{n+1}.$$
+Then 
+$$
+\frac {1+\epsilon}n \geq a_k > \frac {1+\epsilon}{n+1}
++ \frac {(1+\epsilon)^2}{(n+1)^2},
+$$
+which is equivalent to
+$\frac {1}{n} >
+\epsilon.$ 
+This is again a contradiction, and we are done.
+\end{comment}
 
 \begin{lemma}
 \label{expansion factor}
@@ -820,13 +827,13 @@ which clearly implies (\ref{eq:triangle-comparison}) and thereby that $\eta_{w_1
 	\draw [red!70!white, decorate,decoration={snake,segment length=2mm,amplitude=1mm}]
     (w1) -- node[left] {$\gamma_m$} (s1);
     \draw [red!70!white]
-    (s1) -- node[above, yshift = 4]{$\ell m$} (0,3);
+    (s1) -- node[above, yshift = 4]{$\ell_m$} (0,3);
     \draw []
     (0,3) -- node[above] {$\gamma_{m,n}$} (11,3);
-    \draw [orange!70!white]
+    \draw [orange!90!white]
     (11,3) -- node[above, yshift = 4]{$\ell_n$} (s2);
-    \draw [orange!70!white, decorate,decoration={snake,segment length=2mm,amplitude=1mm}]    
-    (s2) -- node[right] {$\gamma_n$} (w2);
+    \draw [orange!90!white, decorate,decoration={snake,segment length=2mm,amplitude=1mm}]    
+    (s2) -- node[right, xshift=2] {$\gamma_n$} (w2);
 
 
  
@@ -859,6 +866,7 @@ We define the constants $C_1, C_2, \epsilon$ as follows. We first choose $C_1 \g
 \end{equation}
 where the constant $k$ was defined in \cref{expansion factor}.
 The constant $C_2$ was chosen so that for any pair $(m,n)$ of integers, we have at least one of the following three cases: either $m,n$ are both greater than $C_1$, or both are smaller than $C_2$, or $|m-n| > d$.
+% The choice of $epsilon$ guarantees that when the stopping condition occurs, $m,n$ are either both smaller than $C_1$ or both larger than $C_2$. But this was already guaranteed by the choice of $d$. Can one actually toss away Case 3?
 
 \subsubsection{The special cases}
 In this section we treat the following special cases:
@@ -963,7 +971,7 @@ as desired.
 \nomenclature{$\mathcal K$}{The filled Julia set of $f$.}
 \nomenclature{$\gamma_{s_1, s_2}$}{The track connecting stations $s_1$ and $s_2$. It can be either angular (\enquote{peripheral}) or radial (\enquote{express}).}
 \nomenclature{$\eta_{z_1, z_2}$}{The itinerary connecting two points. When $z_1$ and $z_2$ are stations, $\eta_{z_1, z_2}$ coincides with $\gamma_{z_1,z_2}$.}
-\nomenclature{$\mathrm{Exterior}(\mathcal{J}), \; A_\infty(f)$}{The exterior of the Julia set of $f$. The complement of $\mathcal K$.}
+\nomenclature{$\mathrm{Exterior}(\mathcal{J}), \; A_\infty(f)$}{The exterior of the Julia set of $f$.}
 % \nomenclature{$\mathrm{Exterior}(\mathcal{J})$}{ $\;$ An alternative notation for $A_\infty(f_c)$.}
 \nomenclature{$\psi$}{The Böttcher coordinate $\mathbb D ^* \to \Exterior(\mathcal J)$ conjugating $f_0$ and $f$.}
 \nomenclature{$s_{n,k}$}{A station in $\mathbb D^*$ or its image under $\psi$.}
