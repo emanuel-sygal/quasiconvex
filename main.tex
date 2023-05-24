@@ -653,9 +653,8 @@ satisfies the recurrence
 a_n = a_{n+1}^2+a_{n+1}.
 \end{equation}
 
-An induction argument shows that $a_n = 1/n + o(1/n)$, and consequently, $\ell_n = a_n - a_{n+1} \asymp 1/n^2$.
+An induction argument shows that $a_n \asymp 1/n$, and consequently, $\ell_n = a_n - a_{n+1} = a_{n+1}^2 \asymp 1/n^2$.
 \end{proof}
-% Notice that it is not true in general that if a_n \asymp 1/n then a_n-a_{n-1} \asymp 1/n^2.
 \begin{comment}
 The full proof by induction:
 It is enough to prove that for every $\epsilon>0$ there exists $k = k(\epsilon)$
