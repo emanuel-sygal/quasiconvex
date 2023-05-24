@@ -17,7 +17,7 @@ School of Mathematical Sciences
 
 \begin{doublespace}
 \begin{center}
-{\LARGE{}The basin of attraction to infinity of $z^2+1/4$ is quasiconvex}{\LARGE\par}
+{\LARGE{}The escaping set of $z^2+1/4$ is quasiconvex}{\LARGE\par}
 \par\end{center}
 \end{doublespace}
 
@@ -62,7 +62,7 @@ under iteration by $f_c$\,:
 $$
 \mathcal K_c = \bigl \{z \in \mathbb{C} : \sup_{n \ge 0} f_c^{\circ n}(z) < \infty \bigr \}.
 $$
-Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}\/, and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f_c$.
+Its boundary $\mathcal J_c = \partial \mathcal K(f_c)$ is known as the {\em Julia set}\/, and its complement $\Exterior(\mathcal{J}_c) = \mathbb{C} \setminus \mathcal K(f_c)$ forms the {\em attracting basin of infinity}, also called the {\em escaping set}. The sets $\mathcal J_c$ and $\mathcal K_c$ are compact and are both forward and backward invariant under the dynamics of $f_c$.
  
 The {\em main cardioid}
 $$
@@ -88,7 +88,7 @@ to any other point $z_1\in \Omega$ by a curve $\gamma$ which does not get too cl
 	\dist(z, \partial \Omega) \gtrsim |z_1-z|,
 \end{equation} for all $z\in \gamma$.
 
-A domain $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
+A set $\Omega\subseteq\C$ is called \textbf{quasiconvex} 
 if its intrinsic metric is comparable to the ambient Euclidean metric. 
 Explicitly, this means that there exists a constant $A\geq1$ such that every two points $z_{1},z_{2}\in \overline \Omega$
  are connected by a rectifiable path $\eta_{z_1,z_2}: [0,1]\to \overline \Omega$ which satisfies
@@ -119,9 +119,11 @@ We call $\Omega$ a
  if every 
 $u \in W^{1,1}(\Omega)$ extends to a function
 in $W^{1,1}(\mathbb{C})$.
-In \cite[Equation (1.1) and Theorem 1.4]{strong_bv_extension_2022}, 
-it is proved that a bounded simply connected domain
+In \cite[Equation (1.1)]{strong_bv_extension_2022}, 
+it is proved that a bounded Jordan domain 
 is a $W^{1,1}$ extension domain if and only if its complement is quasiconvex.
+% it is proved that a bounded simply connected domain $\Omega$
+% is a $W^{1,1}$ extension domain if and only if its complement is quasiconvex via certificates that only touch the boundary $\partial \Omega$ at a set with zero Hausdorff measure $\mathcal H^1$.
 Thus our result can be rephrased as follows:
 
 % Or as a consequence of \cite[Theorem 1.1]{koskela_geometric_2010} and \cite[Theorem 1.4]{strong_bv_extension_2022}, we have:
